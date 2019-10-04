@@ -60,9 +60,9 @@
 ## Elixir
 
 * [Installation](elixir/installation.md)
-* [Crypto](elixir/getting-started/README.md)
-  * [API Documentation](elixir/getting-started/api-documentation.md)
-  * [Examples](elixir/getting-started/examples.md)
+* [Crypto](elixir/crypto/README.md)
+  * [API Documentation](elixir/crypto/api-documentation.md)
+  * [Examples](elixir/crypto/examples.md)
 * [Client](elixir/client/README.md)
   * [API Documentation](elixir/client/api-documentation.md)
   * [Examples](elixir/client/examples.md)
