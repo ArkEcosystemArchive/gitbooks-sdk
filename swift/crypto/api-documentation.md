@@ -3,10 +3,11 @@ id: api-documentation
 title: API Documentation
 ---
 
+# API Documentation
+
 ## Crypto.Crypto.Configuration.FeeConfiguration.Fee
 
 ### `get()`
-
 
 ```swift
 public func get(forType: TransactionType)
@@ -16,16 +17,13 @@ Get a fee for a given transaction type
 
 #### Parameters
 
-| Type            | Name             | Required | Description                                     |
-| --------------- | ---------------- | -------- | ----------------------------------------------- |
-| TransactionType | forType          | Yes      | Transaction type for which we wish to get a fee |
-
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| TransactionType | forType | Yes | Transaction type for which we wish to get a fee |
 
 #### Return Value
 
 `UInt64`
-
----
 
 ### `set()`
 
@@ -37,10 +35,10 @@ Set a fee
 
 #### Parameters
 
-| Type            | Name             | Required | Description                                     |
-| --------------- | ---------------- | -------- | ----------------------------------------------- |
-| TransactionType | forType          | Yes      | Transaction type for which we wish to get a fee |
-| UInt64          | fee              | Yes      | Fee for a given transaction type                |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| TransactionType | forType | Yes | Transaction type for which we wish to get a fee |
+| UInt64 | fee | Yes | Fee for a given transaction type |
 
 #### Return Value
 
@@ -58,15 +56,13 @@ Set what network you want to use in the crypto library
 
 #### Parameters
 
-| Type            | Name             | Required | Description              |
-| ----------------| ---------------- | -------- | ------------------------ |
-| ProtocolNetwork | network          | Yes      | Testnet, Devnet, Mainnet |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ProtocolNetwork | network | Yes | Testnet, Devnet, Mainnet |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `get()`
 
@@ -94,16 +90,14 @@ Get an address from a passphrase, a private key or a public key
 
 #### Parameters
 
-| Type     | Name                                | Required | Description                           |
-| -------- | ----------------------------------- | -------- | ------------------------------------- |
-| String   | passphrase | privateKey | publicKey | Yes      | Passphrase, private key or public key |
-| UInt8    | network                             | No       | Version of the network                |
+| Type | Name | Required | Description |  |  |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| String | passphrase | privateKey | publicKey | Yes | Passphrase, private key or public key |
+| UInt8 | network | No | Version of the network |  |  |
 
 #### Return Value
 
 `String`
-
----
 
 ### `validate()`
 
@@ -115,9 +109,9 @@ Validate a given address
 
 #### Parameters
 
-| Type     | Name             | Required | Description            |
-| -------- | ---------------- | -------- | ---------------------- |
-| String   | address          | Yes      | Address to validate    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | address | Yes | Address to validate |
 
 #### Return Value
 
@@ -136,9 +130,9 @@ Create PrivateKey object from a given passphrase or hex string
 
 #### Parameters
 
-| Type     | Name             | Required | Description               |
-| -------- | ---------------- | -------- | ------------------------- |
-| Str      | passphrase | hex | Yes      | Passphrase or hex string  |
+| Type | Name | Required | Description |  |
+| :--- | :--- | :--- | :--- | :--- |
+| Str | passphrase | hex | Yes | Passphrase or hex string |
 
 #### Return Value
 
@@ -157,9 +151,9 @@ Create PublicKey object from a given passphrase
 
 #### Parameters
 
-| Type     | Name             | Required | Description              |
-| -------- | ---------------- | -------- | ------------------------ |
-| String   | passphrase | hex | Yes      | Passphrase or hex string |
+| Type | Name | Required | Description |  |
+| :--- | :--- | :--- | :--- | :--- |
+| String | passphrase | hex | Yes | Passphrase or hex string |
 
 #### Return Value
 
@@ -177,9 +171,9 @@ Get wif from passphrase
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| String   | passphrase       | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | passphrase | Yes | Passphrase |
 
 #### Return Value
 
@@ -199,8 +193,6 @@ Return the epoch date for devnet.
 
 `String`
 
----
-
 ### `version()`
 
 ```swift
@@ -213,8 +205,6 @@ Return the version for devnet.
 
 `UInt8`
 
----
-
 ### `nethash()`
 
 ```swift
@@ -226,8 +216,6 @@ Return the nethash for devnet.
 #### Return Value
 
 `String`
-
----
 
 ### `wif()`
 
@@ -255,8 +243,6 @@ Return the epoch date for mainnet.
 
 `String`
 
----
-
 ### `version()`
 
 ```swift
@@ -269,8 +255,6 @@ Return the version for mainnet.
 
 `UInt8`
 
----
-
 ### `nethash()`
 
 ```swift
@@ -282,8 +266,6 @@ Return the nethash for mainnet.
 #### Return Value
 
 `String`
-
----
 
 ### `wif()`
 
@@ -311,8 +293,6 @@ Return the epoch date for testnet.
 
 `String`
 
----
-
 ### `version()`
 
 ```swift
@@ -325,8 +305,6 @@ Return the version for testnet.
 
 `UInt8`
 
----
-
 ### `nethash()`
 
 ```swift
@@ -338,8 +316,6 @@ Return the nethash for testnet.
 #### Return Value
 
 `String`
-
----
 
 ### `wif()`
 
@@ -365,19 +341,17 @@ Builds a transaction for a transfer.
 
 #### Parameters
 
-| Type     | Name             | Required | Description                                                     |
-| -------- | ---------------- | -------- | --------------------------------------------------------------- |
-| String   | passphrase       | Yes      | Passphrase associated with the account sending this transaction |
-| String   | secondPassphrase | No       | Second passphrase that will be registered for the wallet        |
-| String   | recipient        | Yes      | Recipient identifier                                            |
-| String   | amount           | Yes      | Transaction amount                                              |
-| String   | vendorField      | No       | Transaction vendorfield                                         |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | passphrase | Yes | Passphrase associated with the account sending this transaction |
+| String | secondPassphrase | No | Second passphrase that will be registered for the wallet |
+| String | recipient | Yes | Recipient identifier |
+| String | amount | Yes | Transaction amount |
+| String | vendorField | No | Transaction vendorfield |
 
 #### Return Value
 
 `ArkTransaction`
-
----
 
 ### `buildSecondSignature()`
 
@@ -389,16 +363,14 @@ Builds a transaction for a second signature registration.
 
 #### Parameters
 
-| Type     | Name             | Required | Description                                                     |
-| -------- | ---------------- | -------- | --------------------------------------------------------------- |
-| String   | passphrase       | Yes      | Passphrase associated with the account sending this transaction |
-| String   | secondPassphrase | No       | Second passphrase that will be registered for the wallet        |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | passphrase | Yes | Passphrase associated with the account sending this transaction |
+| String | secondPassphrase | No | Second passphrase that will be registered for the wallet |
 
 #### Return Value
 
 `ArkTransaction`
-
----
 
 ### `buildDelegateRegistration()`
 
@@ -410,17 +382,15 @@ Builds a transaction for a delegate registration.
 
 #### Parameters
 
-| Type     | Name             | Required | Description                                                     |
-| -------- | ---------------- | -------- | --------------------------------------------------------------- |
-| String   | passphrase       | Yes      | Passphrase associated with the account sending this transaction |
-| String   | secondPassphrase | No       | Second passphrase that will be registered for the wallet        |
-| String   | username         | No       | Delegate username                                               |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | passphrase | Yes | Passphrase associated with the account sending this transaction |
+| String | secondPassphrase | No | Second passphrase that will be registered for the wallet |
+| String | username | No | Delegate username |
 
 #### Return Value
 
 `ArkTransaction`
-
----
 
 ### `buildVote()`
 
@@ -432,17 +402,15 @@ Builds a transaction for a vote.
 
 #### Parameters
 
-| Type     | Name             | Required | Description                                                     |
-| -------- | ---------------- | -------- | --------------------------------------------------------------- |
-| String   | passphrase       | Yes      | Passphrase associated with the account sending this transaction |
-| String   | secondPassphrase | No       | Second passphrase that will be registered for the wallet        |
-| String   | vote             | Yes      | Public key of the delegate that is being voted for              |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | passphrase | Yes | Passphrase associated with the account sending this transaction |
+| String | secondPassphrase | No | Second passphrase that will be registered for the wallet |
+| String | vote | Yes | Public key of the delegate that is being voted for |
 
 #### Return Value
 
 `ArkTransaction`
-
----
 
 ### `buildUnvote()`
 
@@ -454,17 +422,15 @@ Builds a transaction for an unvote.
 
 #### Parameters
 
-| Type     | Name             | Required | Description                                                     |
-| -------- | ---------------- | -------- | --------------------------------------------------------------- |
-| String   | passphrase       | Yes      | Passphrase associated with the account sending this transaction |
-| String   | secondPassphrase | No       | Second passphrase that will be registered for the wallet        |
-| String   | vote             | Yes      | Public key of the delegate that is being unvoted                |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | passphrase | Yes | Passphrase associated with the account sending this transaction |
+| String | secondPassphrase | No | Second passphrase that will be registered for the wallet |
+| String | vote | Yes | Public key of the delegate that is being unvoted |
 
 #### Return Value
 
 `ArkTransaction`
-
----
 
 ### `buildMultiSignatureRegistration()`
 
@@ -476,13 +442,13 @@ Builds a transaction for a multi signature registration.
 
 #### Parameters
 
-| Type     | Name             | Required | Description                                                     |
-| -------- | ---------------- | -------- | --------------------------------------------------------------- |
-| String   | passphrase       | Yes      | Passphrase associated with the account sending this transaction |
-| String   | secondPassphrase | No       | Second passphrase that will be registered for the wallet        |
-| UInt8    | min              | Yes      | Minimum required signatures                                     |
-| UInt8    | lifetime         | Yes      | Transaction lifetime                                            | 
-| [String] | keysgroup        | Yes      | Transaction keysgroup                                           |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | passphrase | Yes | Passphrase associated with the account sending this transaction |
+| String | secondPassphrase | No | Second passphrase that will be registered for the wallet |
+| UInt8 | min | Yes | Minimum required signatures |
+| UInt8 | lifetime | Yes | Transaction lifetime |
+| \[String\] | keysgroup | Yes | Transaction keysgroup |
 
 #### Return Value
 
@@ -500,9 +466,9 @@ Perform AIP11 compliant deserialization.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| String   | serialized       | Yes      | Serialized  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | serialized | Yes | Serialized |
 
 #### Return Value
 
@@ -510,7 +476,7 @@ Perform AIP11 compliant deserialization.
 
 ## Crypto.Crypto.Transactions.ArkSerializer.ArkSerializer
 
-### `serialize()` 
+### `serialize()`
 
 ```swift
 public static func serialize(transaction: ArkTransaction)
@@ -520,9 +486,9 @@ Handle the serialization of transaction data.
 
 #### Parameters
 
-| Type           | Name             | Required | Description |
-| -------------- | ---------------- | -------- | ----------- |
-| ArkTransaction | transaction      | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ArkTransaction | transaction | Yes | Transaction |
 
 #### Return Value
 
@@ -530,7 +496,7 @@ Handle the serialization of transaction data.
 
 ## Crypto.Crypto.Transactions.ArkTransaction.ArkTransaction
 
-### `getId()` 
+### `getId()`
 
 ```swift
 public static func getId()
@@ -542,9 +508,7 @@ Convert the byte representation to a unique identifier.
 
 `String`
 
----
-
-### `sign()` 
+### `sign()`
 
 ```swift
 public func sign(_ keys: PrivateKey)
@@ -554,17 +518,15 @@ Sign the transaction using the given passphrase.
 
 #### Parameters
 
-| Type       | Name | Required | Description |
-| ---------- | -----| -------- | ----------- |
-| PrivateKey | keys | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| PrivateKey | keys | Yes | Passphrase |
 
 #### Return Value
 
 `ArkTransaction`
 
----
-
-### `secondSign()` 
+### `secondSign()`
 
 ```swift
 public func secondSign(_ keys: PrivateKey)
@@ -574,17 +536,15 @@ Sign the transaction using the given second passphrase.
 
 #### Parameters
 
-| Type       | Name | Required | Description        |
-| ---------- | -----| -------- | ------------------ |
-| PrivateKey | keys | Yes      | Second passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| PrivateKey | keys | Yes | Second passphrase |
 
 #### Return Value
 
 `ArkTransaction`
 
----
-
-### `verify()` 
+### `verify()`
 
 ```swift
 public static func verify()
@@ -596,9 +556,7 @@ Verify the transaction.
 
 `Bool`
 
----
-
-### `secondVerify()` 
+### `secondVerify()`
 
 ```swift
 public func secondVerify(publicKey: String)
@@ -608,17 +566,15 @@ Verify the transaction with a second public key.
 
 #### Parameters
 
-| Type       | Name      | Required | Description        |
-| ---------- | --------- | -------- | ------------------ |
-| String     | publicKey | Yes      | Second public key  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | publicKey | Yes | Second public key |
 
 #### Return Value
 
 `Bool`
 
----
-
-### `toBytes()` 
+### `toBytes()`
 
 ```swift
 public func toBytes(skipSignature: Bool = true, skipSecondSignature: Bool = true)
@@ -628,18 +584,16 @@ Convert the transaction to its byte representation.
 
 #### Parameters
 
-| Type       | Name                | Required | Description           |
-| ---------- | ------------------- | -------- | --------------------- |
-| Bool       | skipSignature       | False    | Skip first signature  |
-| Bool       | skipSecondSignature | False    | Skip second signature |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Bool | skipSignature | False | Skip first signature |
+| Bool | skipSecondSignature | False | Skip second signature |
 
 #### Return Value
 
 `[UInt8]`
 
----
-
-### `toDict()` 
+### `toDict()`
 
 ```swift
 public func toDict()
@@ -651,9 +605,7 @@ Convert the transaction to its dict representation.
 
 `[String: Any]`
 
----
-
-### `toJson()` 
+### `toJson()`
 
 ```swift
 public func toJson()
@@ -667,7 +619,7 @@ Convert the transaction to its JSON representation.
 
 ## Crypto.Crypto.Utils.Message.ArkMessage
 
-### `init()` 
+### `init()`
 
 ```swift
 public init(publicKey: String, signature: String, message: String)
@@ -677,15 +629,13 @@ Create a new message instance.
 
 #### Parameters
 
-| Type       | Name      | Required | Description |
-| ---------- | --------- | -------- | ----------- |
-| String     | publicKey | Yes      | Public key  |
-| String     | signature | Yes      | Signature   |
-| String     | message   | Yes      | Message     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | publicKey | Yes | Public key |
+| String | signature | Yes | Signature |
+| String | message | Yes | Message |
 
----
-
-### `sign()` 
+### `sign()`
 
 ```swift
 public static func sign(message: String, passphrase: String)
@@ -695,18 +645,16 @@ Sign a message using the given passphrase.
 
 #### Parameters
 
-| Type       | Name       | Required | Description |
-| ---------- | ---------- | -------- | ----------- |
-| String     | message    | Yes      | Message     |
-| String     | passphrase | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | message | Yes | Message |
+| String | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `ArkMessage?`
 
----
-
-### `verify()` 
+### `verify()`
 
 ```swift
 public func sign()
@@ -718,9 +666,7 @@ Verify the message contents.
 
 `Bool`
 
----
-
-### `toDict()` 
+### `toDict()`
 
 ```swift
 public func toDict()
@@ -732,9 +678,7 @@ Convert the message to its dict representation.
 
 `[String: String]`
 
----
-
-### `toJson()` 
+### `toJson()`
 
 ```swift
 public func toJson()
@@ -748,7 +692,7 @@ Convert the message to its JSON representation.
 
 ## Crypto.Crypto.Utils.Slot.Slot
 
-### `time()` 
+### `time()`
 
 ```swift
 public static func time()
@@ -760,9 +704,7 @@ Get the time diff between now and network start.
 
 `UInt32`
 
----
-
-### `epoch()` 
+### `epoch()`
 
 ```swift
 public static func epoch()

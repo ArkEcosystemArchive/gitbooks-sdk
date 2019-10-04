@@ -3,6 +3,8 @@ id: api-documentation
 title: API Documentation
 ---
 
+# API Documentation
+
 ## ArkEcosystem.Client.API.Api
 
 ### `Api()`
@@ -15,15 +17,13 @@ Class Constructor.
 
 #### Parameters
 
-| Type       | Name    | Required | Description |
-| ---------- | ------- | -------- | ----------- |
-| HttpClient | client  | Yes      | Client      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| HttpClient | client | Yes | Client |
 
 #### Return Value
 
 `Api`
-
----
 
 ## ArkEcosystem.Client.API.Blocks
 
@@ -37,15 +37,13 @@ Blocks class constructor.
 
 #### Parameters
 
-| Type       | Name   | Required | Description |
-| ---------- | ------ | -------- | ----------- |
-| HttpClient | client | Yes      | Client      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| HttpClient | client | Yes | Client |
 
 #### Return Value
 
 `Blocks`
-
----
 
 ### `All()`
 
@@ -57,15 +55,13 @@ List All Blocks.
 
 #### Parameters
 
-| Type                       | Name       | Required | Description      |
-| -------------------------- | ---------- | -------- | ---------------- |
-| Dictionary<string, string> | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Response<List<Block>>`
-
----
 
 ### `AllAsync()`
 
@@ -77,15 +73,13 @@ List All Blocks.
 
 #### Parameters
 
-| Type                       | Name       | Required | Description      |
-| -------------------------- | ---------- | -------- | ---------------- |
-| Dictionary<string, string> | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Task<Response<List<Block>>>`
-
----
 
 ### `Show()`
 
@@ -97,15 +91,13 @@ Retrieve a Block
 
 #### Parameters
 
-| Type   | Name  | Required | Description |
-| ------ | ----- | -------- | ----------- |
-| string | id    | Yes      | Block ID    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Block ID |
 
 #### Return Value
 
 `Response<Block>`
-
----
 
 ### `ShowAsync()`
 
@@ -117,15 +109,13 @@ Retrieve a Block
 
 #### Parameters
 
-| Type   | Name   | Required | Description |
-| ------ | ------ | -------- | ----------- |
-| string | id     | Yes      | Block ID    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Block ID |
 
 #### Return Value
 
 `Task<Response<Block>>`
-
----
 
 ### `Transactions()`
 
@@ -137,16 +127,14 @@ List All Transactions of a Block
 
 #### Parameters
 
-| Type                       | Name       | Required | Description      |
-| -------------------------- | ---------- | -------- | ---------------- |
-| string                     | id         | Yes      | Block ID         |
-| Dictionary<string, string> | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Block ID |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Response<List<Transaction>>`
-
----
 
 ### `TransactionsAsync()`
 
@@ -158,16 +146,14 @@ List All Transactions of a Block
 
 #### Parameters
 
-| Type                       | Name       | Required | Description      |
-| -------------------------- | ---------- | -------- | ---------------- |
-| string                     | id         | Yes      | Block ID         |
-| Dictionary<string, string> | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Block ID |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Task<Response<List<Transaction>>>`
-
----
 
 ### `Search()`
 
@@ -179,15 +165,13 @@ Search All Blocks
 
 #### Parameters
 
-| Type                       | Name       | Required | Description       |
-| -------------------------- | ---------- | -------- | ----------------- |
-| Dictionary<string, string> | parameters | No       | Search parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | No | Search parameters |
 
 #### Return Value
 
 `Response<List<Block>>`
-
----
 
 ### `SearchAsync()`
 
@@ -199,9 +183,9 @@ Search All Blocks
 
 #### Parameters
 
-| Type                       | Name       | Required | Description       |
-| -------------------------- | ---------- | -------- | ----------------- |
-| Dictionary<string, string> | parameters | No       | Search parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | No | Search parameters |
 
 #### Return Value
 
@@ -219,15 +203,13 @@ Delegates class constructor.
 
 #### Parameters
 
-| Type       | Name   | Required | Description |
-| ---------- | ------ | -------- | ----------- |
-| HttpClient | client | Yes      | Client      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| HttpClient | client | Yes | Client |
 
 #### Return Value
 
 `Delegates`
-
----
 
 ### `All()`
 
@@ -239,15 +221,13 @@ List All Delegates
 
 #### Parameters
 
-| Type                       | Name       | Required | Description      |
-| -------------------------- | ---------- | -------- | ---------------- |
-| Dictionary<string, string> | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `<List<Delegate>>`
-
----
 
 ### `AllAsync()`
 
@@ -259,15 +239,13 @@ List All Delegates
 
 #### Parameters
 
-| Type                       | Name       | Required | Description      |
-| -------------------------- | ---------- | -------- | ---------------- |
-| Dictionary<string, string> | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Task<Response<List<Delegate>>>`
-
----
 
 ### `Show()`
 
@@ -279,15 +257,13 @@ Retrieve a Delegate
 
 #### Parameters
 
-| Type   | Name | Required | Description         |
-| ------ | ---- | -------- | ------------------- |
-| string | id   | Yes      | Delegate identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Delegate identifier |
 
 #### Return Value
 
 `Response<Delegate>`
-
----
 
 ### `ShowAsync()`
 
@@ -299,15 +275,13 @@ Retrieve a Delegate
 
 #### Parameters
 
-| Type   | Name | Required | Description         |
-| ------ | ---- | -------- | ------------------- |
-| string | id   | Yes      | Delegate identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Delegate identifier |
 
 #### Return Value
 
 `Task<Response<Delegate>>`
-
----
 
 ### `Blocks()`
 
@@ -319,16 +293,14 @@ List All Blocks of a Delegate
 
 #### Parameters
 
-| Type                       | Name       | Required | Description         |
-| -------------------------- | ---------- | -------- | ------------------- |
-| string                     | id         | Yes      | Delegate identifier |
-| Dictionary<string, string> | parameters | No       | Query parameters    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Delegate identifier |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Response<List<Block>>`
-
----
 
 ### `BlocksAsync()`
 
@@ -340,16 +312,14 @@ List All Blocks of a Delegate
 
 #### Parameters
 
-| Type                       | Name       | Required | Description         |
-| -------------------------- | ---------- | -------- | ------------------- |
-| string                     | id         | Yes      | Delegate identifier |
-| Dictionary<string, string> | parameters | No       | Query parameters    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Delegate identifier |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Task<Response<List<Block>>>`
-
----
 
 ### `Voters()`
 
@@ -361,16 +331,14 @@ List All Voters of a Delegate
 
 #### Parameters
 
-| Type                       | Name       | Required | Description         |
-| -------------------------- | ---------- | -------- | ------------------- |
-| string                     | id         | Yes      | Delegate identifier |
-| Dictionary<string, string> | parameters | No       | Query parameters    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Delegate identifier |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Response<List<Wallet>>`
-
----
 
 ### `VotersAsync()`
 
@@ -382,10 +350,10 @@ List All Voters of a Delegate
 
 #### Parameters
 
-| Type                       | Name       | Required | Description         |
-| -------------------------- | ---------- | -------- | ------------------- |
-| string                     | id         | Yes      | Delegate identifier |
-| Dictionary<string, string> | parameters | No       | Query parameters    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Delegate identifier |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
@@ -403,15 +371,13 @@ Node class constructor.
 
 #### Parameters
 
-| Type       | Name   | Required | Description |
-| ---------- | ------ | -------- | ----------- |
-| HttpClient | client | Yes      | Client      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| HttpClient | client | Yes | Client |
 
 #### Return Value
 
 `Node`
-
----
 
 ### `Configuration()`
 
@@ -425,8 +391,6 @@ Retrieve the Configuration
 
 `Response<NodeConfiguration>`
 
----
-
 ### `ConfigurationAsync()`
 
 ```csharp
@@ -438,8 +402,6 @@ Retrieve the Configuration
 #### Return Value
 
 `Task<Response<NodeConfiguration>>`
-
----
 
 ### `Status()`
 
@@ -453,8 +415,6 @@ Retrieve the Status
 
 `Response<NodeStatus>`
 
----
-
 ### `StatusAsync()`
 
 ```csharp
@@ -467,8 +427,6 @@ Retrieve the Status
 
 `Task<Response<NodeStatus>>`
 
----
-
 ### `Syncing()`
 
 ```csharp
@@ -480,8 +438,6 @@ Retrieve the Syncing Status
 #### Return Value
 
 `Response<NodeSyncing>`
-
----
 
 ### `SyncingAsync()`
 
@@ -507,15 +463,13 @@ Peers class constructor.
 
 #### Parameters
 
-| Type       | Name   | Required | Description |
-| ---------- | ------ | -------- | ----------- |
-| HttpClient | client | Yes      | Client      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| HttpClient | client | Yes | Client |
 
 #### Return Value
 
 `Peers`
-
----
 
 ### `All()`
 
@@ -529,8 +483,6 @@ List All Peers
 
 `Response<List<Peer>>`
 
----
-
 ### `AllAsync()`
 
 ```csharp
@@ -541,15 +493,13 @@ List All Peers
 
 #### Parameters
 
-| Type                       | Name       | Required | Description      |
-| -------------------------- | ---------- | -------- | ---------------- |
-| Dictionary<string, string> | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Task<Response<List<Peer>>>`
-
----
 
 ### `Show()`
 
@@ -561,15 +511,13 @@ Retrive a Peer
 
 #### Parameters
 
-| Type   | Name  | Required | Description |
-| ------ | ----- | -------- | ----------- |
-| string | ip    | Yes      | IP address  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | ip | Yes | IP address |
 
 #### Return Value
 
 `Response<Peer>`
-
----
 
 ### `ShowAsync()`
 
@@ -581,9 +529,9 @@ Retrive a Peer
 
 #### Parameters
 
-| Type   | Name  | Required | Description |
-| ------ | ----- | -------- | ----------- |
-| string | ip    | Yes      | IP address  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | ip | Yes | IP address |
 
 #### Return Value
 
@@ -601,15 +549,13 @@ Transactions class constructor.
 
 #### Parameters
 
-| Type       | Name   | Required | Description |
-| ---------- | ------ | -------- | ----------- |
-| HttpClient | client | Yes      | Client      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| HttpClient | client | Yes | Client |
 
 #### Return Value
 
 `Transactions`
-
----
 
 ### `Create()`
 
@@ -621,15 +567,13 @@ Create a Transaction
 
 #### Parameters
 
-| Type                        | Name       | Required | Description      |
-| --------------------------- | ---------- | -------- | ---------------- |
-| Dictionary<string, dynamic> | parameters | Yes      | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | Yes | Query parameters |
 
 #### Return Value
 
 `Response<Transaction>`
-
----
 
 ### `CreateAsync()`
 
@@ -641,15 +585,13 @@ Create a Transaction
 
 #### Parameters
 
-| Type                        | Name       | Required | Description      |
-| --------------------------- | ---------- | -------- | ---------------- |
-| Dictionary<string, dynamic> | parameters | Yes      | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | Yes | Query parameters |
 
 #### Return Value
 
 `Task<Response<Transaction>>`
-
----
 
 ### `Show()`
 
@@ -661,15 +603,13 @@ Retrieve a Transaction
 
 #### Parameters
 
-| Type   | Name  | Required | Description    |
-| ------ | ----- | -------- | -------------- |
-| string | id    | Yes      | Transaction ID |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Transaction ID |
 
 #### Return Value
 
 `Response<Transaction>`
-
----
 
 ### `ShowAsync()`
 
@@ -681,15 +621,13 @@ Retrieve a Transaction
 
 #### Parameters
 
-| Type   | Name  | Required | Description    |
-| ------ | ----- | -------- | -------------- |
-| string | id    | Yes      | Transaction ID |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Transaction ID |
 
 #### Return Value
 
 `Task<Response<Transaction>>`
-
----
 
 ### `All()`
 
@@ -701,15 +639,13 @@ List All Transactions
 
 #### Parameters
 
-| Type                       | Name       | Required | Description      |
-| -------------------------- | ---------- | -------- | ---------------- |
-| Dictionary<string, string> | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Response<List<Transaction>>`
-
----
 
 ### `AllAsync()`
 
@@ -721,15 +657,13 @@ List All Transactions
 
 #### Parameters
 
-| Type                       | Name       | Required | Description      |
-| -------------------------- | ---------- | -------- | ---------------- |
-| Dictionary<string, string> | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Task<Response<List<Transaction>>>`
-
----
 
 ### `AllUnconfirmed()`
 
@@ -741,15 +675,13 @@ List All Unconfirmed Transactions
 
 #### Parameters
 
-| Type                       | Name       | Required | Description      |
-| -------------------------- | ---------- | -------- | ---------------- |
-| Dictionary<string, string> | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Response<List<Transaction>>`
-
----
 
 ### `AllUnconfirmedAsync()`
 
@@ -761,15 +693,13 @@ List All Unconfirmed Transactions
 
 #### Parameters
 
-| Type                       | Name       | Required | Description      |
-| -------------------------- | ---------- | -------- | ---------------- |
-| Dictionary<string, string> | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Task<Response<List<Transaction>>>`
-
----
 
 ### `ShowUnconfirmed()`
 
@@ -781,15 +711,13 @@ Get Unconfirmed Transaction
 
 #### Parameters
 
-| Type   | Name | Required | Description    |
-| ------ | ---- | -------- | -------------- |
-| string | id   | Yes      | Transaction ID |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Transaction ID |
 
 #### Return Value
 
 `Response<List<Transaction>>`
-
----
 
 ### `ShowUnconfirmedAsync()`
 
@@ -801,15 +729,13 @@ Get Unconfirmed Transaction
 
 #### Parameters
 
-| Type   | Name | Required | Description    |
-| ------ | ---- | -------- | -------------- |
-| string | id   | Yes      | Transaction ID |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Transaction ID |
 
 #### Return Value
 
 `Task<Response<List<Transaction>>>`
-
----
 
 ### `Search()`
 
@@ -821,15 +747,13 @@ Search Transactions
 
 #### Parameters
 
-| Type                       | Name       | Required | Description       |
-| -------------------------- | ---------- | -------- | ----------------- |
-| Dictionary<string, string> | parameters | Yes      | Search parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | Yes | Search parameters |
 
 #### Return Value
 
 `Response<List<Transaction>>`
-
----
 
 ### `SearchAsync()`
 
@@ -841,15 +765,13 @@ Search Transactions
 
 #### Parameters
 
-| Type                       | Name       | Required | Description       |
-| -------------------------- | ---------- | -------- | ----------------- |
-| Dictionary<string, string> | parameters | Yes      | Search parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | Yes | Search parameters |
 
 #### Return Value
 
 `Task<Response<List<Transaction>>>`
-
----
 
 ### `Types()`
 
@@ -862,8 +784,6 @@ List Transaction Types
 #### Return Value
 
 `Response<TransactionTypes>`
-
----
 
 ### `TypesAsync()`
 
@@ -889,15 +809,13 @@ Votes class constructor.
 
 #### Parameters
 
-| Type       | Name   | Required | Description |
-| ---------- | ------ | -------- | ----------- |
-| HttpClient | client | Yes      | Clients      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| HttpClient | client | Yes | Clients |
 
 #### Return Value
 
 `Votes`
-
----
 
 ### `All()`
 
@@ -909,15 +827,13 @@ List All Votes
 
 #### Parameters
 
-| Type                       | Name       | Required | Description       |
-| -------------------------- | ---------- | -------- | ----------------- |
-| Dictionary<string, string> | parameters | Yes      | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | Yes | Query parameters |
 
 #### Return Value
 
 `Response<List<Transaction>>`
-
----
 
 ### `AllAsync()`
 
@@ -929,15 +845,13 @@ List All Votes
 
 #### Parameters
 
-| Type                       | Name       | Required | Description       |
-| -------------------------- | ---------- | -------- | ----------------- |
-| Dictionary<string, string> | parameters | Yes      | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | Yes | Query parameters |
 
 #### Return Value
 
 `Task<Response<List<Transaction>>>`
-
----
 
 ### `Show()`
 
@@ -949,15 +863,13 @@ Retrieve a Vote
 
 #### Parameters
 
-| Type   | Name  | Required | Description |
-| ------ | ----- | -------- | ----------- |
-| string | id    | Yes      | Vote ID     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Vote ID |
 
 #### Return Value
 
 `Response<Transaction>`
-
----
 
 ### `ShowAsync()`
 
@@ -969,9 +881,9 @@ Retrieve a Vote
 
 #### Parameters
 
-| Type   | Name  | Required | Description |
-| ------ | ----- | -------- | ----------- |
-| string | id    | Yes      | Vote ID     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Vote ID |
 
 #### Return Value
 
@@ -989,15 +901,13 @@ Wallets class constructor.
 
 #### Parameters
 
-| Type       | Name   | Required | Description |
-| ---------- | ------ | -------- | ----------- |
-| HttpClient | client | Yes      | Client      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| HttpClient | client | Yes | Client |
 
 #### Return Value
 
 `Wallets`
-
----
 
 ### `All()`
 
@@ -1009,15 +919,13 @@ Retrieve All Wallets
 
 #### Parameters
 
-| Type                       | Name       | Required | Description      |
-| -------------------------- | ---------- | -------- | ---------------- |
-| Dictionary<string, string> | parameters | No       | Query Parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | No | Query Parameters |
 
 #### Return Value
 
 `Response<List<Wallet>>`
-
----
 
 ### `AllAsync()`
 
@@ -1029,15 +937,13 @@ Retrieve All Wallets
 
 #### Parameters
 
-| Type                       | Name       | Required | Description      |
-| -------------------------- | ---------- | -------- | ---------------- |
-| Dictionary<string, string> | parameters | No       | Query Parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | No | Query Parameters |
 
 #### Return Value
 
 `Task<Response<List<Wallet>>>`
-
----
 
 ### `Show()`
 
@@ -1049,15 +955,13 @@ Retrieve a Wallet
 
 #### Parameters
 
-| Type   | Name  | Required | Description       |
-| ------ | ----- | -------- | ----------------- |
-| string | id    | Yes      | Wallet identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Wallet identifier |
 
 #### Return Value
 
 `Response<Wallet>`
-
----
 
 ### `ShowAsync()`
 
@@ -1069,15 +973,13 @@ Retrieve a Wallet
 
 #### Parameters
 
-| Type   | Name  | Required | Description       |
-| ------ | ----- | -------- | ----------------- |
-| string | id    | Yes      | Wallet identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Wallet identifier |
 
 #### Return Value
 
 `Task<Response<Wallet>>`
-
----
 
 ### `Transactions()`
 
@@ -1089,16 +991,14 @@ List All Transactions of a Wallet
 
 #### Parameters
 
-| Type                       | Name       | Required | Description       |
-| -------------------------- | ---------- | -------- | ----------------- |
-| string                     | id         | Yes      | Wallet identifier |
-| Dictionary<string, string> | parameters | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Wallet identifier |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Response<List<Transaction>>`
-
----
 
 ### `TransactionsAsync()`
 
@@ -1110,16 +1010,14 @@ List All Transactions of a Wallet
 
 #### Parameters
 
-| Type                       | Name       | Required | Description       |
-| -------------------------- | ---------- | -------- | ----------------- |
-| string                     | id         | Yes      | Wallet identifier |
-| Dictionary<string, string> | parameters | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Wallet identifier |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Task<Response<List<Transaction>>>`
-
----
 
 ### `ReceivedTransactions()`
 
@@ -1131,16 +1029,14 @@ List All Received Transactions of a Wallet
 
 #### Parameters
 
-| Type                       | Name       | Required | Description       |
-| -------------------------- | ---------- | -------- | ----------------- |
-| string                     | id         | Yes      | Wallet identifier |
-| Dictionary<string, string> | parameters | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Wallet identifier |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Response<List<Transaction>>`
-
----
 
 ### `ReceivedTransactionsAsync()`
 
@@ -1152,16 +1048,14 @@ List All Received Transactions of a Wallet
 
 #### Parameters
 
-| Type                       | Name       | Required | Description       |
-| -------------------------- | ---------- | -------- | ----------------- |
-| string                     | id         | Yes      | Wallet identifier |
-| Dictionary<string, string> | parameters | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Wallet identifier |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Task<Response<List<Transaction>>>`
-
----
 
 ### `SentTransactions()`
 
@@ -1173,16 +1067,14 @@ List All Sent Transactions of a Wallet
 
 #### Parameters
 
-| Type                       | Name       | Required | Description       |
-| -------------------------- | ---------- | -------- | ----------------- |
-| string                     | id         | Yes      | Wallet identifier |
-| Dictionary<string, string> | parameters | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Wallet identifier |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Response<List<Transaction>>`
-
----
 
 ### `SentTransactionsAsync()`
 
@@ -1194,16 +1086,14 @@ List All Sent Transactions of a Wallet
 
 #### Parameters
 
-| Type                       | Name       | Required | Description       |
-| -------------------------- | ---------- | -------- | ----------------- |
-| string                     | id         | Yes      | Wallet identifier |
-| Dictionary<string, string> | parameters | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Wallet identifier |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Task<Response<List<Transaction>>>`
-
----
 
 ### `Votes()`
 
@@ -1215,16 +1105,14 @@ List All Votes of a Wallet
 
 #### Parameters
 
-| Type                       | Name       | Required | Description       |
-| -------------------------- | ---------- | -------- | ----------------- |
-| string                     | id         | Yes      | Wallet identifier |
-| Dictionary<string, string> | parameters | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Wallet identifier |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Response<List<Transaction>>`
-
----
 
 ### `VotesAsync()`
 
@@ -1236,16 +1124,14 @@ List All Votes of a Wallet
 
 #### Parameters
 
-| Type                       | Name       | Required | Description       |
-| -------------------------- | ---------- | -------- | ----------------- |
-| string                     | id         | Yes      | Wallet identifier |
-| Dictionary<string, string> | parameters | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Wallet identifier |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Task<Response<List<Transaction>>>`
-
----
 
 ### `Search()`
 
@@ -1257,15 +1143,13 @@ List All Top Wallets
 
 #### Parameters
 
-| Type                       | Name       | Required | Description       |
-| -------------------------- | ---------- | -------- | ----------------- |
-| Dictionary<string, string> | parameters | Yes      | Search parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | Yes | Search parameters |
 
 #### Return Value
 
 `Response<List<Wallet>>`
-
----
 
 ### `SearchAsync()`
 
@@ -1277,15 +1161,13 @@ List All Top Wallets
 
 #### Parameters
 
-| Type                       | Name       | Required | Description       |
-| -------------------------- | ---------- | -------- | ----------------- |
-| Dictionary<string, string> | parameters | Yes      | Search parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | Yes | Search parameters |
 
 #### Return Value
 
 `Task<Response<List<Wallet>>>`
-
----
 
 ### `Top()`
 
@@ -1297,15 +1179,13 @@ List All Top Wallets
 
 #### Parameters
 
-| Type                       | Name       | Required | Description      |
-| -------------------------- | ---------- | -------- | ---------------- |
-| Dictionary<string, string> | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
 `Response<List<Wallet>>`
-
----
 
 ### `TopAsync()`
 
@@ -1317,9 +1197,9 @@ List All Top Wallets
 
 #### Parameters
 
-| Type                       | Name       | Required | Description      |
-| -------------------------- | ---------- | -------- | ---------------- |
-| Dictionary<string, string> | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Dictionary | parameters | No | Query parameters |
 
 #### Return Value
 
@@ -1337,9 +1217,9 @@ Constructor of the Connection class.
 
 #### Parameters
 
-| Type       | Name   | Required | Description |
-| ---------- |------- | -------- | ----------- |
-| HttpClient | client | Yes      | Client      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| HttpClient | client | Yes | Client |
 
 #### Return Value
 
@@ -1357,16 +1237,14 @@ Constructor of the Connection class.
 
 #### Parameters
 
-| Type        | Name       | Required | Description         |
-| ----------- |----------- | -------- | ------------------- |
-| IConnection | connection | Yes      | Connection instance |
-| string      | name       | No       | Connection name     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| IConnection | connection | Yes | Connection instance |
+| string | name | No | Connection name |
 
 #### Return Value
 
 `IConnection`
-
----
 
 ### `Disconnect()`
 
@@ -1378,15 +1256,13 @@ Disconnect from given connection.
 
 #### Parameters
 
-| Type   | Name   | Required | Description     |
-| ------ | ------ | -------- | --------------- |
-| string | name   | No       | Connection name |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | name | No | Connection name |
 
 #### Return Value
 
 `void`
-
----
 
 ### `Connection()`
 
@@ -1398,15 +1274,13 @@ Get a connection instance.
 
 #### Parameters
 
-| Type   | Name   | Required | Description     |
-| ------ | ------ | -------- | --------------- |
-| string | name   | No       | Connection name |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | name | No | Connection name |
 
 #### Return Value
 
 `IConnection`
-
----
 
 ### `GetDefaultConnection()`
 
@@ -1420,8 +1294,6 @@ Get the default connection name.
 
 `string`
 
----
-
 ### `SetDefaultConnection()`
 
 ```csharp
@@ -1432,15 +1304,13 @@ Set the default connection name.
 
 #### Parameters
 
-| Type   | Name   | Required | Description     |
-| ------ | ------ | -------- | --------------- |
-| string | name   | No       | Connection name |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | name | No | Connection name |
 
 #### Return Value
 
 `void`
-
----
 
 ### `GetConnections()`
 
@@ -1453,3 +1323,4 @@ Return all of the created connections.
 #### Return Value
 
 `Dictionary<string, IConnection>`
+

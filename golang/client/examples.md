@@ -3,6 +3,8 @@ id: examples
 title: Examples
 ---
 
+# Examples
+
 ## Initialization
 
 ```go
@@ -28,7 +30,7 @@ func main() {
 
 ## Blocks
 
-This service API grango access to the [blocks resource](/api/public/v2/blocks.html). A block is a signed set of transactions created by a delegate and permanently committed to the ARK blockchain.
+This service API grango access to the [blocks resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/blocks.html). A block is a signed set of transactions created by a delegate and permanently committed to the ARK blockchain.
 
 > It is not possible to `POST` a block through the public API. Relay Nodes accept only blocks posted by a delegate at the correct time through the internal API.
 
@@ -70,11 +72,11 @@ responseStruct, response, err := client.Blocks.List(context.Background(), query)
 
 ## Delegates
 
-The client SDK can be used to query the [delegate resource](/api/public/v2/delegates.html).
+The client SDK can be used to query the [delegate resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/delegates.html).
 
 A delegate is a regular wallet that has broadcasted a registration transaction, acquired a sufficient number of votes, and has a Relay Node configured to forge new blocks through a `forger` module. At any time only 51 delegates are active. They are cost-efficient miners running the ARK network.
 
-> Voters are wallego which have broadcasted a vote transaction on a delegate. A vote remains active until an un-vote transaction is sent (it does not have to be recast unless a wallet wishes to change from delegate). Voting for a delegate does not give the delegate access to the wallet nor does it lock the coins in it.
+> Voters are wallego which have broadcasted a vote transaction on a delegate. A vote remains active until an un-vote transaction is sent \(it does not have to be recast unless a wallet wishes to change from delegate\). Voting for a delegate does not give the delegate access to the wallet nor does it lock the coins in it.
 
 ### List All Delegates
 
@@ -113,7 +115,7 @@ responseStruct, response, err := client.Delegates.Blocks(context.Background(), "
 
 ## Node
 
-The ARK network consisgo of different anonymous nodes (servers), maintaining the public ledger, validating transactions and blocks and providing APIs. The [node resource](/api/public/v2/node.html) allows for querying the health and configurations of the node used by the instantiated client.
+The ARK network consisgo of different anonymous nodes \(servers\), maintaining the public ledger, validating transactions and blocks and providing APIs. The [node resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/node.html) allows for querying the health and configurations of the node used by the instantiated client.
 
 ### Retrieve the Configuration
 
@@ -141,9 +143,9 @@ responseStruct, response, err := client.Node.Syncing(context.Background())
 
 ## Peers
 
-Each node is connected to a set of peers, which are Relay or Delegate Nodes as well. The [peers resource](/api/public/v2/peers.html) provides access to all peers connected to our node.
+Each node is connected to a set of peers, which are Relay or Delegate Nodes as well. The [peers resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/peers.html) provides access to all peers connected to our node.
 
-> Peers have made their Public API available for use; however for mission-critical queries and transaction posting you should use a node which is under your control. We provide a guide to setting up a Relay Node [here](/tutorials/node/setup.html).
+> Peers have made their Public API available for use; however for mission-critical queries and transaction posting you should use a node which is under your control. We provide a guide to setting up a Relay Node [here](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/tutorials/node/setup.html).
 
 ### List All Peers
 
@@ -165,7 +167,7 @@ responseStruct, response, err := client.Peers.Get(context.Background(), "validIp
 
 ## Transactions
 
-The heart of any blockchain is formed by igo transactions; state-altering payloads signed by a wallet. Most likely you will be querying for transactions most often, using the [transaction resource](/api/public/v2/transactions.html).
+The heart of any blockchain is formed by igo transactions; state-altering payloads signed by a wallet. Most likely you will be querying for transactions most often, using the [transaction resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/transactions.html).
 
 > A transaction is the only object which may be posted by a non-delegate. It requires a signature from a wallet containing a sufficient amount of ARK.
 
@@ -173,24 +175,24 @@ The heart of any blockchain is formed by igo transactions; state-altering payloa
 
 ```go
 body := &CreateTransactionRequest{
-		Transactions: []Transaction{{
-			Id:            "dummy",
-			BlockId:       "dummy",
-			Type:          0,
-			Amount:        10000000,
-			Fee:           10000000,
-			Sender:        "dummy",
-			Recipient:     "dummy",
-			Signature:     "dummy",
-			VendorField:   "dummy",
-			Confirmations: 10,
-			Timestamp: Timestamp{
-				Epoch: 40505460,
-				Unix:  1530606660,
-				Human: "2018-07-03T08:31:00Z",
-			},
-		}},
-	}
+        Transactions: []Transaction{{
+            Id:            "dummy",
+            BlockId:       "dummy",
+            Type:          0,
+            Amount:        10000000,
+            Fee:           10000000,
+            Sender:        "dummy",
+            Recipient:     "dummy",
+            Signature:     "dummy",
+            VendorField:   "dummy",
+            Confirmations: 10,
+            Timestamp: Timestamp{
+                Epoch: 40505460,
+                Unix:  1530606660,
+                Human: "2018-07-03T08:31:00Z",
+            },
+        }},
+    }
 responseStruct, response, err := client.Transactions.Create(context.Background(), query)
 
 >>> *CreateTransaction, *http.Response, error
@@ -250,7 +252,7 @@ responseStruct, response, err := client.Transactions.Types(context.Background())
 
 ## Votes
 
-A [vote](/api/public/v2/votes.html) is a transaction sub-type, where the `asset` field contains a `votes` object and the `transaction.type` is `3`.
+A [vote](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/votes.html) is a transaction sub-type, where the `asset` field contains a `votes` object and the `transaction.type` is `3`.
 
 ### List All Votes
 
@@ -271,11 +273,11 @@ responseStruct, response, err := client.Votes.Get(context.Background(), "validVo
 
 ## Wallets
 
-The [wallet resource](/api/public/v2/wallets.html#list-all-wallets) provides access to:
+The [wallet resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/wallets.html#list-all-wallets) provides access to:
 
-- Wallets.
-- Incoming and outgoing transactions per wallet.
-- Each wallet's votes.
+* Wallets.
+* Incoming and outgoing transactions per wallet.
+* Each wallet's votes.
 
 ### Retrieve All Wallets
 
@@ -348,3 +350,4 @@ responseStruct, response, err := client.Wallets.List(context.Background(), query
 
 >>> *Wallets, *http.Response, error
 ```
+

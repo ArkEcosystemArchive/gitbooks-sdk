@@ -3,6 +3,8 @@ id: api-documentation
 title: API Documentation
 ---
 
+# API Documentation
+
 ## crypto.configuration
 
 ### `SetNetwork()`
@@ -15,11 +17,9 @@ Set what network you want to use in the crypto library
 
 #### Parameters
 
-| Type     | Name    | Required | Description              |
-| -------- | --------| -------- | ------------------------ |
-| *Network | network | Yes      | Testnet, Devnet, Mainnet |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*Network | network | Yes | Testnet, Devnet, Mainnet |
 
 ### `GetNetwork()`
 
@@ -33,8 +33,6 @@ Get settings for a selected network, default network is devnet
 
 `*Network`
 
----
-
 ### `GetFee()`
 
 ```go
@@ -45,16 +43,13 @@ Get a fee for a given transaction type
 
 #### Parameters
 
-| Type  | Name            | Required | Description                                     |
-| ----- | --------------- | -------- | ----------------------------------------------- |
-| byte  | transactionType | Yes      | Transaction type for which we wish to get a fee |
-
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| byte | transactionType | Yes | Transaction type for which we wish to get a fee |
 
 #### Return Value
 
 `FlexToshi`
-
----
 
 ### `SetFee()`
 
@@ -66,10 +61,10 @@ Set a fee
 
 #### Parameters
 
-| Type       | Name            | Required | Description                                     |
-| ---------- | --------------- | -------- | ----------------------------------------------- |
-| byte       | transactionType | Yes      | Transaction_type for which we wish to set a fee |
-| FlexToshi  | value           | Yes      | Fee for a given transaction type                |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| byte | transactionType | Yes | Transaction\_type for which we wish to set a fee |
+| FlexToshi | value | Yes | Fee for a given transaction type |
 
 ## crypto.address
 
@@ -83,15 +78,13 @@ Derive the address from the given passphrase.
 
 #### Parameters
 
-| Type            | Name             | Required | Description |
-| --------------- | ---------------- | -------- | ----------- |
-| string          | passphrase       | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `(string, error)`
-
----
 
 ### `AddressToBytes()`
 
@@ -103,15 +96,13 @@ Derive the given address to its bytes representation.
 
 #### Parameters
 
-| Type            | Name             | Required | Description |
-| --------------- | ---------------- | -------- | ----------- |
-| string          | address          | Yes      | address     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | address | Yes | address |
 
 #### Return Value
 
 `([]byte, error)`
-
----
 
 ### `validate()`
 
@@ -123,15 +114,15 @@ Validate the given address.
 
 #### Parameters
 
-| Type            | Name             | Required | Description |
-| --------------- | ---------------- | -------- | ----------- |
-| string          | address          | Yes      | Address     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | address | Yes | Address |
 
 #### Return Value
 
 `(bool, error)`
 
-## crypto.private_key
+## crypto.private\_key
 
 ### `PrivateKeyFromPassphrase()`
 
@@ -143,15 +134,13 @@ Derive the private key for the given passphrase.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| string   | passphrase       | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `*PrivateKey, error`
-
----
 
 ### `PrivateKeyFromHex()`
 
@@ -163,15 +152,13 @@ Create a private key instance from a hex string.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| string   | privateKeyHex    | Yes      | Private key |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | privateKeyHex | Yes | Private key |
 
 #### Return Value
 
 `*PrivateKey, error`
-
----
 
 ### `PrivateKeyFromBytes()`
 
@@ -183,15 +170,13 @@ Create a private key instance from a bytes string.
 
 #### Parameters
 
-| Type     | Name  | Required | Description  |
-| -------- | ----- | -------- | ------------ |
-| []byte   | bytes | Yes      | Bytes string |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[\]byte | bytes | Yes | Bytes string |
 
 #### Return Value
 
 `*PrivateKey`
-
----
 
 ### `ToHex()`
 
@@ -203,15 +188,13 @@ Convert a private key instance to a hex string.
 
 #### Parameters
 
-| Type        | Name  | Required | Description |
-| ----------- | ----- | -------- | ----------- |
-| *PrivateKey | bytes | Yes      | Private key |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*PrivateKey | bytes | Yes | Private key |
 
 #### Return Value
 
 `string`
-
----
 
 ### `ToAddress()`
 
@@ -223,15 +206,13 @@ Create a private key instance to a address.
 
 #### Parameters
 
-| Type        | Name  | Required | Description |
-| ----------- | ----- | -------- | ----------- |
-| *PrivateKey | bytes | Yes      | Private key |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*PrivateKey | bytes | Yes | Private key |
 
 #### Return Value
 
 `string`
-
----
 
 ### `ToWif()`
 
@@ -243,15 +224,13 @@ Create a private key instance to a WIF string.
 
 #### Parameters
 
-| Type        | Name  | Required | Description |
-| ----------- | ----- | -------- | ----------- |
-| *PrivateKey | bytes | Yes      | Private key |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*PrivateKey | bytes | Yes | Private key |
 
 #### Return Value
 
 `string`
-
----
 
 ### `Sign()`
 
@@ -263,15 +242,13 @@ Sign the private key.
 
 #### Parameters
 
-| Type   | Name  | Required | Description |
-| ------ | ----- | -------- | ----------- |
-| []byte | hash  | Yes      | Private key |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[\]byte | hash | Yes | Private key |
 
 #### Return Value
 
 `[]byte, error`
-
----
 
 ### `Verify()`
 
@@ -283,16 +260,16 @@ Verify the private key.
 
 #### Parameters
 
-| Type   | Name      | Required | Description |
-| ------ | --------- | -------- | ----------- |
-| []byte | signature | Yes      | Signature   |
-| []byte | data      | Yes      | Private key |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[\]byte | signature | Yes | Signature |
+| \[\]byte | data | Yes | Private key |
 
 #### Return Value
 
 `bool, error`
 
-## crypto.public_key
+## crypto.public\_key
 
 ### `PublicKeyFromPassphrase()`
 
@@ -304,15 +281,13 @@ Derive the public from the given passphrase.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| string   | passphrase       | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `*PublicKey, error`
-
----
 
 ### `PublicKeyFromHex()`
 
@@ -324,15 +299,13 @@ Create a public key instance from a hex string.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| string   | publicKeyHex     | Yes      | Hex string  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | publicKeyHex | Yes | Hex string |
 
 #### Return Value
 
 `*PublicKey, error`
-
----
 
 ### `PublicKeyFromBytes()`
 
@@ -344,15 +317,13 @@ Create a public key instance from a bytes string.
 
 #### Parameters
 
-| Type     | Name   | Required | Description  |
-| -------- | ------ | -------- | ------------ |
-| []byte   | bytes  | Yes      | Bytes string |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[\]byte | bytes | Yes | Bytes string |
 
 #### Return Value
 
 `*PublicKey, error`
-
----
 
 ### `ToHex()`
 
@@ -364,15 +335,13 @@ Convert a public key instance to a hex string.
 
 #### Parameters
 
-| Type       | Name             | Required | Description |
-| ---------- | ---------------- | -------- | ----------- |
-| *PublicKey | publicKey        | Yes      | Public key  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*PublicKey | publicKey | Yes | Public key |
 
 #### Return Value
 
 `string`
-
----
 
 ### `ToAddress()`
 
@@ -384,9 +353,9 @@ Convert a public key instance to a valid address.
 
 #### Parameters
 
-| Type       | Name             | Required | Description |
-| ---------- | ---------------- | -------- | ----------- |
-| *PublicKey | publicKey        | Yes      | Public key  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*PublicKey | publicKey | Yes | Public key |
 
 #### Return Value
 
@@ -404,17 +373,15 @@ Builds a transaction for a signed transaction.
 
 #### Parameters
 
-| Type         | Name             | Required | Description       |
-| ------------ | ---------------- | -------- | ----------------- |
-| *Transaction | transaction      | Yes      | Transaction       |
-| string       | passphrase       | Yes      | Passphrase        |
-| string       | secondPassphrase | Yes      | Second passphrase |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*Transaction | transaction | Yes | Transaction |
+| string | passphrase | Yes | Passphrase |
+| string | secondPassphrase | Yes | Second passphrase |
 
 #### Return Value
 
 `*Transaction`
-
----
 
 ### `BuildTransfer()`
 
@@ -426,19 +393,17 @@ Builds a transaction for a transfer.
 
 #### Parameters
 
-| Type         | Name             | Required | Description             |
-| ------------ | ---------------- | -------- | ----------------------- |
-| string       | recipient        | Yes      | Recipient identifier    |
-| FlexToshi    | amount           | Yes      | Transaction amount      |
-| string       | vendorField      | Yes      | Transaction vendorfield |
-| string       | passphrase       | Yes      | Passphrase              |
-| string       | secondPassphrase | Yes      | Second passphrase       |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | recipient | Yes | Recipient identifier |
+| FlexToshi | amount | Yes | Transaction amount |
+| string | vendorField | Yes | Transaction vendorfield |
+| string | passphrase | Yes | Passphrase |
+| string | secondPassphrase | Yes | Second passphrase |
 
 #### Return Value
 
 `*Transaction`
-
----
 
 ### `BuildSecondSignatureRegistration()`
 
@@ -450,16 +415,14 @@ Builds a transaction for a second signature registration.
 
 #### Parameters
 
-| Type         | Name             | Required | Description       |
-| ------------ | ---------------- | -------- | ----------------- |
-| string       | passphrase       | Yes      | Passphrase        |
-| string       | secondPassphrase | Yes      | Second passphrase |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | Passphrase |
+| string | secondPassphrase | Yes | Second passphrase |
 
 #### Return Value
 
 `*Transaction`
-
----
 
 ### `BuildDelegateRegistration()`
 
@@ -471,17 +434,15 @@ Builds a transaction for a delegate registration.
 
 #### Parameters
 
-| Type         | Name             | Required | Description       |
-| ------------ | ---------------- | -------- | ----------------- |
-| string       | username         | Yes      | Delegate username |
-| string       | passphrase       | Yes      | Passphrase        |
-| string       | secondPassphrase | Yes      | Second passphrase |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | username | Yes | Delegate username |
+| string | passphrase | Yes | Passphrase |
+| string | secondPassphrase | Yes | Second passphrase |
 
 #### Return Value
 
 `*Transaction`
-
----
 
 ### `BuildVote()`
 
@@ -493,17 +454,15 @@ Builds a transaction for a vote registration.
 
 #### Parameters
 
-| Type         | Name             | Required | Description       |
-| ------------ | ---------------- | -------- | ----------------- |
-| ?            | vote             | Yes      | Vote              |
-| string       | passphrase       | Yes      | Passphrase        |
-| string       | secondPassphrase | Yes      | Second passphrase |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ? | vote | Yes | Vote |
+| string | passphrase | Yes | Passphrase |
+| string | secondPassphrase | Yes | Second passphrase |
 
 #### Return Value
 
 `*Transaction`
-
----
 
 ### `BuildMultiSignatureRegistration()`
 
@@ -515,13 +474,13 @@ Builds a transaction for a multi signature registration.
 
 #### Parameters
 
-| Type         | Name             | Required | Description                             |
-| ------------ | ---------------- | -------- | --------------------------------------- |
-| byte         | min              | Yes      | Transaction minimum required signatures |
-| byte         | lifetime         | Yes      | Transaction lifetime                    |
-| []string     | keysgroup        | Yes      | Transaction keysgroup                   |
-| string       | passphrase       | Yes      | Passphrase                              |
-| string       | secondPassphrase | Yes      | Second passphrase                       |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| byte | min | Yes | Transaction minimum required signatures |
+| byte | lifetime | Yes | Transaction lifetime |
+| \[\]string | keysgroup | Yes | Transaction keysgroup |
+| string | passphrase | Yes | Passphrase |
+| string | secondPassphrase | Yes | Second passphrase |
 
 #### Return Value
 
@@ -539,15 +498,13 @@ Handle the serialization of "transaction" data.
 
 #### Parameters
 
-| Type            | Name             | Required | Description            |
-| --------------- | ---------------- | -------- | ---------------------- |
-| *Transaction    | transaction      | Yes      | Transaction            |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `[]byte`
-
----
 
 ### `serializeHeader()`
 
@@ -559,16 +516,14 @@ Handle the serialization of "headers" data.
 
 #### Parameters
 
-| Type            | Name             | Required | Description            |
-| --------------- | ---------------- | -------- | ---------------------- |
-| *bytes.Buffer   | buffer           | Yes      | Buffer                 |
-| *Transaction    | transaction      | Yes      | Transaction            |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*bytes.Buffer | buffer | Yes | Buffer |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*bytes.Buffer`
-
----
 
 ### `serializeVendorField()`
 
@@ -580,16 +535,14 @@ Handle the serialization of the vendorfield.
 
 #### Parameters
 
-| Type            | Name             | Required | Description            |
-| --------------- | ---------------- | -------- | ---------------------- |
-| *bytes.Buffer   | buffer           | Yes      | Buffer                 |
-| *Transaction    | transaction      | Yes      | Transaction            |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*bytes.Buffer | buffer | Yes | Buffer |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*bytes.Buffer`
-
----
 
 ### `serializeTypeSpecific()`
 
@@ -601,16 +554,14 @@ Handle the deserialization of "type" data.
 
 #### Parameters
 
-| Type            | Name             | Required | Description            |
-| --------------- | ---------------- | -------- | ---------------------- |
-| *bytes.Buffer   | buffer           | Yes      | Buffer                 |
-| *Transaction    | transaction      | Yes      | Transaction            |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*bytes.Buffer | buffer | Yes | Buffer |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*bytes.Buffer`
-
----
 
 ### `serializeSignatures()`
 
@@ -622,10 +573,10 @@ Handle the deserialization of "signature" data.
 
 #### Parameters
 
-| Type            | Name             | Required | Description            |
-| --------------- | ---------------- | -------- | ---------------------- |
-| *bytes.Buffer   | buffer           | Yes      | Buffer                 |
-| *Transaction    | transaction      | Yes      | Transaction            |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*bytes.Buffer | buffer | Yes | Buffer |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
@@ -643,15 +594,13 @@ Handle the deserialization of "transaction" data
 
 #### Parameters
 
-| Type         | Name       | Required | Description |
-| ------------ | ---------- | -------- | ----------- |
-| string       | serialized | Yes      | Serialized  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | serialized | Yes | Serialized |
 
 #### Return Value
 
 `*Transaction`
-
----
 
 ### `deserializeHeader()`
 
@@ -663,16 +612,14 @@ Handle the deserialization of "headers" data
 
 #### Parameters
 
-| Type         | Name        | Required | Description |
-| ------------ | ----------- | -------- | ----------- |
-| []byte       | bytes       | Yes      | ...         |
-| *Transaction | transaction | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[\]byte | bytes | Yes | ... |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*Transaction`
-
----
 
 ### `deserializeTypeSpecific()`
 
@@ -684,17 +631,15 @@ Handle the deserialization for a given type of transaction.
 
 #### Parameters
 
-| Type         | Name        | Required | Description |
-| ------------ | ----------- | -------- | ----------- |
-| int          | assetOffset | Yes      | Offset      |
-| []byte       | bytes       | Yes      | ...         |
-| *Transaction | transaction | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | assetOffset | Yes | Offset |
+| \[\]byte | bytes | Yes | ... |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*Transaction`
-
----
 
 ### `deserializeVersionOne()`
 
@@ -706,16 +651,14 @@ Handle the deserialization for a version one transaction.
 
 #### Parameters
 
-| Type         | Name        | Required | Description |
-| ------------ | ----------- | -------- | ----------- |
-| []byte       | bytes       | Yes      | ...         |
-| *Transaction | transaction | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[\]byte | bytes | Yes | ... |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*Transaction`
-
----
 
 ### `deserializeTransfer()`
 
@@ -727,17 +670,15 @@ Handle the deserialization of "transfer" data
 
 #### Parameters
 
-| Type         | Name        | Required | Description |
-| ------------ | ----------- | -------- | ----------- |
-| int          | assetOffset | Yes      | Offset      |
-| []byte       | bytes       | Yes      | ...         |
-| *Transaction | transaction | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | assetOffset | Yes | Offset |
+| \[\]byte | bytes | Yes | ... |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*Transaction`
-
----
 
 ### `deserializeSecondSignatureRegistration()`
 
@@ -749,17 +690,15 @@ Handle the deserialization of "second signature registration" data
 
 #### Parameters
 
-| Type         | Name        | Required | Description |
-| ------------ | ----------- | -------- | ----------- |
-| int          | assetOffset | Yes      | Offset      |
-| []byte       | bytes       | Yes      | ...         |
-| *Transaction | transaction | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | assetOffset | Yes | Offset |
+| \[\]byte | bytes | Yes | ... |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*Transaction`
-
----
 
 ### `deserializeDelegateRegistration()`
 
@@ -771,17 +710,15 @@ Handle the deserialization of "delegate registration" data
 
 #### Parameters
 
-| Type         | Name        | Required | Description |
-| ------------ | ----------- | -------- | ----------- |
-| int          | assetOffset | Yes      | Offset      |
-| []byte       | bytes       | Yes      | ...         |
-| *Transaction | transaction | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | assetOffset | Yes | Offset |
+| \[\]byte | bytes | Yes | ... |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*Transaction`
-
----
 
 ### `deserializeVote()`
 
@@ -793,17 +730,15 @@ Handle the deserialization of "vote" data
 
 #### Parameters
 
-| Type         | Name        | Required | Description |
-| ------------ | ----------- | -------- | ----------- |
-| int          | assetOffset | Yes      | Offset      |
-| []byte       | bytes       | Yes      | ...         |
-| *Transaction | transaction | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | assetOffset | Yes | Offset |
+| \[\]byte | bytes | Yes | ... |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*Transaction`
-
----
 
 ### `deserializeMultiSignatureRegistration()`
 
@@ -815,17 +750,15 @@ Handle the deserialization of "multi signature registration" data
 
 #### Parameters
 
-| Type         | Name        | Required | Description |
-| ------------ | ----------- | -------- | ----------- |
-| int          | assetOffset | Yes      | Offset      |
-| []byte       | bytes       | Yes      | ...         |
-| *Transaction | transaction | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | assetOffset | Yes | Offset |
+| \[\]byte | bytes | Yes | ... |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*Transaction`
-
----
 
 ### `deserializeIpfs()`
 
@@ -837,17 +770,15 @@ Handle the deserialization of "ipfs" data
 
 #### Parameters
 
-| Type         | Name        | Required | Description |
-| ------------ | ----------- | -------- | ----------- |
-| int          | assetOffset | Yes      | Offset      |
-| []byte       | bytes       | Yes      | ...         |
-| *Transaction | transaction | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | assetOffset | Yes | Offset |
+| \[\]byte | bytes | Yes | ... |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*Transaction`
-
----
 
 ### `deserializeTimelockTransfer()`
 
@@ -859,17 +790,15 @@ Handle the deserialization of "timelock transfer" data
 
 #### Parameters
 
-| Type         | Name        | Required | Description |
-| ------------ | ----------- | -------- | ----------- |
-| int          | assetOffset | Yes      | Offset      |
-| []byte       | bytes       | Yes      | ...         |
-| *Transaction | transaction | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | assetOffset | Yes | Offset |
+| \[\]byte | bytes | Yes | ... |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*Transaction`
-
----
 
 ### `deserializeMultiPayment()`
 
@@ -881,17 +810,15 @@ Handle the deserialization of "multi payments" data
 
 #### Parameters
 
-| Type         | Name        | Required | Description |
-| ------------ | ----------- | -------- | ----------- |
-| int          | assetOffset | Yes      | Offset      |
-| []byte       | bytes       | Yes      | ...         |
-| *Transaction | transaction | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | assetOffset | Yes | Offset |
+| \[\]byte | bytes | Yes | ... |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*Transaction`
-
----
 
 ### `deserializeDelegateResignation()`
 
@@ -903,11 +830,11 @@ Handle the deserialization of "delegate resignation" data
 
 #### Parameters
 
-| Type         | Name        | Required | Description |
-| ------------ | ----------- | -------- | ----------- |
-| int          | assetOffset | Yes      | Offset      |
-| []byte       | bytes       | Yes      | ...         |
-| *Transaction | transaction | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | assetOffset | Yes | Offset |
+| \[\]byte | bytes | Yes | ... |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
@@ -923,16 +850,14 @@ Handle the serialization of "transfer" data.
 
 #### Parameters
 
-| Type            | Name             | Required | Description |
-| --------------- | ---------------- | -------- | ----------- |
-| *bytes.Buffer   | buffer           | Yes      | Buffer      |
-| *Transaction    | transaction      | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*bytes.Buffer | buffer | Yes | Buffer |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*bytes.Buffer`
-
----
 
 ### `serializeSecondSignatureRegistration()`
 
@@ -944,16 +869,14 @@ Handle the serialization of "second signature registration" data.
 
 #### Parameters
 
-| Type            | Name             | Required | Description |
-| --------------- | ---------------- | -------- | ----------- |
-| *bytes.Buffer   | buffer           | Yes      | Buffer      |
-| *Transaction    | transaction      | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*bytes.Buffer | buffer | Yes | Buffer |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*bytes.Buffer`
-
----
 
 ### `serializeDelegateRegistration()`
 
@@ -965,16 +888,14 @@ Handle the serialization of "delegate registration" data.
 
 #### Parameters
 
-| Type            | Name             | Required | Description |
-| --------------- | ---------------- | -------- | ----------- |
-| *bytes.Buffer   | buffer           | Yes      | Buffer      |
-| *Transaction    | transaction      | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*bytes.Buffer | buffer | Yes | Buffer |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*bytes.Buffer`
-
----
 
 ### `serializeVote()`
 
@@ -986,16 +907,14 @@ Handle the serialization of "vote" data.
 
 #### Parameters
 
-| Type            | Name             | Required | Description |
-| --------------- | ---------------- | -------- | ----------- |
-| *bytes.Buffer   | buffer           | Yes      | Buffer      |
-| *Transaction    | transaction      | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*bytes.Buffer | buffer | Yes | Buffer |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*bytes.Buffer`
-
----
 
 ### `serializeMultiSignatureRegistration()`
 
@@ -1007,16 +926,14 @@ Handle the serialization of "multi signature registration" data.
 
 #### Parameters
 
-| Type            | Name             | Required | Description |
-| --------------- | ---------------- | -------- | ----------- |
-| *bytes.Buffer   | buffer           | Yes      | Buffer      |
-| *Transaction    | transaction      | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*bytes.Buffer | buffer | Yes | Buffer |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*bytes.Buffer`
-
----
 
 ### `serializeIpfs()`
 
@@ -1028,16 +945,14 @@ Handle the serialization of "ipfs" data.
 
 #### Parameters
 
-| Type            | Name             | Required | Description |
-| --------------- | ---------------- | -------- | ----------- |
-| *bytes.Buffer   | buffer           | Yes      | Buffer      |
-| *Transaction    | transaction      | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*bytes.Buffer | buffer | Yes | Buffer |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*bytes.Buffer`
-
----
 
 ### `serializeTimelockTransfer()`
 
@@ -1049,16 +964,14 @@ Handle the serialization of "timelock transfer" data.
 
 #### Parameters
 
-| Type            | Name             | Required | Description |
-| --------------- | ---------------- | -------- | ----------- |
-| *bytes.Buffer   | buffer           | Yes      | Buffer      |
-| *Transaction    | transaction      | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*bytes.Buffer | buffer | Yes | Buffer |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*bytes.Buffer`
-
----
 
 ### `serializeMultiPayment()`
 
@@ -1070,16 +983,14 @@ Handle the serialization of "multi payment" data.
 
 #### Parameters
 
-| Type            | Name             | Required | Description |
-| --------------- | ---------------- | -------- | ----------- |
-| *bytes.Buffer   | buffer           | Yes      | Buffer      |
-| *Transaction    | transaction      | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*bytes.Buffer | buffer | Yes | Buffer |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `*bytes.Buffer`
-
----
 
 ### `serializeDelegateResignation()`
 
@@ -1091,10 +1002,10 @@ Handle the serialization of "delegate resignation" data.
 
 #### Parameters
 
-| Type            | Name             | Required | Description |
-| --------------- | ---------------- | -------- | ----------- |
-| *bytes.Buffer   | buffer           | Yes      | Buffer      |
-| *Transaction    | transaction      | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*bytes.Buffer | buffer | Yes | Buffer |
+| \*Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
@@ -1114,8 +1025,6 @@ Convert the byte representation to a unique identifier.
 
 `string`
 
----
-
 ### `Sign()`
 
 ```go
@@ -1126,11 +1035,9 @@ Sign the transaction using the given passphrase.
 
 #### Parameters
 
-| Type   | Name        | Required | Description |
-| ------ | ----------- | -------- | ----------- |
-| string | passphrase  | Yes      | Passphrase  |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | Passphrase |
 
 ### `SecondSign()`
 
@@ -1142,11 +1049,9 @@ Sign the transaction using the given second passphrase.
 
 #### Parameters
 
-| Type   | Name        | Required | Description        |
-| ------ | ----------- | -------- | ------------------ |
-| string | passphrase  | Yes      | Second passphrase  |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | Second passphrase |
 
 ### `Verify()`
 
@@ -1160,8 +1065,6 @@ Verify the transaction.
 
 `bool, error`
 
----
-
 ### `SecondVerify()`
 
 ```go
@@ -1172,15 +1075,13 @@ Verify the transaction with a second public key.
 
 #### Parameters
 
-| Type       | Name            | Required | Description       |
-| ---------- | --------------- | -------- | ----------------- |
-| *PublicKey | secondPublicKey | Yes      | Second public key |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*PublicKey | secondPublicKey | Yes | Second public key |
 
 #### Return Value
 
 `(bool, error)`
-
----
 
 ### `ParseSignatures()`
 
@@ -1192,15 +1093,13 @@ Parse the signature, second signature and multi signatures.
 
 #### Parameters
 
-| Type   | Name         | Required | Description |
-| ------ | ------------ | -------- | ----------- |
-| int    | startOffset  | Yes      | Offset      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | startOffset | Yes | Offset |
 
 #### Return Value
 
 `*Transaction`
-
----
 
 ### `ToMap()`
 
@@ -1214,8 +1113,6 @@ Convert the transaction to its map representation.
 
 `map[string]interface{}`
 
----
-
 ### `ToJson()`
 
 ```go
@@ -1228,8 +1125,6 @@ Convert the transaction to its JSON representation.
 
 `string, error`
 
----
-
 ### `ToBytes()`
 
 ```go
@@ -1240,16 +1135,14 @@ Convert the transaction to its byte representation.
 
 #### Parameters
 
-| Type  | Name                  | Required | Description           |
-| ----- | --------------------- | -------- | --------------------- |
-| bool  | skipSignature         | No       | Skip first signature  |
-| bool  | skipSecondSignature   | No       | Skip second signature |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| bool | skipSignature | No | Skip first signature |
+| bool | skipSecondSignature | No | Skip second signature |
 
 #### Return Value
 
 `[]byte`
-
----
 
 ### `Serialize()`
 
@@ -1263,8 +1156,6 @@ Perform AIP11 compliant serialization
 
 `[]byte`
 
----
-
 ## crypto.message
 
 ### `SignMessage()`
@@ -1277,16 +1168,14 @@ Sign a message using the given passphrase.
 
 #### Parameters
 
-| Type   | Name       | Required | Description |
-| ------ | ---------- | -------- | ----------- |
-| string | message    | Yes      | Message     |
-| string | passphrase | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | message | Yes | Message |
+| string | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `*Message, error`
-
----
 
 ### `Verify()`
 
@@ -1298,15 +1187,13 @@ Verify the message content.
 
 #### Parameters
 
-| Type     | Name       | Required | Description |
-| -------- | ---------- | -------- | ----------- |
-| *Message | message    | Yes      | Message     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*Message | message | Yes | Message |
 
 #### Return Value
 
 `bool, error`
-
----
 
 ### `ToMap()`
 
@@ -1318,15 +1205,13 @@ Convert the message to its map representation
 
 #### Parameters
 
-| Type     | Name       | Required | Description |
-| -------- | ---------- | -------- | ----------- |
-| *Message | message    | Yes      | Message     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*Message | message | Yes | Message |
 
 #### Return Value
 
 `map[string]interface{}`
-
----
 
 ### `ToJson()`
 
@@ -1338,9 +1223,9 @@ Convert the message to its JSON representation
 
 #### Parameters
 
-| Type     | Name       | Required | Description |
-| -------- | ---------- | -------- | ----------- |
-| *Message | message    | Yes      | Message     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*Message | message | Yes | Message |
 
 #### Return Value
 
@@ -1360,8 +1245,6 @@ Get the time diff between now and network start.
 
 `int32`
 
----
-
 ### `GetEpoch()`
 
 ```go
@@ -1373,3 +1256,4 @@ Get the network start epoch.
 #### Return Value
 
 `uint32`
+

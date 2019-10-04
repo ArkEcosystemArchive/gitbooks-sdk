@@ -1,169 +1,124 @@
-# Table Of Contents
+# Table of contents
 
-* [Prologue](prologue/getting-started.md)
+* [Introduction](README.md)
 
 ## Guidelines
 
 * [Crypto](guidelines/crypto.md)
 * [Client](guidelines/client.md)
 
-## C++
-
-### Crypto
-
-* [Getting Started](cpp/crypto/getting-started.md)
-* [Api Documentation](cpp/crypto/api-documentation.md)
-* [Examples](cpp/crypto/examples.md)
-
-### Client
-
-* [Getting Started](cpp/client/getting-started.md)
-* [Api Documentation](cpp/client/api-documentation.md)
-* [Examples](cpp/client/examples.md)
-
-## Elixir
-
-### Crypto
-
-* [Getting Started](elixir/crypto/getting-started.md)
-* [Api Documentation](elixir/crypto/api-documentation.md)
-* [Examples](elixir/crypto/examples.md)
-
-### Client
-
-* [Getting Started](elixir/client/getting-started.md)
-* [Api Documentation](elixir/client/api-documentation.md)
-* [Examples](elixir/client/examples.md)
-
-## Golang
-
-### Crypto
-
-* [Getting Started](golang/crypto/getting-started.md)
-* [Api Documentation](golang/crypto/api-documentation.md)
-* [Examples](golang/crypto/examples.md)
-
-
-### Client
-
-* [Getting Started](golang/client/getting-started.md)
-* [Api Documentation](golang/client/api-documentation.md)
-* [Examples](golang/client/examples.md)
-
 ## Java
 
-### Crypto
+* [Installation](java/installation.md)
+* [Crypto](java/crypto/README.md)
+  * [API Documentation](java/crypto/api-documentation.md)
+  * [Examples](java/crypto/examples.md)
+* [Client](java/client/README.md)
+  * [API Documentation](java/client/api-documentation.md)
+  * [Examples](java/client/examples.md)
 
-* [Getting Started](java/crypto/getting-started.md)
-* [Api Documentation](java/crypto/api-documentation.md)
-* [Examples](java/crypto/examples.md)
+## golang
 
-### Client
-
-* [Getting Started](java/client/getting-started.md)
-* [Api Documentation](java/client/api-documentation.md)
-* [Examples](java/client/examples.md)
-
-## .NET
-
-### Crypto
-
-* [Getting Started](dotnet/crypto/getting-started.md)
-* [Api Documentation](dotnet/crypto/api-documentation.md)
-* [Examples](dotnet/crypto/examples.md)
-
-
-### Client
-
-* [Getting Started](dotnet/client/getting-started.md)
-* [Api Documentation](dotnet/client/api-documentation.md)
-* [Examples](dotnet/client/examples.md)
+* [Installation](golang/installation.md)
+* [Crypto](golang/crypto/README.md)
+  * [API Documentation](golang/crypto/api-documentation.md)
+  * [Examples](golang/crypto/examples.md)
+* [Client](golang/client/README.md)
+  * [API Documentation](golang/client/api-documentation.md)
+  * [Examples](golang/client/examples.md)
 
 ## PHP
 
-### Crypto
-
-* [Getting Started](php/crypto/getting-started.md)
-* [Api Documentation](php/crypto/api-documentation.md)
-* [Examples](php/crypto/examples.md)
-
-### Client
-
-* [Getting Started](php/client/getting-started.md)
-* [Api Documentation](php/client/api-documentation.md)
-* [Examples](php/client/examples.md)
-
-### Frameworks
-
-* [Laravel](php/frameworks/laravel.md)
-* [Symfony](php/frameworks/symfony.md)
+* [Installation](php/installation-1.md)
+* [Crypto](php/crypto/README.md)
+  * [API Documentation](php/crypto/api-documentation.md)
+  * [Examples](php/crypto/examples.md)
+* [Client](php/client/README.md)
+  * [API Documentation](php/client/api-documentation.md)
+  * [Examples](php/client/examples.md)
 
 ## Python
 
-### Crypto
+* [Installation](python/installation.md)
+* [Crypto](python/crypto/README.md)
+  * [API Documentation](python/crypto/api-documentation.md)
+  * [Examples](python/crypto/examples.md)
+* [Client](python/client/README.md)
+  * [API Documentation](python/client/api-documentation.md)
+  * [Examples](python/client/examples.md)
 
-* [Getting Started](python/crypto/getting-started.md)
-* [Api Documentation](python/crypto/api-documentation.md)
-* [Examples](python/crypto/examples.md)
+## C++
 
-### Client
+* [Installation](c++/installation.md)
+* [Crypto](c++/crypto/README.md)
+  * [API Documentation](c++/crypto/api-documentation.md)
+  * [Examples](c++/crypto/examples.md)
+* [Client](c++/client/README.md)
+  * [API Documentation](c++/client/api-documentation.md)
+  * [Examples](c++/client/examples.md)
 
-* [Getting Started](python/client/getting-started.md)
-* [Api Documentation](python/client/api-documentation.md)
-* [Examples](python/client/examples.md)
+## Elixir
+
+* [Installation](elixir/installation.md)
+* [Crypto](elixir/getting-started/README.md)
+  * [API Documentation](elixir/getting-started/api-documentation.md)
+  * [Examples](elixir/getting-started/examples.md)
+* [Client](elixir/client/README.md)
+  * [API Documentation](elixir/client/api-documentation.md)
+  * [Examples](elixir/client/examples.md)
+
+## DotNET
+
+* [Installation](dotnet/installation.md)
+* [Crypto](dotnet/getting-started/README.md)
+  * [API Documentation](dotnet/getting-started/api-documentation.md)
+  * [Examples](dotnet/getting-started/examples.md)
+* [Client](dotnet/client/README.md)
+  * [API Documentation](dotnet/client/api-documentation.md)
+  * [Examples](dotnet/client/examples.md)
 
 ## Ruby
 
-### Crypto
-
-* [Getting Started](ruby/crypto/getting-started.md)
-* [Api Documentation](ruby/crypto/api-documentation.md)
-* [Examples](ruby/crypto/examples.md)
-
-### Client
-
-* [Getting Started](ruby/client/getting-started.md)
-* [Api Documentation](ruby/client/api-documentation.md)
-* [Examples](ruby/client/examples.md)
+* [Installation](ruby/installation.md)
+* [Crypto](ruby/crypto/README.md)
+  * [API Documentation](ruby/crypto/api-documentation.md)
+  * [Examples](ruby/crypto/examples.md)
+* [Client](ruby/client/README.md)
+  * [API Documentation](ruby/client/api-documentation.md)
+  * [Examples](ruby/client/examples.md)
 
 ## Rust
 
-### Crypto
-
-* [Getting Started](rust/crypto/getting-started.md)
-* [Api Documentation](rust/crypto/api-documentation.md)
-* [Examples](rust/crypto/examples.md)
-
-### Client
-
-* [Getting Started](rust/client/getting-started.md)
-* [Api Documentation](rust/client/api-documentation.md)
-* [Examples](rust/client/examples.md)
+* [Installation](rust/installation.md)
+* [Crypto](rust/crypto/README.md)
+  * [API Documentation](rust/crypto/api-documentation.md)
+  * [Examples](rust/crypto/examples.md)
+* [Client](rust/client/README.md)
+  * [API Documentation](rust/client/api-documentation.md)
+  * [Examples](rust/client/examples.md)
 
 ## Swift
 
-### Crypto
+* [Installation](swift/installation.md)
+* [Crypto](swift/crypto/README.md)
+  * [API Documentation](swift/crypto/api-documentation.md)
+  * [Examples](swift/crypto/examples.md)
+* [Client](swift/client/README.md)
+  * [API Documentation](swift/client/api-documentation.md)
+  * [Examples](swift/client/examples.md)
 
-* [Getting Started](swift/crypto/getting-started.md)
-* [Api Documentation](swift/crypto/api-documentation.md)
-* [Examples](swift/crypto/examples.md)
+## Javascript
 
-### Client
+* [Installation](javascript/installation.md)
+* [Crypto](javascript/crypto/README.md)
+  * [API Documentation](javascript/crypto/api-documentation.md)
+  * [Examples](javascript/crypto/examples.md)
+* [Client](javascript/client/README.md)
+  * [API Documentation](javascript/client/api-documentation.md)
+  * [Examples](javascript/client/examples.md)
 
-* [Getting Started](swift/client/getting-started.md)
-* [Api Documentation](swift/client/api-documentation.md)
-* [Examples](swift/client/examples.md)
+## Frameworks
 
-## TypeScript
+* [Laravel](frameworks/laravel.md)
+* [Symfony](frameworks/symfony.md)
 
-### Crypto
-
-* [Getting Started](typescript/crypto/getting-started.md)
-* [Api Documentation](typescript/crypto/api-documentation.md)
-* [Examples](typescript/crypto/examples.md)
-
-### Client
-
-* [Getting Started](typescript/client/getting-started.md)
-* [Api Documentation](typescript/client/api-documentation.md)
-* [Examples](typescript/client/examples.md)

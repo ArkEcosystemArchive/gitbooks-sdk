@@ -3,6 +3,8 @@ id: api-documentation
 title: API Documentation
 ---
 
+# API Documentation
+
 ## Client.Client.Api.Endpoints.Blocks.Blocks
 
 ### `all()`
@@ -15,17 +17,15 @@ List All Blocks.
 
 #### Parameters
 
-| Type   | Name              | Required | Description      |
-| ------ | ----------------- | -------- | ---------------- |
-| Int    | limit             | No       | Limit of results |
-| Int    | page              | No       | Pagination       |
-| String | completionHandler | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Int | limit | No | Limit of results |
+| Int | page | No | Pagination |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `get()`
 
@@ -37,16 +37,14 @@ Retrieve a Block
 
 #### Parameters
 
-| Type   | Name              | Required | Description      |
-| ------ | ----------------- | -------- | ---------------- |
-| String | id                | Yes      | Block ID         |
-| String | completionHandler | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Block ID |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `transactions()`
 
@@ -58,18 +56,16 @@ List All Transactions of a Block
 
 #### Parameters
 
-| Type   | Name              | Required | Description      |
-| ------ | ----------------- | -------- | ---------------- |
-| String | id                | Yes      | Block ID         |
-| Int    | limit             | No       | Limit of results |
-| Int    | page              | No       | Pagination       |
-| String | completionHandler | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Block ID |
+| Int | limit | No | Limit of results |
+| Int | page | No | Pagination |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `search()`
 
@@ -81,12 +77,12 @@ Search All Blocks
 
 #### Parameters
 
-| Type   | Name              | Required | Description       |
-| ------ | ----------------- | -------- | ----------------- |
-| String | body              | Yes      | Search parameters |
-| Int    | limit             | No       | Limit of results  |
-| Int    | page              | No       | Pagination        |
-| String | completionHandler | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | body | Yes | Search parameters |
+| Int | limit | No | Limit of results |
+| Int | page | No | Pagination |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
@@ -104,17 +100,15 @@ List All Delegates
 
 #### Parameters
 
-| Type   | Name              | Required | Description      |
-| ------ | ----------------- | -------- | ---------------- |
-| Int    | limit             | No       | Limit of results |
-| Int    | page              | No       | Pagination       |
-| String | completionHandler | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Int | limit | No | Limit of results |
+| Int | page | No | Pagination |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `get()`
 
@@ -126,16 +120,14 @@ Retrieve a Delegate
 
 #### Parameters
 
-| Type   | Name              | Required | Description                                       |
-| ------ | ----------------- | -------- | ------------------------------------------------- |
-| String | id                | Yes      | id can be one of: Username, Address or Public Key |
-| String | completionHandler | No       | Query parameters                                  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | id can be one of: Username, Address or Public Key |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `blocks()`
 
@@ -147,18 +139,16 @@ List All Blocks of a Delegate
 
 #### Parameters
 
-| Type   | Name              | Required | Description                                       |
-| ------ | ----------------- | -------- | ------------------------------------------------- |
-| String | id                | Yes      | id can be one of: Username, Address or Public Key |
-| Int    | limit             | No       | Limit of results                                  |
-| Int    | page              | No       | Pagination                                        |
-| String | completionHandler | No       | Query parameters                                  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | id can be one of: Username, Address or Public Key |
+| Int | limit | No | Limit of results |
+| Int | page | No | Pagination |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `voters()`
 
@@ -170,12 +160,12 @@ List All Voters of a Delegate
 
 #### Parameters
 
-| Type   | Name              | Required | Description                                       |
-| ------ | ----------------- | -------- | ------------------------------------------------- |
-| String | id                | Yes      | id can be one of: Username, Address or Public Key |
-| Int    | limit             | No       | Limit of results                                  |
-| Int    | page              | No       | Pagination                                        |
-| String | completionHandler | No       | Query parameters                                  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | id can be one of: Username, Address or Public Key |
+| Int | limit | No | Limit of results |
+| Int | page | No | Pagination |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
@@ -195,8 +185,6 @@ Retrieve the Configuration
 
 `Void`
 
----
-
 ### `status()`
 
 ```swift
@@ -208,8 +196,6 @@ Retrieve the Status
 #### Return Value
 
 `Void`
-
----
 
 ### `syncing()`
 
@@ -223,8 +209,6 @@ Retrieve the Syncing Status
 
 `Void`
 
----
-
 ### `fees()`
 
 ```swift
@@ -232,7 +216,6 @@ public func fees(completionHandler: @escaping ([String: Any]?)
 ```
 
 Retrieve the Fees
-
 
 #### Return Value
 
@@ -250,17 +233,15 @@ List All Peers
 
 #### Parameters
 
-| Type   | Name              | Required | Description      |
-| ------ | ----------------- | -------- | ---------------- |
-| Int    | limit             | No       | Limit of results |
-| Int    | page              | No       | Pagination       |
-| String | completionHandler | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Int | limit | No | Limit of results |
+| Int | page | No | Pagination |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `status()`
 
@@ -272,10 +253,10 @@ Retrive a Peer
 
 #### Parameters
 
-| Type   | Name              | Required | Description      |
-| ------ | ----------------- | -------- | ---------------- |
-| String | ip                | Yes      | IP address       |
-| String | completionHandler | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | ip | Yes | IP address |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
@@ -293,16 +274,14 @@ Create a Transaction
 
 #### Parameters
 
-| Type   | Name              | Required | Description       |
-| ------ | ----------------- | -------- | ----------------- |
-| String | body              | Yes      | Search parameters |
-| String | completionHandler | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | body | Yes | Search parameters |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `get()`
 
@@ -314,16 +293,14 @@ Retrieve a Transaction
 
 #### Parameters
 
-| Type   | Name              | Required | Description      |
-| ------ | ----------------- | -------- | ---------------- |
-| String | id                | Yes      | Transaction ID   |
-| String | completionHandler | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Transaction ID |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `all()`
 
@@ -335,17 +312,15 @@ List All Transactions
 
 #### Parameters
 
-| Type   | Name              | Required | Description      |
-| ------ | ----------------- | -------- | ---------------- |
-| Int    | limit             | No       | Limit of results |
-| Int    | page              | No       | Pagination       |
-| String | completionHandler | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Int | limit | No | Limit of results |
+| Int | page | No | Pagination |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `allUnconfirmed()`
 
@@ -357,17 +332,15 @@ List All Unconfirmed Transactions
 
 #### Parameters
 
-| Type   | Name              | Required | Description      |
-| ------ | ----------------- | -------- | ---------------- |
-| Int    | limit             | No       | Limit of results |
-| Int    | page              | No       | Pagination       |
-| String | completionHandler | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Int | limit | No | Limit of results |
+| Int | page | No | Pagination |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `getUnconfirmed()`
 
@@ -379,16 +352,14 @@ Get Unconfirmed Transaction
 
 #### Parameters
 
-| Type   | Name              | Required | Description      |
-| ------ | ----------------- | -------- | ---------------- |
-| String | id                | Yes      | Transaction ID   |
-| String | completionHandler | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Transaction ID |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `search()`
 
@@ -400,18 +371,16 @@ Search Transactions
 
 #### Parameters
 
-| Type   | Name              | Required | Description       |
-| ------ | ----------------- | -------- | ----------------- |
-| String | body              | Yes      | Search parameters |
-| Int    | limit             | No       | Limit of results  |
-| Int    | page              | No       | Pagination        |
-| String | completionHandler | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | body | Yes | Search parameters |
+| Int | limit | No | Limit of results |
+| Int | page | No | Pagination |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `types()`
 
@@ -423,9 +392,9 @@ List Transaction Types
 
 #### Parameters
 
-| Type   | Name              | Required | Description      |
-| ------ | ----------------- | -------- | ---------------- |
-| String | completionHandler | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
@@ -443,17 +412,15 @@ List All Votes
 
 #### Parameters
 
-| Type   | Name              | Required | Description      |
-| ------ | ----------------- | -------- | ---------------- |
-| Int    | limit             | No       | Limit of results |
-| Int    | page              | No       | Pagination       |
-| String | completionHandler | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Int | limit | No | Limit of results |
+| Int | page | No | Pagination |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `get()`
 
@@ -465,10 +432,10 @@ Retrieve a Vote
 
 #### Parameters
 
-| Type   | Name              | Required | Description      |
-| ------ | ----------------- | -------- | ---------------- |
-| String | id                | Yes      | Vote ID          |
-| String | completionHandler | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Vote ID |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
@@ -486,17 +453,15 @@ Retrieve All Wallets
 
 #### Parameters
 
-| Type   | Name              | Required | Description      |
-| ------ | ----------------- | -------- | ---------------- |
-| Int    | limit             | No       | Limit of results |
-| Int    | page              | No       | Pagination       |
-| String | completionHandler | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Int | limit | No | Limit of results |
+| Int | page | No | Pagination |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `get()`
 
@@ -508,16 +473,14 @@ Retrieve a Wallet
 
 #### Parameters
 
-| Type   | Name              | Required | Description                                       |
-| ------ | ----------------- | -------- | ------------------------------------------------- |
-| String | id                | Yes      | id can be one of: Username, Address or Public Key |
-| String | completionHandler | No       | Query parameters                                  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | id can be one of: Username, Address or Public Key |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `transactions()`
 
@@ -529,18 +492,16 @@ List All Transactions of a Wallet
 
 #### Parameters
 
-| Type   | Name              | Required | Description       |
-| ------ | ----------------- | -------- | ----------------- |
-| String | id                | Yes      | Wallet identifier |
-| Int    | limit             | No       | Limit of results  |
-| Int    | page              | No       | Pagination        |
-| String | completionHandler | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Wallet identifier |
+| Int | limit | No | Limit of results |
+| Int | page | No | Pagination |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `receivedTransactions()`
 
@@ -552,18 +513,16 @@ List All Received Transactions of a Wallet
 
 #### Parameters
 
-| Type   | Name              | Required | Description       |
-| ------ | ----------------- | -------- | ----------------- |
-| String | id                | Yes      | Wallet identifier |
-| Int    | limit             | No       | Limit of results  |
-| Int    | page              | No       | Pagination        |
-| String | completionHandler | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Wallet identifier |
+| Int | limit | No | Limit of results |
+| Int | page | No | Pagination |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `sentTransactions()`
 
@@ -575,18 +534,16 @@ List All Sent Transactions of a Wallet
 
 #### Parameters
 
-| Type   | Name              | Required | Description       |
-| ------ | ----------------- | -------- | ----------------- |
-| String | id                | Yes      | Wallet identifier |
-| Int    | limit             | No       | Limit of results  |
-| Int    | page              | No       | Pagination        |
-| String | completionHandler | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Wallet identifier |
+| Int | limit | No | Limit of results |
+| Int | page | No | Pagination |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `votes()`
 
@@ -598,18 +555,16 @@ List All Votes of a Wallet
 
 #### Parameters
 
-| Type   | Name              | Required | Description       |
-| ------ | ----------------- | -------- | ----------------- |
-| String | id                | Yes      | Wallet identifier |
-| Int    | limit             | No       | Limit of results  |
-| Int    | page              | No       | Pagination        |
-| String | completionHandler | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Wallet identifier |
+| Int | limit | No | Limit of results |
+| Int | page | No | Pagination |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `top()`
 
@@ -621,17 +576,15 @@ List All Top Wallets
 
 #### Parameters
 
-| Type   | Name              | Required | Description      |
-| ------ | ----------------- | -------- | ---------------- |
-| Int    | limit             | No       | Limit of results |
-| Int    | page              | No       | Pagination       |
-| String | completionHandler | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Int | limit | No | Limit of results |
+| Int | page | No | Pagination |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `search()`
 
@@ -643,13 +596,14 @@ Search All Wallets
 
 #### Parameters
 
-| Type   | Name              | Required | Description       |
-| ------ | ----------------- | -------- | ----------------- |
-| String | body              | Yes      | Search parameters |
-| Int    | limit             | No       | Limit of results  |
-| Int    | page              | No       | Pagination        |
-| String | completionHandler | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | body | Yes | Search parameters |
+| Int | limit | No | Limit of results |
+| Int | page | No | Pagination |
+| String | completionHandler | No | Query parameters |
 
 #### Return Value
 
 `Void`
+

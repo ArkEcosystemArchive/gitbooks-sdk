@@ -3,6 +3,8 @@ id: api-documentation
 title: API Documentation
 ---
 
+# API Documentation
+
 ## client
 
 ### `NewClient()`
@@ -15,9 +17,9 @@ Create a new Connection class instance.
 
 #### Parameters
 
-| Type          | Name         | Required | Description |
-| ------------- | ------------ | -------- | ----------- |
-| *http.Client  | httpClient   | Yes      | Client      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \*http.Client | httpClient | Yes | Client |
 
 #### Return Value
 
@@ -35,17 +37,14 @@ Get all blocks.
 
 #### Parameters
 
-| Type            | Name       | Required | Description       |
-| --------------- | ---------- | -------- | ----------------- |
-| context.Context | ctx        | Yes      | Context           |
-| *Pagination     | query      | No       | Query parameters  |
-
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| \*Pagination | query | No | Query parameters |
 
 #### Return Value
 
 `*Blocks, *http.Response, error`
-
----
 
 ### `Get()`
 
@@ -57,16 +56,14 @@ Get a block by the given id.
 
 #### Parameters
 
-| Type            | Name       | Required | Description |
-| --------------- | ---------- | -------- | ----------- |
-| context.Context | ctx        | Yes      | Context     |
-| int             | id         | Yes      | Block ID    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| int | id | Yes | Block ID |
 
 #### Return Value
 
 `*GetBlock, *http.Response, error`
-
----
 
 ### `Transactions()`
 
@@ -78,17 +75,15 @@ Get all transactions by the given block.
 
 #### Parameters
 
-| Type            | Name       | Required | Description      |
-| --------------- | ---------- | -------- | ---------------- |
-| context.Context | ctx        | Yes      | Context          |
-| int             | id         | Yes      | Block ID         |
-| *Pagination     | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| int | id | Yes | Block ID |
+| \*Pagination | query | No | Query parameters |
 
 #### Return Value
 
 `*GetBlockTransactions, *http.Response, error`
-
----
 
 ### `Search()`
 
@@ -100,11 +95,11 @@ Filter all blocks by the given parameters.
 
 #### Parameters
 
-| Type                 | Name       | Required | Description       |
-| -------------------- | ---------- | -------- | ----------------- |
-| context.Context      | ctx        | Yes      | Context           |
-| *Pagination          | query      | No       | Query parameters  |
-| *BlocksSearchRequest | body       | No       | Search parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| \*Pagination | query | No | Query parameters |
+| \*BlocksSearchRequest | body | No | Search parameters |
 
 #### Return Value
 
@@ -122,16 +117,14 @@ Get all delegates.
 
 #### Parameters
 
-| Type            | Name       | Required | Description       |
-| --------------- | ---------- | -------- | ----------------- |
-| context.Context | ctx        | Yes      | Context           |
-| *Pagination     | query      | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| \*Pagination | query | No | Query parameters |
 
 #### Return Value
 
 `(*Delegates, *http.Response, error)`
-
----
 
 ### `Get()`
 
@@ -143,16 +136,14 @@ Get a delegate by the given id.
 
 #### Parameters
 
-| Type            | Name       | Required | Description |
-| --------------- | ---------- | -------- | ----------- |
-| context.Context | ctx        | Yes      | ...         |
-| string          | id         | Yes      | ...         |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | ... |
+| string | id | Yes | ... |
 
 #### Return Value
 
 `(*GetDelegate, *http.Response, error)`
-
----
 
 ### `Blocks()`
 
@@ -164,17 +155,15 @@ Get all blocks for the given delegate.
 
 #### Parameters
 
-| Type            | Name       | Required | Description         |
-| --------------- | ---------- | -------- | ------------------- |
-| context.Context | ctx        | Yes      | Context             |
-| string          | id         | Yes      | Delegate identifier |
-| *Pagination     | query      | No       | Query parameters    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| string | id | Yes | Delegate identifier |
+| \*Pagination | query | No | Query parameters |
 
 #### Return Value
 
 `(*GetDelegateBlocks, *http.Response, error)`
-
----
 
 ### `Voters()`
 
@@ -186,11 +175,11 @@ Get all voters for the given delegate.
 
 #### Parameters
 
-| Type            | Name       | Required | Description         |
-| --------------- | ---------- | -------- | ------------------- |
-| context.Context | ctx        | Yes      | Context             |
-| string          | id         | Yes      | Delegate identifier |
-| *Pagination     | query      | No       | Query parameters    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| string | id | Yes | Delegate identifier |
+| \*Pagination | query | No | Query parameters |
 
 #### Return Value
 
@@ -208,15 +197,13 @@ Get the node configuration.
 
 #### Parameters
 
-| Type            | Name        | Required | Description |
-| --------------- | ----------- | -------- | ----------- |
-| context.Context | ctx         | Yes      | Context     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
 
 #### Return Value
 
 `*GetNodeConfiguration, *http.Response, error`
-
----
 
 ### `Status()`
 
@@ -228,15 +215,13 @@ Get the node status.
 
 #### Parameters
 
-| Type            | Name        | Required | Description |
-| --------------- | ----------- | -------- | ----------- |
-| context.Context | ctx         | Yes      | Context     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
 
 #### Return Value
 
 `*GetNodeStatus, *http.Response, error`
-
----
 
 ### `Syncing()`
 
@@ -248,9 +233,9 @@ Get the node syncing status.
 
 #### Parameters
 
-| Type            | Name        | Required | Description |
-| --------------- | ----------- | -------- | ----------- |
-| context.Context | ctx         | Yes      | Context     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
 
 #### Return Value
 
@@ -268,16 +253,14 @@ Get all peers.
 
 #### Parameters
 
-| Type            | Name       | Required | Description      |
-| --------------  | ---------- | -------- | ---------------- |
-| context.Context | ctx        | Yes      | Context          |
-| *Pagination     | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| \*Pagination | query | No | Query parameters |
 
 #### Return Value
 
 `(*Peers, *http.Response, error)`
-
----
 
 ### `Get()`
 
@@ -289,10 +272,10 @@ Get a peer by the given IP address.
 
 #### Parameters
 
-| Type            | Name       | Required | Description |
-| --------------  | ---------- | -------- | ----------- |
-| context.Context | ctx        | Yes      | Context     |
-| string          | ip         | Yes      | IP address  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| string | ip | Yes | IP address |
 
 #### Return Value
 
@@ -310,15 +293,13 @@ Create a new transaction.
 
 #### Parameters
 
-| Type     | Name         | Required | Description              |
-| -------- | ------------ | -------- | ------------------------ |
-| object[] | payload      | Yes      | Transaction to broadcast |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| object\[\] | payload | Yes | Transaction to broadcast |
 
 #### Return Value
 
 `*CreateTransaction, *http.Response, error`
-
----
 
 ### `Get()`
 
@@ -330,16 +311,14 @@ Get a transaction by the given id.
 
 #### Parameters
 
-| Type            | Name       | Required | Description    |
-| --------------- | ---------- | -------- | -------------- |
-| context.Context | ctx        | Yes      | Context        |
-| string          | id         | Yes      | Transaction ID |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| string | id | Yes | Transaction ID |
 
 #### Return Value
 
 `*GetTransaction, *http.Response, error`
-
----
 
 ### `List()`
 
@@ -351,16 +330,14 @@ Get all transactions.
 
 #### Parameters
 
-| Type            | Name       | Required | Description      |
-| --------------  | ---------- | -------- | ---------------- |
-| context.Context | ctx        | Yes      | Context          |
-| *Pagination     | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| \*Pagination | query | No | Query parameters |
 
 #### Return Value
 
 `*Transactions, *http.Response, error`
-
----
 
 ### `ListUnconfirmed()`
 
@@ -372,16 +349,14 @@ Get all unconfirmed transactions.
 
 #### Parameters
 
-| Type            | Name       | Required | Description      |
-| --------------  | ---------- | -------- | ---------------- |
-| context.Context | ctx        | Yes      | Context          |
-| *Pagination     | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| \*Pagination | query | No | Query parameters |
 
 #### Return Value
 
 `*Transactions, *http.Response, error`
-
----
 
 ### `GetUnconfirmed()`
 
@@ -393,16 +368,14 @@ Get an unconfirmed transaction by the given id.
 
 #### Parameters
 
-| Type            | Name       | Required | Description    |
-| --------------- | ---------- | -------- | -------------- |
-| context.Context | ctx        | Yes      | Context        |
-| string          | id         | Yes      | Transaction ID |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| string | id | Yes | Transaction ID |
 
 #### Return Value
 
 `*GetTransaction, *http.Response, error`
-
----
 
 ### `Search()`
 
@@ -414,17 +387,15 @@ Filter all transactions by the given parameters.
 
 #### Parameters
 
-| Type                        | Name       | Required | Description       |
-| --------------------------- | ---------- | -------- | ----------------- |
-| context.Context             | ctx        | Yes      | Context           |
-| *Pagination                 | query      | No       | Query parameters  |
-| *TransactionsSearchRequest  | query      | No       | Search parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| \*Pagination | query | No | Query parameters |
+| \*TransactionsSearchRequest | query | No | Search parameters |
 
 #### Return Value
 
 `*Transactions, *http.Response, error`
-
----
 
 ### `Types()`
 
@@ -436,9 +407,9 @@ Get a list of valid transaction types.
 
 #### Parameters
 
-| Type            | Name       | Required | Description |
-| --------------- | ---------- | -------- | ----------- |
-| context.Context | ctx        | Yes      | Context     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
 
 #### Return Value
 
@@ -456,16 +427,14 @@ Get all votes.
 
 #### Parameters
 
-| Type            | Name       | Required | Description      |
-| --------------  | ---------- | -------- | ---------------- |
-| context.Context | ctx        | Yes      | Context          |
-| *Pagination     | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| \*Pagination | query | No | Query parameters |
 
 #### Return Value
 
 `*Transactions, *http.Response, error`
-
----
 
 ### `Get()`
 
@@ -477,10 +446,10 @@ Get a vote by the given id.
 
 #### Parameters
 
-| Type            | Name       | Required | Description    |
-| --------------- | ---------- | -------- | -------------- |
-| context.Context | ctx        | Yes      | Context        |
-| string          | id         | Yes      | Vote ID        |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| string | id | Yes | Vote ID |
 
 #### Return Value
 
@@ -498,16 +467,14 @@ Get all wallets.
 
 #### Parameters
 
-| Type            | Name       | Required | Description      |
-| --------------  | ---------- | -------- | ---------------- |
-| context.Context | ctx        | Yes      | Context          |
-| *Pagination     | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| \*Pagination | query | No | Query parameters |
 
 #### Return Value
 
 `*Wallets, *http.Response, error`
-
----
 
 ### `Get()`
 
@@ -519,16 +486,14 @@ Get a wallet by the given id.
 
 #### Parameters
 
-| Type            | Name       | Required | Description       s|
-| --------------- | ---------- | -------- | ----------------- |
-| context.Context | ctx        | Yes      | Context           |
-| string          | id         | Yes      | Wallet identifier |
+| Type | Name | Required | Description       s |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| string | id | Yes | Wallet identifier |
 
 #### Return Value
 
 `*GetWallet, *http.Response, error`
-
----
 
 ### `Transactions()`
 
@@ -540,17 +505,15 @@ Get all transactions for the given wallet.
 
 #### Parameters
 
-| Type            | Name       | Required | Description       |
-| --------------- | ---------- | -------- | ----------------- |
-| context.Context | ctx        | Yes      | Context           |
-| string          | id         | Yes      | Wallet identifier |
-| *Pagination     | query      | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| string | id | Yes | Wallet identifier |
+| \*Pagination | query | No | Query parameters |
 
 #### Return Value
 
 `*Transactions, *http.Response, error`
-
----
 
 ### `Receivedtransactions()`
 
@@ -562,17 +525,15 @@ Get all transactions received by the given wallet.
 
 #### Parameters
 
-| Type            | Name       | Required | Description       |
-| --------------- | ---------- | -------- | ----------------- |
-| context.Context | ctx        | Yes      | Context           |
-| string          | id         | Yes      | Wallet identifier |
-| *Pagination     | query      | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| string | id | Yes | Wallet identifier |
+| \*Pagination | query | No | Query parameters |
 
 #### Return Value
 
 `*Transactions, *http.Response, error`
-
----
 
 ### `SentTransactions()`
 
@@ -584,17 +545,15 @@ Get all transactions sent by the given wallet.
 
 #### Parameters
 
-| Type            | Name       | Required | Description       |
-| --------------- | ---------- | -------- | ----------------- |
-| context.Context | ctx        | Yes      | Context           |
-| string          | id         | Yes      | Wallet identifier |
-| *Pagination     | query      | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| string | id | Yes | Wallet identifier |
+| \*Pagination | query | No | Query parameters |
 
 #### Return Value
 
 `*Transactions, *http.Response, error`
-
----
 
 ### `Votes()`
 
@@ -606,17 +565,15 @@ Get all votes by the given wallet.
 
 #### Parameters
 
-| Type            | Name       | Required | Description       |
-| --------------- | ---------- | -------- | ----------------- |
-| context.Context | ctx        | Yes      | Context           |
-| string          | id         | Yes      | Wallet identifier |
-| *Pagination     | query      | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| string | id | Yes | Wallet identifier |
+| \*Pagination | query | No | Query parameters |
 
 #### Return Value
 
 `*Transactions, *http.Response, error`
-
----
 
 ### `Top()`
 
@@ -628,16 +585,14 @@ Get all wallego sorted by balance in descending order.
 
 #### Parameters
 
-| Type            | Name       | Required | Description      |
-| --------------  | ---------- | -------- | ---------------- |
-| context.Context | ctx        | Yes      | Context          |
-| *Pagination     | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| \*Pagination | query | No | Query parameters |
 
 #### Return Value
 
 `*Wallets, *http.Response, error`
-
----
 
 ### `Search()`
 
@@ -649,12 +604,13 @@ Filter all wallego by the given parameters.
 
 #### Parameters
 
-| Type                  | Name       | Required | Description       |
-| --------------------- | ---------- | -------- | ----------------- |
-| context.Context       | ctx        | Yes      | Context           |
-| *Pagination           | query      | No       | Query parameters  |
-| *WalletsSearchRequest | body       | Yes      | Search parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| context.Context | ctx | Yes | Context |
+| \*Pagination | query | No | Query parameters |
+| \*WalletsSearchRequest | body | Yes | Search parameters |
 
 #### Return Value
 
 `*Wallets, *http.Response, error`
+

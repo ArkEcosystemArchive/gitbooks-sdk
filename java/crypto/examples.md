@@ -3,6 +3,8 @@ id: examples
 title: Examples
 ---
 
+# Examples
+
 ## Initialization
 
 ```java
@@ -12,11 +14,11 @@ import org.arkecosystem.crypto.transactions.builder.Transfer;
 
 ## Transactions
 
-A transaction is an object specifying the transfer of funds from the sender's wallet to the recipient's. Each transaction must be signed by the sender's private key to prove authenticity and origin. After broadcasting through the [client SDK](/java/client/api-documentation#initialization), a transaction is permanently incorporated in the blockchain by a Delegate Node.
+A transaction is an object specifying the transfer of funds from the sender's wallet to the recipient's. Each transaction must be signed by the sender's private key to prove authenticity and origin. After broadcasting through the [client SDK](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/java/client/api-documentation/README.md#initialization), a transaction is permanently incorporated in the blockchain by a Delegate Node.
 
 ### Sign
 
-The crypto SDK can sign a transaction using your private key or passphrase (from which the private key is generated). Ensure you are familiar with [digital signatures](https://en.wikipedia.org/wiki/Digital_signature) before using the crypto SDKs.
+The crypto SDK can sign a transaction using your private key or passphrase \(from which the private key is generated\). Ensure you are familiar with [digital signatures](https://en.wikipedia.org/wiki/Digital_signature) before using the crypto SDKs.
 
 ```java
 Transaction transfer = new Transfer()
@@ -29,7 +31,7 @@ Transaction transfer = new Transfer()
 >>> Transfer
 ```
 
-### Serialize (AIP11)
+### Serialize \(AIP11\)
 
 > Serialization of a transaction object ensures it is compact and properly formatted to be incorporated in the ARK blockchain. If you are using the crypto SDK in combination with the public API SDK, you should not need to serialize manually.
 
@@ -42,7 +44,7 @@ String serializedHex = Arrays.toString(bytes);
 >>> String
 ```
 
-### Deserialize (AIP11)
+### Deserialize \(AIP11\)
 
 > A serialized transaction may be deserialized for inspection purposes. The public API does not return serialized transactions, so you should only need to deserialize in exceptional circumstances.
 
@@ -56,7 +58,7 @@ Transaction transaction = new Deserializer().deserialize("serialized-hex");
 
 ## Message
 
-The crypto SDK not only supports transactions but can also work with other arbitrary data (expressed as strings).
+The crypto SDK not only supports transactions but can also work with other arbitrary data \(expressed as strings\).
 
 ### Sign
 
@@ -181,7 +183,6 @@ This function has not been implemented in this client library.
 
 ```java
 This function has not been implemented in this client library.
-
 ```
 
 ## WIF
@@ -197,3 +198,4 @@ WIF.fromPassphrase("this is a top secret passphrase");
 
 >>> String
 ```
+

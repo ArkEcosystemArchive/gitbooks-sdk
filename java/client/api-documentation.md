@@ -3,6 +3,8 @@ id: api-documentation
 title: API Documentation
 ---
 
+# API Documentation
+
 ## org.arkecosystem.client.http.Client;
 
 ### `Client()`
@@ -15,12 +17,10 @@ Create a new Client class instance.
 
 #### Parameters
 
-| Type    | Name    | Required | Description    |
-| --------| ------- | -------- | -------------- |
-| String  | host    | Yes      | Node url       |
-| String  | version | Yes      | Version to use |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | host | Yes | Node url |
+| String | version | Yes | Version to use |
 
 ### `get()`
 
@@ -32,16 +32,14 @@ Send a GET request with query parameters.
 
 #### Parameters
 
-| Type                | Name       | Required | Description      |
-| ------------------- | ---------- | -------- | ---------------- |
-| String              | url        | Yes      | Endpoint         |
-| Map<String, Object> | params     | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | url | Yes | Endpoint |
+| Map | params | No | Query parameters |
 
 #### Return Value
 
 `LinkedTreeMap<String, Object>`
-
----
 
 ### `get()`
 
@@ -53,15 +51,13 @@ Send a GET request without query parameters.
 
 #### Parameters
 
-| Type                | Name       | Required | Description |
-| ------------------- | ---------- | -------- | ----------- |
-| String              | url        | Yes      | Endpoint    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | url | Yes | Endpoint |
 
 #### Return Value
 
 `LinkedTreeMap<String, Object>`
-
----
 
 ### `post()`
 
@@ -73,16 +69,14 @@ Send a POST request with JSON-encoded parameters.
 
 #### Parameters
 
-| Type   | Name       | Required | Description            |
-| ------ | ---------- | -------- | ---------------------- |
-| String | url        | Yes      | Endpoint               |
-| Map    | payload    | Yes      | Transaction(s) to post |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | url | Yes | Endpoint |
+| Map | payload | Yes | Transaction\(s\) to post |
 
 #### Return Value
 
 `LinkedTreeMap<String, Object>`
-
----
 
 ### `getClient()`
 
@@ -96,8 +90,6 @@ Get Client instance.
 
 `OkHttpClient`
 
----
-
 ### `setClient()`
 
 ```java
@@ -108,9 +100,9 @@ Set client instance.
 
 #### Parameters
 
-| Type         | Name       | Required | Description |
-| ------------ | ---------- | -------- | ----------- |
-| OkHttpClient | client     | Yes      | Client      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| OkHttpClient | client | Yes | Client |
 
 #### Return Value
 
@@ -128,11 +120,9 @@ Connection class constructor.
 
 #### Parameters
 
-| Type                | Name    | Required | Description   |
-| ------------------- | ------- | -------- | ------------- |
-| Map<String, Object> | config  | Yes      | Configuration |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Map | config | Yes | Configuration |
 
 ### `api()`
 
@@ -144,9 +134,9 @@ Instantiate new Api.
 
 #### Parameters
 
-| Type                | Name    | Required | Description   |
-| ------------------- | ------- | -------- | ------------- |
-| Map<String, Object> | config  | Yes      | Configuration |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Map | config | Yes | Configuration |
 
 #### Return Value
 
@@ -162,8 +152,6 @@ public ConnectionManager()
 
 ConnectionManager class constructor.
 
----
-
 ### `getDefaultConnection()`
 
 ```java
@@ -176,8 +164,6 @@ Get the default connection name.
 
 `String`
 
----
-
 ### `setDefaultConnection()`
 
 ```java
@@ -188,15 +174,13 @@ Set the default connection.
 
 #### Parameters
 
-| Type   | Name    | Required | Description     |
-| ------ | ------- | -------- | --------------- |
-| String | name    | Yes      | Connection name |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | name | Yes | Connection name |
 
 #### Return Value
 
 `void`
-
----
 
 ### `getConnections()`
 
@@ -210,8 +194,6 @@ Get a map of connections.
 
 `Map<String, Connection<? extends AbstractAPI>>`
 
----
-
 ### `connect()`
 
 ```java
@@ -222,16 +204,14 @@ Connect to the given connection.
 
 #### Parameters
 
-| Type   | Name    | Required | Description     |
-| ------ | ------- | -------- | --------------- |
-| Map    | config  | Yes      | Configuration   |
-| String | name    | Yes      | Connection name |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Map | config | Yes | Configuration |
+| String | name | Yes | Connection name |
 
 #### Return Value
 
 `<T extends AbstractAPI>`
-
----
 
 ### `connect()`
 
@@ -243,15 +223,13 @@ Connect to the given connection.
 
 #### Parameters
 
-| Type   | Name    | Required | Description   |
-| ------ | ------- | -------- | ------------- |
-| Map    | config  | Yes      | Configuration |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Map | config | Yes | Configuration |
 
 #### Return Value
 
 `<T extends AbstractAPI>`
-
----
 
 ### `disconnect()`
 
@@ -263,15 +241,13 @@ Disconnect from given connection.
 
 #### Parameters
 
-| Type   | Name    | Required | Description     |
-| ------ | ------- | -------- | --------------- |
-| String | name    | Yes      | Connection name |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | name | Yes | Connection name |
 
 #### Return Value
 
 `void`
-
----
 
 ### `disconnect()`
 
@@ -280,8 +256,6 @@ public void disconnect()
 ```
 
 Disconnect from given connection.
-
----
 
 ### `connection()`
 
@@ -293,15 +267,13 @@ Get a connection instance.
 
 #### Parameters
 
-| Type   | Name    | Required | Description     |
-| ------ | ------- | -------- | --------------- |
-| String | name    | Yes      | Connection name |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | name | Yes | Connection name |
 
 #### Return Value
 
 `<T extends AbstractAPI>`
-
----
 
 ### `connection()`
 
@@ -327,9 +299,9 @@ Create a new API class instance.
 
 #### Parameters
 
-| Type   | Name    | Required | Description |
-| ------ | ------- | -------- | ----------- |
-| Client | client  | Yes      | Client      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Client | client | Yes | Client |
 
 ## org.arkecosystem.client.api.Blocks;
 
@@ -343,11 +315,9 @@ Blocks class constructor.
 
 #### Parameters
 
-| Type   | Name    | Required | Description |
-| ------ | ------- | -------- | ----------- |
-| Client | client  | Yes      | Client      |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Client | client | Yes | Client |
 
 ### `all()`
 
@@ -361,8 +331,6 @@ Get all blocks.
 
 `LinkedTreeMap<String, Object>`
 
----
-
 ### `show()`
 
 ```java
@@ -373,15 +341,13 @@ Get a block by the given id.
 
 #### Parameters
 
-| Type   | Name     | Required | Description |
-| ------ | -------- | -------- | ----------- |
-| String | id       | Yes      | Block ID    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Block ID |
 
 #### Return Value
 
 `LinkedTreeMap<String, Object>`
-
----
 
 ### `transactions()`
 
@@ -393,15 +359,13 @@ Get all transactions by the given block.
 
 #### Parameters
 
-| Type   | Name     | Required | Description |
-| ------ | -------- | -------- | ----------- |
-| String | id       | Yes      | Block ID    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Block ID |
 
 #### Return Value
 
 `LinkedTreeMap<String, Object>`
-
----
 
 ### `search()`
 
@@ -413,9 +377,9 @@ Filter all blocks by the given parameters.
 
 #### Parameters
 
-| Type                | Name       | Required | Description      |
-| ------------------- | ---------- | -------- | ---------------- |
-| Map<String, Object> | parameters | Yes      | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Map | parameters | Yes | Query parameters |
 
 #### Return Value
 
@@ -433,11 +397,9 @@ Delegates class constructor.
 
 #### Parameters
 
-| Type   | Name    | Required | Description |
-| ------ | ------- | -------- | ----------- |
-| Client | client  | Yes      | Client      |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Client | client | Yes | Client |
 
 ### `all()`
 
@@ -451,8 +413,6 @@ Get all accounts.
 
 `LinkedTreeMap<String, Object>`
 
----
-
 ### `show()`
 
 ```java
@@ -463,15 +423,13 @@ Get a delegate by the given id.
 
 #### Parameters
 
-| Type   | Name        | Required | Description         |
-| ------ | ----------- | -------- | ------------------- |
-| String | id          | Yes      | Delegate identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Delegate identifier |
 
 #### Return Value
 
 `LinkedTreeMap<String, Object>`
-
----
 
 ### `blocks()`
 
@@ -483,15 +441,13 @@ Get all blocks for the given delegate.
 
 #### Parameters
 
-| Type   | Name        | Required | Description         |
-| ------ | ----------- | -------- | ------------------- |
-| String | id          | Yes      | Delegate identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Delegate identifier |
 
 #### Return Value
 
 `LinkedTreeMap<String, Object>`
-
----
 
 ### `voters()`
 
@@ -503,9 +459,9 @@ Get all voters for the given delegate.
 
 #### Parameters
 
-| Type   | Name        | Required | Description         |
-| ------ | ----------- | -------- | ------------------- |
-| String | id          | Yes      | Delegate identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Delegate identifier |
 
 #### Return Value
 
@@ -523,11 +479,9 @@ Node class constructor.
 
 #### Parameters
 
-| Type   | Name    | Required | Description |
-| ------ | ------- | -------- | ----------- |
-| Client | client  | Yes      | Client      |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Client | client | Yes | Client |
 
 ### `configuration()`
 
@@ -541,8 +495,6 @@ Get the node configuration.
 
 `LinkedTreeMap<String, Object>`
 
----
-
 ### `status()`
 
 ```java
@@ -554,8 +506,6 @@ Get the node status.
 #### Return Value
 
 `LinkedTreeMap<String, Object>`
-
----
 
 ### `syncing()`
 
@@ -581,11 +531,9 @@ Peers class constructor.
 
 #### Parameters
 
-| Type   | Name    | Required | Description |
-| ------ | ------- | -------- | ----------- |
-| Client | client  | Yes      | Client      |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Client | client | Yes | Client |
 
 ### `all()`
 
@@ -599,8 +547,6 @@ Get all peers.
 
 `public LinkedTreeMap<String, Object>`
 
----
-
 ### `show()`
 
 ```java
@@ -611,9 +557,9 @@ Get a peer by the given IP address.
 
 #### Parameters
 
-| Type   | Name | Required | Description |
-| ------ | ---- | -------- | ----------- |
-| String | ip   | Yes      | IP address  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | ip | Yes | IP address |
 
 #### Return Value
 
@@ -631,11 +577,9 @@ Transactions class constructor.
 
 #### Parameters
 
-| Type   | Name    | Required | Description |
-| ------ | ------- | -------- | ----------- |
-| Client | client  | Yes      | Client      |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Client | client | Yes | Client |
 
 ### `create()`
 
@@ -647,15 +591,13 @@ Create a new transaction.
 
 #### Parameters
 
-| Type          | Name         | Required | Description                 |
-| ------------- | ------------ | -------- | --------------------------- |
-| List<HashMap> | transactions | Yes      | Transaction(s) to broadcast |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| List | transactions | Yes | Transaction\(s\) to broadcast |
 
 #### Return Value
 
 `LinkedTreeMap<String, Object>`
-
----
 
 ### `show()`
 
@@ -667,15 +609,13 @@ Get a transaction by the given id.
 
 #### Parameters
 
-| Type   | Name           | Required | Description    |
-| ------ | -------------- | -------- | -------------- |
-| String | id             | Yes      | Transaction ID |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Transaction ID |
 
 #### Return Value
 
 `LinkedTreeMap<String, Object>`
-
----
 
 ### `all()`
 
@@ -689,8 +629,6 @@ Get all transactions.
 
 `LinkedTreeMap<String, Object>`
 
----
-
 ### `allUnconfirmed()`
 
 ```java
@@ -703,8 +641,6 @@ Get all unconfirmed transactions.
 
 `LinkedTreeMap<String, Object>`
 
----
-
 ### `showUnconfirmed()`
 
 ```java
@@ -715,15 +651,13 @@ Get an unconfirmed transaction by the given id.
 
 #### Parameters
 
-| Type   | Name     | Required | Description                |
-| ------ | -------- | -------- | -------------------------- |
-| String | id       | No       | Unconfirmed transaction ID |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | No | Unconfirmed transaction ID |
 
 #### Return Value
 
 `LinkedTreeMap<String, Object>`
-
----
 
 ### `search()`
 
@@ -735,15 +669,13 @@ Filter all transactions by the given parameters.
 
 #### Parameters
 
-| Type                 | Name       | Required | Description      |
-| -------------------- | ---------- | -------- | ---------------- |
-| Map<String, Object>  | parameters | Yes      | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Map | parameters | Yes | Query parameters |
 
 #### Return Value
 
 `LinkedTreeMap<String, Object>`
-
----
 
 ### `types()`
 
@@ -769,11 +701,9 @@ Votes class constructor.
 
 #### Parameters
 
-| Type   | Name    | Required | Description |
-| ------ | ------- | -------- | ----------- |
-| Client | client  | Yes      | Client      |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Client | client | Yes | Client |
 
 ### `all()`
 
@@ -787,8 +717,6 @@ Get all votes.
 
 `LinkedTreeMap<String, Object>`
 
----
-
 ### `show()`
 
 ```java
@@ -799,9 +727,9 @@ Get a vote by the given id.
 
 #### Parameters
 
-| Type   | Name           | Required | Description     |
-| ------ | -------------- | -------- | --------------- |
-| String | id             | Yes      | Vote identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Vote identifier |
 
 #### Return Value
 
@@ -819,11 +747,9 @@ Wallets class constructor.
 
 #### Parameters
 
-| Type   | Name    | Required | Description |
-| ------ | ------- | -------- | ----------- |
-| Client | client  | Yes      | Client      |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Client | client | Yes | Client |
 
 ### `all()`
 
@@ -837,8 +763,6 @@ Get all wallets.
 
 `LinkedTreeMap<String, Object>`
 
----
-
 ### `show()`
 
 ```java
@@ -849,15 +773,13 @@ Get a wallet by the given id.
 
 #### Parameters
 
-| Type   | Name           | Required | Description       |
-| ------ | -------------- | -------- | ----------------- |
-| String | id             | Yes      | Wallet identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Wallet identifier |
 
 #### Return Value
 
 `LinkedTreeMap<String, Object>`
-
----
 
 ### `transactions()`
 
@@ -869,15 +791,13 @@ Get all transactions for the given wallet.
 
 #### Parameters
 
-| Type   | Name  | Required | Description       |
-| ------ | ----- | -------- | ----------------- |
-| String | id    | Yes      | Wallet identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Wallet identifier |
 
 #### Return Value
 
 `LinkedTreeMap<String, Object>`
-
----
 
 ### `receivedTransactions()`
 
@@ -889,15 +809,13 @@ Get all transactions received by the given wallet.
 
 #### Parameters
 
-| Type   | Name  | Required | Description       |
-| ------ | ----- | -------- | ----------------- |
-| String | id    | Yes      | Wallet identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Wallet identifier |
 
 #### Return Value
 
 `LinkedTreeMap<String, Object>`
-
----
 
 ### `sentTransactions()`
 
@@ -909,15 +827,13 @@ Get all transactions sent by the given wallet.
 
 #### Parameters
 
-| Type   | Name  | Required | Description       |
-| ------ | ----- | -------- | ----------------- |
-| String | id    | Yes      | Wallet identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Wallet identifier |
 
 #### Return Value
 
 `LinkedTreeMap<String, Object>`
-
----
 
 ### `votes()`
 
@@ -929,15 +845,13 @@ Get all votes by the given wallet.
 
 #### Parameters
 
-| Type   | Name  | Required | Description       |
-| ------ | ----- | -------- | ----------------- |
-| String | id    | Yes      | Wallet identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Wallet identifier |
 
 #### Return Value
 
 `LinkedTreeMap<String, Object>`
-
----
 
 ### `top()`
 
@@ -951,8 +865,6 @@ Get all wallets sorted by balance in descending order.
 
 `LinkedTreeMap<String, Object>`
 
----
-
 ### `search()`
 
 ```java
@@ -963,10 +875,11 @@ Filter all wallets by the given parameters.
 
 #### Parameters
 
-| Type                 | Name       | Required | Description             |
-| -------------------- | ---------- | -------- | ----------------------- |
-| Map<String, Object>  | parameters | Yes      | Search query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Map | parameters | Yes | Search query parameters |
 
 #### Return Value
 
 `LinkedTreeMap<String, Object>`
+

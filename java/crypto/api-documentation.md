@@ -3,10 +3,11 @@ id: api-documentation
 title: API Documentation
 ---
 
+# API Documentation
+
 ## org.arkecosystem.crypto.configuration.Fee;
 
 ### `get()`
-
 
 ```java
 public static long get(Types type)
@@ -16,16 +17,13 @@ Get a fee for a given transaction type
 
 #### Parameters
 
-| Type   | Name | Required | Description                                     |
-| ------ | ---- | -------- | ----------------------------------------------- |
-| Types  | type | Yes      | Transaction type for which we wish to get a fee |
-
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Types | type | Yes | Transaction type for which we wish to get a fee |
 
 #### Return Value
 
 `long`
-
----
 
 ### `set()`
 
@@ -37,10 +35,10 @@ Set a fee
 
 #### Parameters
 
-| Type   | Name | Required | Description                                     |
-| ------ | ---- | -------- | ----------------------------------------------- |
-| Types  | type | Yes      | Transaction type for which we wish to set a fee |
-| long   | fee  | Yes      | Fee for a given transaction type                |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Types | type | Yes | Transaction type for which we wish to set a fee |
+| long | fee | Yes | Fee for a given transaction type |
 
 #### Return Value
 
@@ -58,15 +56,13 @@ Set what network you want to use in the crypto library
 
 #### Parameters
 
-| Type     | Name    | Required | Description              |
-| -------- | --------| -------- | ------------------------ |
-| INetwork | network | Yes      | Testnet, Devnet, Mainnet |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| INetwork | network | Yes | Testnet, Devnet, Mainnet |
 
 #### Return Value
 
 `void`
-
----
 
 ### `get()`
 
@@ -120,16 +116,14 @@ Derive the address from the given public key.
 
 #### Parameters
 
-| Type    | Name             | Required | Description            |
-| ------- | ---------------- | -------- | ---------------------- |
-| String  | publicKey        | Yes      | Public key             |
-| Integer | networkVersion   | Yes      | Version of the network |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | publicKey | Yes | Public key |
+| Integer | networkVersion | Yes | Version of the network |
 
 #### Return Value
 
 `String`
-
----
 
 ### `fromPublicKey()`
 
@@ -141,15 +135,13 @@ Derive the address from the given public key.
 
 #### Parameters
 
-| Type    | Name             | Required | Description            |
-| ------- | ---------------- | -------- | ---------------------- |
-| String  | publicKey        | Yes      | Public key             |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | publicKey | Yes | Public key |
 
 #### Return Value
 
 `String`
-
----
 
 ### `fromPrivateKey()`
 
@@ -161,16 +153,14 @@ Derive the address from the given private key.
 
 #### Parameters
 
-| Type    | Name             | Required | Description            |
-| ------- | ---------------- | -------- | ---------------------- |
-| ECKey   | privateKey       | Yes      | Private key            |
-| Integer | networkVersion   | No       | Version of the network |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ECKey | privateKey | Yes | Private key |
+| Integer | networkVersion | No | Version of the network |
 
 #### Return Value
 
 `String`
-
----
 
 ### `fromPrivateKey()`
 
@@ -182,15 +172,13 @@ Derive the address from the given private key.
 
 #### Parameters
 
-| Type    | Name             | Required | Description            |
-| ------- | ---------------- | -------- | ---------------------- |
-| ECKey   | privateKey       | Yes      | Private key            |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ECKey | privateKey | Yes | Private key |
 
 #### Return Value
 
 `String`
-
----
 
 ### `fromPassphrase()`
 
@@ -202,16 +190,14 @@ Derive the address from the given passphrase.
 
 #### Parameters
 
-| Type    | Name             | Required | Description            |
-| ------- | ---------------- | -------- | ---------------------- |
-| String  | passphrase       | Yes      | Passphrase             |
-| Integer | networkVersion   | No       | Version of the network |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | passphrase | Yes | Passphrase |
+| Integer | networkVersion | No | Version of the network |
 
 #### Return Value
 
 `String`
-
----
 
 ### `fromPassphrase()`
 
@@ -223,15 +209,13 @@ Derive the address from the given passphrase.
 
 #### Parameters
 
-| Type    | Name             | Required | Description            |
-| ------- | ---------------- | -------- | ---------------------- |
-| String  | passphrase       | Yes      | Passphrase             |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `String`
-
----
 
 ### `validate()`
 
@@ -243,16 +227,14 @@ Validate the given address.
 
 #### Parameters
 
-| Type    | Name             | Required | Description            |
-| ------- | ---------------- | -------- | ---------------------- |
-| String  | address          | Yes      | Address to validate    |
-| Integer | networkVersion   | Yes      | Version of the network |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | address | Yes | Address to validate |
+| Integer | networkVersion | Yes | Version of the network |
 
 #### Return Value
 
 `Boolean`
-
----
 
 ### `validate()`
 
@@ -264,9 +246,9 @@ Validate the given address.
 
 #### Parameters
 
-| Type    | Name             | Required | Description            |
-| ------- | ---------------- | -------- | ---------------------- |
-| String  | address          | Yes      | Address to validate    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | address | Yes | Address to validate |
 
 #### Return Value
 
@@ -284,15 +266,13 @@ Derive the private key for the given passphrase.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| String   | passphrase       | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `ECKey`
-
----
 
 ### `fromHex()`
 
@@ -304,9 +284,9 @@ Create a private key instance from a hex String.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| String   | privateKey       | Yes      | Hex string  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | privateKey | Yes | Hex string |
 
 #### Return Value
 
@@ -324,9 +304,9 @@ Derive the public from the given passphrase.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| String   | passphrase       | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | passphrase | Yes | Passphrase |
 
 #### Return Value
 
@@ -344,9 +324,9 @@ Derive the WIF from the given passphrase.
 
 #### Parameters
 
-| Type   | Name        | Required | Description |
-| ------ | ----------- | -------- | ----------- |
-| String | passphrase  | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | passphrase | Yes | Passphrase |
 
 #### Return Value
 
@@ -366,8 +346,6 @@ Get the epoch time of the start of the Network.
 
 `int`
 
----
-
 ### `wif()`
 
 ```java
@@ -379,8 +357,6 @@ Get the epoch time of the start of the Network.
 #### Return Value
 
 `int`
-
----
 
 ### `epoch()`
 
@@ -408,8 +384,6 @@ Get the epoch time of the start of the Network.
 
 `int`
 
----
-
 ### `wif()`
 
 ```java
@@ -421,8 +395,6 @@ Get the epoch time of the start of the Network.
 #### Return Value
 
 `int`
-
----
 
 ### `epoch()`
 
@@ -450,8 +422,6 @@ Get the epoch time of the start of the Network.
 
 `int`
 
----
-
 ### `wif()`
 
 ```java
@@ -463,8 +433,6 @@ Get the epoch time of the start of the Network.
 #### Return Value
 
 `int`
-
----
 
 ### `epoch()`
 
@@ -488,8 +456,6 @@ public AbstractTransaction()
 
 AbstractTransaction class constructor.
 
----
-
 ### `sign()`
 
 ```java
@@ -500,15 +466,13 @@ Sign the transaction using the given passphrase.
 
 #### Parameters
 
-| Type     | Name             | Required | Description                                                     |
-| -------- | ---------------- | -------- | --------------------------------------------------------------- |
-| String   | passphrase       | Yes      | Passphrase associated with the account sending this transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | passphrase | Yes | Passphrase associated with the account sending this transaction |
 
 #### Return Value
 
 `AbstractTransaction`
-
----
 
 ### `secondSign()`
 
@@ -520,15 +484,13 @@ Sign the transaction using the given second passphrase
 
 #### Parameters
 
-| Type     | Name             | Required | Description                                                            |
-| -------- | ---------------- | -------- | ---------------------------------------------------------------------- |
-| String   | passphrase       | Yes      | Second passphrase associated with the account sending this transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | passphrase | Yes | Second passphrase associated with the account sending this transaction |
 
 #### Return Value
 
 `AbstractTransaction`
-
----
 
 ### `getType()`
 
@@ -552,8 +514,6 @@ Get the type of the transaction.
 
 `Types`
 
----
-
 ### `username()`
 
 ```java
@@ -564,9 +524,9 @@ Set the username to assign.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| String   | username         | Yes      | Username    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | username | Yes | Username |
 
 #### Return Value
 
@@ -584,15 +544,13 @@ Set the minimum required signatures.
 
 #### Parameters
 
-| Type     | Name | Required | Description                 |
-| -------- | ---- | -------- | --------------------------- |
-| int      | min  | Yes      | Minimum required signatures |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | min | Yes | Minimum required signatures |
 
 #### Return Value
 
 `MultiSignatureRegistration`
-
----
 
 ### `min()`
 
@@ -604,15 +562,13 @@ Set the minimum required signatures.
 
 #### Parameters
 
-| Type     | Name | Required | Description                 |
-| -------- | ---- | -------- | --------------------------- |
-| int      | min  | Yes      | Minimum required signatures |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | min | Yes | Minimum required signatures |
 
 #### Return Value
 
 `MultiSignatureRegistration`
-
----
 
 ### `lifetime()`
 
@@ -624,15 +580,13 @@ Set the transaction lifetime.
 
 #### Parameters
 
-| Type     | Name     | Required | Description          |
-| -------- | -------- | -------- | -------------------- |
-| int      | lifetime | Yes      | Transaction lifetime |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | lifetime | Yes | Transaction lifetime |
 
 #### Return Value
 
 `MultiSignatureRegistration`
-
----
 
 ### `lifetime()`
 
@@ -644,15 +598,13 @@ Set the transaction lifetime.
 
 #### Parameters
 
-| Type     | Name     | Required | Description          |
-| -------- | -------- | -------- | -------------------- |
-| byte     | lifetime | Yes      | Transaction lifetime |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| byte | lifetime | Yes | Transaction lifetime |
 
 #### Return Value
 
 `MultiSignatureRegistration`
-
----
 
 ### `keysGroup()`
 
@@ -664,15 +616,13 @@ Set the keysgroup of signatures.
 
 #### Parameters
 
-| Type         | Name      | Required | Description           |
-| ------------ | --------- | -------- | --------------------- |
-| List<String> | keysgroup | Yes      | Transaction keysgroup |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| List | keysgroup | Yes | Transaction keysgroup |
 
 #### Return Value
 
 `MultiSignatureRegistration`
-
----
 
 ### `getType()`
 
@@ -698,15 +648,13 @@ Set the signature asset to register the second passphrase.
 
 #### Parameters
 
-| Type     | Name              | Required | Description |
-| -------- | ----------------- | -------- | ----------- |
-| String   | signature         | Yes      | Signature   |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | signature | Yes | Signature |
 
 #### Return Value
 
 `SecondSignatureRegistration`
-
----
 
 ### `getType()`
 
@@ -732,15 +680,13 @@ Set the recipient of the transfer.
 
 #### Parameters
 
-| Type     | Name             | Required | Description          |
-| -------- | ---------------- | -------- | -------------------- |
-| String   | recipientId      | Yes      | Recipient identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | recipientId | Yes | Recipient identifier |
 
 #### Return Value
 
 `Transfer`
-
----
 
 ### `amount()`
 
@@ -752,15 +698,13 @@ Set the amount to transfer.
 
 #### Parameters
 
-| Type     | Name             | Required | Description        |
-| -------- | ---------------- | -------- | ------------------ |
-| int      | amount           | Yes      | Transaction amount |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | amount | Yes | Transaction amount |
 
 #### Return Value
 
 `Transfer`
-
----
 
 ### `amount()`
 
@@ -772,15 +716,13 @@ Set the amount to transfer.
 
 #### Parameters
 
-| Type     | Name             | Required | Description        |
-| -------- | ---------------- | -------- | ------------------ |
-| long     | amount           | Yes      | Transaction amount |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| long | amount | Yes | Transaction amount |
 
 #### Return Value
 
 `Transfer`
-
----
 
 ### `vendorField()`
 
@@ -792,15 +734,13 @@ Set the vendor field / smartbridge.
 
 #### Parameters
 
-| Type     | Name             | Required | Description             |
-| -------- | ---------------- | -------- | ----------------------- |
-| String   | vendorField      | Yes      | Transaction vendorfield |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | vendorField | Yes | Transaction vendorfield |
 
 #### Return Value
 
 `Transfer`
-
----
 
 ### `getType()`
 
@@ -826,15 +766,13 @@ Set the votes to cast.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| List     | votes            | Yes      | Votes       |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| List | votes | Yes | Votes |
 
 #### Return Value
 
 `Vote`
-
----
 
 ### `sign()`
 
@@ -846,15 +784,13 @@ Sign the transaction using the given passphrase.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| String   | passphrase       | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `Vote`
-
----
 
 ### `getType()`
 
@@ -880,11 +816,11 @@ Create a new deserializer instance
 
 #### Parameters
 
-| Type        | Name             | Required | Description |
-| ----------- | ---------------- | -------- | ----------- |
-| String      | serialized       | Yes      | Serialized  |
-| ByteBuffer  | buffer           | Yes      | Buffer      |
-| Transaction | transaction      | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | serialized | Yes | Serialized |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
@@ -902,13 +838,11 @@ Create a new DelegateRegistration instance.
 
 #### Parameters
 
-| Type        | Name             | Required | Description |
-| ----------- | ---------------- | -------- | ----------- |
-| String      | serialized       | Yes      | Serialized  |
-| ByteBuffer  | buffer           | Yes      | Buffer      |
-| Transaction | transaction      | Yes      | Transaction |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | serialized | Yes | Serialized |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
 
 ### `deserialize()`
 
@@ -920,9 +854,9 @@ Handle the deserialization of "delegate registration" data.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| int      | assetOffset      | Yes      | Offset      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | assetOffset | Yes | Offset |
 
 #### Return Value
 
@@ -940,13 +874,11 @@ Create a new MultiSignatureRegistration instance.
 
 #### Parameters
 
-| Type        | Name             | Required | Description |
-| ----------- | ---------------- | -------- | ----------- |
-| String      | serialized       | Yes      | Serialized  |
-| ByteBuffer  | buffer           | Yes      | Buffer      |
-| Transaction | transaction      | Yes      | Transaction |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | serialized | Yes | Serialized |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
 
 ### `deserialize()`
 
@@ -958,9 +890,9 @@ Handle the deserialization of "multi signature registration" data
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| int      | assetOffset      | Yes      | Offset      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | assetOffset | Yes | Offset |
 
 #### Return Value
 
@@ -978,13 +910,11 @@ Create a new SecondSignatureRegistration instance.
 
 #### Parameters
 
-| Type        | Name             | Required | Description |
-| ----------- | ---------------- | -------- | ----------- |
-| String      | serialized       | Yes      | Serialized  |
-| ByteBuffer  | buffer           | Yes      | Buffer      |
-| Transaction | transaction      | Yes      | Transaction |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | serialized | Yes | Serialized |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
 
 ### `deserialize()`
 
@@ -996,9 +926,9 @@ Handle the deserialization of "second signature" data.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| int      | assetOffset      | Yes      | Offset      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | assetOffset | Yes | Offset |
 
 #### Return Value
 
@@ -1016,13 +946,11 @@ Create a new Transfer instance.
 
 #### Parameters
 
-| Type        | Name             | Required | Description |
-| ----------- | ---------------- | -------- | ----------- |
-| String      | serialized       | Yes      | Serialized  |
-| ByteBuffer  | buffer           | Yes      | Buffer      |
-| Transaction | transaction      | Yes      | Transaction |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | serialized | Yes | Serialized |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
 
 ### `deserialize()`
 
@@ -1034,9 +962,9 @@ Handle the deserialization of "transfer" data.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| int      | assetOffset      | Yes      | Offsets      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | assetOffset | Yes | Offsets |
 
 #### Return Value
 
@@ -1054,13 +982,11 @@ Create a new Vote instance.
 
 #### Parameters
 
-| Type        | Name             | Required | Description |
-| ----------- | ---------------- | -------- | ----------- |
-| String      | serialized       | Yes      | Serialized  |
-| ByteBuffer  | buffer           | Yes      | Buffer      |
-| Transaction | transaction      | Yes      | Transaction |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | serialized | Yes | Serialized |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
 
 ### `deserialize()`
 
@@ -1072,9 +998,9 @@ Handle the deserialization of "vote" data.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| int      | assetOffset      | Yes      | Offset      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | assetOffset | Yes | Offset |
 
 #### Return Value
 
@@ -1092,10 +1018,10 @@ Create a new AbstractSerializer instance.
 
 #### Parameters
 
-| Type        | Name        | Required | Description |
-| ----------- | ----------- | -------- | ----------- |
-| ByteBuffer  | buffer      | Yes      | Buffer      |
-| Transaction | transaction | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
 
 ## org.arkecosystem.crypto.transactions.serializers.DelegateRegistration;
 
@@ -1109,12 +1035,10 @@ Create a new DelegateRegistration instance.
 
 #### Parameters
 
-| Type        | Name        | Required | Description |
-| ----------- | ----------- | -------- | ----------- |
-| ByteBuffer  | buffer      | Yes      | Buffer      |
-| Transaction | transaction | Yes      | Transaction |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
 
 ### `serialize`
 
@@ -1140,12 +1064,10 @@ Create a new MultiSignatureRegistration instance.
 
 #### Parameters
 
-| Type        | Name        | Required | Description |
-| ----------- | ----------- | -------- | ----------- |
-| ByteBuffer  | buffer      | Yes      | Buffer      |
-| Transaction | transaction | Yes      | Transaction |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
 
 ### `serialize`
 
@@ -1171,12 +1093,10 @@ Create a new SecondSignatureRegistration instance.
 
 #### Parameters
 
-| Type        | Name        | Required | Description |
-| ----------- | ----------- | -------- | ----------- |
-| ByteBuffer  | buffer      | Yes      | Buffer      |
-| Transaction | transaction | Yes      | Transaction |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
 
 ### `serialize`
 
@@ -1202,12 +1122,10 @@ Create a new Transfer instance.
 
 #### Parameters
 
-| Type        | Name        | Required | Description |
-| ----------- | ----------- | -------- | ----------- |
-| ByteBuffer  | buffer      | Yes      | Buffer      |
-| Transaction | transaction | Yes      | Transaction |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
 
 ### `serialize`
 
@@ -1233,12 +1151,10 @@ Create a new Vote instance.
 
 #### Parameters
 
-| Type        | Name        | Required | Description |
-| ----------- | ----------- | -------- | ----------- |
-| ByteBuffer  | buffer      | Yes      | Buffer      |
-| Transaction | transaction | Yes      | Transaction |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
 
 ### `serialize`
 
@@ -1264,15 +1180,13 @@ Perform AIP11 compliant deserialization.
 
 #### Parameters
 
-| Type    | Name       | Required | Description |
-| ------- | ---------- | -------- | ----------- |
-| String  | serialized | Yes      | Serialized  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | serialized | Yes | Serialized |
 
 #### Return Value
 
 `Transaction`
-
----
 
 ## org.arkecosystem.crypto.transactions.Serializer;
 
@@ -1286,15 +1200,13 @@ Perform AIP11 compliant serialization.
 
 #### Parameters
 
-| Type        | Name        | Required | Description |
-| ----------- | ----------- | -------- | ----------- |
-| Transaction | transaction | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `byte[]`
-
----
 
 ## org.arkecosystem.crypto.transactions.Transaction;
 
@@ -1310,8 +1222,6 @@ Convert the byte representation to a unique identifier.
 
 `String`
 
----
-
 ### `sign()`
 
 ```java
@@ -1322,15 +1232,13 @@ Sign the transaction using the given passphrase.
 
 #### Parameters
 
-| Type   | Name        | Required | Description |
-| ------ | ----------- | -------- | ----------- |
-| String | passphrase  | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `Transaction`
-
----
 
 ### `secondSign()`
 
@@ -1342,15 +1250,13 @@ Sign the transaction using the given second passphrase.
 
 #### Parameters
 
-| Type   | Name        | Required | Description        |
-| ------ | ----------- | -------- | ------------------ |
-| String | passphrase  | Yes      | Second passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | passphrase | Yes | Second passphrase |
 
 #### Return Value
 
 `Transaction`
-
----
 
 ### `verify()`
 
@@ -1364,8 +1270,6 @@ Verify the transaction.
 
 `boolean`
 
----
-
 ### `secondVerify()`
 
 ```java
@@ -1376,15 +1280,13 @@ Verify the transaction with a second public key.
 
 #### Parameters
 
-| Type   | Name            | Required | Description       |
-| ------ | --------------- | -------- | ----------------- |
-| String | secondPublicKey | Yes      | Second public key |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | secondPublicKey | Yes | Second public key |
 
 #### Return Value
 
 `boolean`
-
----
 
 ### `parseSignatures()`
 
@@ -1396,16 +1298,14 @@ Parse the signature, second signature and multi signatures.
 
 #### Parameters
 
-| Type   | Name         | Required | Description |
-| ------ | ------------ | -------- | ----------- |
-| String | serialized   | Yes      | Serialized  |
-| int    | startOffset  | Yes      | Offset      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | serialized | Yes | Serialized |
+| int | startOffset | Yes | Offset |
 
 #### Return Value
 
 `Transaction`
-
----
 
 ### `toHashMap()`
 
@@ -1419,8 +1319,6 @@ Convert the transaction to its hashmap representation.
 
 `HashMap`
 
----
-
 ### `toJson()`
 
 ```java
@@ -1432,8 +1330,6 @@ Convert the transaction to its JSON representation.
 #### Return Value
 
 `String`
-
----
 
 ### `serialize()`
 
@@ -1447,8 +1343,6 @@ Perform AIP11 compliant serialization
 
 `String`
 
----
-
 ### `deserialize()`
 
 ```java
@@ -1459,9 +1353,9 @@ Perform AIP11 compliant deserialization.
 
 #### Parameters
 
-| Type   | Name       | Required | Description |
-| ------ | ---------- | -------- | ----------- |
-| String | serialized | Yes      | Serialized  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | serialized | Yes | Serialized |
 
 #### Return Value
 
@@ -1479,17 +1373,15 @@ Create a new message instance
 
 #### Parameters
 
-| Type   | Name       | Required | Description |
-| ------ | ---------- | -------- | ----------- |
-| String | publickey  | Yes      | Public key  |
-| String | signature  | Yes      | Signature   |
-| String | message    | Yes      | Message     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | publickey | Yes | Public key |
+| String | signature | Yes | Signature |
+| String | message | Yes | Message |
 
 #### Return Value
 
 `Message`
-
----
 
 ### `sign()`
 
@@ -1501,16 +1393,14 @@ Sign a message using the given passphrase.
 
 #### Parameters
 
-| Type   | Name       | Required | Description |
-| ------ | ---------- | -------- | ----------- |
-| String | message    | Yes      | Message     |
-| String | passphrase | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | message | Yes | Message |
+| String | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `Message`
-
----
 
 ### `verify()`
 
@@ -1524,8 +1414,6 @@ Verify the message contents
 
 `boolean`
 
----
-
 ### `toMap()`
 
 ```java
@@ -1537,8 +1425,6 @@ Convert the message to its map representation
 #### Return Value
 
 `array`
-
----
 
 ### `toJson()`
 
@@ -1552,8 +1438,6 @@ Convert the message to its JSON representation
 
 `String`
 
----
-
 ### `getMessage()`
 
 ```java
@@ -1566,8 +1450,6 @@ Get the message content from the message object.
 
 `String`
 
----
-
 ### `getPublickey()`
 
 ```java
@@ -1579,8 +1461,6 @@ Get the public key from the message.
 #### Return Value
 
 `String`
-
----
 
 ### `getSignature()`
 
@@ -1608,8 +1488,6 @@ Get the time diff between now and network start.
 
 `int`
 
----
-
 ### `epoch()`
 
 ```java
@@ -1621,3 +1499,4 @@ Get the network start epoch.
 #### Return Value
 
 `long`
+

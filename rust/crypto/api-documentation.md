@@ -3,10 +3,11 @@ id: api-documentation
 title: API Documentation
 ---
 
+# API Documentation
+
 ## configuration::fees
 
 ### `get()`
-
 
 ```rust
 pub fn get(transaction_type: TransactionType)
@@ -16,16 +17,13 @@ Get a fee for a given transaction type
 
 #### Parameters
 
-| Type            | Name             | Required | Description                                     |
-| --------------- | ---------------- | -------- | ----------------------------------------------- |
-| TransactionType | transaction_type | Yes      | Transaction type for which we wish to get a fee |
-
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| TransactionType | transaction\_type | Yes | Transaction type for which we wish to get a fee |
 
 #### Return Value
 
 `u64`
-
----
 
 ### `set()`
 
@@ -37,10 +35,10 @@ Set a fee
 
 #### Parameters
 
-| Type            | Name             | Required | Description                                     |
-| --------------- | ---------------- | -------- | ----------------------------------------------- |
-| TransactionType | transaction_type | Yes      | Transaction type for which we wish to set a fee |
-| u64             | value            | Yes      | Fee for a given transaction type                |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| TransactionType | transaction\_type | Yes | Transaction type for which we wish to set a fee |
+| u64 | value | Yes | Fee for a given transaction type |
 
 #### Return Value
 
@@ -58,15 +56,13 @@ Set what network you want to use in the crypto library.
 
 #### Parameters
 
-| Type    | Name    | Required | Description              |
-| ------- | --------| -------- | ------------------------ |
-| Network | network | Yes      | Testnet, Devnet, Mainnet |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Network | network | Yes | Testnet, Devnet, Mainnet |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `get()`
 
@@ -94,8 +90,6 @@ Get the epoch time of the Network.
 
 `&'static str`
 
----
-
 ### `version()`
 
 ```rust
@@ -107,8 +101,6 @@ Get the version of the Network.
 #### Return Value
 
 `u8`
-
----
 
 ### `epoch()`
 
@@ -122,7 +114,7 @@ Get the epoch time of the Network.
 
 `u8`
 
-## enums::transaction_types::TransactionType
+## enums::transaction\_types::TransactionType
 
 ### `fee()`
 
@@ -148,16 +140,14 @@ Derive the address from the given public key.
 
 #### Parameters
 
-| Type            | Name             | Required | Description            |
-| --------------- | ---------------- | -------- | ---------------------- |
-| &PublicKey      | public_key       | Yes      | Public key             |
-| Option<u8>      | network_version  | No       | Version of the network |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &PublicKey | public\_key | Yes | Public key |
+| Option | network\_version | No | Version of the network |
 
 #### Return Value
 
 `String`
-
----
 
 ### `from_private_key()`
 
@@ -169,16 +159,14 @@ Derive the address from the given private key.
 
 #### Parameters
 
-| Type            | Name             | Required | Description            |
-| --------------- | ---------------- | -------- | ---------------------- |
-| &PrivateKey     | private_key      | Yes      | Private key            |
-| Option<u8>      | network_version  | No       | Version of the network |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &PrivateKey | private\_key | Yes | Private key |
+| Option | network\_version | No | Version of the network |
 
 #### Return Value
 
 `String`
-
----
 
 ### `from_passphrase()`
 
@@ -190,16 +178,14 @@ Derive the address from the given passphrase.
 
 #### Parameters
 
-| Type       | Name             | Required | Description            |
-| ---------- | ---------------- | -------- | ---------------------- |
-| &str       | passphrase       | Yes      | Passphrase             |
-| Option<u8> | network          | No       | Version of the network |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | passphrase | Yes | Passphrase |
+| Option | network | No | Version of the network |
 
 #### Return Value
 
 `Result<String, Error>`
-
----
 
 ### `validate()`
 
@@ -211,16 +197,16 @@ Validate the given address.
 
 #### Parameters
 
-| Type       | Name             | Required | Description            |
-| ---------- | ---------------- | -------- | ---------------------- |
-| &str       | address          | Yes      | Address                |
-| Option<u8> | network          | No       | Version of the network |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | address | Yes | Address |
+| Option | network | No | Version of the network |
 
 #### Return Value
 
 `bool`
 
-## identities::private_key
+## identities::private\_key
 
 ### `from_passphrase()`
 
@@ -232,15 +218,13 @@ Derive the private key for the given passphrase.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| &str     | passphrase       | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `Result<PrivateKey, Error>`
-
----
 
 ### `from_hex()`
 
@@ -252,15 +236,13 @@ Create a private key instance from a hex string.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| &str     | private_key      | Yes      | Private key |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | private\_key | Yes | Private key |
 
 #### Return Value
 
 `Result<PrivateKey, Error>`
-
----
 
 ### `sign()`
 
@@ -272,16 +254,16 @@ Sign the private key.
 
 #### Parameters
 
-| Type            | Name       | Required | Description |
-| --------------- | ---------- | -------- | ----------- |
-| &[u8]           | bytes      | Yes      | ...         |
-| &str            | passphrase | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &\[u8\] | bytes | Yes | ... |
+| &str | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `String`
 
-## identities::public_key
+## identities::public\_key
 
 ### `from_passphrase()`
 
@@ -293,15 +275,13 @@ Derive the public from the given passphrase.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| &str     | passphrase       | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `Result<PublicKey, Error>`
-
----
 
 ### `from_hex()`
 
@@ -313,15 +293,13 @@ Create a public key instance from a hex string.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| &str     | public_key       | Yes      | Public key  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | public\_key | Yes | Public key |
 
 #### Return Value
 
 `Result<PublicKey, Error>`
-
----
 
 ### `from_private_key()`
 
@@ -333,9 +311,9 @@ Create a public key instance from a private key.
 
 #### Parameters
 
-| Type                     | Name             | Required | Description |
-| ------------------------ | ---------------- | -------- | ----------- |
-| &private_key::PrivateKey | private_key      | Yes      | Private key |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &private\_key::PrivateKey | private\_key | Yes | Private key |
 
 #### Return Value
 
@@ -353,9 +331,9 @@ Derive the WIF from the given passphrase.
 
 #### Parameters
 
-| Type  | Name             | Required | Description |
-| ----- | ---------------- | -------- | ----------- |
-| &str  | passphrase       | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | passphrase | Yes | Passphrase |
 
 #### Return Value
 
@@ -379,19 +357,17 @@ Builds a transaction for a transfer.
 
 #### Parameters
 
-| Type    | Name              | Required | Description                |
-| ------- | ----------------- | -------- | -------------------------- |
-| &str    | passphrase        | Yes      | Passphrase                 |
-| &str    | second_passphrase | No       | Second passphrase          |
-| &str    | recipient_id      | Yes      | Recipient identifier       |
-| u64     | amount            | Yes      | Transaction amount         |
-| &str    | vendor_field      | Yes      | Transaction vendorfield    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | passphrase | Yes | Passphrase |
+| &str | second\_passphrase | No | Second passphrase |
+| &str | recipient\_id | Yes | Recipient identifier |
+| u64 | amount | Yes | Transaction amount |
+| &str | vendor\_field | Yes | Transaction vendorfield |
 
 #### Return Value
 
 `Result<Transaction, failure::Error>`
-
----
 
 ### `build_vote()`
 
@@ -407,18 +383,15 @@ Builds a transaction for a vote registration.
 
 #### Parameters
 
-| Type            | Name              | Required | Description                |
-| --------------- | ----------------- | -------- | -------------------------- |
-| &str            | passphrase        | Yes      | Passphrase                 |
-| Option<&str>    | second_passphrase | No       | Second passphrase          |
-| Vec<String>     | votes             | Yes      | Votes                      |
-
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | passphrase | Yes | Passphrase |
+| Option&lt;&str&gt; | second\_passphrase | No | Second passphrase |
+| Vec | votes | Yes | Votes |
 
 #### Return Value
 
 `Result<Transaction, failure::Error>`
-
----
 
 ### `build_second_signature_registration()`
 
@@ -433,16 +406,14 @@ Builds a transaction for a second signature registration.
 
 #### Parameters
 
-| Type            | Name              | Required | Description                |
-| --------------- | ----------------- | -------- | -------------------------- |
-| &str            | passphrase        | Yes      | Passphrase                 |
-| Option<&str>    | second_passphrase | No       | Second passphrase          |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | passphrase | Yes | Passphrase |
+| Option&lt;&str&gt; | second\_passphrase | No | Second passphrase |
 
 #### Return Value
 
 `Result<Transaction, failure::Error>`
-
----
 
 ### `build_delegate_registration()`
 
@@ -458,17 +429,15 @@ Builds a transaction for a delegate registration.
 
 #### Parameters
 
-| Type          | Name              | Required | Description                |
-| ------------- | ----------------- | -------- | -------------------------- |
-| &str          | passphrase        | Yes      | Passphrase                 |
-| Option<&str>  | second_passphrase | No       | Second passphrase          |
-| &str          | username          | Yes      | Delegate username          |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | passphrase | Yes | Passphrase |
+| Option&lt;&str&gt; | second\_passphrase | No | Second passphrase |
+| &str | username | Yes | Delegate username |
 
 #### Return Value
 
 `Result<Transaction, failure::Error>`
-
----
 
 ### `build_multi_signature_registration()`
 
@@ -486,13 +455,13 @@ Builds a transaction for a multi signature registration.
 
 #### Parameters
 
-| Type         | Name              | Required | Description                 |
-| ------------ | ----------------- | -------- | --------------------------- |
-| &str         | passphrase        | Yes      | Passphrase                  |
-| Option<&str> | second_passphrase | No       | Second passphrase           |
-| u8           | min               | Yes      | Minimum required signatures |
-| u8           | lifetime          | Yes      | Transaction lifetime        |
-| Vec<String>  | keysgroup         | Yes      | Transaction keysgroup       |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | passphrase | Yes | Passphrase |
+| Option&lt;&str&gt; | second\_passphrase | No | Second passphrase |
+| u8 | min | Yes | Minimum required signatures |
+| u8 | lifetime | Yes | Transaction lifetime |
+| Vec | keysgroup | Yes | Transaction keysgroup |
 
 #### Return Value
 
@@ -510,13 +479,13 @@ Handle the deserialization of data.
 
 #### Parameters
 
-| Type | Name       | Required | Description      |
-| ---- | ---------- | -------- | ---------------- |
-| &str | serialized | Yes      | Serialized       |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | serialized | Yes | Serialized |
 
 #### Return Value
 
-`Transaction
+\`Transaction
 
 ## transactions::serializer
 
@@ -530,9 +499,9 @@ Handle the serialization of data.
 
 #### Parameters
 
-| Type         | Name        | Required | Description      |
-| ------------ | ----------- | -------- | ---------------- |
-| &Transaction | transaction | Yes      | Transaction      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
@@ -552,8 +521,6 @@ Convert the byte representation to a unique identifier.
 
 `String`
 
----
-
 ### `sign()`
 
 ```rust
@@ -564,16 +531,14 @@ Sign the transaction using the given passphrase.
 
 #### Parameters
 
-| Type   | Name       | Required  | Description        |
-| ------ | ---------- | --------- | ------------------ |
-| &mut   | self       | Yes       | ...                |
-| &str   | passphrase | Yes       | Passphrase         |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &mut | self | Yes | ... |
+| &str | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `&Self`
-
----
 
 ### `second_sign()`
 
@@ -585,16 +550,14 @@ Sign the transaction using the given second passphrase.
 
 #### Parameters
 
-| Type   | Name       | Required  | Description        |
-| ------ | ---------- | --------- | ------------------ |
-| &mut   | self       | Yes       | ...                |
-| &str   | passphrase | Yes       | Second passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &mut | self | Yes | ... |
+| &str | passphrase | Yes | Second passphrase |
 
 #### Return Value
 
 `&Self`
-
----
 
 ### `verify()`
 
@@ -608,8 +571,6 @@ Verify the transaction.
 
 `bool`
 
----
-
 ### `second_verify()`
 
 ```rust
@@ -620,15 +581,13 @@ Verify the transaction with a second public key.
 
 #### Parameters
 
-| Type   | Name              | Required | Description       |
-| ------ | ----------------- | -------- | ----------------- |
-| string | sender_public_key | Yes      | Second public key |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | sender\_public\_key | Yes | Second public key |
 
 #### Return Value
 
 `bool`
-
----
 
 ### `to_bytes()`
 
@@ -640,16 +599,14 @@ Convert the transaction to its byte representation.
 
 #### Parameters
 
-| Type   | Name                  | Required | Description           |
-| ------ | --------------------- | -------- | --------------------- |
-| bool   | skip_signature        | Yes      | Skip first signature  |
-| bool   | skip_second_signature | Yes      | Skip second signature |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| bool | skip\_signature | Yes | Skip first signature |
+| bool | skip\_second\_signature | Yes | Skip second signature |
 
 #### Return Value
 
 `Vec<u8>`
-
----
 
 ### `to_params()`
 
@@ -662,8 +619,6 @@ Convert the transaction to its params representation.
 #### Return Value
 
 `Result<serde_json::Value, serde_json::Error>`
-
----
 
 ### `to_json()`
 
@@ -689,17 +644,15 @@ Instantiate new Message.
 
 #### Parameters
 
-| Type | Name       | Required | Description |
-| ---- |----------- | -------- | ----------- |
-| &str | public_key | Yes      | Public key  |
-| &str | signature  | Yes      | Signature   |
-| &str | message    | Yes      | Message     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | public\_key | Yes | Public key |
+| &str | signature | Yes | Signature |
+| &str | message | Yes | Message |
 
 #### Return Value
 
 `Message`
-
----
 
 ### `sign()`
 
@@ -711,16 +664,14 @@ Sign a message using the given passphrase.
 
 #### Parameters
 
-| Type | Name       | Required | Description |
-| ---- |----------- | -------- | ----------- |
-| &str | message    | Yes      | Message     |
-| &str | passphrase | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | message | Yes | Message |
+| &str | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `Message`
-
----
 
 ### `verify()`
 
@@ -734,8 +685,6 @@ Verify the message contents
 
 `bool`
 
----
-
 ### `to_json()`
 
 ```rust
@@ -747,8 +696,6 @@ Convert the message to its JSON representation
 #### Return Value
 
 `Result<String, serde_json::Error>`
-
----
 
 ### `to_map()`
 
@@ -774,15 +721,13 @@ Convert the given string from its hex representation.
 
 #### Parameters
 
-| Type | Name   | Required | Description |
-| ---- |------- | -------- | ----------- |
-| &str | string | Yes      | String      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | string | Yes | String |
 
 #### Return Value
 
 `Result<String, failure::Error>`
-
----
 
 ### `str_to_hex()`
 
@@ -794,9 +739,9 @@ Convert the given string to its hex representation.
 
 #### Parameters
 
-| Type | Name   | Required | Description |
-| ---- |------- | -------- | ----------- |
-| &str | string | Yes      | String      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | string | Yes | String |
 
 #### Return Value
 
@@ -816,8 +761,6 @@ Get the time diff between now and network start.
 
 `u32`
 
----
-
 ### `get_epoch()`
 
 ```rust
@@ -829,3 +772,4 @@ Get the network start epoch.
 #### Return Value
 
 `u32`
+

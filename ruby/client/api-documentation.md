@@ -3,6 +3,8 @@ id: api-documentation
 title: API Documentation
 ---
 
+# API Documentation
+
 ## ArkEcosystem.Client.API.Base
 
 ### `initialize()`
@@ -15,9 +17,9 @@ Create a new resource instance.
 
 #### Parameters
 
-| Type        | Name       | Required | Description |
-| ----------- | ---------- | -------- | ----------- |
-| [Object]    | client     | Yes      | Client      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[Object\] | client | Yes | Client |
 
 #### Return Value
 
@@ -35,16 +37,14 @@ Create a new connection instance.
 
 #### Parameters
 
-| Type   | Name       | Required | Description   |
-| ------ | ---------- | -------- | ------------- |
-| [Hash] | config     | Yes      | Configuration |
-| Client | client     | No       | Client        |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[Hash\] | config | Yes | Configuration |
+| Client | client | No | Client |
 
 #### Return Value
 
 `[ArkEcosystem::Client::Connection]`
-
----
 
 ### `blocks()`
 
@@ -58,8 +58,6 @@ Return the Blocks API resource.
 
 `[Object]`
 
----
-
 ### `delegates()`
 
 ```ruby
@@ -71,8 +69,6 @@ Return the Delegates API resource.
 #### Return Value
 
 `[Object]`
-
----
 
 ### `node()`
 
@@ -86,8 +82,6 @@ Return the Node API resource.
 
 `[Object]`
 
----
-
 ### `peers()`
 
 ```ruby
@@ -99,8 +93,6 @@ Return the Peers API resource.
 #### Return Value
 
 `[Object]`
-
----
 
 ### `transactions()`
 
@@ -114,8 +106,6 @@ Return the Transactions API resource.
 
 `[Object]`
 
----
-
 ### `votes()`
 
 ```ruby
@@ -127,8 +117,6 @@ Return the Votes API resource.
 #### Return Value
 
 `[Object]`
-
----
 
 ### `wallets()`
 
@@ -156,8 +144,6 @@ Create a new client instance.
 
 `[Faraday::Response]`
 
----
-
 ### `connect()`
 
 ```ruby
@@ -168,16 +154,14 @@ Connect to the given connection.
 
 #### Parameters
 
-| Type                               | Name       | Required | Description         |
-| ---------------------------------- | ---------- | -------- | ------------------- |
-| [ArkEcosystem::Client::Connection] | connection | Yes      | Connection instance |
-| [String]                           | name       | No       | Connection name     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[ArkEcosystem::Client::Connection\] | connection | Yes | Connection instance |
+| \[String\] | name | No | Connection name |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `disconnect()`
 
@@ -189,15 +173,13 @@ Disconnect from the given connection.
 
 #### Parameters
 
-| Type     | Name       | Required | Description     |
-| -------- | ---------- | -------- | --------------- |
-| [String] | name       | Yes      | Connection name |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[String\] | name | Yes | Connection name |
 
 #### Return Value
 
 `[nil]`
-
----
 
 ### `connection()`
 
@@ -209,9 +191,9 @@ Get a connection instance.
 
 #### Parameters
 
-| Type     | Name       | Required | Description     |
-| -------- | ---------- | -------- | --------------- |
-| [String] | name       | Yes      | Connection name |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[String\] | name | Yes | Connection name |
 
 #### Return Value
 
@@ -229,16 +211,13 @@ Get all blocks.
 
 #### Parameters
 
-| Type      | Name       | Required | Description      |
-| --------- | ---------- | -------- | ---------------- |
-| [Hash]    | parameters | No       | Query parameters |
-
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[Hash\] | parameters | No | Query parameters |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `show()`
 
@@ -250,15 +229,13 @@ Get a block by the given id.
 
 #### Parameters
 
-| Type     | Name       | Required | Description |
-| -------- | ---------- | -------- | ----------- |
-| [String] | id         | Yes      | Block ID    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[String\] | id | Yes | Block ID |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `transactions()`
 
@@ -270,16 +247,14 @@ Get all transactions by the given block.
 
 #### Parameters
 
-| Type     | Name       | Required | Description      |
-| -------- | ---------- | -------- | ---------------- |
-| [String] | id         | Yes      | Block ID         |
-| [Hash]   | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[String\] | id | Yes | Block ID |
+| \[Hash\] | parameters | No | Query parameters |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `search()`
 
@@ -291,9 +266,9 @@ Filter all blocks by the given parameters.
 
 #### Parameters
 
-| Type     | Name       | Required | Description       |
-| -------- | ---------- | -------- | ----------------- |
-| [Hash]   | parameters | Yes      | Search parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[Hash\] | parameters | Yes | Search parameters |
 
 #### Return Value
 
@@ -311,15 +286,13 @@ Get all accounts.
 
 #### Parameters
 
-| Type   | Name       | Required | Description      |
-| ------ | ---------- | -------- | ---------------- |
-| [Hash] | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[Hash\] | parameters | No | Query parameters |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `show()`
 
@@ -331,15 +304,13 @@ Get a delegate by the given id.
 
 #### Parameters
 
-| Type     | Name | Required | Description         |
-| -------- | ---- | -------- | ------------------- |
-| [String] | id   | No       | Delegate identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[String\] | id | No | Delegate identifier |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `blocks()`
 
@@ -351,16 +322,14 @@ Get all blocks for the given delegate.
 
 #### Parameters
 
-| Type     | Name       | Required | Description         |
-| -------- | ---------- | -------- | ------------------- |
-| [String] | id         | No       | Delegate identifier |
-| [Hash]   | parameters | No       | Query parameters    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[String\] | id | No | Delegate identifier |
+| \[Hash\] | parameters | No | Query parameters |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `voters()`
 
@@ -372,10 +341,10 @@ Get all voters for the given delegate.
 
 #### Parameters
 
-| Type     | Name       | Required | Description         |
-| -------- | ---------- | -------- | ------------------- |
-| [String] | id         | No       | Delegate identifier |
-| [Hash]   | parameters | No       | Query parameters    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[String\] | id | No | Delegate identifier |
+| \[Hash\] | parameters | No | Query parameters |
 
 #### Return Value
 
@@ -395,8 +364,6 @@ Get the node configuration.
 
 `[Faraday::Response]`
 
----
-
 ### `status()`
 
 ```ruby
@@ -409,8 +376,6 @@ Get the node status.
 
 `[Faraday::Response]`
 
----
-
 ### `syncing()`
 
 ```ruby
@@ -422,8 +387,6 @@ Get the node syncing status.
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `fees()`
 
@@ -449,15 +412,13 @@ Get all peers.
 
 #### Parameters
 
-| Type   | Name       | Required | Description      |
-| ------ | ---------- | -------- | ---------------- |
-| [Hash] | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[Hash\] | parameters | No | Query parameters |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `show()`
 
@@ -469,9 +430,9 @@ Get a peer by the given IP address.
 
 #### Parameters
 
-| Type     | Name       | Required | Description |
-| -------- | ---------- | -------- | ----------- |
-| [String] | ip_addr    | Yes      | IP address  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[String\] | ip\_addr | Yes | IP address |
 
 #### Return Value
 
@@ -489,15 +450,13 @@ Create a new transaction.
 
 #### Parameters
 
-| Type   | Name       | Required | Description              |
-| ------ | ---------- | -------- | ------------------------ |
-| [Hash] | parameters | Yes      | Transaction to broadcast |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[Hash\] | parameters | Yes | Transaction to broadcast |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `show()`
 
@@ -509,15 +468,13 @@ Get a transaction by the given id.
 
 #### Parameters
 
-| Type     | Name       | Required | Description    |
-| -------- | ---------- | -------- | -------------- |
-| [String] | id         | Yes      | Transaction ID |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[String\] | id | Yes | Transaction ID |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `all()`
 
@@ -529,15 +486,13 @@ Get all transactions.
 
 #### Parameters
 
-| Type   | Name       | Required | Description      |
-| ------ | ---------- | -------- | ---------------- |
-| [Hash] | parameters | Yes      | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[Hash\] | parameters | Yes | Query parameters |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `all_unconfirmed()`
 
@@ -549,15 +504,13 @@ Get all unconfirmed transactions.
 
 #### Parameters
 
-| Type   | Name       | Required | Description      |
-| ------ | ---------- | -------- | ---------------- |
-| [Hash] | parameters | Yes      | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[Hash\] | parameters | Yes | Query parameters |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `show_unconfirmed()`
 
@@ -569,15 +522,13 @@ Get an unconfirmed transaction by the given id.
 
 #### Parameters
 
-| Type     | Name | Required | Description    |
-| -------- | ---- | -------- | -------------- |
-| [String] | id   | Yes      | Transaction ID |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[String\] | id | Yes | Transaction ID |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `search()`
 
@@ -589,15 +540,13 @@ Filter all transactions by the given parameters.
 
 #### Parameters
 
-| Type   | Name       | Required | Description      |
-| ------ | ---------- | -------- | ---------------- |
-| [Hash] | parameters | Yes      | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[Hash\] | parameters | Yes | Query parameters |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `types()`
 
@@ -623,15 +572,13 @@ Get all votes.
 
 #### Parameters
 
-| Type   | Name       | Required | Description      |
-| ------ | ---------- | -------- | ---------------- |
-| [Hash] | parameters | Yes      | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[Hash\] | parameters | Yes | Query parameters |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `show()`
 
@@ -643,9 +590,9 @@ Get a vote by the given id.
 
 #### Parameters
 
-| Type     | Name       | Required | Description |
-| -------- | ---------- | -------- | ----------- |
-| [String] | id         | Yes      | Vote ID     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[String\] | id | Yes | Vote ID |
 
 #### Return Value
 
@@ -663,15 +610,13 @@ Get all wallets.
 
 #### Parameters
 
-| Type   | Name       | Required | Description      |
-| ------ | ---------- | -------- | ---------------- |
-| [Hash] | parameters | Yes      | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[Hash\] | parameters | Yes | Query parameters |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `show()`
 
@@ -683,15 +628,13 @@ Get a wallet by the given id.
 
 #### Parameters
 
-| Type     | Name       | Required | Description       |
-| -------- | ---------- | -------- | ----------------- |
-| [String] | id         | Yes      | Wallet identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[String\] | id | Yes | Wallet identifier |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `transactions()`
 
@@ -703,16 +646,14 @@ Get all transactions for the given wallet.
 
 #### Parameters
 
-| Type      | Name       | Required | Description       |
-| --------- | ---------- | -------- | ----------------- |
-| [String]  | id         | Yes      | Wallet identifier |
-| [Hash]    | parameters | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[String\] | id | Yes | Wallet identifier |
+| \[Hash\] | parameters | No | Query parameters |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `received_transactions()`
 
@@ -724,16 +665,14 @@ Get all transactions received by the given wallet.
 
 #### Parameters
 
-| Type      | Name       | Required | Description       |
-| --------- | ---------- | -------- | ----------------- |
-| [String]  | id         | Yes      | Wallet identifier |
-| [Hash]    | parameters | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[String\] | id | Yes | Wallet identifier |
+| \[Hash\] | parameters | No | Query parameters |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `sent_transactions()`
 
@@ -745,16 +684,14 @@ Get all transactions sent by the given wallet.
 
 #### Parameters
 
-| Type      | Name       | Required | Description       |
-| --------- | ---------- | -------- | ----------------- |
-| [String]  | id         | Yes      | Wallet identifier |
-| [Hash]    | parameters | No       | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[String\] | id | Yes | Wallet identifier |
+| \[Hash\] | parameters | No | Query parameters |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `votes()`
 
@@ -766,15 +703,13 @@ Get all votes by the given wallet.
 
 #### Parameters
 
-| Type      | Name       | Required | Description       |
-| --------- | ---------- | -------- | ----------------- |
-| [String]  | id         | Yes      | Wallet identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[String\] | id | Yes | Wallet identifier |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `top()`
 
@@ -786,15 +721,13 @@ Get all wallets sorted by balance in descending order.
 
 #### Parameters
 
-| Type      | Name       | Required | Description      |
-| --------- | ---------- | -------- | ---------------- |
-| [Hash]    | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[Hash\] | parameters | No | Query parameters |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `search()`
 
@@ -806,9 +739,9 @@ Filter all wallets by the given parameters.
 
 #### Parameters
 
-| Type      | Name       | Required | Description       |
-| --------- | ---------- | -------- | ----------------- |
-| [Hash]    | parameters | No       | Search parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[Hash\] | parameters | No | Search parameters |
 
 #### Return Value
 
@@ -826,15 +759,13 @@ Create a new resource instance.
 
 #### Parameters
 
-| Type        | Name       | Required | Description   |
-| ----------- | ---------- | -------- | ------------- |
-| [Hash]      | config     | Yes      | Configuration |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[Hash\] | config | Yes | Configuration |
 
 #### Return Value
 
 `[ArkEcosystem::Client]`
-
----
 
 ### `get()`
 
@@ -846,16 +777,14 @@ Create and send a HTTP "GET" request.
 
 #### Parameters
 
-| Type        | Name       | Required | Description      |
-| ----------- | ---------- | -------- | ---------------- |
-| [String]    | url        | Yes      | Endpoint         |
-| [Hash]      | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[String\] | url | Yes | Endpoint |
+| \[Hash\] | query | No | Query parameters |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `post()`
 
@@ -867,16 +796,14 @@ Create and send a HTTP "POST" request.
 
 #### Parameters
 
-| Type        | Name       | Required | Description      |
-| ----------- | ---------- | -------- | ---------------- |
-| [String]    | url        | Yes      | Endpoint         |
-| [Hash]      | payload    | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[String\] | url | Yes | Endpoint |
+| \[Hash\] | payload | No | Query parameters |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `put()`
 
@@ -888,16 +815,14 @@ Create and send a HTTP "PUT" request.
 
 #### Parameters
 
-| Type        | Name       | Required | Description      |
-| ----------- | ---------- | -------- | ---------------- |
-| [String]    | url        | Yes      | Endpoint         |
-| [Hash]      | payload    | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[String\] | url | Yes | Endpoint |
+| \[Hash\] | payload | No | Query parameters |
 
 #### Return Value
 
 `[Faraday::Response]`
-
----
 
 ### `delete()`
 
@@ -909,10 +834,10 @@ Create and send a HTTP "DELETE" request.
 
 #### Parameters
 
-| Type        | Name       | Required | Description      |
-| ----------- | ---------- | -------- | ---------------- |
-| [String]    | url        | Yes      | Endpoint         |
-| [Hash]      | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[String\] | url | Yes | Endpoint |
+| \[Hash\] | query | No | Query parameters |
 
 #### Return Value
 
@@ -930,15 +855,13 @@ Create a new resource instance.
 
 #### Parameters
 
-| Type        | Name       | Required | Description |
-| ----------- | ---------- | -------- | ----------- |
-| [String]    | response   | Yes      | Response    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| \[String\] | response | Yes | Response |
 
 #### Return Value
 
 `[ArkEcosystem::Response]`
-
----
 
 ### `body()`
 
@@ -952,8 +875,6 @@ Get the body from the Response.
 
 `[String]`
 
----
-
 ### `url()`
 
 ```ruby
@@ -966,8 +887,6 @@ Get url from the Response.
 
 `[String]`
 
----
-
 ### `to_hash()`
 
 ```ruby
@@ -979,3 +898,4 @@ Convert the Response to a hash.
 #### Return Value
 
 `[String]`
+

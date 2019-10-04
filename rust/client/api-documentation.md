@@ -3,6 +3,8 @@ id: api-documentation
 title: API Documentation
 ---
 
+# API Documentation
+
 ## api::mod::Api
 
 ### `new()`
@@ -15,15 +17,13 @@ Instantiate new Api.
 
 #### Parameters
 
-| Type | Name       | Required | Description |
-| ---- | ---------- | -------- | ----------- |
-| &str | host       | Yes      | Node url    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | host | Yes | Node url |
 
 #### Return Value
 
 `Api`
-
----
 
 ### `new_with_client()`
 
@@ -35,15 +35,13 @@ Instantiate new Api with an already existing Client.
 
 #### Parameters
 
-| Type    | Name       | Required | Description |
-| ------- | ---------- | -------- | ----------- |
-| &Client | client     | Yes      | Client      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &Client | client | Yes | Client |
 
 #### Return Value
 
 `Api`
-
----
 
 ## api::blocks::Blocks
 
@@ -57,15 +55,13 @@ Instantiate new Blocks.
 
 #### Parameters
 
-| Type    | Name       | Required | Description |
-| ------- | ---------- | -------- | ----------- |
-| &Client | client     | Yes      | Client      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &Client | client | Yes | Client |
 
 #### Return Value
 
 `Blocks`
-
----
 
 ### `all()`
 
@@ -79,8 +75,6 @@ Get all blocks.
 
 `Result<Vec<Block>>`
 
----
-
 ### `all_params()`
 
 ```rust
@@ -91,15 +85,13 @@ Get all blocks.
 
 #### Parameters
 
-| Type   | Name       | Required | Description      |
-| ------ | ---------- | -------- | ---------------- |
-| I      | parameters | Yes      | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| I | parameters | Yes | Query parameters |
 
 #### Return Value
 
 `Result<Vec<Block>>`
-
----
 
 ### `show()`
 
@@ -111,15 +103,13 @@ Get a block by the given id.
 
 #### Parameters
 
-| Type  | Name       | Required | Description |
-| ----- | ---------- | -------- | ----------- |
-| &str  | id         | Yes      | Block ID    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | id | Yes | Block ID |
 
 #### Return Value
 
 `Result<Block>`
-
----
 
 ### `transactions()`
 
@@ -131,15 +121,13 @@ Get all transactions by the given block.
 
 #### Parameters
 
-| Type  | Name       | Required | Description |
-| ----- | ---------- | -------- | ----------- |
-| &str  | id         | Yes      | Block ID    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | id | Yes | Block ID |
 
 #### Return Value
 
 `Result<Vec<Transaction>>`
-
----
 
 ### `transactions_params()`
 
@@ -151,16 +139,14 @@ Get all transactions by the given block.
 
 #### Parameters
 
-| Type   | Name       | Required | Description      |
-| ------ | ---------- | -------- | ---------------- |
-| &str   | id         | Yes      | Block ID         |
-| I      | parameters | Yes      | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | id | Yes | Block ID |
+| I | parameters | Yes | Query parameters |
 
 #### Return Value
 
 `Result<Vec<Transaction>>`
-
----
 
 ### `search()`
 
@@ -172,9 +158,9 @@ Filter all blocks by the given parameters.
 
 #### Parameters
 
-| Type   | Name       | Required | Description       |
-| ------ | ---------- | -------- | ----------------- |
-| I      | parameters | Yes      | Search parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| I | parameters | Yes | Search parameters |
 
 #### Return Value
 
@@ -192,15 +178,13 @@ Instantiate new Delegates.
 
 #### Parameters
 
-| Type   | Name       | Required | Description |
-| ------ | ---------- | -------- | ----------- |
-| Client | client     | Yes      | Client      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Client | client | Yes | Client |
 
 #### Return Value
 
 `Delegates`
-
----
 
 ### `all()`
 
@@ -214,8 +198,6 @@ Get all accounts.
 
 `Result<Vec<Delegate>>`
 
----
-
 ### `all_params()`
 
 ```rust
@@ -226,15 +208,13 @@ Get all accounts.
 
 #### Parameters
 
-| Type   | Name       | Required | Description      |
-| ------ | ---------- | -------- | ---------------- |
-| I      | parameters | Yes      | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| I | parameters | Yes | Query parameters |
 
 #### Return Value
 
 `Result<Vec<Delegate>>`
-
----
 
 ### `show()`
 
@@ -246,15 +226,13 @@ Get a delegate by the given id.
 
 #### Parameters
 
-| Type  | Name       | Required | Description         |
-| ----- | ---------- | -------- | ------------------- |
-| &str  | id         | Yes      | Delegate identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | id | Yes | Delegate identifier |
 
 #### Return Value
 
 `Result<Delegate>`
-
----
 
 ### `blocks()`
 
@@ -266,15 +244,13 @@ Get all blocks for the given delegate.
 
 #### Parameters
 
-| Type  | Name       | Required | Description         |
-| ----- | ---------- | -------- | ------------------- |
-| &str  | id         | Yes      | Delegate identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | id | Yes | Delegate identifier |
 
 #### Return Value
 
 `Result<Vec<Block>>`
-
----
 
 ### `blocks_params()`
 
@@ -286,16 +262,14 @@ Get all blocks for the given delegate.
 
 #### Parameters
 
-| Type  | Name       | Required | Description         |
-| ----- | ---------- | -------- | ------------------- |
-| &str  | id         | Yes      | Delegate identifier |
-| I     | parameters | Yes      | Query parameters    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | id | Yes | Delegate identifier |
+| I | parameters | Yes | Query parameters |
 
 #### Return Value
 
 `Result<Vec<Block>>`
-
----
 
 ### `voters()`
 
@@ -307,15 +281,13 @@ Get all voters for the given delegate.
 
 #### Parameters
 
-| Type  | Name       | Required | Description         |
-| ----- | ---------- | -------- | ------------------- |
-| &str  | id         | Yes      | Delegate identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | id | Yes | Delegate identifier |
 
 #### Return Value
 
 `Result<Vec<Wallet>>`
-
----
 
 ### `voters_params()`
 
@@ -327,16 +299,14 @@ Get all voters for the given delegate.
 
 #### Parameters
 
-| Type  | Name       | Required | Description         |
-| ----- | ---------- | -------- | ------------------- |
-| &str  | id         | Yes      | Delegate identifier |
-| I     | parameters | Yes      | Query parameters    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | id | Yes | Delegate identifier |
+| I | parameters | Yes | Query parameters |
 
 #### Return Value
 
 `Result<Vec<Wallet>>`
-
----
 
 ### `voters_balances()`
 
@@ -348,15 +318,13 @@ Returns the voters of a delegate and their balances.
 
 #### Parameters
 
-| Type  | Name       | Required | Description         |
-| ----- | ---------- | -------- | ------------------- |
-| &str  | id         | Yes      | Delegate identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | id | Yes | Delegate identifier |
 
 #### Return Value
 
 `Result<Balances>`
-
----
 
 ### `search()`
 
@@ -372,10 +340,10 @@ Searches the delegates.
 
 #### Parameters
 
-| Type                        | Name       | Required | Description       |
-| --------------------------- | ---------- | -------- | ----------------- |
-| Option<HashMap<&str, &str>> | payload    | Yes      | Search parameters |
-| I                           | parameters | Yes      | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Option&gt; | payload | Yes | Search parameters |
+| I | parameters | Yes | Query parameters |
 
 #### Return Value
 
@@ -393,15 +361,13 @@ Instantiate new Node.
 
 #### Parameters
 
-| Type   | Name       | Required | Description |
-| ------ | ---------- | -------- | ----------- |
-| Client | client     | Yes      | Clients      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Client | client | Yes | Clients |
 
 #### Return Value
 
 `Node`
-
----
 
 ### `configuration()`
 
@@ -415,8 +381,6 @@ Get the node configuration.
 
 `Result<NodeConfiguration>`
 
----
-
 ### `status()`
 
 ```rust
@@ -428,8 +392,6 @@ Get the node status.
 #### Return Value
 
 `Result<NodeStatus>`
-
----
 
 ### `syncing()`
 
@@ -455,15 +417,13 @@ Instantiate new Peers.
 
 #### Parameters
 
-| Type   | Name       | Required | Description |
-| ------ | ---------- | -------- | ----------- |
-| Client | client     | Yes      | Client      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Client | client | Yes | Client |
 
 #### Return Value
 
 `Peers`
-
----
 
 ### `all()`
 
@@ -477,8 +437,6 @@ Get all peers.
 
 `Result<Vec<Peer>>`
 
----
-
 ### `all_params()`
 
 ```rust
@@ -489,15 +447,13 @@ Get all peers.
 
 #### Parameters
 
-| Type | Name       | Required | Description      |
-| ---- | ---------- | -------- | ---------------- |
-| I    | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| I | parameters | No | Query parameters |
 
 #### Return Value
 
 `Result<Vec<Peer>>`
-
----
 
 ### `show()`
 
@@ -509,9 +465,9 @@ Get a peer by the given IP address.
 
 #### Parameters
 
-| Type | Name       | Required | Description |
-| ---- | ---------- | -------- | ----------- |
-| &str | ip_address | Yes      | IP address  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | ip\_address | Yes | IP address |
 
 #### Return Value
 
@@ -529,15 +485,13 @@ Instantiate new Transactions.
 
 #### Parameters
 
-| Type   | Name       | Required | Description |
-| ------ | ---------- | -------- | ----------- |
-| Client | client     | Yes      | Client      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Client | client | Yes | Client |
 
 #### Return Value
 
 `Transactions`
-
----
 
 ### `create()`
 
@@ -549,15 +503,13 @@ Create a new transaction.
 
 #### Parameters
 
-| Type      | Name         | Required | Description                 |
-| --------- | ------------ | -------- | --------------------------- |
-| Vec<&str> | transactions | Yes      | Transaction(s) to broadcast |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Vec&lt;&str&gt; | transactions | Yes | Transaction\(s\) to broadcast |
 
 #### Return Value
 
 `Result<Transaction>`
-
----
 
 ### `show()`
 
@@ -569,15 +521,13 @@ Get a transaction by the given id.
 
 #### Parameters
 
-| Type | Name       | Required | Description    |
-| ---- | ---------- | -------- | -------------- |
-| &str | id         | Yes      | Transaction ID |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | id | Yes | Transaction ID |
 
 #### Return Value
 
 `Result<Transaction>`
-
----
 
 ### `all()`
 
@@ -591,8 +541,6 @@ Get all transactions.
 
 `Result<Vec<Transaction>>`
 
----
-
 ### `all_params()`
 
 ```rust
@@ -603,15 +551,13 @@ Get all transactions.
 
 #### Parameters
 
-| Type | Name       | Required | Description      |
-| ---- | ---------- | -------- | ---------------- |
-| I    | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| I | parameters | No | Query parameters |
 
 #### Return Value
 
 `Result<Vec<Transaction>>`
-
----
 
 ### `all_unconfirmed()`
 
@@ -625,8 +571,6 @@ Get all unconfirmed transactions.
 
 `Result<Vec<Transaction>>`
 
----
-
 ### `all_unconfirmed_params()`
 
 ```rust
@@ -637,15 +581,13 @@ Get all unconfirmed transactions.
 
 #### Parameters
 
-| Type | Name       | Required | Description      |
-| ---- | ---------- | -------- | ---------------- |
-| I    | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| I | parameters | No | Query parameters |
 
 #### Return Value
 
 `Result<Vec<Transaction>>`
-
----
 
 ### `show_unconfirmed()`
 
@@ -657,15 +599,13 @@ Get an unconfirmed transaction by the given id.
 
 #### Parameters
 
-| Type  | Name       | Required | Description    |
-| ----- | ---------- | -------- | -------------- |
-| &str  | id         | Yes      | Transaction ID |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | id | Yes | Transaction ID |
 
 #### Return Value
 
 `Result<Vec<Transaction>>`
-
----
 
 ### `search()`
 
@@ -681,16 +621,14 @@ Filter all transactions by the given parameters.
 
 #### Parameters
 
-| Type                        | Name       | Required | Description       |
-| --------------------------- | ---------- | -------- | ----------------- |
-| Option<HashMap<&str, &str>> | payload    | Yes      | Search parameters |
-| I                           | parameters | Yes      | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Option&gt; | payload | Yes | Search parameters |
+| I | parameters | Yes | Query parameters |
 
 #### Return Value
 
 `Result<Vec<Transaction>>`
-
----
 
 ### `types()`
 
@@ -703,8 +641,6 @@ Get a list of valid transaction types.
 #### Return Value
 
 `Result<TransactionTypes>`
-
----
 
 ### `fees()`
 
@@ -730,15 +666,13 @@ Instantiate new Votes.
 
 #### Parameters
 
-| Type   | Name       | Required | Description |
-| ------ | ---------- | -------- | ----------- |
-| Client | client     | Yes      | Client      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Client | client | Yes | Client |
 
 #### Return Value
 
 `Votes`
-
----
 
 ### `all()`
 
@@ -752,8 +686,6 @@ Get all votes.
 
 `Result<Vec<Transaction>>`
 
----
-
 ### `all_params()`
 
 ```rust
@@ -764,15 +696,13 @@ Get all votes.
 
 #### Parameters
 
-| Type | Name       | Required | Description      |
-| ---- | ---------- | -------- | ---------------- |
-| I    | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| I | parameters | No | Query parameters |
 
 #### Return Value
 
 `Result<Vec<Transaction>>`
-
----
 
 ### `show()`
 
@@ -784,9 +714,9 @@ Get a vote by the given id.
 
 #### Parameters
 
-| Type | Name       | Required | Description |
-| ---- | ---------- | -------- | ----------- |
-| &str | id         | Yes      | Vote ID     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | id | Yes | Vote ID |
 
 #### Return Value
 
@@ -804,15 +734,13 @@ Instantiate new Wallets.
 
 #### Parameters
 
-| Type   | Name       | Required | Description |
-| ------ | ---------- | -------- | ----------- |
-| Client | client     | Yes      | Client      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Client | client | Yes | Client |
 
 #### Return Value
 
 `Wallets`
-
----
 
 ### `all()`
 
@@ -826,8 +754,6 @@ Get all wallets.
 
 `Result<Vec<Wallet>>`
 
----
-
 ### `all_params()`
 
 ```rust
@@ -838,15 +764,13 @@ Get all wallets.
 
 #### Parameters
 
-| Type | Name       | Required | Description      |
-| ---- | ---------- | -------- | ---------------- |
-| I    | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| I | parameters | No | Query parameters |
 
 #### Return Value
 
 `Result<Vec<Wallet>>`
-
----
 
 ### `show()`
 
@@ -858,15 +782,13 @@ Get a wallet by the given id.
 
 #### Parameters
 
-| Type | Name       | Required | Description       |
-| ---- | ---------- | -------- | ----------------- |
-| &str | id         | Yes      | Wallet identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | id | Yes | Wallet identifier |
 
 #### Return Value
 
 `Result<Wallet>`
-
----
 
 ### `transactions()`
 
@@ -878,15 +800,13 @@ Get all transactions for the given wallet.
 
 #### Parameters
 
-| Type | Name       | Required | Description       |
-| ---- | ---------- | -------- | ----------------- |
-| &str | id         | Yes      | Wallet identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | id | Yes | Wallet identifier |
 
 #### Return Value
 
 `Result<Vec<Transaction>>`
-
----
 
 ### `transactions_params()`
 
@@ -898,16 +818,14 @@ Get all transactions for the given wallet.
 
 #### Parameters
 
-| Type | Name       | Required | Description       |
-| ---- | ---------- | -------- | ----------------- |
-| &str | id         | Yes      | Wallet identifier |
-| I    | parameters | Yes      | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | id | Yes | Wallet identifier |
+| I | parameters | Yes | Query parameters |
 
 #### Return Value
 
 `Result<Vec<Transaction>>`
-
----
 
 ### `received_transactions()`
 
@@ -919,15 +837,13 @@ Get all transactions received by the given wallet.
 
 #### Parameters
 
-| Type  | Name       | Required | Description       |
-| ----- | ---------- | -------- | ----------------- |
-| &str  | id         | Yes      | Wallet identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | id | Yes | Wallet identifier |
 
 #### Return Value
 
 `Result<Vec<Transaction>>`
-
----
 
 ### `received_transactions_params()`
 
@@ -943,16 +859,14 @@ Get all transactions received by the given wallet.
 
 #### Parameters
 
-| Type | Name       | Required | Description       |
-| ---- | ---------- | -------- | ----------------- |
-| &str | id         | Yes      | Wallet identifier |
-| I    | parameters | Yes      | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | id | Yes | Wallet identifier |
+| I | parameters | Yes | Query parameters |
 
 #### Return Value
 
 `Result<Vec<Transaction>>`
-
----
 
 ### `sent_transactions()`
 
@@ -964,15 +878,13 @@ Get all transactions sent by the given wallet.
 
 #### Parameters
 
-| Type  | Name       | Required | Description       |
-| ----- | ---------- | -------- | ----------------- |
-| &str  | id         | Yes      | Wallet identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | id | Yes | Wallet identifier |
 
 #### Return Value
 
 `Result<Vec<Transaction>>`
-
----
 
 ### `sent_transactions_params()`
 
@@ -988,16 +900,14 @@ Get all transactions sent by the given wallet.
 
 #### Parameters
 
-| Type | Name       | Required | Description       |
-| ---- | ---------- | -------- | ----------------- |
-| &str | id         | Yes      | Wallet identifier |
-| I    | parameters | Yes      | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | id | Yes | Wallet identifier |
+| I | parameters | Yes | Query parameters |
 
 #### Return Value
 
 `Result<Vec<Transaction>>`
-
----
 
 ### `votes()`
 
@@ -1009,15 +919,13 @@ Get all votes by the given wallet.
 
 #### Parameters
 
-| Type  | Name       | Required | Description       |
-| ----- | ---------- | -------- | ----------------- |
-| &str  | id         | Yes      | Wallet identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | id | Yes | Wallet identifier |
 
 #### Return Value
 
 `Result<Vec<Transaction>>`
-
----
 
 ### `top()`
 
@@ -1031,8 +939,6 @@ Get all wallets sorted by balance in descending order.
 
 `Result<Vec<Wallet>>`
 
----
-
 ### `top_params()`
 
 ```rust
@@ -1043,15 +949,13 @@ Get all wallets sorted by balance in descending order.
 
 #### Parameters
 
-| Type | Name       | Required | Description      |
-| ---- | ---------- | -------- | ---------------- |
-| I    | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| I | parameters | No | Query parameters |
 
 #### Return Value
 
 `Result<Vec<Wallet>>`
-
----
 
 ### `search()`
 
@@ -1063,9 +967,9 @@ Filter all wallets by the given parameters.
 
 #### Parameters
 
-| Type | Name       | Required | Description      |
-| ---- | ---------- | -------- | ---------------- |
-| I    | parameters | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| I | parameters | No | Query parameters |
 
 #### Return Value
 
@@ -1085,8 +989,6 @@ Instantiate new Manager.
 
 `Manager<'a>`
 
----
-
 ### `connect()`
 
 ```rust
@@ -1097,15 +999,13 @@ Connect to the given connection.
 
 #### Parameters
 
-| Type           | Name       | Required | Description |
-| -------------- | ---------- | -------- | ----------- |
-| &'a Connection | connection | Yes      | Connection  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &'a Connection | connection | Yes | Connection |
 
 #### Return Value
 
 `Result<(), &str>`
-
----
 
 ### `connect_as()`
 
@@ -1117,16 +1017,14 @@ Connect to the given connection.
 
 #### Parameters
 
-| Type           | Name       | Required | Description     |
-| -------------- | ---------- | -------- | --------------- |
-| &'a Connection | connection | Yes      | Connection      |
-| &str           | name       | Yes      | Connection name |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &'a Connection | connection | Yes | Connection |
+| &str | name | Yes | Connection name |
 
 #### Return Value
 
 `Result<(), &str>`
-
----
 
 ### `disconnect()`
 
@@ -1138,15 +1036,13 @@ Disconnect from given connection.
 
 #### Parameters
 
-| Type  | Name       | Required | Description     |
-| ----- | ---------- | -------- | --------------- |
-| &str  | name       | Yes      | Connection name |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | name | Yes | Connection name |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `connection()`
 
@@ -1160,8 +1056,6 @@ Get a connection instance.
 
 `Option<&'a Connection>`
 
----
-
 ### `connection_by_name()`
 
 ```rust
@@ -1172,15 +1066,13 @@ Get the connection by name.
 
 #### Parameters
 
-| Type  | Name       | Required | Description     |
-| ----- | ---------- | -------- | --------------- |
-| &str  | name       | Yes      | Connection name |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | name | Yes | Connection name |
 
 #### Return Value
 
 `Option<&'a Connection>`
-
----
 
 ### `get_default_connection()`
 
@@ -1194,8 +1086,6 @@ Get the default connection name.
 
 `String`
 
----
-
 ### `set_default_connection()`
 
 ```rust
@@ -1206,15 +1096,13 @@ Set the default connection name.
 
 #### Parameters
 
-| Type  | Name       | Required | Description     |
-| ----- | ---------- | -------- | --------------- |
-| &str  | name       | Yes      | Connection name |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | name | Yes | Connection name |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `connections()`
 
@@ -1241,8 +1129,8 @@ Instantiate new Connection.
 #### Parameters
 
 | Type | Name | Required | Description |
-| ---- | ---- | -------- | ----------- |
-| &str | host | Yes      | Node URL    |
+| :--- | :--- | :--- | :--- |
+| &str | host | Yes | Node URL |
 
 #### Return Value
 
@@ -1261,14 +1149,12 @@ Instantiate new Client.
 #### Parameters
 
 | Type | Name | Required | Description |
-| ---- | ---- | -------- | ----------- |
-| &str | host | Yes      | Node URL    |
+| :--- | :--- | :--- | :--- |
+| &str | host | Yes | Node URL |
 
 #### Return Value
 
 `Client`
-
----
 
 ### `set_version()`
 
@@ -1280,15 +1166,13 @@ Set the version of the client.
 
 #### Parameters
 
-| Type         | Name    | Required | Description |
-| ------------ | ------- | -------- | ----------- |
-| &'static str | version | Yes      | API Version |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &'static str | version | Yes | API Version |
 
 #### Return Value
 
 `Void`
-
----
 
 ### `get()`
 
@@ -1300,15 +1184,13 @@ GET request on the given endpoint.
 
 #### Parameters
 
-| Type | Name     | Required | Description |
-| ---- | -------- | -------- | ----------- |
-| &str | endpoint | Yes      | Endpoint    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | endpoint | Yes | Endpoint |
 
 #### Return Value
 
 `Result<T>`
-
----
 
 ### `get_with_params()`
 
@@ -1320,16 +1202,14 @@ GET request with parameters on the given endpoint.
 
 #### Parameters
 
-| Type | Name       | Required | Description      |
-| ---- | ---------- | -------- | ---------------- |
-| &str | endpoint   | Yes      | Endpoint         |
-| I    | parameters | Yes      | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | endpoint | Yes | Endpoint |
+| I | parameters | Yes | Query parameters |
 
 #### Return Value
 
 `Result<T>`
-
----
 
 ### `post()`
 
@@ -1341,16 +1221,14 @@ POST request on the given endpoint.
 
 #### Parameters
 
-| Type                     | Name       | Required | Description |
-| ------------------------ | ---------- | -------- | ----------- |
-| &str                     | endpoint   | Yes      | Endpoint    |
-| Option<HashMap<&str, V>> | payload    | Yes      | Payload     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | endpoint | Yes | Endpoint |
+| Option&gt; | payload | Yes | Payload |
 
 #### Return Value
 
 `Result<T>`
-
----
 
 ### `post_with_params()`
 
@@ -1367,12 +1245,13 @@ POST request with parameters on the given endpoint.
 
 #### Parameters
 
-| Type                     | Name       | Required | Description      |
-| ------------------------ | ---------- | -------- | ---------------- |
-| &str                     | endpoint   | Yes      | Endpoint         |
-| Option<HashMap<&str, V>> | payload    | Yes      | Payload          |
-| I                        | parameters | Yes      | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| &str | endpoint | Yes | Endpoint |
+| Option&gt; | payload | Yes | Payload |
+| I | parameters | Yes | Query parameters |
 
 #### Return Value
 
 `Result<T>`
+

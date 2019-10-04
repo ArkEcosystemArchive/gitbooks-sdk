@@ -3,6 +3,8 @@ id: examples
 title: Examples
 ---
 
+# Examples
+
 ## Initialization
 
 ```swift
@@ -13,7 +15,7 @@ let conn = Connection(host: "http://127.0.0.1:4003/api")
 
 ## Blocks
 
-This service API grants access to the [blocks resource](/api/public/v2/blocks.html). A block is a signed set of transactions created by a delegate and permanently committed to the ARK blockchain.
+This service API grants access to the [blocks resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/blocks.html). A block is a signed set of transactions created by a delegate and permanently committed to the ARK blockchain.
 
 > It is not possible to `POST` a block through the public API. Relay Nodes accept only blocks posted by a delegate at the correct time through the internal API.
 
@@ -79,11 +81,11 @@ blocks.search(body: ["generatorPublicKey": "validPublicKey"], completionHandler:
 
 ## Delegates
 
-The client SDK can be used to query the [delegate resource](/api/public/v2/delegates.html).
+The client SDK can be used to query the [delegate resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/delegates.html).
 
 A delegate is a regular wallet that has broadcasted a registration transaction, acquired a sufficient number of votes, and has a Relay Node configured to forge new blocks through a `forger` module. At any time only 51 delegates are active. They are cost-efficient miners running the ARK network.
 
-> Voters are wallets which have broadcasted a vote transaction on a delegate. A vote remains active until an un-vote transaction is sent (it does not have to be recast unless a wallet wishes to change from delegate). Voting for a delegate does not give the delegate access to the wallet nor does it lock the coins in it.
+> Voters are wallets which have broadcasted a vote transaction on a delegate. A vote remains active until an un-vote transaction is sent \(it does not have to be recast unless a wallet wishes to change from delegate\). Voting for a delegate does not give the delegate access to the wallet nor does it lock the coins in it.
 
 ### List All Delegates
 
@@ -147,7 +149,7 @@ delegates.voters(byName: "delegateName", completionHandler: { (res) in
 
 ## Node
 
-The ARK network consists of different anonymous nodes (servers), maintaining the public ledger, validating transactions and blocks and providing APIs. The [node resource](/api/public/v2/node.html) allows for querying the health and configurations of the node used by the instantiated client.
+The ARK network consists of different anonymous nodes \(servers\), maintaining the public ledger, validating transactions and blocks and providing APIs. The [node resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/node.html) allows for querying the health and configurations of the node used by the instantiated client.
 
 ### Retrieve the Configuration
 
@@ -211,9 +213,9 @@ node.fees(completionHandler: { (res) in
 
 ## Peers
 
-Each node is connected to a set of peers, which are Relay or Delegate Nodes as well. The [peers resource](/api/public/v2/peers.html) provides access to all peers connected to our node.
+Each node is connected to a set of peers, which are Relay or Delegate Nodes as well. The [peers resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/peers.html) provides access to all peers connected to our node.
 
-> Peers have made their Public API available for use; however for mission-critical queries and transaction posting you should use a node which is under your control. We provide a guide to setting up a Relay Node [here](/tutorials/node/setup.html).
+> Peers have made their Public API available for use; however for mission-critical queries and transaction posting you should use a node which is under your control. We provide a guide to setting up a Relay Node [here](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/tutorials/node/setup.html).
 
 ### List All Peers
 
@@ -247,7 +249,7 @@ peers.status(completionHandler: { (res) in
 
 ## Transactions
 
-The heart of any blockchain is formed by its transactions; state-altering payloads signed by a wallet. Most likely you will be querying for transactions most often, using the [transaction resource](/api/public/v2/transactions.html).
+The heart of any blockchain is formed by its transactions; state-altering payloads signed by a wallet. Most likely you will be querying for transactions most often, using the [transaction resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/transactions.html).
 
 > A transaction is the only object which may be posted by a non-delegate. It requires a signature from a wallet containing a sufficient amount of ARK.
 
@@ -257,7 +259,7 @@ The heart of any blockchain is formed by its transactions; state-altering payloa
 let transactions = Transactions(connection: conn)
 
 var response: [String: Any]?
- 
+
 transactions.create(body: [transaction], completionHandler: { (res) in
     response = res
     print(response)
@@ -272,7 +274,7 @@ transactions.create(body: [transaction], completionHandler: { (res) in
 let transactions = Transactions(connection: conn)
 
 var response: [String: Any]?
- 
+
 transactions.get(id: "validTransactionId", completionHandler: { (res) in
     response = res
     print(response)
@@ -287,7 +289,7 @@ transactions.get(id: "validTransactionId", completionHandler: { (res) in
 let transactions = Transactions(connection: conn)
 
 var response: [String: Any]?
- 
+
 transactions.all(limit: 10, completionHandler: { (res) in
     response = res
     print(response)
@@ -302,7 +304,7 @@ transactions.all(limit: 10, completionHandler: { (res) in
 let transactions = Transactions(connection: conn)
 
 var response: [String: Any]?
- 
+
 transactions.allUnconfirmed(limit: 10, completionHandler: { (res) in
     response = res
     print(response)
@@ -317,7 +319,7 @@ transactions.allUnconfirmed(limit: 10, completionHandler: { (res) in
 let transactions = Transactions(connection: conn)
 
 var response: [String: Any]?
- 
+
 transactions.getUnconfirmed(id: "validTransactionId", completionHandler: { (res) in
     response = res
     print(response)
@@ -332,7 +334,7 @@ transactions.getUnconfirmed(id: "validTransactionId", completionHandler: { (res)
 let transactions = Transactions(connection: conn)
 
 var response: [String: Any]?
- 
+
 transactions.search(body: ["amount": 100000], completionHandler: { (res) in
     response = res
     print(response)
@@ -347,7 +349,7 @@ transactions.search(body: ["amount": 100000], completionHandler: { (res) in
 let transactions = Transactions(connection: conn)
 
 var response: [String: Any]?
- 
+
 transactions.types(completionHandler: { (res) in
     response = res
     print(response)
@@ -358,7 +360,7 @@ transactions.types(completionHandler: { (res) in
 
 ## Votes
 
-A [vote](/api/public/v2/votes.html) is a transaction sub-type, where the `asset` field contains a `votes` object and the `transaction.type` is `3`.
+A [vote](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/votes.html) is a transaction sub-type, where the `asset` field contains a `votes` object and the `transaction.type` is `3`.
 
 ### List All Votes
 
@@ -366,7 +368,7 @@ A [vote](/api/public/v2/votes.html) is a transaction sub-type, where the `asset`
 let votes = Votes(connection: conn)
 
 var response: [String: Any]?
- 
+
 votes.all(limit: 10, completionHandler: { (res) in
     response = res
     print(response)
@@ -381,7 +383,7 @@ votes.all(limit: 10, completionHandler: { (res) in
 let votes = Votes(connection: conn)
 
 var response: [String: Any]?
- 
+
 votes.get(id: "validVoteId", completionHandler: { (res) in
     response = res
     print(response)
@@ -392,11 +394,11 @@ votes.get(id: "validVoteId", completionHandler: { (res) in
 
 ## Wallets
 
-The [wallet resource](/api/public/v2/wallets.html#list-all-wallets) provides access to:
+The [wallet resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/wallets.html#list-all-wallets) provides access to:
 
-- Wallets.
-- Incoming and outgoing transactions per wallet.
-- Each wallet's votes.
+* Wallets.
+* Incoming and outgoing transactions per wallet.
+* Each wallet's votes.
 
 ### Retrieve All Wallets
 
@@ -404,7 +406,7 @@ The [wallet resource](/api/public/v2/wallets.html#list-all-wallets) provides acc
 let wallets = Wallets(connection: conn)
 
 var response: [String: Any]?
- 
+
 wallets.all(limit: 10, completionHandler: { (res) in
     response = res
     print(response)
@@ -419,7 +421,7 @@ wallets.all(limit: 10, completionHandler: { (res) in
 let wallets = Wallets(connection: conn)
 
 var response: [String: Any]?
- 
+
 wallets.all(byAddress: "validWalletAddress", completionHandler: { (res) in
     response = res
     print(response)
@@ -434,7 +436,7 @@ wallets.all(byAddress: "validWalletAddress", completionHandler: { (res) in
 let wallets = Wallets(connection: conn)
 
 var response: [String: Any]?
- 
+
 wallets.transactions(byAddress: "validWalletAddress", completionHandler: { (res) in
     response = res
     print(response)
@@ -449,7 +451,7 @@ wallets.transactions(byAddress: "validWalletAddress", completionHandler: { (res)
 let wallets = Wallets(connection: conn)
 
 var response: [String: Any]?
- 
+
 wallets.receivedTransactions(byAddress: "validWalletAddress", completionHandler: { (res) in
     response = res
     print(response)
@@ -464,7 +466,7 @@ wallets.receivedTransactions(byAddress: "validWalletAddress", completionHandler:
 let wallets = Wallets(connection: conn)
 
 var response: [String: Any]?
- 
+
 wallets.sentTransactions(byAddress: "validWalletAddress", completionHandler: { (res) in
     response = res
     print(response)
@@ -479,7 +481,7 @@ wallets.sentTransactions(byAddress: "validWalletAddress", completionHandler: { (
 let wallets = Wallets(connection: conn)
 
 var response: [String: Any]?
- 
+
 wallets.votes(byAddress: "validWalletAddress", completionHandler: { (res) in
     response = res
     print(response)
@@ -494,7 +496,7 @@ wallets.votes(byAddress: "validWalletAddress", completionHandler: { (res) in
 let wallets = Wallets(connection: conn)
 
 var response: [String: Any]?
- 
+
 wallets.top(limit: 10, completionHandler: { (res) in
     response = res
     print(response)
@@ -509,7 +511,7 @@ wallets.top(limit: 10, completionHandler: { (res) in
 let wallets = Wallets(connection: conn)
 
 var response: [String: Any]?
- 
+
 wallets.all(body: ["balance": 0], completionHandler: { (res) in
     response = res
     print(response)
@@ -517,3 +519,4 @@ wallets.all(body: ["balance": 0], completionHandler: { (res) in
 
 >>> {'meta': {'count': 10, ... }}
 ```
+

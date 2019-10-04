@@ -3,12 +3,13 @@ id: api-documentation
 title: API Documentation
 ---
 
+# API Documentation
+
 ## crypto.configuration.fee
 
 ### `get_fee()`
 
-
-```py
+```python
 def get_fee(transaction_type):
 ```
 
@@ -16,20 +17,17 @@ Get a fee for a given transaction type
 
 #### Parameters
 
-| Type | Name             | Required | Description                                     |
-| ---- | ---------------- | -------- | ----------------------------------------------- |
-| int  | transaction_type | Yes      | Transaction type for which we wish to get a fee |
-
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | transaction\_type | Yes | Transaction type for which we wish to get a fee |
 
 #### Return Value
 
 `<class 'int'>`
 
----
-
 ### `set_fee()`
 
-```py
+```python
 def set_fee(transaction_type, value):
 ```
 
@@ -37,10 +35,10 @@ Set a fee
 
 #### Parameters
 
-| Type | Name             | Required | Description                                     |
-| ---- | ---------------- | -------- | ----------------------------------------------- |
-| int  | transaction_type | Yes      | Transaction type for which we wish to set a fee |
-| int  | value            | Yes      | Fee for a given transaction type                |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | transaction\_type | Yes | Transaction type for which we wish to set a fee |
+| int | value | Yes | Fee for a given transaction type |
 
 #### Return Value
 
@@ -50,7 +48,7 @@ Set a fee
 
 ### `set_network()`
 
-```py
+```python
 def set_network(network_object):
 ```
 
@@ -58,19 +56,17 @@ Set what network you want to use in the crypto library
 
 #### Parameters
 
-| Type     | Name             | Required | Description              |
-| -------- | ---------------- | -------- | ------------------------ |
-| Network  | network_object   | Yes      | Testnet, Devnet, Mainnet |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Network | network\_object | Yes | Testnet, Devnet, Mainnet |
 
 #### Return Value
 
 `<class 'NoneType'>`
 
----
-
 ### `get_network()`
 
-```py
+```python
 def get_network():
 ```
 
@@ -80,11 +76,9 @@ Get settings for a selected network, default network is devnet
 
 `<class 'dict'>`
 
----
-
 ### `set_custom_network()`
 
-```py
+```python
 def set_custom_network(epoch, version, wif):
 ```
 
@@ -92,11 +86,11 @@ Set custom network
 
 #### Parameters
 
-| Type     | Name    | Required | Description        |
-| -------- | --------| -------- | ------------------ |
-| datetime | epoch   | Yes      | Network epoch time |
-| int      | version | Yes      | Network version    |
-| int      | wif     | Yes      | Network WIF        | 
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| datetime | epoch | Yes | Network epoch time |
+| int | version | Yes | Network version |
+| int | wif | Yes | Network WIF |
 
 #### Return Value
 
@@ -106,7 +100,7 @@ Set custom network
 
 ### `address_from_public_key()`
 
-```py
+```python
 def address_from_public_key(public_key, network_version=None):
 ```
 
@@ -114,20 +108,18 @@ Get an address from a public key
 
 #### Parameters
 
-| Type     | Name             | Required | Description            |
-| -------- | ---------------- | -------- | ---------------------- |
-| str      | public_key       | Yes      | Public key             |
-| int      | network_version  | No       | Version of the network |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | public\_key | Yes | Public key |
+| int | network\_version | No | Version of the network |
 
 #### Return Value
 
 `<class 'str'>`
 
----
-
 ### `address_from_private_key()`
 
-```py
+```python
 def address_from_private_key(private_key, network_version=None):
 ```
 
@@ -135,20 +127,18 @@ Get an address from private key
 
 #### Parameters
 
-| Type     | Name             | Required | Description            |
-| -------- | ---------------- | -------- | ---------------------- |
-| str      | private_key      | Yes      | Private key            |
-| int      | network_version  | No       | Version of the network |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | private\_key | Yes | Private key |
+| int | network\_version | No | Version of the network |
 
 #### Return Value
 
 `<class 'str'>`
 
----
-
 ### `address_from_passphrase()`
 
-```py
+```python
 def address_from_passphrase(passphrase, network_version=None):
 ```
 
@@ -156,20 +146,18 @@ Get an address from passphrase
 
 #### Parameters
 
-| Type     | Name             | Required | Description            |
-| -------- | ---------------- | -------- | ---------------------- |
-| str      | passphrase       | Yes      | Passphrase             |
-| int      | network_version  | No       | Version of the network |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | passphrase | Yes | Passphrase |
+| int | network\_version | No | Version of the network |
 
 #### Return Value
 
 `<class 'str'>`
 
----
-
 ### `validate_address()`
 
-```py
+```python
 def validate_address(address, network_version=None):
 ```
 
@@ -177,20 +165,20 @@ Validate a given address
 
 #### Parameters
 
-| Type     | Name             | Required | Description            |
-| -------- | ---------------- | -------- | ---------------------- |
-| str      | address          | Yes      | Address to validate    |
-| int      | network_version  | No       | Version of the network |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | address | Yes | Address to validate |
+| int | network\_version | No | Version of the network |
 
 #### Return Value
 
 `<class 'bool'>`
 
-## crypto.identity.private_key.PrivateKey
+## crypto.identity.private\_key.PrivateKey
 
 ### `sign()`
 
-```py
+```python
 def sign(self, message):
 ```
 
@@ -198,19 +186,17 @@ Sign a message with this private key object
 
 #### Parameters
 
-| Type     | Name             | Required | Description                         |
-| -------- | ---------------- | -------- | ----------------------------------- |
-| str      | message          | Yes      | Bytes data you want to sign         |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | message | Yes | Bytes data you want to sign |
 
 #### Return Value
 
 `<class 'NoneType'>`
 
----
-
 ### `to_hex()`
 
-```py
+```python
 def to_hex(self):
 ```
 
@@ -220,11 +206,9 @@ Returns a private key in hex format
 
 `<class 'str'>`
 
----
-
 ### `from_passphrase()`
 
-```py
+```python
 def from_passphrase(cls, passphrase):
 ```
 
@@ -232,19 +216,17 @@ Create PrivateKey object from a given passphrase
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| str      | passphrase       | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `<class 'PrivateKey'>`
 
----
-
 ### `from_hex()`
 
-```py
+```python
 def from_hex(self, private_key):
 ```
 
@@ -252,19 +234,19 @@ Create PrivateKey object from a given hex private key
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| str      | private_key      | Yes      | Private key |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | private\_key | Yes | Private key |
 
 #### Return Value
 
 `<class 'PrivateKey'>`
 
-## crypto.identity.public_key.PublicKey
+## crypto.identity.public\_key.PublicKey
 
 ### `to_hex()`
 
-```py
+```python
 def to_hex(self):
 ```
 
@@ -274,11 +256,9 @@ Returns a public key in hex format
 
 `<class 'str'>`
 
----
-
 ### `from_passphrase()`
 
-```py
+```python
 def from_passphrase(cls, passphrase):
 ```
 
@@ -286,19 +266,17 @@ Create PublicKey object from a given passphrase
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| str      | passphrase       | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `<class 'PublicKey'>`
 
----
-
 ### `from_hex()`
 
-```py
+```python
 def from_hex(cls, public_key):
 ```
 
@@ -306,9 +284,9 @@ Create PublicKey object from a given hex private key
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| str      | public_key       | Yes      | Public key  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | public\_key | Yes | Public key |
 
 #### Return Value
 
@@ -318,7 +296,7 @@ Create PublicKey object from a given hex private key
 
 ### `wif_from_passphrase()`
 
-```py
+```python
 def wif_from_passphrase(passphrase, network_wif=None):
 ```
 
@@ -326,10 +304,10 @@ Get wif from passphrase
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| str      | passphrase       | Yes      | Passphrase  |
-| int      | network_wif      | No       | Network WIF |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | passphrase | Yes | Passphrase |
+| int | network\_wif | No | Network WIF |
 
 #### Return Value
 
@@ -339,7 +317,7 @@ Get wif from passphrase
 
 ### `to_dict()`
 
-```py
+```python
 def to_dict(self):
 ```
 
@@ -349,11 +327,9 @@ Convert the transaction to its dictionary representation.
 
 `<class 'dict'>`
 
----
-
 ### `to_json()`
 
-```py
+```python
 def to_json(self):
 ```
 
@@ -363,11 +339,9 @@ Convert the transaction to its JSON representation
 
 `<class 'dict'>`
 
----
-
 ### `sign()`
 
-```py
+```python
 def sign(self, passphrase):
 ```
 
@@ -375,19 +349,17 @@ Sign the transaction using the given passphrase
 
 #### Parameters
 
-| Type     | Name             | Required | Description                                                     |
-| -------- | ---------------- | -------- | --------------------------------------------------------------- |
-| str      | passphrase       | Yes      | Passphrase associated with the account sending this transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | passphrase | Yes | Passphrase associated with the account sending this transaction |
 
 #### Return Value
 
 `<class 'NoneType'>`
 
----
-
 ### `second_sign()`
 
-```py
+```python
 def second_sign(self, passphrase):
 ```
 
@@ -395,19 +367,17 @@ Sign the transaction using the given second passphrase
 
 #### Parameters
 
-| Type     | Name             | Required | Description                                                            |
-| -------- | ---------------- | -------- | ---------------------------------------------------------------------- |
-| str      | passphrase       | Yes      | Second passphrase associated with the account sending this transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | passphrase | Yes | Second passphrase associated with the account sending this transaction |
 
 #### Return Value
 
 `<class 'NoneType'>`
 
----
-
 ### `verify()`
 
-```py
+```python
 def verify(self):
 ```
 
@@ -417,11 +387,9 @@ Verify the transaction validity
 
 `<class 'bool'>`
 
----
-
 ### `second_verify()`
 
-```py
+```python
 def second_verify(self):
 ```
 
@@ -431,11 +399,11 @@ Verify the transaction validity with a second signature
 
 `<class 'bool'>`
 
-## crypto.transactions.builder.delegate_registration.DelegateRegistration
+## crypto.transactions.builder.delegate\_registration.DelegateRegistration
 
 ### `__init__()`
 
-```py
+```python
 def __init__(self, username, fee=None):
 ```
 
@@ -443,20 +411,18 @@ Create a new DelegateRegistration transaction instance
 
 #### Parameters
 
-| Type     | Name             | Required | Description       |
-| -------- | ---------------- | -------- | ----------------- |
-| str      | username         | Yes      | Delegate username |
-| int      | fee              | No       | Transaction fee   |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | username | Yes | Delegate username |
+| int | fee | No | Transaction fee |
 
 #### Return Value
 
 `<class 'crypto.transactions.builder.delegate_registration.DelegateRegistration'>`
 
----
-
 ### `sign()`
 
-```py
+```python
 def sign(self, passphrase):
 ```
 
@@ -464,19 +430,19 @@ Sign the transaction using the given passphrase
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| str      | passphrase       | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `<class 'NoneType'>`
 
-## crypto.transactions.builder.delegate_resignation.DelegateResignation
+## crypto.transactions.builder.delegate\_resignation.DelegateResignation
 
 ### `__init__()`
 
-```py
+```python
 def __init__(self, fee=None):
 ```
 
@@ -484,9 +450,9 @@ Create a new DelegateResignation transaction instance
 
 #### Parameters
 
-| Type     | Name  | Required | Description     |
-| -------- | ----- | -------- | --------------- |
-| int      | fee   | No       | Transaction fee |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | fee | No | Transaction fee |
 
 #### Return Value
 
@@ -496,7 +462,7 @@ Create a new DelegateResignation transaction instance
 
 ### `__init__()`
 
-```py
+```python
 def __init__(self, fee=None):
 ```
 
@@ -504,19 +470,19 @@ Create a new IPFS transaction instance
 
 #### Parameters
 
-| Type     | Name  | Required | Description     |
-| -------- | ----- | -------- | --------------- |
-| int      | fee   | No       | Transaction fee |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | fee | No | Transaction fee |
 
 #### Return Value
 
 `<class 'crypto.transactions.builder.ipfs.IPFS'>`
 
-## crypto.transactions.builder.multi_payment.MultiPayment
+## crypto.transactions.builder.multi\_payment.MultiPayment
 
 ### `__init__()`
 
-```py
+```python
 def __init__(self, fee=None):
 ```
 
@@ -524,19 +490,19 @@ Create a new MultiPayment transaction instance
 
 #### Parameters
 
-| Type     | Name  | Required | Description     |
-| -------- | ----- | -------- | --------------- |
-| int      | fee   | No       | Transaction fee |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | fee | No | Transaction fee |
 
 #### Return Value
 
 `<class 'crypto.transactions.builder.multi_payment.MultiPayment'>`
 
-## crypto.transactions.builder.multi_signature_registration.MultiSignatureRegistration
+## crypto.transactions.builder.multi\_signature\_registration.MultiSignatureRegistration
 
 ### `__init__()`
 
-```py
+```python
 def __init__(self, min_signatures, lifetime, keysgroup, fee=None):
 ```
 
@@ -544,22 +510,22 @@ Create a new MultiSignatureRegistration transaction instance
 
 #### Parameters
 
-| Type     | Name             | Required | Description                             |
-| -------- | ---------------- | -------- | --------------------------------------- |
-| int      | min_signatures   | Yes      | Transaction minimum required signatures |
-| int      | lifetime         | Yes      | Transaction lifetime                    |
-| list     | keysgroup        | Yes      | Transaction keygroups                   |
-| int      | fee              | No       | Transaction fee                         |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | min\_signatures | Yes | Transaction minimum required signatures |
+| int | lifetime | Yes | Transaction lifetime |
+| list | keysgroup | Yes | Transaction keygroups |
+| int | fee | No | Transaction fee |
 
 #### Return Value
 
 `<class 'crypto.transactions.builder.multi_signature_registration.MultiSignatureRegistration'>`
 
-## crypto.transactions.builder.second_signature_registration.SecondSignatureRegistration
+## crypto.transactions.builder.second\_signature\_registration.SecondSignatureRegistration
 
 ### `__init__()`
 
-```py
+```python
 def __init__(self, second_passphrase, fee=None):
 ```
 
@@ -567,20 +533,20 @@ Create a new SecondSignatureRegistration transaction instance
 
 #### Parameters
 
-| Type     | Name              | Required | Description       |
-| -------- | ----------------- | -------- | ----------------- |
-| str      | second_passphrase | No       | Second passphrase |
-| int      | fee               | No       | Transaction fee   |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | second\_passphrase | No | Second passphrase |
+| int | fee | No | Transaction fee |
 
 #### Return Value
 
 `<class 'crypto.transactions.builder.second_signature_registration.SecondSignatureRegistration'>`
 
-## crypto.transactions.builder.timelock_transfer.TimelockTransfer
+## crypto.transactions.builder.timelock\_transfer.TimelockTransfer
 
 ### `__init__()`
 
-```py
+```python
 def __init__(self, fee=None):
 ```
 
@@ -588,9 +554,9 @@ Create a new TimelockTransfer transaction instance
 
 #### Parameters
 
-| Type     | Name  | Required | Description     |
-| -------- | ----- | -------- | --------------- |
-| int      | fee   | No       | Transaction fee |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | fee | No | Transaction fee |
 
 #### Return Value
 
@@ -600,7 +566,7 @@ Create a new TimelockTransfer transaction instance
 
 ### `__init__()`
 
-```py
+```python
 def __init__(self, recipientId, amount, vendorField=None, fee=None):
 ```
 
@@ -608,12 +574,12 @@ Create a new Transfer transaction instance
 
 #### Parameters
 
-| Type     | Name             | Required | Description             |
-| -------- | ---------------- | -------- | ----------------------- |
-| str      | recipientId      | Yes      | Recipient identifier    |
-| int      | amount           | Yes      | Transaction amount      |
-| str      | vendorField      | No       | Transaction vendorfield |
-| int      | fee              | No       | Transaction fee         |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | recipientId | Yes | Recipient identifier |
+| int | amount | Yes | Transaction amount |
+| str | vendorField | No | Transaction vendorfield |
+| int | fee | No | Transaction fee |
 
 #### Return Value
 
@@ -623,7 +589,7 @@ Create a new Transfer transaction instance
 
 ### `__init__()`
 
-```py
+```python
 def __init__(self, vote, fee=None):
 ```
 
@@ -631,10 +597,10 @@ Create a new Vote transaction instance
 
 #### Parameters
 
-| Type     | Name             | Required | Description     |
-| -------- | ---------------- | -------- | --------------- |
-| str      | vote             | Yes      | Vote            |
-| int      | fee              | No       | Transaction fee |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | vote | Yes | Vote |
+| int | fee | No | Transaction fee |
 
 #### Return Value
 
@@ -642,7 +608,7 @@ Create a new Vote transaction instance
 
 ### `sign()`
 
-```py
+```python
 def sign(self, passphrase):
 ```
 
@@ -650,9 +616,9 @@ Sign the transaction using the given passphrase
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| str      | passphrase       | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | passphrase | Yes | Passphrase |
 
 #### Return Value
 
@@ -662,7 +628,7 @@ Sign the transaction using the given passphrase
 
 ### `__init__()`
 
-```py
+```python
 def __init__(self, serialized, asset_offset, transaction):
 ```
 
@@ -670,21 +636,19 @@ Create a new deserializer instance
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| ???      | serialized       | Yes      | Serialized  |
-| ???      | asset_offset     | Yes      | Offset      |
-| ???      | transaction      | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ??? | serialized | Yes | Serialized |
+| ??? | asset\_offset | Yes | Offset |
+| ??? | transaction | Yes | Transaction |
 
 #### Return Value
 
 `<class 'crypto.transactions.deserializers.base.BaseDeserializer'>`
 
----
-
 ### `deserialize()`
 
-```py
+```python
 def deserialize(self):
 ```
 
@@ -694,11 +658,11 @@ Handle the deserialization of transaction data
 
 `NotImplementedError`
 
-## crypto.transactions.deserializers.delegate_registration
+## crypto.transactions.deserializers.delegate\_registration
 
 ### `deserialize()`
 
-```py
+```python
 def deserialize(self):
 ```
 
@@ -708,11 +672,11 @@ Handle the deserialization of "delegate registration" data
 
 `<class 'dict'>`
 
-## crypto.transactions.deserializers.multi_signature_registration
+## crypto.transactions.deserializers.multi\_signature\_registration
 
 ### `deserialize()`
 
-```py
+```python
 def deserialize(self):
 ```
 
@@ -722,11 +686,11 @@ Handle the deserialization of "multi signature registration" data
 
 `<class 'dict'>`
 
-## crypto.transactions.deserializers.second_signature_registration
+## crypto.transactions.deserializers.second\_signature\_registration
 
 ### `deserialize()`
 
-```py
+```python
 def deserialize(self):
 ```
 
@@ -740,7 +704,7 @@ Handle the deserialization of "second signature" data.
 
 ### `deserialize()`
 
-```py
+```python
 def deserialize(self):
 ```
 
@@ -754,7 +718,7 @@ Handle the deserialization of "transfer" data
 
 ### `deserialize()`
 
-```py
+```python
 def deserialize(self):
 ```
 
@@ -768,7 +732,7 @@ Handle the deserialization of "vote" data.
 
 ### `__init__()`
 
-```py
+```python
 def __init__(self, transaction, byte_data=bytes()):
 ```
 
@@ -776,20 +740,18 @@ Create a new serializer instance
 
 #### Parameters
 
-| Type        | Name             | Required | Description |
-| ----------- | ---------------- | -------- | ----------- |
-| Transaction | transaction      | Yes      | Transaction |
-| bytes       | byte_data        | No       | ...         |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Transaction | transaction | Yes | Transaction |
+| bytes | byte\_data | No | ... |
 
 #### Return Value
 
 `<class 'crypto.transactions.serializers.base.BaseSerializer'>`
 
----
-
 ### `serialize`
 
-```py
+```python
 def serialize(self):
 ```
 
@@ -799,11 +761,11 @@ Handle the serialization of transaction data
 
 `NotImplementedError`
 
-## crypto.transactions.serializers.delegate_registration
+## crypto.transactions.serializers.delegate\_registration
 
 ### `serialize`
 
-```py
+```python
 def serialize(self):
 ```
 
@@ -813,11 +775,11 @@ Handle the serialization of "delegate registration" data
 
 `<class 'bytes'>`
 
-## crypto.transactions.serializers.delegate_resignation
+## crypto.transactions.serializers.delegate\_resignation
 
 ### `serialize`
 
-```py
+```python
 def serialize(self):
 ```
 
@@ -831,7 +793,7 @@ Handle the serialization of "delegate resignation" data
 
 ### `serialize`
 
-```py
+```python
 def serialize(self):
 ```
 
@@ -841,11 +803,11 @@ Handle the serialization of "ipfs" data
 
 `<class 'bytes'>`
 
-## crypto.transactions.serializers.multi_payment
+## crypto.transactions.serializers.multi\_payment
 
 ### `serialize`
 
-```py
+```python
 def serialize(self):
 ```
 
@@ -855,11 +817,11 @@ Handle the serialization of "multi payment" data
 
 `<class 'bytes'>`
 
-## crypto.transactions.serializers.multi_signature_registration
+## crypto.transactions.serializers.multi\_signature\_registration
 
 ### `serialize`
 
-```py
+```python
 def serialize(self):
 ```
 
@@ -869,11 +831,11 @@ Handle the serialization of "multi signature" data
 
 `<class 'bytes'>`
 
-## crypto.transactions.serializers.second_signature_registration
+## crypto.transactions.serializers.second\_signature\_registration
 
 ### `serialize`
 
-```py
+```python
 def serialize(self):
 ```
 
@@ -883,11 +845,11 @@ Handle the serialization of "second signature" data
 
 `<class 'bytes'>`
 
-## crypto.transactions.serializers.timelock_transfer
+## crypto.transactions.serializers.timelock\_transfer
 
 ### `serialize`
 
-```py
+```python
 def serialize(self):
 ```
 
@@ -901,7 +863,7 @@ Handle the serialization of "timelock" data
 
 ### `serialize`
 
-```py
+```python
 def serialize(self):
 ```
 
@@ -915,7 +877,7 @@ Handle the serialization of "transfer" data
 
 ### `serialize`
 
-```py
+```python
 def serialize(self):
 ```
 
@@ -929,7 +891,7 @@ Handle the serialization of "vote" data
 
 ### `__init__`
 
-```py
+```python
 def __init__(self, serialized):
 ```
 
@@ -937,19 +899,17 @@ Create a new deserializer instance
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| str      | serialized       | Yes      | Serialized  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | serialized | Yes | Serialized |
 
 #### Return Value
 
 `<class 'crypto.transactions.deserializer.Deserializer'>`
 
----
-
 ### `deserialize`
 
-```py
+```python
 def deserialize(self):
 ```
 
@@ -959,11 +919,9 @@ Perform AIP11 compliant deserialization
 
 `<class 'crypto.transactions.transaction.Transaction'>`
 
----
-
 ### `_handle_transaction_type`
 
-```py
+```python
 def _handle_transaction_type(self, asset_offset, transaction):
 ```
 
@@ -971,20 +929,18 @@ Handle the deserialization of transaction data
 
 #### Parameters
 
-| Type                    | Name             | Required | Description |
-| ------------------------| ---------------- | -------- | ----------- |
-| int                     | asset_offset     | Yes      | Offset      |
-| transaction.Transaction | transaction      | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | asset\_offset | Yes | Offset |
+| transaction.Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `<class 'crypto.transactions.transaction.Transaction'>`
 
----
-
 ### `_handle_version_one`
 
-```py
+```python
 def _handle_version_one(self, transaction):
 ```
 
@@ -992,19 +948,17 @@ Handle the deserialization of transaction data with a version of 1.0
 
 #### Parameters
 
-| Type                    | Name             | Required | Description |
-| ------------------------| ---------------- | -------- | ----------- |
-| transaction.Transaction | transaction      | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| transaction.Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `<class 'crypto.transactions.transaction.Transaction'>`
 
----
-
 ### `_handle_version_two`
 
-```py
+```python
 def _handle_version_two(self, transaction):
 ```
 
@@ -1012,9 +966,9 @@ Handle the deserialization of transaction data with a version of 2.0.
 
 #### Parameters
 
-| Type                    | Name             | Required | Description |
-| ------------------------| ---------------- | -------- | ----------- |
-| transaction.Transaction | transaction      | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| transaction.Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
@@ -1024,7 +978,7 @@ Handle the deserialization of transaction data with a version of 2.0.
 
 ### `__init__`
 
-```py
+```python
 def __init__(self, transaction):
 ```
 
@@ -1032,19 +986,17 @@ Create a new serializer instance
 
 #### Parameters
 
-| Type                    | Name             | Required | Description |
-| ------------------------| ---------------- | -------- | ----------- |
-| transaction.Transaction | transaction      | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| transaction.Transaction | transaction | Yes | Transaction |
 
 #### Return Value
 
 `<class 'crypto.transactions.serializer.Serializer'>`
 
----
-
 ### `serialize`
 
-```py
+```python
 def serialize(self):
 ```
 
@@ -1054,11 +1006,9 @@ Perform AIP11 compliant serialization
 
 `<class 'str'>`
 
----
-
 ### `_handle_transaction_type`
 
-```py
+```python
 def _handle_transaction_type(self, bytes_data):
 ```
 
@@ -1066,19 +1016,17 @@ Handle the serialization of transaction data
 
 #### Parameters
 
-| Type  | Name       | Required | Description |
-| ----- | ---------- | -------- | ----------- |
-| bytes | bytes_data | Yes      | ...         |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| bytes | bytes\_data | Yes | ... |
 
 #### Return Value
 
 `<class 'bytes'>`
 
----
-
 ### `_handle_signature`
 
-```py
+```python
 def _handle_signature(self, bytes_data):
 ```
 
@@ -1086,9 +1034,9 @@ Handle the serialization of "signatures" data
 
 #### Parameters
 
-| Type  | Name       | Required | Description |
-| ----- | ---------- | -------- | ----------- |
-| bytes | bytes_data | Yes      | ...         |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| bytes | bytes\_data | Yes | ... |
 
 #### Return Value
 
@@ -1098,7 +1046,7 @@ Handle the serialization of "signatures" data
 
 ### `__init__`
 
-```py
+```python
 def __init__(self, *args, **kwargs):
 ```
 
@@ -1106,20 +1054,18 @@ Create a new transaction instance
 
 #### Parameters
 
-| Type  | Name       | Required | Description |
-| ----- | ---------- | -------- | ----------- |
-| any   | *args      | No       | ...         |
-| any   | **kwargs   | No       | ...         |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| any | \*args | No | ... |
+| any | \*\*kwargs | No | ... |
 
 #### Return Value
 
 `<class 'crypto.transactions.transaction.Transaction'>`
 
----
-
 ### `get_id`
 
-```py
+```python
 def get_id(self):
 ```
 
@@ -1129,11 +1075,9 @@ Convert the byte representation to a unique identifier
 
 `<class 'str'>`
 
----
-
 ### `to_dict`
 
-```py
+```python
 def to_dict(self):
 ```
 
@@ -1143,11 +1087,9 @@ Convert the transaction to its dictionary representation.
 
 `<class 'dict'>`
 
----
-
 ### `to_json`
 
-```py
+```python
 def to_json(self):
 ```
 
@@ -1157,11 +1099,9 @@ Convert the transaction to its JSON representation
 
 `<class 'dict'>`
 
----
-
 ### `to_bytes`
 
-```py
+```python
 def to_bytes(self, skip_signature=True, skip_second_signature=True):
 ```
 
@@ -1169,20 +1109,18 @@ Convert the transaction to its byte representation
 
 #### Parameters
 
-| Type  | Name                  | Required | Description           |
-| ----- | --------------------- | -------- | --------------------- |
-| bool  | skip_signature        | Yes      | Skip first signature  |
-| bool  | skip_second_signature | Yes      | Skip second signature |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| bool | skip\_signature | Yes | Skip first signature |
+| bool | skip\_second\_signature | Yes | Skip second signature |
 
 #### Return Value
 
 `<class 'bytes'>`
 
----
-
 ### `parse_signatures`
 
-```py
+```python
 def parse_signatures(self, serialized, start_offset):
 ```
 
@@ -1190,20 +1128,18 @@ Parse the signature, second signature and multi signatures
 
 #### Parameters
 
-| Type  | Name         | Required | Description |
-| ----- | ------------ | -------- | ----------- |
-| str   | serialized   | Yes      | Serialized  |
-| int   | start_offset | Yes      | Offset      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | serialized | Yes | Serialized |
+| int | start\_offset | Yes | Offset |
 
 #### Return Value
 
 `<class 'NoneType'>`
 
----
-
 ### `serialize`
 
-```py
+```python
 def serialize(self):
 ```
 
@@ -1213,11 +1149,9 @@ Perform AIP11 compliant serialization
 
 `<class 'str'>`
 
----
-
 ### `deserialize`
 
-```py
+```python
 def deserialize(self, serialized):
 ```
 
@@ -1225,19 +1159,17 @@ Perform AIP11 compliant deserialization
 
 #### Parameters
 
-| Type  | Name       | Required | Description |
-| ----- | ---------- | -------- | ----------- |
-| str   | serialized | Yes      | Serialized  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | serialized | Yes | Serialized |
 
 #### Return Value
 
 `<class 'str'>`
 
----
-
 ### `verify`
 
-```py
+```python
 def verify(self):
 ```
 
@@ -1247,11 +1179,9 @@ Verify the transaction
 
 `<class 'NoneType'>`
 
----
-
 ### `second_verify`
 
-```py
+```python
 def second_verify(self, passphrase):
 ```
 
@@ -1259,19 +1189,17 @@ Verify the transaction using the 2nd passphrase
 
 #### Parameters
 
-| Type  | Name       | Required | Description       |
-| ----- | ---------- | -------- | ----------------- |
-| str   | passphrase | Yes      | Second passphrase |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | passphrase | Yes | Second passphrase |
 
 #### Return Value
 
 `<class 'NoneType'>`
 
----
-
 ### `_handle_transaction_type`
 
-```py
+```python
 def _handle_transaction_type(self, bytes_data):
 ```
 
@@ -1279,19 +1207,17 @@ Handle each transaction type differently
 
 #### Parameters
 
-| Type  | Name       | Required | Description                                                |
-| ----- | ---------- | -------- | ---------------------------------------------------------- |
-| bytes | bytes_data | Yes      | Input the bytes data to which you want to append new bytes |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| bytes | bytes\_data | Yes | Input the bytes data to which you want to append new bytes |
 
 #### Return Value
 
 `<class 'bytes'>`
 
----
-
 ### `_handle_signature`
 
-```py
+```python
 def _handle_signature(self, bytes_data, skip_signature, skip_second_signature):
 ```
 
@@ -1299,11 +1225,11 @@ Handle the serialization of "signatures" data
 
 #### Parameters
 
-| Type  | Name                  | Required | Description                                                               |
-| ----- | --------------------- | -------- | ------------------------------------------------------------------------- |
-| bytes | bytes_data            | Yes      | Input the bytes data to which you want to append new bytes from signature |
-| bool  | skip_signature        | Yes      | Skip first signature                                                      |
-| bool  | skip_second_signature | Yes      | Skip second signature                                                     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| bytes | bytes\_data | Yes | Input the bytes data to which you want to append new bytes from signature |
+| bool | skip\_signature | Yes | Skip first signature |
+| bool | skip\_second\_signature | Yes | Skip second signature |
 
 #### Return Value
 
@@ -1313,7 +1239,7 @@ Handle the serialization of "signatures" data
 
 ### `__init__`
 
-```py
+```python
 def __init__(self, message, signature, public_key):
 ```
 
@@ -1321,21 +1247,19 @@ Create a new message instance
 
 #### Parameters
 
-| Type  | Name       | Required | Description |
-| ----- | ---------- | -------- | ----------- |
-| str   | message    | Yes      | Message     |
-| str   | signature  | Yes      | Signature   |
-| str   | public_key | Yes      | Public key  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | message | Yes | Message |
+| str | signature | Yes | Signature |
+| str | public\_key | Yes | Public key |
 
 #### Return Value
 
 `<class 'crypto.utils.message.Message'>`
 
----
-
 ### `sign`
 
-```py
+```python
 def sign(cls, message, passphrase):
 ```
 
@@ -1343,20 +1267,18 @@ Sign a message using the given passphrase
 
 #### Parameters
 
-| Type  | Name       | Required | Description |
-| ----- | ---------- | -------- | ----------- |
-| str   | message    | Yes      | Message     |
-| str   | passphrase | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | message | Yes | Message |
+| str | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `<class 'crypto.utils.message.Message'>`
 
----
-
 ### `verify`
 
-```py
+```python
 def verify(self):
 ```
 
@@ -1366,11 +1288,9 @@ Verify the message contents
 
 `<class 'bool'>`
 
----
-
 ### `to_dict`
 
-```py
+```python
 def to_dict(self):
 ```
 
@@ -1380,11 +1300,9 @@ Convert the message to its dictionary representation
 
 `<class 'dict'>`
 
----
-
 ### `to_json`
 
-```py
+```python
 def to_json(self):
 ```
 
@@ -1398,7 +1316,7 @@ Convert the message to its JSON representation
 
 ### `get_time`
 
-```py
+```python
 def get_time():
 ```
 
@@ -1408,11 +1326,9 @@ Get the time diff between now and network start
 
 `<class 'int'>`
 
----
-
 ### `get_epoch`
 
-```py
+```python
 def get_epoch():
 ```
 
@@ -1421,3 +1337,4 @@ Get the network start epoch
 #### Return Value
 
 `<class 'datetime'>`
+

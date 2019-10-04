@@ -3,10 +3,11 @@ id: api-documentation
 title: API Documentation
 ---
 
+# API Documentation
+
 ## ArkEcosystem.Crypto.Configuration.Fee
 
 ### `get()`
-
 
 ```ruby
 def self.get(type)
@@ -16,16 +17,13 @@ Get a fee for a given transaction type
 
 #### Parameters
 
-| Type                              | Name | Required | Description                                     |
-| --------------------------------- | ---- | -------- | ----------------------------------------------- |
-| ArkEcosystem::Crypto::Enums::Fees | type | Yes      | Transaction type for which we wish to get a fee |
-
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ArkEcosystem::Crypto::Enums::Fees | type | Yes | Transaction type for which we wish to get a fee |
 
 #### Return Value
 
 `?`
-
----
 
 ### `set()`
 
@@ -37,10 +35,10 @@ Set a fee
 
 #### Parameters
 
-| Type                              | Name | Required | Description                                     |
-| --------------------------------- | ---- | -------- | ----------------------------------------------- |
-| ArkEcosystem::Crypto::Enums::Fees | type | Yes      | Transaction type for which we wish to get a fee |
-| Integer                           | fee  | Yes      | Fee for a given transaction type                |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ArkEcosystem::Crypto::Enums::Fees | type | Yes | Transaction type for which we wish to get a fee |
+| Integer | fee | Yes | Fee for a given transaction type |
 
 #### Return Value
 
@@ -60,8 +58,6 @@ Get settings for a selected network, default network is mainnet.
 
 `?`
 
----
-
 ### `set()`
 
 ```ruby
@@ -72,9 +68,9 @@ Set settings for a selected network, default network is mainnet.
 
 #### Parameters
 
-| Type   | Name | Required | Description                                     |
-| ------ | ---- | -------- | ----------------------------------------------- |
-| string | type | Yes      | Transaction type for which we wish to get a fee |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | type | Yes | Transaction type for which we wish to get a fee |
 
 #### Return Value
 
@@ -92,16 +88,14 @@ Derive the address from the given public key.
 
 #### Parameters
 
-| Type            | Name             | Required | Description            |
-| --------------- | ---------------- | -------- | ---------------------- |
-| string          | public_key       | Yes      | Public key             |
-| string          | network          | No       | Version of the network |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | public\_key | Yes | Public key |
+| string | network | No | Version of the network |
 
 #### Return Value
 
 `string`
-
----
 
 ### `from_private_key()`
 
@@ -113,16 +107,14 @@ Derive the address from the given private key.
 
 #### Parameters
 
-| Type   | Name             | Required | Description            |
-| ------ | ---------------- | -------- | ---------------------- |
-| string | private_key      | Yes      | Private key            |
-| string | network          | No       | Version of the network |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | private\_key | Yes | Private key |
+| string | network | No | Version of the network |
 
 #### Return Value
 
 `?`
-
----
 
 ### `from_passphrase()`
 
@@ -134,16 +126,14 @@ Derive the address from the given passphrase.
 
 #### Parameters
 
-| Type   | Name             | Required | Description            |
-| ------ | ---------------- | -------- | ---------------------- |
-| string | passphrase       | Yes      | Passphrase             |
-| string | network          | No       | Version of the network |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | Passphrase |
+| string | network | No | Version of the network |
 
 #### Return Value
 
 `string`
-
----
 
 ### `validate()`
 
@@ -155,9 +145,9 @@ Validate the given address.
 
 #### Parameters
 
-| Type   | Name             | Required | Description |
-| ------ | ---------------- | -------- | ----------- |
-| string | address          | Yes      | Address     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | address | Yes | Address |
 
 #### Return Value
 
@@ -175,15 +165,13 @@ Derive the private key for the given passphrase.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| string   | passphrase       | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `?`
-
----
 
 ### `from_hex()`
 
@@ -195,9 +183,9 @@ Create a private key instance from a hex string.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| string   | private_key      | Yes      | Private key |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | private\_key | Yes | Private key |
 
 #### Return Value
 
@@ -215,15 +203,13 @@ Derive the public from the given passphrase.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| string   | passphrase       | Yes      | Psassphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | Psassphrase |
 
 #### Return Value
 
 `?`
-
----
 
 ### `from_hex()`
 
@@ -235,9 +221,9 @@ Create a public key instance from a hex string.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| string   | public_key       | Yes      | Public key  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | public\_key | Yes | Public key |
 
 #### Return Value
 
@@ -255,10 +241,10 @@ Derive the WIF from the given passphrase.
 
 #### Parameters
 
-| Type    | Name             | Required | Description |
-| ------- | ---------------- | -------- | ----------- |
-| string  | passphrase       | Yes      | Passphrase  |
-| string  | network          | No       | Network wif |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | Passphrase |
+| string | network | No | Network wif |
 
 #### Return Value
 
@@ -278,8 +264,6 @@ Get the epoch time of the Network.
 
 `String`
 
----
-
 ### `version()`
 
 ```ruby
@@ -291,8 +275,6 @@ Get the version of the Network.
 #### Return Value
 
 `Integer`
-
----
 
 ### `wif()`
 
@@ -320,8 +302,6 @@ Get the epoch time of the Network.
 
 `String`
 
----
-
 ### `version()`
 
 ```ruby
@@ -333,8 +313,6 @@ Get the version of the Network.
 #### Return Value
 
 `Integer`
-
----
 
 ### `wif()`
 
@@ -362,8 +340,6 @@ Get the epoch time of the Network.
 
 `String`
 
----
-
 ### `version()`
 
 ```ruby
@@ -375,8 +351,6 @@ Get the version of the Network.
 #### Return Value
 
 `Integer`
-
----
 
 ### `wif()`
 
@@ -402,15 +376,13 @@ Sign the transaction using the given passphrase.
 
 #### Parameters
 
-| Type    | Name       | Required | Description |
-| ------- | ---------- | -------- | ----------- |
-| string  | passphrase | Yes      | passphrase  | 
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | passphrase |
 
 #### Return Value
 
 `?`
-
----
 
 ### `sign_and_create_id()`
 
@@ -422,15 +394,13 @@ Sign the transaction using the given passphrase and generate a valid id for it.
 
 #### Parameters
 
-| Type    | Name       | Required | Description |
-| ------- | ---------- | -------- | ----------- |
-| string  | passphrase | Yes      | passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | passphrase |
 
 #### Return Value
 
 `?`
-
----
 
 ### `second_sign()`
 
@@ -442,15 +412,13 @@ Sign the transaction using the given second passphrase.
 
 #### Parameters
 
-| Type    | Name       | Required | Description |
-| ------- | ---------- | -------- | ----------- |
-| string  | passphrase | Yes      | passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | passphrase |
 
 #### Return Value
 
 `?`
-
----
 
 ### `verify()`
 
@@ -464,8 +432,6 @@ Verify the transaction with a public key.
 
 `?`
 
----
-
 ### `second_verify()`
 
 ```ruby
@@ -476,15 +442,13 @@ Verify the transaction with a second public key.
 
 #### Parameters
 
-| Type    | Name              | Required | Description       |
-| ------- | ----------------- | -------- | ----------------- |
-| string  | second_public_key | Yes      | Second public key |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | second\_public\_key | Yes | Second public key |
 
 #### Return Value
 
 `?`
-
----
 
 ### `to_params()`
 
@@ -497,8 +461,6 @@ Convert the transaction to its params representation.
 #### Return Value
 
 `?`
-
---- 
 
 ### `to_json()`
 
@@ -524,15 +486,13 @@ Set the username to assign.
 
 #### Parameters
 
-| Type    | Name     | Required | Description       |
-| ------- | -------- | -------- | ----------------- |
-| string  | username | Yes      | Delegate username |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | username | Yes | Delegate username |
 
 #### Return Value
 
 `?`
-
----
 
 ### `def sign()`
 
@@ -544,15 +504,13 @@ Sign the transaction using the given passphrase.
 
 #### Parameters
 
-| Type    | Name       | Required | Description |
-| ------- | ---------- | -------- | ----------- |
-| string  | passphrase | Yes      | passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | passphrase |
 
 #### Return Value
 
 `?`
-
----
 
 ### `def type()`
 
@@ -578,15 +536,13 @@ Set the keysgroup of signatures.
 
 #### Parameters
 
-| Type    | Name       | Required | Description           |
-| ------- | ---------- | -------- | --------------------- |
-| string  | keysgroup  | Yes      | Transaction keysgroup |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | keysgroup | Yes | Transaction keysgroup |
 
 #### Return Value
 
 `?`
-
----
 
 ### `def set_lifetime()`
 
@@ -598,15 +554,13 @@ Set the transaction lifetime.
 
 #### Parameters
 
-| Type    | Name       | Required | Description          |
-| ------- | ---------- | -------- | -------------------- |
-| Integer | lifetime   | Yes      | Transaction lifetime |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Integer | lifetime | Yes | Transaction lifetime |
 
 #### Return Value
 
 `?`
-
----
 
 ### `def set_min()`
 
@@ -618,15 +572,13 @@ Set the transaction minimum required signatures.
 
 #### Parameters
 
-| Type    | Name       | Required | Description                 |
-| ------- | ---------- | -------- | --------------------------- |
-| Integer | min        | Yes      | Minimum required signatures |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Integer | min | Yes | Minimum required signatures |
 
 #### Return Value
 
 `?`
-
----
 
 ### `def type()`
 
@@ -652,15 +604,13 @@ Set the second passphrase for the transaction.
 
 #### Parameters
 
-| Type    | Name               | Required | Description       |
-| ------- | ------------------ | -------- | ----------------- |
-| string  | second_passphrase  | Yes      | Second passphrase |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | second\_passphrase | Yes | Second passphrase |
 
 #### Return Value
 
 `?`
-
----
 
 ### `def type()`
 
@@ -686,15 +636,13 @@ Set the recipient id of the transaction.
 
 #### Parameters
 
-| Type    | Name               | Required | Description          |
-| ------- | ------------------ | -------- | -------------------- |
-| string  | recipient_id       | Yes      | Recipient identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | recipient\_id | Yes | Recipient identifier |
 
 #### Return Value
 
 `?`
-
----
 
 ### `def set_amount()`
 
@@ -706,15 +654,13 @@ Set the amount of the transaction.
 
 #### Parameters
 
-| Type    | Name               | Required | Description        |
-| ------- | ------------------ | -------- | ------------------ |
-| string  | amount             | Yes      | Transaction amount |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | amount | Yes | Transaction amount |
 
 #### Return Value
 
 `?`
-
----
 
 ### `def set_vendor_field()`
 
@@ -726,15 +672,13 @@ Set the vendorfield of the transaction.
 
 #### Parameters
 
-| Type    | Name               | Required | Description             |
-| ------- | ------------------ | -------- | ----------------------- |
-| String  | vendor_field       | Yes      | Transaction vendorfield |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | vendor\_field | Yes | Transaction vendorfield |
 
 #### Return Value
 
 `?`
-
----
 
 ### `def type()`
 
@@ -760,15 +704,13 @@ Set the votes to cast.
 
 #### Parameters
 
-| Type    | Name               | Required | Description |
-| ------- | ------------------ | -------- | ----------- |
-| Array   | votes              | Yes      | Votes       |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Array | votes | Yes | Votes |
 
 #### Return Value
 
 `?`
-
----
 
 ### `def sign()`
 
@@ -780,15 +722,13 @@ Sign the transaction using the given passphrase.
 
 #### Parameters
 
-| Type    | Name               | Required | Description |
-| ------- | ------------------ | -------- | ----------- |
-| string  | passphrase         | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `?`
-
----
 
 ### `def type()`
 
@@ -814,12 +754,12 @@ The base deserializer for transactions.
 
 #### Parameters
 
-| Type    | Name         | Required | Description      |
-| ------- | ------------ | -------- | ---------------- |
-| ?       | serialized   | Yes      | Serialized       |
-| ?       | binary       | Yes      | ...              |
-| ?       | asset_offset | Yes      | Offset           |
-| ?       | transaction  | Yes      | Transaction      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ? | serialized | Yes | Serialized |
+| ? | binary | Yes | ... |
+| ? | asset\_offset | Yes | Offset |
+| ? | transaction | Yes | Transaction |
 
 #### Return Value
 
@@ -963,10 +903,10 @@ The base serializer for transactions
 
 #### Parameters
 
-| Type    | Name        | Required | Description      |
-| ------- | ----------- | -------- | ---------------- |
-| ?       | transaction | Yes      | Transaction      |
-| ?       | bytes       | Yes      | ...              |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ? | transaction | Yes | Transaction |
+| ? | bytes | Yes | ... |
 
 #### Return Value
 
@@ -1110,15 +1050,13 @@ The base deserializer for transactions
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| Map      | serialized       | Yes      | Serialized  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Map | serialized | Yes | Serialized |
 
 #### Return Value
 
 `?`
-
----
 
 ### `deserialize()`
 
@@ -1132,8 +1070,6 @@ Perform AIP11 compliant deserialization.
 
 `?`
 
----
-
 ### `handle_type()`
 
 ```ruby
@@ -1144,16 +1080,14 @@ Handle the deserialization of "type" data
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| ?        | asset_offset     | Yes      | Offset      |
-| ?        | transaction      | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ? | asset\_offset | Yes | Offset |
+| ? | transaction | Yes | Transaction |
 
 #### Return Value
 
 `?`
-
----
 
 ### `handle_version_one()`
 
@@ -1165,9 +1099,9 @@ Handle the deserialization of transaction data with a version of 1.0.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| ?        | transaction      | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ? | transaction | Yes | Transaction |
 
 #### Return Value
 
@@ -1185,15 +1119,13 @@ The base serializer for transactions.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| ?        | transaction      | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ? | transaction | Yes | Transaction |
 
 #### Return Value
 
 `?`
-
----
 
 ### `serialize()`
 
@@ -1207,8 +1139,6 @@ Perform AIP11 compliant serialization.
 
 `?`
 
----
-
 ### `handle_type()`
 
 ```ruby
@@ -1219,16 +1149,13 @@ Handle the serialization of "type" data
 
 #### Parameters
 
-| Type        | Name  | Required | Description |
-| ----------- | ----- | -------- | ----------- |
-| ?           | bytes | Yes      | ...         |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ? | bytes | Yes | ... |
 
 #### Return Value
 
 `?`
-
----
-
 
 ### `handle_signatures()`
 
@@ -1240,15 +1167,13 @@ Handle the serialization of "signatures" data
 
 #### Parameters
 
-| Type        | Name  | Required | Description |
-| ----------- | ----- | -------- | ----------- |
-| ?           | bytes | Yes      | ...         |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ? | bytes | Yes | ... |
 
 #### Return Value
 
 `?`
-
----
 
 ## ArkEcosystem.Crypto.Transactions.Transaction
 
@@ -1264,8 +1189,6 @@ Convert the byte representation to a unique identifier.
 
 `String`
 
----
-
 ### `sign()`
 
 ```ruby
@@ -1276,15 +1199,13 @@ Sign the transaction using the given passphrase.
 
 #### Parameters
 
-| Type   | Name              | Required  | Description        |
-| ------ | ----------------- | --------- | ------------------ |
-| String | passphrase        | Yes       | Passphrase         |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `?`
-
----
 
 ### `second_sign()`
 
@@ -1296,15 +1217,13 @@ Sign the transaction using the given second passphrase.
 
 #### Parameters
 
-| Type   | Name              | Required  | Description        |
-| ------ | ----------------- | --------- | ------------------ |
-| ?      | second_passphrase | Yes       | Second passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ? | second\_passphrase | Yes | Second passphrase |
 
 #### Return Value
 
 `?`
-
----
 
 ### `verify()`
 
@@ -1318,8 +1237,6 @@ Verify the transaction.
 
 `?`
 
----
-
 ### `second_verify()`
 
 ```ruby
@@ -1330,15 +1247,13 @@ Verify the transaction with a second public key.
 
 #### Parameters
 
-| Type   | Name              | Required | Description       |
-| ------ | ----------------- | -------- | ----------------- |
-| String | second_public_key | Yes      | Second public key |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | second\_public\_key | Yes | Second public key |
 
 #### Return Value
 
 `?`
-
----
 
 ### `to_bytes()`
 
@@ -1350,16 +1265,14 @@ Convert the transaction to its byte representation.
 
 #### Parameters
 
-| Type   | Name                  | Required | Description           |
-| ------ | --------------------- | -------- | --------------------- |
-| string | skip_signature        | No       | Skip first signature  |
-| string | skip_second_signature | No       | Skip second signature |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | skip\_signature | No | Skip first signature |
+| string | skip\_second\_signature | No | Skip second signature |
 
 #### Return Value
 
 `?`
-
----
 
 ### `parse_signatures()`
 
@@ -1371,17 +1284,14 @@ Parse the signature, second signature, and multi signatures.
 
 #### Parameters
 
-| Type   | Name         | Required | Description |
-| ------ | ------------ | -------- | ----------- |
-| ?      | serialized   | Yes      | Serialized  |
-| ?      | start_offset | Yes      | Offset      |
-
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ? | serialized | Yes | Serialized |
+| ? | start\_offset | Yes | Offset |
 
 #### Return Value
 
 `?`
-
----
 
 ### `to_params()`
 
@@ -1395,8 +1305,6 @@ Convert the transaction to its params representation.
 
 `?`
 
----
-
 ### `to_json()`
 
 ```ruby
@@ -1409,8 +1317,6 @@ Convert the transaction to its JSON representation.
 
 `?`
 
----
-
 ### `serialize()`
 
 ```ruby
@@ -1421,15 +1327,13 @@ Perform AIP11 compliant serialization
 
 #### Parameters
 
-| Type   | Name        | Required | Description |
-| ------ | ----------- | -------- | ----------- |
-| ?      | transaction | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ? | transaction | Yes | Transaction |
 
 #### Return Value
 
 `?`
-
----
 
 ### `deserialize()`
 
@@ -1441,9 +1345,9 @@ Perform AIP11 compliant deserialization.
 
 #### Parameters
 
-| Type   | Name        | Required | Description |
-| ------ | ----------- | -------- | ----------- |
-| ?      | transaction | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ? | transaction | Yes | Transaction |
 
 #### Return Value
 
@@ -1461,15 +1365,13 @@ The builder to work with signed messages.
 
 #### Parameters
 
-| Type       | Name       | Required | Description |
-| ---------- | ---------- | -------- | ----------- |
-| String     | message    | Yes      | Message     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | message | Yes | Message |
 
 #### Return Value
 
 `?`
-
----
 
 ### `sign()`
 
@@ -1481,16 +1383,14 @@ Sign a message using the given passphrase.
 
 #### Parameters
 
-| Type       | Name       | Required | Description |
-| ---------- | ---------- | -------- | ----------- |
-| String     | message    | Yes      | Message     |
-| String     | passphrase | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | message | Yes | Message |
+| String | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `?`
-
----
 
 ### `verify()`
 
@@ -1504,8 +1404,6 @@ Verify the message contents
 
 `?`
 
----
-
 ### `to_params()`
 
 ```ruby
@@ -1517,8 +1415,6 @@ Convert the message to its params representation
 #### Return Value
 
 `?`
-
----
 
 ### `to_json()`
 
@@ -1546,8 +1442,6 @@ Get the time diff between now and network start.
 
 `?`
 
----
-
 ### `get_epoch()`
 
 ```ruby
@@ -1559,3 +1453,4 @@ Get the network start epoch.
 #### Return Value
 
 `?`
+

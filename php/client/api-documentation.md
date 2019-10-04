@@ -3,6 +3,8 @@ id: api-documentation
 title: API Documentation
 ---
 
+# API Documentation
+
 ## ArkEcosystem\Client\API\AbstractAPI
 
 ### `__construct()`
@@ -15,11 +17,9 @@ Create a new API class instance.
 
 #### Parameters
 
-| Type        | Name       | Required | Description |
-| ----------- | ---------- | -------- | ----------- |
-| Connection  | connection | Yes      | Connection  |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Connection | connection | Yes | Connection |
 
 ### `get()`
 
@@ -31,16 +31,14 @@ Send a GET request with query parameters.
 
 #### Parameters
 
-| Type   | Name       | Required | Description      |
-| ------ | ---------- | -------- | ---------------- |
-| string | path       | Yes      | Endpoint         |
-| array  | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | path | Yes | Endpoint |
+| array | query | No | Query parameters |
 
 #### Return Value
 
 `array|string`
-
----
 
 ### `post()`
 
@@ -52,16 +50,14 @@ Send a POST request with JSON-encoded parameters.
 
 #### Parameters
 
-| Type   | Name       | Required | Description      |
-| ------ | ---------- | -------- | ---------------- |
-| string | path       | Yes      | Endpoint         |
-| array  | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | path | Yes | Endpoint |
+| array | query | No | Query parameters |
 
 #### Return Value
 
 `array|string`
-
----
 
 ## ArkEcosystem\Client\API\Blocks
 
@@ -75,16 +71,13 @@ Get all blocks.
 
 #### Parameters
 
-| Type  | Name       | Required | Description      |
-| ----- | ---------- | -------- | ---------------- |
-| array | query      | No       | Query parameters |
-
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| array | query | No | Query parameters |
 
 #### Return Value
 
 `array`
-
----
 
 ### `show()`
 
@@ -96,15 +89,13 @@ Get a block by the given id.
 
 #### Parameters
 
-| Type   | Name     | Required | Description |
-| ------ | -------- | -------- | ----------- |
-| string | id       | Yes      | Block ID    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Block ID |
 
 #### Return Value
 
 `array`
-
----
 
 ### `transactions()`
 
@@ -116,16 +107,14 @@ Get all transactions by the given block.
 
 #### Parameters
 
-| Type   | Name  | Required | Description      |
-| ------ | ----- | -------- | ---------------- |
-| string | id    | Yes      | Block ID         |
-| array  | query | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Block ID |
+| array | query | No | Query parameters |
 
 #### Return Value
 
 `array`
-
----
 
 ### `search()`
 
@@ -137,9 +126,9 @@ Filter all blocks by the given parameters.
 
 #### Parameters
 
-| Type  | Name       | Required | Description       |
-| ----- | ---------- | -------- | ----------------- |
-| array | parameters | Yes      | Search parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| array | parameters | Yes | Search parameters |
 
 #### Return Value
 
@@ -157,15 +146,13 @@ Get all accounts.
 
 #### Parameters
 
-| Type  | Name       | Required | Description      |
-| ----- | ---------- | -------- | ---------------- |
-| array | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| array | query | No | Query parameters |
 
 #### Return Value
 
 `array`
-
----
 
 ### `show()`
 
@@ -177,15 +164,13 @@ Get a delegate by the given id.
 
 #### Parameters
 
-| Type   | Name        | Required | Description         |
-| ------ | ----------- | -------- | ------------------- |
-| string | id          | Yes      | Delegate identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Delegate identifier |
 
 #### Return Value
 
 `array`
-
----
 
 ### `blocks()`
 
@@ -197,16 +182,14 @@ Get all blocks for the given delegate.
 
 #### Parameters
 
-| Type   | Name        | Required | Description         |
-| ------ | ----------- | -------- | ------------------- |
-| string | id          | Yes      | Delegate identifier |
-| array  | query       | No       | Query parameters    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Delegate identifier |
+| array | query | No | Query parameters |
 
 #### Return Value
 
 `array`
-
----
 
 ### `voters()`
 
@@ -218,10 +201,10 @@ Get all voters for the given delegate.
 
 #### Parameters
 
-| Type   | Name        | Required | Description         |
-| ------ | ----------- | -------- | ------------------- |
-| string | id          | Yes      | Delegate identifier |
-| array  | query       | No       | Query parameters    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Delegate identifier |
+| array | query | No | Query parameters |
 
 #### Return Value
 
@@ -241,8 +224,6 @@ Get the node configuration.
 
 `array`
 
----
-
 ### `status()`
 
 ```php
@@ -254,8 +235,6 @@ Get the node status.
 #### Return Value
 
 `array`
-
----
 
 ### `syncing()`
 
@@ -269,8 +248,6 @@ Get the node syncing status.
 
 `array`
 
----
-
 ### `fees()`
 
 ```php
@@ -281,9 +258,9 @@ Get the node fee statistics.
 
 #### Parameters
 
-| Type   | Name        | Required | Description |
-| ------ | ----------- | -------- | ----------- |
-| int    | days        | No       | ...         |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | days | No | ... |
 
 #### Return Value
 
@@ -301,15 +278,13 @@ Get all peers.
 
 #### Parameters
 
-| Type  | Name       | Required | Description      |
-| ----- | ---------- | -------- | ---------------- |
-| array | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| array | query | No | Query parameters |
 
 #### Return Value
 
 `array`
-
----
 
 ### `show()`
 
@@ -321,9 +296,9 @@ Get a peer by the given IP address.
 
 #### Parameters
 
-| Type   | Name | Required | Description |
-| ------ | ---- | -------- | ----------- |
-| string | ip   | Yes      | IP address  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | ip | Yes | IP address |
 
 #### Return Value
 
@@ -341,15 +316,13 @@ Create a new transaction.
 
 #### Parameters
 
-| Type  | Name         | Required | Description                 |
-| ----- | ------------ | -------- | --------------------------- |
-| array | transactions | Yes      | Transaction(s) to broadcast |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| array | transactions | Yes | Transaction\(s\) to broadcast |
 
 #### Return Value
 
 `array`
-
----
 
 ### `show()`
 
@@ -361,15 +334,13 @@ Get a transaction by the given id.
 
 #### Parameters
 
-| Type   | Name           | Required | Description    |
-| ------ | -------------- | -------- | -------------- |
-| string | id             | Yes      | Transaction ID |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Transaction ID |
 
 #### Return Value
 
 `array`
-
----
 
 ### `all()`
 
@@ -381,15 +352,13 @@ Get all transactions.
 
 #### Parameters
 
-| Type  | Name       | Required | Description      |
-| ----- | ---------- | -------- | ---------------- |
-| array | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| array | query | No | Query parameters |
 
 #### Return Value
 
 `array`
-
----
 
 ### `allUnconfirmed()`
 
@@ -403,8 +372,6 @@ Get all unconfirmed transactions.
 
 `array`
 
----
-
 ### `showUnconfirmed()`
 
 ```php
@@ -415,15 +382,13 @@ Get an unconfirmed transaction by the given id.
 
 #### Parameters
 
-| Type   | Name     | Required | Description    |
-| ------ | -------- | -------- | -------------- |
-| string | id       | No       | Transaction ID |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | No | Transaction ID |
 
 #### Return Value
 
 `array`
-
----
 
 ### `search()`
 
@@ -435,15 +400,13 @@ Filter all transactions by the given parameters.
 
 #### Parameters
 
-| Type  | Name       | Required | Description       |
-| ----- | ---------- | -------- | ----------------- |
-| array | query      | No       | Search parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| array | query | No | Search parameters |
 
 #### Return Value
 
 `array`
-
----
 
 ### `types()`
 
@@ -469,15 +432,13 @@ Get all votes.
 
 #### Parameters
 
-| Type  | Name       | Required | Description      |
-| ----- | ---------- | -------- | ---------------- |
-| array | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| array | query | No | Query parameters |
 
 #### Return Value
 
 `array`
-
----
 
 ### `show()`
 
@@ -489,9 +450,9 @@ Get a vote by the given id.
 
 #### Parameters
 
-| Type   | Name | Required | Description |
-| ------ | ---- | -------- | ----------- |
-| string | id   | Yes      | Vote ID     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Vote ID |
 
 #### Return Value
 
@@ -509,15 +470,13 @@ Get all wallets.
 
 #### Parameters
 
-| Type  | Name       | Required | Description      |
-| ----- | ---------- | -------- | ---------------- |
-| array | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| array | query | No | Query parameters |
 
 #### Return Value
 
 `array`
-
----
 
 ### `show()`
 
@@ -529,15 +488,13 @@ Get a wallet by the given id.
 
 #### Parameters
 
-| Type   | Name           | Required | Description       |
-| ------ | -------------- | -------- | ----------------- |
-| string | id             | Yes      | Wallet identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Wallet identifier |
 
 #### Return Value
 
 `array`
-
----
 
 ### `transactions()`
 
@@ -549,16 +506,14 @@ Get all transactions for the given wallet.
 
 #### Parameters
 
-| Type   | Name  | Required | Description       |
-| ------ | ----- | -------- | ----------------- |
-| string | id    | Yes      | Wallet identifier |
-| array  | query | No       | Quey parameters   |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Wallet identifier |
+| array | query | No | Quey parameters |
 
 #### Return Value
 
 `array`
-
----
 
 ### `receivedTransactions()`
 
@@ -570,16 +525,14 @@ Get all transactions received by the given wallet.
 
 #### Parameters
 
-| Type   | Name  | Required | Description       |
-| ------ | ----- | -------- | ----------------- |
-| string | id    | Yes      | Wallet identifier |
-| array  | query | No       | Quey parameters   |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Wallet identifier |
+| array | query | No | Quey parameters |
 
 #### Return Value
 
 `array`
-
----
 
 ### `sentTransactions()`
 
@@ -591,16 +544,14 @@ Get all transactions sent by the given wallet.
 
 #### Parameters
 
-| Type   | Name  | Required | Description       |
-| ------ | ----- | -------- | ----------------- |
-| string | id    | Yes      | Wallet identifier |
-| array  | query | No       | Quey parameters   |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Wallet identifier |
+| array | query | No | Quey parameters |
 
 #### Return Value
 
 `array`
-
----
 
 ### `votes()`
 
@@ -612,16 +563,14 @@ Get all votes by the given wallet.
 
 #### Parameters
 
-| Type   | Name  | Required | Description       |
-| ------ | ----- | -------- | ----------------- |
-| string | id    | Yes      | Wallet identifier |
-| array  | query | No       | Quey parameters   |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Wallet identifier |
+| array | query | No | Quey parameters |
 
 #### Return Value
 
 `array`
-
----
 
 ### `top()`
 
@@ -635,8 +584,6 @@ Get all wallets sorted by balance in descending order.
 
 `array`
 
----
-
 ### `search()`
 
 ```php
@@ -647,10 +594,11 @@ Filter all wallets by the given parameters.
 
 #### Parameters
 
-| Type   | Name       | Required | Description       |
-| ------ | ---------- | -------- | ----------------- |
-| array  | parameters | Yes      | Search parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| array | parameters | Yes | Search parameters |
 
 #### Return Value
 
 `array`
+
