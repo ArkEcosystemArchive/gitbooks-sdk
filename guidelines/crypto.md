@@ -3,11 +3,11 @@ id: crypto
 title: Crypto
 ---
 
-# Crypto
+# Crypto Libraries
 
-## Introduction
-
+{% hint style="info" %}
 **The following is a guide for implementing a new ARK Cryptography SDK. It covers the required functionalities as well as guidelines for how cryptography should typically look and behave.**
+{% endhint %}
 
 These guidelines are to be strictly followed if you are implementing or modifying a cryptography package for the ARK Ecosystem.
 

@@ -16,7 +16,7 @@ go get github.com/ARKEcosystem/go-crypto/crypto
 ## Development
 
 1. Fork the [package](https://github.com/ARKEcosystem/go-crypto).
-2. Clone your forked repository.
+2. Clone forked repository.
 
    ```bash
    git clone https://github.com/<githubusername>/go-crypto

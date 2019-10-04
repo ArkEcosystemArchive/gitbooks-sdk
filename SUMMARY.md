@@ -4,8 +4,8 @@
 
 ## Guidelines
 
-* [Crypto](guidelines/crypto.md)
-* [Client](guidelines/client.md)
+* [Crypto Libraries](guidelines/crypto.md)
+* [Client Libraries](guidelines/client.md)
 
 ## Java
 

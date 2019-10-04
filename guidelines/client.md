@@ -3,11 +3,11 @@ id: client
 title: Client
 ---
 
-# Client
+# Client Libraries
 
-## Introduction
-
+{% hint style="info" %}
 **The following is a guide for implementing a new ARK Client SDK. It covers the required functionalities as well as guidelines for how clients should typically look and behave.**
+{% endhint %}
 
 These guidelines are to be strictly followed if you are implementing or modifying an API client for the ARK Ecosystem.
 

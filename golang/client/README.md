@@ -14,7 +14,7 @@ go get github.com/ARKEcosystem/go-client/client
 ## Development
 
 1. Fork the [package](https://github.com/ARKEcosystem/go-client)
-2. Clone your forked repository.
+2. Clone forked repository.
 
    ```bash
    git clone https://github.com/<githubusername>/go-client
