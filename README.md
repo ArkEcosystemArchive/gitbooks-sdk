@@ -14,17 +14,17 @@ Usage guides are included for each supported language, and examples of how to us
 
 | Crypto | Client | Frameworks |
 | :--- | :--- | :--- |
-| [C++](c++/crypto/) | [C++](c++/client/) | [Laravel](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/php/frameworks/laravel/README.md) |
-| [Elixir](elixir/crypto/) | [Elixir](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/elixir/client/getting-started/README.md) | [Symfony](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/php/frameworks/symfony/README.md) |
-| [Golang](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/golang/crypto/getting-started/README.md) | [Golang](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/golang/client/getting-started/README.md) |  |
-| [Java](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/java/crypto/getting-started/README.md) | [Java](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/java/client/getting-started/README.md) |  |
-| [.NET](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/dotnet/crypto/getting-started/README.md) | [.NET](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/dotnet/client/getting-started/README.md) |  |
-| [PHP](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/php/crypto/getting-started/README.md) | [PHP](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/php/client/getting-started/README.md) |  |
-| [Python](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/python/crypto/getting-started/README.md) | [Python](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/python/client/getting-started/README.md) |  |
-| [Ruby](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/ruby/crypto/getting-started/README.md) | [Ruby](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/ruby/client/getting-started/README.md) |  |
-| [Rust](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/rust/crypto/getting-started/README.md) | [Rust](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/rust/client/getting-started/README.md) |  |
-| [Swift](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/swift/crypto/getting-started/README.md) | [Swift](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/swift/client/getting-started/README.md) |  |
-| [TypeScript](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/typescript/crypto/getting-started/README.md) | [TypeScript](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/typescript/client/getting-started/README.md) |  |
+| [TypeScript](/typescript/crypto/) | [TypeScript](/typescript/client/) |  |
+| [Java](/java/crypto/) | [Java](/java/client/) |  |
+| [PHP](/php/crypto/) | [PHP](/php/client/) |  |
+| [Python](/python/crypto/) | [Python](/python/client/) |  |
+| [C++](c++/crypto/) | [C++](c++/client/) | [Laravel](/laravel/) |
+| [Elixir](elixir/crypto/) | [Elixir](/elixir/client) | [Symfony](/symfony/ |
+| [Golang](/golang/crypto/) | [Golang](/golang/client/) |  |
+| [.NET](/dotnet/crypto/) | [.NET](/dotnet/client/) |  |
+| [Ruby](/ruby/crypto/) | [Ruby](/ruby/client/) |  |
+| [Rust](/rust/crypto/) | [Rust](/rust/client/) |  |
+| [Swift](/swift/crypto/) | [Swift](/swift/client/) |  |
 
 ## Contributing
 
