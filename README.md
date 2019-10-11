@@ -14,17 +14,17 @@ Usage guides are included for each supported language, and examples of how to us
 
 | Crypto | Client | Frameworks |
 | :--- | :--- | :--- |
-| [TypeScript](/typescript/crypto/) | [TypeScript](/typescript/client/) |  |
-| [Java](/java/crypto/) | [Java](/java/client/) |  |
-| [PHP](/php/crypto/) | [PHP](/php/client/) |  |
-| [Python](/python/crypto/) | [Python](/python/client/) |  |
-| [C++](c++/crypto/) | [C++](c++/client/) | [Laravel](/laravel/) |
-| [Elixir](elixir/crypto/) | [Elixir](/elixir/client) | [Symfony](/symfony/ |
-| [Golang](/golang/crypto/) | [Golang](/golang/client/) |  |
-| [.NET](/dotnet/crypto/) | [.NET](/dotnet/client/) |  |
-| [Ruby](/ruby/crypto/) | [Ruby](/ruby/client/) |  |
-| [Rust](/rust/crypto/) | [Rust](/rust/client/) |  |
-| [Swift](/swift/crypto/) | [Swift](/swift/client/) |  |
+| [TypeScript](https://github.com/ArkEcosystem/gitbooks-sdk/tree/24a0f2ca8731c280dab0dfe5f890a471c7d2252e/typescript/crypto/README.md) | [TypeScript](https://github.com/ArkEcosystem/gitbooks-sdk/tree/24a0f2ca8731c280dab0dfe5f890a471c7d2252e/typescript/client/README.md) |  |
+| [Java](java/crypto/) | [Java](java/client/) |  |
+| [PHP](php/crypto/) | [PHP](php/client/) |  |
+| [Python](python/crypto/) | [Python](python/client/) |  |
+| [C++](c++/crypto/) | [C++](c++/client/) | [Laravel](frameworks/laravel.md) |
+| [Elixir](elixir/crypto/) | [Elixir](elixir/client/) | [Symfony](frameworks/symfony.md) |
+| [Golang](golang/crypto/) | [Golang](golang/client/) |  |
+| [.NET](https://github.com/ArkEcosystem/gitbooks-sdk/tree/24a0f2ca8731c280dab0dfe5f890a471c7d2252e/dotnet/crypto/README.md) | [.NET](dotnet/client/) |  |
+| [Ruby](ruby/crypto/) | [Ruby](ruby/client/) |  |
+| [Rust](rust/crypto/) | [Rust](rust/client/) |  |
+| [Swift](swift/crypto/) | [Swift](swift/client/) |  |
 
 ## Contributing
 

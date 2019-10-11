@@ -1,6 +1,7 @@
 ---
 id: getting-started
 title: Getting Started
+description: GoLang Crypto Library For Working With Transactions
 ---
 
 # Crypto

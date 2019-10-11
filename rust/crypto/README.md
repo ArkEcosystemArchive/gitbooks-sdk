@@ -1,6 +1,7 @@
 ---
 id: getting-started
 title: Getting Started
+description: Rust Crypto Library For Working With Transactions
 ---
 
 # Crypto

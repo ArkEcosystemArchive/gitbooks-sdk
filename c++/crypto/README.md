@@ -1,6 +1,7 @@
 ---
 id: getting-started
 title: Getting Started
+description: C++ Crypto Library For Working With Transactions
 ---
 
 # Crypto

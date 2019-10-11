@@ -1,6 +1,7 @@
 ---
 id: getting-started
 title: Getting Started
+description: Python Client Library For Communicating With Core Server Public REST API
 ---
 
 # Client

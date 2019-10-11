@@ -1,6 +1,7 @@
 ---
 id: getting-started
 title: Getting Started
+description: Javascript Crypto Library For Working With Transactions
 ---
 
 # Crypto

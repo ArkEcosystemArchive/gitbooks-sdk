@@ -1,6 +1,7 @@
 ---
 id: getting-started
 title: Getting Started
+description: C++ Client Library For Communicating With Core Server Public REST API
 ---
 
 # Client

@@ -1,6 +1,7 @@
 ---
 id: getting-started
 title: Getting Started
+description: Elixir Crypto Library For Working With Transactions
 ---
 
 # Crypto
