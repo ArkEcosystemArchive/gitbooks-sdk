@@ -24,7 +24,8 @@ description: C++ Crypto Library For Working With Transactions
 4. Build the package using CMake.
 
    ```bash
-   cmake
+   mkdir build && cd build
+   cmake -DUNIT_TEST=ON ..
    cmake --build .
    ```
 

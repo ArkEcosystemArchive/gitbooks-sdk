@@ -1,6 +1,9 @@
 ---
 id: client
 title: Client
+description: >-
+  Client SDKs help developers fetch information from the ARK blockchain via
+  Public REST API
 ---
 
 # Client Libraries

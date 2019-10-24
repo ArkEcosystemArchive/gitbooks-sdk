@@ -1,6 +1,9 @@
 ---
 id: crypto
 title: Crypto
+description: >-
+  Crypto libraries assist developers in working with transactions: creating,
+  signing, serializing...
 ---
 
 # Crypto Libraries

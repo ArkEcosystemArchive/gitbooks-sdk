@@ -24,7 +24,8 @@ description: C++ Client Library For Communicating With Core Server Public REST A
 4. Build the package using CMake.
 
    ```bash
-   cmake
+   mkdir build && cd build
+   cmake -DUNIT_TEST=ON ..
    cmake --build .
    ```
 
