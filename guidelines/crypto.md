@@ -20,54 +20,6 @@ Following these guidelines is required to provide a streamlined experience acros
 
 ## Required Functionality
 
-### AIP11 Serialization
-
-* Transfer **\(Type 0\)**
-* Second Signature Registration **\(Type 1\)**
-* Delegate Registration **\(Type 2\)**
-* Vote **\(Type 3\)**
-* Multi Signature Registration **\(Type 4\)**
-* IPFS **\(Type 5\)**
-* Timelock Transfer **\(Type 6\)**
-* Multi Payment **\(Type 7\)**
-* Delegate Resignation **\(Type 8\)**
-
-### AIP11 Deserialization
-
-* Transfer **\(Type 0\)**
-* Second Signature Registration **\(Type 1\)**
-* Delegate Registration **\(Type 2\)**
-* Vote **\(Type 3\)**
-* Multi Signature Registration **\(Type 4\)**
-* IPFS **\(Type 5\)**
-* Timelock Transfer **\(Type 6\)**
-* Multi Payment **\(Type 7\)**
-* Delegate Resignation **\(Type 8\)**
-
-### Transaction Signing
-
-* Transfer **\(Type 0\)**
-* Second Signature Registration **\(Type 1\)**
-* Delegate Registration **\(Type 2\)**
-* Vote **\(Type 3\)**
-* Multi Signature Registration **\(Type 4\)**
-* ~~IPFS **\(Type 5\)**~~
-* ~~Timelock Transfer **\(Type 6\)**~~
-* ~~Multi Payment **\(Type 7\)**~~
-* ~~Delegate Resignation **\(Type 8\)**~~
-
-### Transaction Verifying
-
-* Transfer **\(Type 0\)**
-* Second Signature Registration **\(Type 1\)**
-* Delegate Registration **\(Type 2\)**
-* Vote **\(Type 3\)**
-* Multi Signature Registration **\(Type 4\)**
-* ~~IPFS **\(Type 5\)**~~
-* ~~Timelock Transfer **\(Type 6\)**~~
-* ~~Multi Payment **\(Type 7\)**~~
-* ~~Delegate Resignation **\(Type 8\)**~~
-
 ### Transaction
 
 * **getId** Compute the unique transaction ID.
