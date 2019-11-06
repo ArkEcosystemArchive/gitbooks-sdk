@@ -14,7 +14,7 @@ Usage guides are included for each supported language, and examples of how to us
 
 | Crypto | Client | Frameworks |
 | :--- | :--- | :--- |
-| [TypeScript](https://github.com/ArkEcosystem/core/tree/master/packages/crypto) | [TypeScript](https://github.com/ArkEcosystem/typescript-client) | [Laravel](frameworks/laravel.md) |
+| [TypeScript](typescript/crypto/) | [TypeScript](typescript/client/) | [Laravel](frameworks/laravel.md) |
 | [Java](java/crypto/) | [Java](java/client/) | [Symfony](frameworks/symfony.md) |
 | [PHP](php/crypto/) | [PHP](php/client/) |  |
 | [Python](python/crypto/) | [Python](python/client/) |  |

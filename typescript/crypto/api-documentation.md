@@ -3,11 +3,13 @@ id: api-documentation
 title: API Documentation
 ---
 
+# API Documentation
+
 ## Crypto\Managers\Config
 
 ### `setConfig()`
 
-```ts
+```typescript
 public setConfig(config: INetworkConfig)
 ```
 
@@ -15,20 +17,17 @@ Set the configuration.
 
 #### Parameters
 
-| Type            | Name   | Required | Description   |
-| --------------- | ------ | -------- | ------------- |
-| INetworkConfig  | config | Yes      | Configuration |
-
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| INetworkConfig | config | Yes | Configuration |
 
 #### Return Value
 
 `void`
 
----
-
 ### `setFromPreset()`
 
-```ts
+```typescript
 public setFromPreset(network: NetworkName)
 ```
 
@@ -36,19 +35,17 @@ Set the configuration from given presets.
 
 #### Parameters
 
-| Type         | Name     | Required | Description |
-| ------------ | -------- | -------- | ----------- |
-| NetworkName  | network  | Yes      | Preset      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| NetworkName | network | Yes | Preset |
 
 #### Return Value
 
 `void`
 
----
-
 ### `getPreset()`
 
-```ts
+```typescript
 public getPreset(network: NetworkName)
 ```
 
@@ -56,19 +53,17 @@ Get configuration preset.
 
 #### Parameters
 
-| Type         | Name     | Required | Description |
-| ------------ | -------- | -------- | ----------- |
-| NetworkName  | network  | Yes      | Preset      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| NetworkName | network | Yes | Preset |
 
 #### Return Value
 
 `INetworkConfig`
 
----
-
 ### `all()`
 
-```ts
+```typescript
 public all()
 ```
 
@@ -78,11 +73,9 @@ Get all configs.
 
 `INetworkConfig`
 
----
-
 ### `set()`
 
-```ts
+```typescript
 public set<T = any>(key: string, value: T)
 ```
 
@@ -90,20 +83,18 @@ Set key value.
 
 #### Parameters
 
-| Type   | Name   | Required | Description  |
-| ------ | ------ | -------- | ------------ |
-| string | key    | Yes      | Key to set   |
-| T      | value  | Yes      | Value to set |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | key | Yes | Key to set |
+| T | value | Yes | Value to set |
 
 #### Return Value
 
 `void`
 
----
-
 ### `get()`
 
-```ts
+```typescript
 public get<T = any>(key: string)
 ```
 
@@ -111,19 +102,17 @@ Get key.
 
 #### Parameters
 
-| Type   | Name   | Required | Description |
-| ------ | ------ | -------- | ----------- |
-| string | key    | Yes      | Key to get  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | key | Yes | Key to get |
 
 #### Return Value
 
 `T`
 
----
-
 ### `setHeight()`
 
-```ts
+```typescript
 public setHeight(value: number)
 ```
 
@@ -131,19 +120,17 @@ Set network height.
 
 #### Parameters
 
-| Type   | Name   | Required | Description    |
-| ------ | ------ | -------- | -------------- |
-| number | value  | Yes      | Network height |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| number | value | Yes | Network height |
 
 #### Return Value
 
 `void`
 
----
-
 ### `getHeight()`
 
-```ts
+```typescript
 public getHeight()
 ```
 
@@ -153,11 +140,9 @@ Get network height.
 
 `number`
 
---- 
-
 ### `isNewMilestone()`
 
-```ts
+```typescript
 public isNewMilestone(): boolean
 ```
 
@@ -167,11 +152,9 @@ Verify is new milestone.
 
 `boolean`
 
----
-
 ### `getMilestone()`
 
-```ts
+```typescript
 public getMilestone(height?: number)
 ```
 
@@ -179,19 +162,17 @@ Get milestone.
 
 #### Parameters
 
-| Type   | Name   | Required | Description    |
-| ------ | ------ | -------- | -------------- |
-| number | height | No       | Network height |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| number | height | No | Network height |
 
 #### Return Value
 
 `{ [key: string]: any }`
 
----
-
 ### `getMilestones()`
 
-```ts
+```typescript
 public getMilestones()
 ```
 
@@ -205,7 +186,7 @@ Get all milestones.
 
 ### `set()`
 
-```ts
+```typescript
 public set(type: TransactionTypes | number, value: number)
 ```
 
@@ -213,21 +194,18 @@ Set a fee.
 
 #### Parameters
 
-| Type                       | Name   | Required | Description      |
-| -------------------------- | ------ | -------- | ---------------- |
-| TransactionTypes | number  | type   | Yes      | Transaction type |
-| number                     | value  | Yes      | Fee value        |
-
+| Type | Name | Required | Description |  |
+| :--- | :--- | :--- | :--- | :--- |
+| TransactionTypes | number | type | Yes | Transaction type |
+| number | value | Yes | Fee value |  |
 
 #### Return Value
 
 `void`
 
----
-
 ### `get()`
 
-```ts
+```typescript
 public get(type: TransactionTypes | number)
 ```
 
@@ -235,19 +213,17 @@ Get a fee for a given transaction type.
 
 #### Parameters
 
-| Type                       | Name   | Required | Description      |
-| -------------------------- | ------ | -------- | ---------------- |
-| TransactionTypes | number  | type   | Yes      | Transaction type |
+| Type | Name | Required | Description |  |
+| :--- | :--- | :--- | :--- | :--- |
+| TransactionTypes | number | type | Yes | Transaction type |
 
 #### Return Value
 
 `BigNumber`
 
----
-
 ### `getForTransaction()`
 
-```ts
+```typescript
 public getForTransaction(transaction: ITransactionData)
 ```
 
@@ -255,9 +231,9 @@ Get a fee for a given transaction.
 
 #### Parameters
 
-| Type             | Name        | Required | Description |
-| ---------------- | ----------- | -------- | ----------- |
-| ITransactionData | transaction | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ITransactionData | transaction | Yes | Transaction |
 
 #### Return Value
 
@@ -267,7 +243,7 @@ Get a fee for a given transaction.
 
 ### `all()`
 
-```ts
+```typescript
 public static all()
 ```
 
@@ -277,29 +253,27 @@ Get settings for all networks.
 
 `Record<NetworkName, INetworkConfig>`
 
----
-
 ### `findByName()`
 
-```ts
+```typescript
 public static findByName(name: NetworkName)
 ```
 
 Get settings for a selected network, default network is devnet.
 
-| Type        | Name    | Required | Description  |
-| ----------- | --------| -------- | ------------ |
-| NetworkName | name    | Yes      | Network name |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| NetworkName | name | Yes | Network name |
 
 #### Return Value
 
-`INetworkConfig `
+`INetworkConfig`
 
 ## Crypto\Identities\Address
 
 ### `fromPublicKey()`
 
-```ts
+```typescript
 public static fromPublicKey(publicKey: string, networkVersion?: number)
 ```
 
@@ -307,20 +281,18 @@ Derive the address from the given public key.
 
 #### Parameters
 
-| Type   | Name             | Required | Description            |
-| ------ | ---------------- | -------- | ---------------------- |
-| string | publicKey        | Yes      | Public key             |
-| number | networkVersion   | No       | Version of the network |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | publicKey | Yes | Public key |
+| number | networkVersion | No | Version of the network |
 
 #### Return Value
 
 `string`
 
----
-
 ### `fromPrivateKey()`
 
-```ts
+```typescript
 public static fromPrivateKey(privateKey, networkVersion?: number)
 ```
 
@@ -328,20 +300,18 @@ Derive the address from the given private key.
 
 #### Parameters
 
-| Type   | Name             | Required | Description            |
-| ------ | ---------------- | -------- | ---------------------- |
-| string | privateKey       | Yes      | Private key            |
-| number | networkVersion   | No       | Version of the network |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | privateKey | Yes | Private key |
+| number | networkVersion | No | Version of the network |
 
 #### Return Value
 
 `string`
 
----
-
 ### `fromPassphrase()`
 
-```ts
+```typescript
 public static fromPassphrase(passphrase: string, networkVersion?: number)
 ```
 
@@ -349,20 +319,18 @@ Derive the address from the given passphrase.
 
 #### Parameters
 
-| Type   | Name             | Required | Description            |
-| ------ | ---------------- | -------- | ---------------------- |
-| string | passphrase       | Yes      | Passphrase             |
-| number | networkVersion   | No       | Version of the network |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | Passphrase |
+| number | networkVersion | No | Version of the network |
 
 #### Return Value
 
 `string`
 
----
-
 ### `fromMultiSignatureAsset()`
 
-```ts
+```typescript
 public static fromMultiSignatureAsset(asset: IMultiSignatureAsset, networkVersion?: number)
 ```
 
@@ -370,20 +338,18 @@ Derive the address from the given multi signature asset.
 
 #### Parameters
 
-| Type                 | Name           | Required | Description            |
-| -------------------- | -------------- | -------- | ---------------------- |
-| IMultiSignatureAsset | asset          | Yes      | Address to validate    |
-| number               | networkVersion | No       | Version of the network |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| IMultiSignatureAsset | asset | Yes | Address to validate |
+| number | networkVersion | No | Version of the network |
 
 #### Return Value
 
 `string`
 
----
-
 ### `validate()`
 
-```ts
+```typescript
 public static validate(address: string, networkVersion?: number)
 ```
 
@@ -391,10 +357,10 @@ Validate the given address.
 
 #### Parameters
 
-| Type   | Name             | Required | Description            |
-| ------ | ---------------- | -------- | ---------------------- |
-| string | address          | Yes      | Address to validate    |
-| number | networkVersion   | No       | Version of the network |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | address | Yes | Address to validate |
+| number | networkVersion | No | Version of the network |
 
 #### Return Value
 
@@ -404,7 +370,7 @@ Validate the given address.
 
 ### `fromPassphrase()`
 
-```ts
+```typescript
 public static fromPassphrase(passphrase: string, compressed: boolean = true)
 ```
 
@@ -412,20 +378,18 @@ Derive the keys from the given passphrase.
 
 #### Parameters
 
-| Type    | Name             | Required | Description            |
-| ------- | ---------------- | -------- | ---------------------- |
-| string  | passphrase       | Yes      | Passphrase             |
-| boolean | compressed       | No       | Compression flag       |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | Passphrase |
+| boolean | compressed | No | Compression flag |
 
 #### Return Value
 
 `IKeyPair`
 
----
-
 ### `fromPrivateKey()`
 
-```ts
+```typescript
 public static fromPrivateKey(privateKey: Buffer | string, compressed: boolean = true)
 ```
 
@@ -433,20 +397,18 @@ Derive the keys from the given private key.
 
 #### Parameters
 
-| Type             | Name             | Required | Description            |
-| ---------------- | ---------------- | -------- | ---------------------- |
-| Buffer | string  | privateKey       | Yes      | Private key            |
-| boolean          | compressed       | No       | Compression flag       |
+| Type | Name | Required | Description |  |
+| :--- | :--- | :--- | :--- | :--- |
+| Buffer | string | privateKey | Yes | Private key |
+| boolean | compressed | No | Compression flag |  |
 
 #### Return Value
 
 `IKeyPair`
 
----
-
 ### `fromWIF()`
 
-```ts
+```typescript
 public static fromWIF(wifKey: string, network?: INetwork)
 ```
 
@@ -454,10 +416,10 @@ Derive the keys from the given WIF.
 
 #### Parameters
 
-| Type     | Name    | Required | Description   |
-| -------- | --------| -------- | ------------- |
-| string   | wifKey  | Yes      | Private key   |        
-| INetwork | network | No       | Network       |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | wifKey | Yes | Private key |
+| INetwork | network | No | Network |
 
 #### Return Value
 
@@ -467,7 +429,7 @@ Derive the keys from the given WIF.
 
 ### `fromPassphrase()`
 
-```ts
+```typescript
 public static fromPassphrase(passphrase: string)
 ```
 
@@ -475,19 +437,17 @@ Derive the private key for the given passphrase.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| string   | passphrase       | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `string`
 
----
-
 ### `fromWIF()`
 
-```ts
+```typescript
 public static fromWIF(wif: string, network?: NetworkType)
 ```
 
@@ -495,10 +455,10 @@ Create a private key instance from a hex string.
 
 #### Parameters
 
-| Type        | Name    | Required | Description |
-| ----------- | ------- | -------- | ----------- |
-| string      | wif     | Yes      | Network WIF |
-| NetworkType | network | No       | Network     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | wif | Yes | Network WIF |
+| NetworkType | network | No | Network |
 
 #### Return Value
 
@@ -508,7 +468,7 @@ Create a private key instance from a hex string.
 
 ### `fromPassphrase()`
 
-```ts
+```typescript
 public static fromPassphrase(passphrase: string)
 ```
 
@@ -516,19 +476,17 @@ Derive the public key from the given passphrase.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| string   | passphrase       | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `string`
 
----
-
 ### `fromWIF()`
 
-```ts
+```typescript
 public static fromWIF(wif: string, network?: NetworkType)
 ```
 
@@ -536,20 +494,18 @@ Derive the public key from the given WIF.
 
 #### Parameters
 
-| Type        | Name       | Required | Description |
-| ----------- | ---------- | -------- | ----------- |
-| string      | passphrase | Yes      | Passphrase  |
-| NetworkType | network    | No       | Network     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | Passphrase |
+| NetworkType | network | No | Network |
 
 #### Return Value
 
 `string`
 
----
-
 ### `fromMultiSignatureAsset()`
 
-```ts
+```typescript
 public static fromMultiSignatureAsset(asset: IMultiSignatureAsset)
 ```
 
@@ -557,19 +513,17 @@ Derive the public key from the given multi signature asset.
 
 #### Parameters
 
-| Type                 | Name  | Required | Description |
-| -------------------- | ----- | -------- | ----------- |
-| IMultiSignatureAsset | asset | Yes      | Asset       |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| IMultiSignatureAsset | asset | Yes | Asset |
 
 #### Return Value
 
 `string`
 
----
-
 ### `validate()`
 
-```ts
+```typescript
 public static validate(publicKey: string, networkVersion?: number)
 ```
 
@@ -577,10 +531,10 @@ Validate the given public key.
 
 #### Parameters
 
-| Type   | Name           | Required | Description     |
-| ------ | -------------- | -------- | --------------- |
-| string | publicKey      | Yes      | Public key      |
-| number | networkVersion | No       | Network version |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | publicKey | Yes | Public key |
+| number | networkVersion | No | Network version |
 
 #### Return Value
 
@@ -590,7 +544,7 @@ Validate the given public key.
 
 ### `fromPassphrase()`
 
-```ts
+```typescript
 public static fromPassphrase(passphrase: string, network?: INetwork)
 ```
 
@@ -598,20 +552,18 @@ Derive the WIF from the given passphrase.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| str      | paspphrase       | Yes      | Passphrase  |
-| INetwork | network          | No       | Network wif |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | paspphrase | Yes | Passphrase |
+| INetwork | network | No | Network wif |
 
 #### Return Value
 
 `string`
 
----
-
 ### `fromKeys()`
 
-```ts
+```typescript
 public static fromKeys(keys: IKeyPair, network?: INetwork)
 ```
 
@@ -619,10 +571,10 @@ Derive the WIF from the given keys.
 
 #### Parameters
 
-| Type     | Name    | Required | Description |
-| -------- | ------- | -------- | ----------- |
-| IKeyPair | keys    | Yes      | Keys        |
-| INetwork | network | No       | Network     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| IKeyPair | keys | Yes | Keys |
+| INetwork | network | No | Network |
 
 #### Return Value
 
@@ -632,7 +584,7 @@ Derive the WIF from the given keys.
 
 ### `build()`
 
-```ts
+```typescript
 public build(data: Partial<ITransactionData> = {})
 ```
 
@@ -640,19 +592,17 @@ Create a new transaction instance.
 
 #### Parameters
 
-| Type                      | Name | Required | Description |
-| ------------------------- | ---- | -------- | ----------- |
-| Partial<ITransactionData> | data | Yes      | Data        |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Partial | data | Yes | Data |
 
 #### Return Value
 
 `ITransaction`
 
----
-
 ### `version()`
 
-```ts
+```typescript
 public version(version: number)
 ```
 
@@ -660,19 +610,17 @@ Set the version.
 
 #### Parameters
 
-| Type     | Name    | Required | Description     |
-| -------- | ------- | -------- | --------------- |
-| number   | version | Yes      | Network         |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| number | version | Yes | Network |
 
 #### Return Value
 
 `TBuilder`
 
----
-
 ### `network()`
 
-```ts
+```typescript
 public network(network: number)
 ```
 
@@ -680,19 +628,17 @@ Set the network.
 
 #### Parameters
 
-| Type     | Name    | Required | Description |
-| -------- | ------- | -------- | ----------- |
-| number   | network | Yes      | Network     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| number | network | Yes | Network |
 
 #### Return Value
 
 `TBuilder`
 
----
-
 ### `fee()`
 
-```ts
+```typescript
 public fee(fee: string)
 ```
 
@@ -700,19 +646,17 @@ Set the transaction fee.
 
 #### Parameters
 
-| Type     | Name | Required | Description     |
-| -------- | ---- | -------- | --------------- |
-| string   | fee  | Yes      | Transaction fee |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | fee | Yes | Transaction fee |
 
 #### Return Value
 
 `TBuilder`
 
----
-
 ### `amount()`
 
-```ts
+```typescript
 public amount(amount: string)
 ```
 
@@ -720,19 +664,17 @@ Set the amount of the transaction.
 
 #### Parameters
 
-| Type     | Name   | Required | Description        |
-| -------- | ------ | -------- | ------------------ |
-| string   | amount | Yes      | Transaction amount |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | amount | Yes | Transaction amount |
 
 #### Return Value
 
 `TBuilder`
 
----
-
 ### `recipientId()`
 
-```ts
+```typescript
 public recipientId(recipientId: string)
 ```
 
@@ -740,19 +682,17 @@ Set the recipient of the transaction.
 
 #### Parameters
 
-| Type     | Name        | Required | Description          |
-| -------- | ----------- | -------- | -------------------- |
-| string   | recipientId | Yes      | Recipient identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | recipientId | Yes | Recipient identifier |
 
 #### Return Value
 
 `TBuilder`
 
----
-
 ### `senderPublicKey()`
 
-```ts
+```typescript
 public senderPublicKey(publicKey: string)
 ```
 
@@ -760,19 +700,17 @@ Set the public key of the transaction.
 
 #### Parameters
 
-| Type     | Name        | Required | Description |
-| -------- | ----------- | -------- | ----------- |
-| string   | publicKey   | Yes      | Public key  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | publicKey | Yes | Public key |
 
 #### Return Value
 
 `TBuilder`
 
----
-
 ### `vendorField()`
 
-```ts
+```typescript
 public vendorField(vendorField: string)
 ```
 
@@ -780,19 +718,17 @@ Set the vendorfield of the transaction.
 
 #### Parameters
 
-| Type     | Name        | Required | Description |
-| -------- | ----------- | -------- | ----------- |
-| string   | vendorField | Yes      | Vendorfield |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | vendorField | Yes | Vendorfield |
 
 #### Return Value
 
 `TBuilder`
 
----
-
 ### `sign()`
 
-```ts
+```typescript
 public sign(passphrase: string)
 ```
 
@@ -800,19 +736,17 @@ Sign the transaction using the given passphrase.
 
 #### Parameters
 
-| Type     | Name             | Required | Description                                                     |
-| -------- | ---------------- | -------- | --------------------------------------------------------------- |
-| string   | passphrase       | Yes      | Passphrase associated with the account sending this transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | Passphrase associated with the account sending this transaction |
 
 #### Return Value
 
 `TBuilder`
 
----
-
 ### `signWithWif()`
 
-```ts
+```typescript
 public signWithWif(wif: string, networkWif?: number)
 ```
 
@@ -820,20 +754,18 @@ Sign the transaction using the given WIF.
 
 #### Parameters
 
-| Type     | Name             | Required | Description                                                     |
-| -------- | ---------------- | -------- | --------------------------------------------------------------- |
-| string   | wif              | Yes      | Passphrase associated with the account sending this transaction |
-| number   | networkWif       | Yes      | Network WIF                                                     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | wif | Yes | Passphrase associated with the account sending this transaction |
+| number | networkWif | Yes | Network WIF |
 
 #### Return Value
 
 `TBuilder`
 
----
-
 ### `secondSign()`
 
-```ts
+```typescript
 public secondSign(secondPassphrase: string)
 ```
 
@@ -841,19 +773,17 @@ Sign the transaction using the given second passphrase
 
 #### Parameters
 
-| Type     | Name             | Required | Description                                                            |
-| -------- | ---------------- | -------- | ---------------------------------------------------------------------- |
-| string   | secondPassphrase | Yes      | Second passphrase associated with the account sending this transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | secondPassphrase | Yes | Second passphrase associated with the account sending this transaction |
 
 #### Return Value
 
 `TBuilder`
 
----
-
 ### `secondSignWithWif()`
 
-```ts
+```typescript
 public secondSignWithWif(wif: string, networkWif?: number)
 ```
 
@@ -861,20 +791,18 @@ Sign the transaction using the given WIF.
 
 #### Parameters
 
-| Type     | Name       | Required | Description |
-| -------- | ---------- | -------- | ----------- |
-| string   | wif        | Yes      | Network WIF |
-| number   | networkWif | Yes      | Network WIF |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | wif | Yes | Network WIF |
+| number | networkWif | Yes | Network WIF |
 
 #### Return Value
 
 `TBuilder`
 
----
-
 ### `multiSign()`
 
-```ts
+```typescript
 public multiSign(passphrase: string, index: number)
 ```
 
@@ -882,20 +810,18 @@ Multi sign the transaction.
 
 #### Parameters
 
-| Type     | Name       | Required | Description |
-| -------- | ---------- | -------- | ----------- |
-| string   | passphrase | Yes      | Passphrase  |
-| number   | index      | Yes      | ...         |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | passphrase | Yes | Passphrase |
+| number | index | Yes | ... |
 
 #### Return Value
 
 `TBuilder`
 
----
-
 ### `verify()`
 
-```ts
+```typescript
 public verify()
 ```
 
@@ -905,11 +831,9 @@ Verify the transaction validity.
 
 `boolean`
 
----
-
 ### `getStruct()`
 
-```ts
+```typescript
 public getStruct()
 ```
 
@@ -923,7 +847,7 @@ Get transaction structure.
 
 ### `usernameAsset()`
 
-```ts
+```typescript
 public usernameAsset(username: string)
 ```
 
@@ -931,19 +855,17 @@ Set the username to assign.
 
 #### Parameters
 
-| Type     | Name             | Required | Description       |
-| -------- | ---------------- | -------- | ----------------- |
-| string   | username         | Yes      | Delegate username |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | username | Yes | Delegate username |
 
 #### Return Value
 
 `DelegateRegistrationBuilder`
 
----
-
 ### `getStruct()`
 
-```ts
+```typescript
 public getStruct()
 ```
 
@@ -957,7 +879,7 @@ Get transaction structure.
 
 ### `getStruct()`
 
-```ts
+```typescript
 public getStruct()
 ```
 
@@ -971,7 +893,7 @@ Get transaction structure.
 
 ### `ipfsAsset()`
 
-```ts
+```typescript
 public ipfsAsset(ipfsId: string)
 ```
 
@@ -979,19 +901,17 @@ Set IPFS asset.
 
 #### Parameters
 
-| Type   | Name    | Required | Description |
-| ------ | ------- | -------- | ----------- |
-| string | ipfsId  | Yes      | IPFS ID     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | ipfsId | Yes | IPFS ID |
 
 #### Return Value
 
-`IPFSBuilder `
-
----
+`IPFSBuilder`
 
 ### `getStruct()`
 
-```ts
+```typescript
 public getStruct()
 ```
 
@@ -1005,7 +925,7 @@ Get transaction structure.
 
 ### `addPayment()`
 
-```ts
+```typescript
 public addPayment(recipientId: string, amount: number)
 ```
 
@@ -1013,20 +933,18 @@ Add a new payment to the collection.
 
 #### Parameters
 
-| Type     | Name             | Required | Description          |
-| -------- | ---------------- | -------- | -------------------- |
-| string   | recipientId      | Yes      | Recipient identifier |
-| number   | amount           | Yes      | Transaction amount   |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | recipientId | Yes | Recipient identifier |
+| number | amount | Yes | Transaction amount |
 
 #### Return Value
 
-`MultiPaymentBuilder `
-
----
+`MultiPaymentBuilder`
 
 ### `getStruct()`
 
-```ts
+```typescript
 public getStruct()
 ```
 
@@ -1040,7 +958,7 @@ Get transaction structure.
 
 ### `participant()`
 
-```ts
+```typescript
 public participant(publicKey: string)
 ```
 
@@ -1048,19 +966,17 @@ Add participant to multi signature transaction.
 
 #### Parameters
 
-| Type     | Name             | Required | Description |
-| -------- | ---------------- | -------- | ----------- |
-| string   | publicKey        | Yes      | Public key  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | publicKey | Yes | Public key |
 
 #### Return Value
 
 `MultiSignatureBuilder`
 
----
-
 ### `min()`
 
-```ts
+```typescript
 public min(min: number)
 ```
 
@@ -1068,9 +984,9 @@ Set the minimum required signatures.
 
 #### Parameters
 
-| Type     | Name | Required | Description                 |
-| -------- | ---- | -------- | --------------------------- |
-| number   | min  | Yes      | Minimum required signatures |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| number | min | Yes | Minimum required signatures |
 
 #### Return Value
 
@@ -1078,7 +994,7 @@ Set the minimum required signatures.
 
 ### `multiSignatureAsset()`
 
-```ts
+```typescript
 public multiSignatureAsset(multiSignature: IMultiSignatureAsset)
 ```
 
@@ -1086,19 +1002,17 @@ Derive the address from the given multi signature asset.
 
 #### Parameters
 
-| Type                 | Name             | Required | Description           |
-| -------------------- | ---------------- | -------- | --------------------- |
-| IMultiSignatureAsset | multiSignature   | Yes      | Multi signature asset |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| IMultiSignatureAsset | multiSignature | Yes | Multi signature asset |
 
 #### Return Value
 
 `MultiPaymentBuilder`
 
----
-
 ### `getStruct()`
 
-```ts
+```typescript
 public getStruct()
 ```
 
@@ -1112,7 +1026,7 @@ Get transaction structure.
 
 ### `signature()`
 
-```ts
+```typescript
 public signatureAsset(secondPassphrase: string)
 ```
 
@@ -1120,19 +1034,17 @@ Set the signature asset to register the second passphrase.
 
 #### Parameters
 
-| Type     | Name              | Required | Description       |
-| -------- | ----------------- | -------- | ----------------- |
-| str      | secondPassphrase  | Yes      | Second passphrase |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | secondPassphrase | Yes | Second passphrase |
 
 #### Return Value
 
 `SecondSignatureBuilder`
 
----
-
 ### `getStruct()`
 
-```ts
+```typescript
 public getStruct()
 ```
 
@@ -1146,7 +1058,7 @@ Get transaction structure.
 
 ### `timelock`
 
-```ts
+```typescript
 public timelock(timelock: number, timelockType: number)
 ```
 
@@ -1154,20 +1066,18 @@ Set the timelock of the transfer.
 
 #### Parameters
 
-| Type     | Name             | Required | Description   |
-| -------- | ---------------- | -------- | ------------- |
-| number   | timelock         | Yes      | Timelock time |
-| number   | timelockType     | Yes      | Timelock type |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| number | timelock | Yes | Timelock time |
+| number | timelockType | Yes | Timelock type |
 
 #### Return Value
 
-`TimelockTransferBuilder `
-
----
+`TimelockTransferBuilder`
 
 ### `getStruct()`
 
-```ts
+```typescript
 public getStruct()
 ```
 
@@ -1181,7 +1091,7 @@ Get transaction structure.
 
 ### `recipient()`
 
-```ts
+```typescript
 public expiration(expiration: number)
 ```
 
@@ -1189,19 +1099,17 @@ Set the expiration of the transfer.
 
 #### Parameters
 
-| Type     | Name             | Required | Description            |
-| -------- | ---------------- | -------- | ---------------------- |
-| number   | expiration       | Yes      | Transaction expiration |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| number | expiration | Yes | Transaction expiration |
 
 #### Return Value
 
 `TransferBuilder`
 
----
-
 ### `getStruct()`
 
-```ts
+```typescript
 public getStruct()
 ```
 
@@ -1215,7 +1123,7 @@ Get transaction structure.
 
 ### `votes()`
 
-```ts
+```typescript
 public votesAsset(votes: string[])
 ```
 
@@ -1223,19 +1131,17 @@ Set the votes to cast.
 
 #### Parameters
 
-| Type     | Name  | Required | Description |
-| -------- | ----- | -------- | ----------- |
-| string[] | votes | Yes      | Votes       |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string\[\] | votes | Yes | Votes |
 
 #### Return Value
 
 `VoteBuilder`
 
----
-
 ### `getStruct()`
 
-```ts
+```typescript
 public getStruct()
 ```
 
@@ -1249,7 +1155,7 @@ Get transaction structure.
 
 ### `getSchema()`
 
-```ts
+```typescript
 public static getSchema()
 ```
 
@@ -1259,11 +1165,9 @@ Get transaction schema.
 
 `schemas.TransactionSchema`
 
----
-
 ### `serialize()`
 
-```ts
+```typescript
 public serialize(options?: ISerializeOptions)
 ```
 
@@ -1271,19 +1175,17 @@ Handle the serialization of "delegate registration" data.
 
 #### Parameters
 
-| Type              | Name             | Required | Description |
-| ----------------- | ---------------- | -------- | ----------- |
-| ISerializeOptions | options          | No       | Options     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ISerializeOptions | options | No | Options |
 
 #### Return Value
 
 `ByteBuffer`
 
----
-
 ### `deserialize()`
 
-```ts
+```typescript
 public deserialize(buf: ByteBuffer)
 ```
 
@@ -1291,9 +1193,9 @@ Handle the deserialization of "delegate registration" data.
 
 #### Parameters
 
-| Type       | Name | Required | Description |
-| ---------- | ---- | -------- | ----------- |
-| ByteBuffer | buf  | Yes      | Buffer      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ByteBuffer | buf | Yes | Buffer |
 
 #### Return Value
 
@@ -1303,7 +1205,7 @@ Handle the deserialization of "delegate registration" data.
 
 ### `getSchema()`
 
-```ts
+```typescript
 public static getSchema()
 ```
 
@@ -1313,11 +1215,9 @@ Get transaction schema.
 
 `schemas.TransactionSchema`
 
----
-
 ### `serialize()`
 
-```ts
+```typescript
 public serialize(options?: ISerializeOptions)
 ```
 
@@ -1325,19 +1225,17 @@ Handle the serialization of "delegate resignation" data.
 
 #### Parameters
 
-| Type              | Name             | Required | Description |
-| ----------------- | ---------------- | -------- | ----------- |
-| ISerializeOptions | options          | No       | Options     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ISerializeOptions | options | No | Options |
 
 #### Return Value
 
 `ByteBuffer`
 
----
-
 ### `deserialize()`
 
-```ts
+```typescript
 public deserialize(buf: ByteBuffer)
 ```
 
@@ -1345,9 +1243,9 @@ Handle the deserialization of "delegate resignation" data.
 
 #### Parameters
 
-| Type       | Name | Required | Description |
-| ---------- | ---- | -------- | ----------- |
-| ByteBuffer | buf  | Yes      | Buffer      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ByteBuffer | buf | Yes | Buffer |
 
 #### Return Value
 
@@ -1357,20 +1255,18 @@ Handle the deserialization of "delegate resignation" data.
 
 ### `initialize()`
 
-```ts
+```typescript
 public static initialize(
         coreTypes: Map<TransactionTypes, TransactionConstructor>,
         customTypes: Map<TransactionTypes, TransactionConstructor>,
-    ) 
+    )
 ```
 
 Transaction factory.
 
----
-
 ### `create()`
 
-```ts
+```typescript
 public static create(data: ITransactionData)
 ```
 
@@ -1378,19 +1274,17 @@ Create a new factory.
 
 #### Parameters
 
-| Type              | Name  | Required | Description |
-| ----------------- | ----- | -------- | ----------- |
-| ITransactionData  | data  | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ITransactionData | data | Yes | Transaction |
 
 #### Return Value
 
 `ITransaction`
 
----
-
 ### `get()`
 
-```ts
+```typescript
 public static get(type: TransactionTypes | number)
 ```
 
@@ -1398,9 +1292,9 @@ Get factory.
 
 #### Parameters
 
-| Type                       | Name  | Required | Description |
-| -------------------------- | ----- | -------- | ----------- |
-| TransactionTypes | number  | type  | Yes      | Transaction |
+| Type | Name | Required | Description |  |
+| :--- | :--- | :--- | :--- | :--- |
+| TransactionTypes | number | type | Yes | Transaction |
 
 #### Return Value
 
@@ -1410,7 +1304,7 @@ Get factory.
 
 ### `getSchema()`
 
-```ts
+```typescript
 public static getSchema()
 ```
 
@@ -1420,11 +1314,9 @@ Get transaction schema.
 
 `schemas.TransactionSchema`
 
----
-
 ### `serialize()`
 
-```ts
+```typescript
 public serialize(options?: ISerializeOptions)
 ```
 
@@ -1432,19 +1324,17 @@ Handle the serialization of "IPFS" data.
 
 #### Parameters
 
-| Type              | Name             | Required | Description |
-| ----------------- | ---------------- | -------- | ----------- |
-| ISerializeOptions | options          | No       | Options     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ISerializeOptions | options | No | Options |
 
 #### Return Value
 
 `ByteBuffer`
 
----
-
 ### `deserialize()`
 
-```ts
+```typescript
 public deserialize(buf: ByteBuffer)
 ```
 
@@ -1452,9 +1342,9 @@ Handle the deserialization of "IPFS" data.
 
 #### Parameters
 
-| Type       | Name | Required | Description |
-| ---------- | ---- | -------- | ----------- |
-| ByteBuffer | buf  | Yes      | Buffer      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ByteBuffer | buf | Yes | Buffer |
 
 #### Return Value
 
@@ -1464,7 +1354,7 @@ Handle the deserialization of "IPFS" data.
 
 ### `getSchema()`
 
-```ts
+```typescript
 public static getSchema()
 ```
 
@@ -1474,11 +1364,9 @@ Get transaction schema.
 
 `schemas.TransactionSchema`
 
----
-
 ### `serialize()`
 
-```ts
+```typescript
 public serialize(options?: ISerializeOptions)
 ```
 
@@ -1486,19 +1374,17 @@ Handle the serialization of "multi payments" data.
 
 #### Parameters
 
-| Type              | Name             | Required | Description |
-| ----------------- | ---------------- | -------- | ----------- |
-| ISerializeOptions | options          | No       | Options     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ISerializeOptions | options | No | Options |
 
 #### Return Value
 
 `ByteBuffer`
 
----
-
 ### `deserialize()`
 
-```ts
+```typescript
 public deserialize(buf: ByteBuffer)
 ```
 
@@ -1506,9 +1392,9 @@ Handle the deserialization of "multi payments" data.
 
 #### Parameters
 
-| Type       | Name | Required | Description |
-| ---------- | ---- | -------- | ----------- |
-| ByteBuffer | buf  | Yes      | Buffer      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ByteBuffer | buf | Yes | Buffer |
 
 #### Return Value
 
@@ -1518,7 +1404,7 @@ Handle the deserialization of "multi payments" data.
 
 ### `getSchema()`
 
-```ts
+```typescript
 public static getSchema()
 ```
 
@@ -1528,11 +1414,9 @@ Get transaction schema.
 
 `schemas.TransactionSchema`
 
----
-
 ### `serialize()`
 
-```ts
+```typescript
 public serialize(options?: ISerializeOptions)
 ```
 
@@ -1540,19 +1424,17 @@ Handle the serialization of "multi signatures" data.
 
 #### Parameters
 
-| Type              | Name             | Required | Description |
-| ----------------- | ---------------- | -------- | ----------- |
-| ISerializeOptions | options          | No       | Options     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ISerializeOptions | options | No | Options |
 
 #### Return Value
 
 `ByteBuffer`
 
----
-
 ### `deserialize()`
 
-```ts
+```typescript
 public deserialize(buf: ByteBuffer)
 ```
 
@@ -1560,9 +1442,9 @@ Handle the deserialization of "multi signatures" data.
 
 #### Parameters
 
-| Type       | Name | Required | Description |
-| ---------- | ---- | -------- | ----------- |
-| ByteBuffer | buf  | Yes      | Buffer      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ByteBuffer | buf | Yes | Buffer |
 
 #### Return Value
 
@@ -1572,7 +1454,7 @@ Handle the deserialization of "multi signatures" data.
 
 ### `getSchema()`
 
-```ts
+```typescript
 public static getSchema()
 ```
 
@@ -1582,11 +1464,9 @@ Get transaction schema.
 
 `schemas.TransactionSchema`
 
----
-
 ### `serialize()`
 
-```ts
+```typescript
 public serialize(options?: ISerializeOptions)
 ```
 
@@ -1594,19 +1474,17 @@ Handle the serialization of "timelock transfer" data.
 
 #### Parameters
 
-| Type              | Name             | Required | Description |
-| ----------------- | ---------------- | -------- | ----------- |
-| ISerializeOptions | options          | No       | Options     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ISerializeOptions | options | No | Options |
 
 #### Return Value
 
 `ByteBuffer`
 
----
-
 ### `deserialize()`
 
-```ts
+```typescript
 public deserialize(buf: ByteBuffer)
 ```
 
@@ -1614,9 +1492,9 @@ Handle the deserialization of "timelock transfer" data.
 
 #### Parameters
 
-| Type       | Name | Required | Description |
-| ---------- | ---- | -------- | ----------- |
-| ByteBuffer | buf  | Yes      | Buffer      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ByteBuffer | buf | Yes | Buffer |
 
 #### Return Value
 
@@ -1626,7 +1504,7 @@ Handle the deserialization of "timelock transfer" data.
 
 ### `getSchema()`
 
-```ts
+```typescript
 public static getSchema()
 ```
 
@@ -1636,11 +1514,9 @@ Get transaction schema.
 
 `schemas.TransactionSchema`
 
----
-
 ### `serialize()`
 
-```ts
+```typescript
 public serialize(options?: ISerializeOptions)
 ```
 
@@ -1648,19 +1524,17 @@ Handle the serialization of "delegate registration" data.
 
 #### Parameters
 
-| Type              | Name             | Required | Description |
-| ----------------- | ---------------- | -------- | ----------- |
-| ISerializeOptions | options          | No       | Options     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ISerializeOptions | options | No | Options |
 
 #### Return Value
 
 `ByteBuffer`
 
----
-
 ### `deserialize()`
 
-```ts
+```typescript
 public deserialize(buf: ByteBuffer)
 ```
 
@@ -1668,9 +1542,9 @@ Handle the deserialization of "delegate registration" data.
 
 #### Parameters
 
-| Type       | Name | Required | Description |
-| ---------- | ---- | -------- | ----------- |
-| ByteBuffer | buf  | Yes      | Buffer      |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ByteBuffer | buf | Yes | Buffer |
 
 #### Return Value
 
@@ -1680,7 +1554,7 @@ Handle the deserialization of "delegate registration" data.
 
 ### `id()`
 
-```ts
+```typescript
 public get id()
 ```
 
@@ -1690,11 +1564,9 @@ Convert the byte representation to a unique identifier.
 
 `string`
 
----
-
 ### `types()`
 
-```ts
+```typescript
 public get types()
 ```
 
@@ -1704,11 +1576,9 @@ Check the transaction type.
 
 `TransactionTypes`
 
----
-
 ### `verified()`
 
-```ts
+```typescript
 public get verified()
 ```
 
@@ -1718,11 +1588,9 @@ Check if the transaction is verified.
 
 `boolean`
 
----
-
 ### `getSchema()`
 
-```ts
+```typescript
 public static getSchema()
 ```
 
@@ -1732,11 +1600,9 @@ Get transaction schema.
 
 `TransactionSchema`
 
----
-
 ### `serialize()`
 
-```ts
+```typescript
 public abstract serialize()
 ```
 
@@ -1746,11 +1612,9 @@ Perform AIP11 compliant serialization.
 
 `ByteBuffer`
 
----
-
 ### `deserialize()`
 
-```ts
+```typescript
 public abstract deserialize(buf: ByteBuffer)
 ```
 
@@ -1760,11 +1624,9 @@ Perform AIP11 compliant deserialization.
 
 `void`
 
----
-
 ### `verify()`
 
-```ts
+```typescript
 public verify()
 ```
 
@@ -1774,11 +1636,9 @@ Verify the transaction.
 
 `boolean`
 
----
-
 ### `verifySecondSignature()`
 
-```ts
+```typescript
 public verifySecondSignature(publicKey: string)
 ```
 
@@ -1786,19 +1646,17 @@ Verify the transaction with a second public key.
 
 #### Parameters
 
-| Type   | Name      | Required | Description       |
-| ------ | --------- | -------- | ----------------- |
-| string | publicKey | Yes      | Second public key |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | publicKey | Yes | Second public key |
 
 #### Return Value
 
 `boolean`
 
----
-
 ### `verifySchema()`
 
-```ts
+```typescript
 public verifySchema()
 ```
 
@@ -1808,11 +1666,9 @@ Verify transaction schema.
 
 `ISchemaValidationResult`
 
----
-
 ### `toJson()`
 
-```ts
+```typescript
 public toJson()
 ```
 
@@ -1822,11 +1678,9 @@ Convert the transaction to its JSON representation.
 
 `ITransactionJson`
 
----
-
 ### `hasVendorField()`
 
-```ts
+```typescript
 public hasVendorField()
 ```
 
@@ -1840,7 +1694,7 @@ Verify if the transaction contains a vendorfield.
 
 ### `getSchema()`
 
-```ts
+```typescript
 public static getSchema()
 ```
 
@@ -1850,11 +1704,9 @@ Get transaction schema.
 
 `schemas.TransactionSchema`
 
----
-
 ### `hasVendorField()`
 
-```ts
+```typescript
 public hasVendorField()
 ```
 
@@ -1864,11 +1716,9 @@ Verify if the transaction contains a vendorfield.
 
 `boolean`
 
----
-
 ### `serialize()`
 
-```ts
+```typescript
 public serialize(options?: ISerializeOptions)
 ```
 
@@ -1876,19 +1726,17 @@ Perform AIP11 compliant serialization.
 
 #### Parameters
 
-| Type              | Name             | Required | Description |
-| ----------------- | ---------------- | -------- | ----------- |
-| ISerializeOptions | options          | No       | Options         |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ISerializeOptions | options | No | Options |
 
 #### Return Value
 
 `ByteBuffer`
 
----
-
 ### `deserialize()`
 
-```ts
+```typescript
 public deserialize(buf: ByteBuffer)
 ```
 
@@ -1896,9 +1744,9 @@ Perform AIP11 compliant deserialization.
 
 #### Parameters
 
-| Type       | Name | Required | Description |
-| ---------- | ---- | -------- | ----------- |
-| ByteBuffer | buf  | Yes      | ...         |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ByteBuffer | buf | Yes | ... |
 
 #### Return Value
 
@@ -1908,7 +1756,7 @@ Perform AIP11 compliant deserialization.
 
 ### `getSchema()`
 
-```ts
+```typescript
 public static getSchema()
 ```
 
@@ -1918,11 +1766,9 @@ Get transaction schema.
 
 `schemas.TransactionSchema`
 
----
-
 ### `serialize()`
 
-```ts
+```typescript
 public serialize(options?: ISerializeOptions)
 ```
 
@@ -1930,19 +1776,17 @@ Perform AIP11 compliant serialization.
 
 #### Parameters
 
-| Type              | Name             | Required | Description |
-| ----------------- | ---------------- | -------- | ----------- |
-| ISerializeOptions | options          | No       | ...         |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ISerializeOptions | options | No | ... |
 
 #### Return Value
 
 `ByteBuffer`
 
----
-
 ### `deserialize()`
 
-```ts
+```typescript
 public deserialize(buf: ByteBuffer)
 ```
 
@@ -1950,9 +1794,9 @@ Perform AIP11 compliant deserialization.
 
 #### Parameters
 
-| Type       | Name | Required | Description |
-| ---------- | ---- | -------- | ----------- |
-| ByteBuffer | buf  | Yes      | ...         |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ByteBuffer | buf | Yes | ... |
 
 #### Return Value
 
@@ -1962,7 +1806,7 @@ Perform AIP11 compliant deserialization.
 
 ### `deserialize()`
 
-```ts
+```typescript
 public deserialize(serialized: string | Buffer)
 ```
 
@@ -1970,19 +1814,17 @@ Perform AIP11 compliant deserialization.
 
 #### Parameters
 
-| Type              | Name        | Required | Description |
-| ----------------- | ----------- | -------- | ----------- |
-| string | Buffer   | serialized  | No       | Buffer      |
+| Type | Name | Required | Description |  |
+| :--- | :--- | :--- | :--- | :--- |
+| string | Buffer | serialized | No | Buffer |
 
 #### Return Value
 
 `ITransaction`
 
----
-
 ### `applyV1Compatibility()`
 
-```ts
+```typescript
 public applyV1Compatibility(transaction: ITransactionData)
 ```
 
@@ -1990,9 +1832,9 @@ Apply V1 compatibility on the given transaction.
 
 #### Parameters
 
-| Type              | Name        | Required | Description |
-| ----------------- | ----------- | -------- | ----------- |
-| ITransactionData  | transaction | No       | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ITransactionData | transaction | No | Transaction |
 
 #### Return Value
 
@@ -2002,7 +1844,7 @@ Apply V1 compatibility on the given transaction.
 
 ### `getBytes()`
 
-```ts
+```typescript
 public static getBytes(transaction: ITransactionData, options?: ISerializeOptions)
 ```
 
@@ -2010,20 +1852,18 @@ Convert the transaction to its byte representation.
 
 #### Parameters
 
-| Type              | Name        | Required | Description |
-| ----------------- | ----------- | -------- | ----------- |
-| ITransactionData  | transaction | Yes      | Transaction |
-| ISerializeOptions | options     | No       | Options     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ITransactionData | transaction | Yes | Transaction |
+| ISerializeOptions | options | No | Options |
 
 #### Return Value
 
 `Buffer`
 
----
-
 ### `serialize()`
 
-```ts
+```typescript
 public static serialize(transaction: ITransaction, options: ISerializeOptions = {})
 ```
 
@@ -2031,10 +1871,10 @@ Perform AIP11 compliant serialization.
 
 #### Parameters
 
-| Type              | Name        | Required | Description |
-| ----------------- | ----------- | -------- | ----------- |
-| ITransaction      | transaction | Yes      | Transaction |
-| ISerializeOptions | options     | No       | Options     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ITransaction | transaction | Yes | Transaction |
+| ISerializeOptions | options | No | Options |
 
 #### Return Value
 
@@ -2044,7 +1884,7 @@ Perform AIP11 compliant serialization.
 
 ### `sign()`
 
-```ts
+```typescript
 public static sign(transaction: ITransactionData, keys: IKeyPair, options?: ISerializeOptions)
 ```
 
@@ -2052,21 +1892,19 @@ Sign the given transaction with the provided keys.
 
 #### Parameters
 
-| Type              | Name        | Required | Description |
-| ----------------- | ----------- | -------- | ----------- |
-| ITransactionData  | transaction | Yes      | Transaction |
-| IKeyPair          | keys        | Yes      | Keys        |
-| ISerializeOptions | options     | No       | Options     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ITransactionData | transaction | Yes | Transaction |
+| IKeyPair | keys | Yes | Keys |
+| ISerializeOptions | options | No | Options |
 
 #### Return Value
 
 `string`
 
----
-
 ### `secondSign()`
 
-```ts
+```typescript
 public static secondSign(transaction: ITransactionData, keys: IKeyPair)
 ```
 
@@ -2074,20 +1912,18 @@ Second sign the given transaction with the provided keys.
 
 #### Parameters
 
-| Type              | Name        | Required | Description |
-| ----------------- | ----------- | -------- | ----------- |
-| ITransactionData  | transaction | Yes      | Transaction |
-| IKeyPair          | keys        | Yes      | Keys        |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ITransactionData | transaction | Yes | Transaction |
+| IKeyPair | keys | Yes | Keys |
 
 #### Return Value
 
 `string`
 
----
-
 ### `multiSign()`
 
-```ts
+```typescript
 public static multiSign(transaction: ITransactionData, keys: IKeyPair, index: number = -1)
 ```
 
@@ -2095,11 +1931,11 @@ Multi sign the given transaction with the provided keys.
 
 #### Parameters
 
-| Type              | Name        | Required | Description |
-| ----------------- | ----------- | -------- | ----------- |
-| ITransactionData  | transaction | Yes      | Transaction |
-| IKeyPair          | keys        | Yes      | Keys        |
-| number            | index       | No       | Index       |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ITransactionData | transaction | Yes | Transaction |
+| IKeyPair | keys | Yes | Keys |
+| number | index | No | Index |
 
 #### Return Value
 
@@ -2109,7 +1945,7 @@ Multi sign the given transaction with the provided keys.
 
 ### `verify()`
 
-```ts
+```typescript
 public static verify(data: ITransactionData)
 ```
 
@@ -2117,19 +1953,17 @@ Verify transaction.
 
 #### Parameters
 
-| Type              | Name | Required | Description |
-| ----------------- | ---- | -------- | ----------- |
-| ITransactionData  | data | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ITransactionData | data | Yes | Transaction |
 
 #### Return Value
 
 `boolean`
 
----
-
 ### `verifySecondSignature()`
 
-```ts
+```typescript
 public static verifySecondSignature(transaction: ITransactionData, publicKey: string)
 ```
 
@@ -2137,20 +1971,18 @@ Verify second signature.
 
 #### Parameters
 
-| Type              | Name      | Required | Description |
-| ----------------- | --------- | -------- | ----------- |
-| ITransactionData  | data      | Yes      | Transaction |
-| string            | publicKey | Yes      | Public key  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ITransactionData | data | Yes | Transaction |
+| string | publicKey | Yes | Public key |
 
 #### Return Value
 
 `boolean`
 
----
-
 ### `verifyHash()`
 
-```ts
+```typescript
 public static verifyHash(data: ITransactionData)
 ```
 
@@ -2158,19 +1990,17 @@ Verify transaction hash.
 
 #### Parameters
 
-| Type              | Name      | Required | Description |
-| ----------------- | --------- | -------- | ----------- |
-| ITransactionData  | data      | Yes      | Transaction |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ITransactionData | data | Yes | Transaction |
 
 #### Return Value
 
 `boolean`
 
----
-
 ### `verifySchema()`
 
-```ts
+```typescript
 public static verifySchema(data: ITransactionData, strict: boolean = true)
 ```
 
@@ -2178,10 +2008,10 @@ Verify transaction schema.
 
 #### Parameters
 
-| Type              | Name      | Required | Description |
-| ----------------- | --------- | -------- | ----------- |
-| ITransactionData  | data      | Yes      | Transaction |
-| boolean           | strict    | No       | Strict flag |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ITransactionData | data | Yes | Transaction |
+| boolean | strict | No | Strict flag |
 
 #### Return Value
 
@@ -2191,7 +2021,7 @@ Verify transaction schema.
 
 ### `sign()`
 
-```ts
+```typescript
 public static sign(message: string, passphrase: string)
 ```
 
@@ -2199,20 +2029,18 @@ Sign a message using the given passphrase.
 
 #### Parameters
 
-| Type   | Name       | Required | Description |
-| ------ | ---------- | -------- | ----------- |
-| string | message    | Yes      | Message     |
-| string | passphrase | Yes      | Passphrase  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | message | Yes | Message |
+| string | passphrase | Yes | Passphrase |
 
 #### Return Value
 
 `IMessage`
 
----
-
 ### `signWithWif()`
 
-```ts
+```typescript
 public static signWithWif(message: string, wif: string, network?: INetwork)
 ```
 
@@ -2220,21 +2048,19 @@ Sign a message using the given WIF string.
 
 #### Parameters
 
-| Type     | Name       | Required | Description |
-| -------- | ---------- | -------- | ----------- |
-| string   | message    | Yes      | Message     |
-| string   | wif        | Yes      | Network WIF |
-| INetwork | network    | No       | Network     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | message | Yes | Message |
+| string | wif | Yes | Network WIF |
+| INetwork | network | No | Network |
 
 #### Return Value
 
 `IMessage`
 
----
-
 ### `verify()`
 
-```ts
+```typescript
 public static verify({ message, publicKey, signature }: IMessage)
 ```
 
@@ -2242,11 +2068,11 @@ Verify the message contents
 
 #### Parameters
 
-| Type     | Name       | Required | Description |
-| -------- | ---------- | -------- | ----------- |
-| string   | message    | Yes      | Message     |
-| string   | publicKey  | Yes      | Public key  |
-| string   | signature  | Yes      | Signature   |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | message | Yes | Message |
+| string | publicKey | Yes | Public key |
+| string | signature | Yes | Signature |
 
 #### Return Value
 
@@ -2256,7 +2082,7 @@ Verify the message contents
 
 ### `getTime()`
 
-```ts
+```typescript
 public static getTime(time?: number)
 ```
 
@@ -2264,19 +2090,17 @@ Get the time diff between now and network start.
 
 #### Parameters
 
-| Type   | Name       | Required | Description        |
-| ------ | ---------- | -------- | ------------------ |
-| number | time       | No       | Network start time |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| number | time | No | Network start time |
 
 #### Return Value
 
 `number`
 
----
-
 ### `epoch()`
 
-```ts
+```typescript
 public static getTimeInMsUntilNextSlot()
 ```
 
@@ -2286,11 +2110,9 @@ Get in seconds the time before the next slot.
 
 `number`
 
----
-
 ### `getSlotNumber()`
 
-```ts
+```typescript
 public static getSlotNumber(epoch?: number)
 ```
 
@@ -2298,19 +2120,17 @@ Get the slot number.
 
 #### Parameters
 
-| Type   | Name       | Required | Description |
-| ------ | ---------- | -------- | ----------- |
-| number | epoch      | No       | Epoch time  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| number | epoch | No | Epoch time |
 
 #### Return Value
 
 `number`
 
----
-
 ### `getSlotTime()`
 
-```ts
+```typescript
 public static getSlotTime(slot: number)
 ```
 
@@ -2318,19 +2138,17 @@ Get the slot time.
 
 #### Parameters
 
-| Type   | Name       | Required | Description |
-| ------ | ---------- | -------- | ----------- |
-| number | slot       | Yes      | Slot        |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| number | slot | Yes | Slot |
 
 #### Return Value
 
 `number`
 
----
-
 ### `getNextSlot()`
 
-```ts
+```typescript
 public static getNextSlot()
 ```
 
@@ -2340,11 +2158,9 @@ Get the next slot.
 
 `number`
 
----
-
 ### `isForgingAllowed()`
 
-```ts
+```typescript
 public static isForgingAllowed(epoch?: number)
 ```
 
@@ -2352,10 +2168,11 @@ Verify is forging is allowed.
 
 #### Parameters
 
-| Type   | Name       | Required | Description |
-| ------ | ---------- | -------- | ----------- |
-| number | epoch      | No       | Epoch time  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| number | epoch | No | Epoch time |
 
 #### Return Value
 
 `boolean`
+

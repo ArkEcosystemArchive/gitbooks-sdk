@@ -3,23 +3,25 @@ id: examples
 title: Examples
 ---
 
+# Examples
+
 ## Initialization
 
-```ts
-import ApiClient from '@arkecosystem/client'
+```typescript
+import ApiClient from '@arkecosystem/typescript-client'
 
 const client = new ApiClient(server, 2) // API version
 ```
 
 ## Blocks
 
-This service API grants access to the [blocks resource](/api/public/v2/blocks.html). A block is a signed set of transactions created by a delegate and permanently committed to the ARK blockchain.
+This service API grants access to the [blocks resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/blocks.html). A block is a signed set of transactions created by a delegate and permanently committed to the ARK blockchain.
 
 > It is not possible to `POST` a block through the public API. Relay Nodes accept only blocks posted by a delegate at the correct time through the internal API.
 
 ### List All Blocks
 
-```ts
+```typescript
 const { blocks } = await client.resource('blocks').all()
 
 >>> Promise<IResponse<T>>
@@ -27,7 +29,7 @@ const { blocks } = await client.resource('blocks').all()
 
 ### Retrieve a Block
 
-```ts
+```typescript
 const { block } = await client.resource('blocks').get('validBlockId')
 
 >>> Promise<IResponse<T>>
@@ -35,7 +37,7 @@ const { block } = await client.resource('blocks').get('validBlockId')
 
 ### List All Transactions of a Block
 
-```ts
+```typescript
 const { blockTransactions } = await client.resource('blocks').transactions('validBlockId')
 
 >>> Promise<IResponse<T>>
@@ -43,7 +45,7 @@ const { blockTransactions } = await client.resource('blocks').transactions('vali
 
 ### Search All Blocks
 
-```ts
+```typescript
 const { searchedBlocks } = await client.resource('blocks').search({"id": "validBlockId"})
 
 >>> Promise<IResponse<T>>
@@ -51,16 +53,15 @@ const { searchedBlocks } = await client.resource('blocks').search({"id": "validB
 
 ## Delegates
 
-The client SDK can be used to query the [delegate resource](/api/public/v2/delegates.html).
+The client SDK can be used to query the [delegate resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/delegates.html).
 
 A delegate is a regular wallet that has broadcasted a registration transaction, acquired a sufficient number of votes, and has a Relay Node configured to forge new blocks through a `forger` module. At any time only 51 delegates are active. They are cost-efficient miners running the ARK network.
 
-> Voters are wallets which have broadcasted a vote transaction on a delegate. A vote remains active until an un-vote transaction is sent (it does not have to be recast unless a wallet wishes to change from delegate). Voting for a delegate does not give the delegate access to the wallet nor does it lock the coins in it.
+> Voters are wallets which have broadcasted a vote transaction on a delegate. A vote remains active until an un-vote transaction is sent \(it does not have to be recast unless a wallet wishes to change from delegate\). Voting for a delegate does not give the delegate access to the wallet nor does it lock the coins in it.
 
 ### List All Delegates
 
-```ts
-
+```typescript
 const { delegates } = await client.resource('delegates').all()
 
 >>> Promise<IResponse<T>>
@@ -68,7 +69,7 @@ const { delegates } = await client.resource('delegates').all()
 
 ### Retrieve a Delegate
 
-```ts
+```typescript
 const { delegate } = await client.resource('delegates').get("validId")
 
 >>> Promise<IResponse<T>>
@@ -76,7 +77,7 @@ const { delegate } = await client.resource('delegates').get("validId")
 
 ### List All Blocks of a Delegate
 
-```ts
+```typescript
 const { delegateBlocks } = await client.resource('delegates').blocks("validId")
 
 >>> Promise<IResponse<T>>
@@ -84,7 +85,7 @@ const { delegateBlocks } = await client.resource('delegates').blocks("validId")
 
 ### List All Voters of a Delegate
 
-```ts
+```typescript
 const { delegateVoters } = await client.resource('delegates').voters("validId")
 
 >>> Promise<IResponse<T>>
@@ -92,11 +93,11 @@ const { delegateVoters } = await client.resource('delegates').voters("validId")
 
 ## Node
 
-The ARK network consists of different anonymous nodes (servers), maintaining the public ledger, validating transactions and blocks and providing APIs. The [node resource](/api/public/v2/node.html) allows for querying the health and configurations of the node used by the instantiated client.
+The ARK network consists of different anonymous nodes \(servers\), maintaining the public ledger, validating transactions and blocks and providing APIs. The [node resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/node.html) allows for querying the health and configurations of the node used by the instantiated client.
 
 ### Retrieve the Configuration
 
-```ts
+```typescript
 const { nodeConfiguration } = await client.resource('node').configuration()
 
 >>> Promise<IResponse<T>>
@@ -104,7 +105,7 @@ const { nodeConfiguration } = await client.resource('node').configuration()
 
 ### Retrieve the Status
 
-```ts
+```typescript
 const { nodeStatus } = await client.resource('node').status()
 
 >>> Promise<IResponse<T>>
@@ -112,7 +113,7 @@ const { nodeStatus } = await client.resource('node').status()
 
 ### Retrieve the Syncing Status
 
-```ts
+```typescript
 const { nodeSyncing } = await client.resource('node').syncing()
 
 >>> Promise<IResponse<T>>
@@ -120,7 +121,7 @@ const { nodeSyncing } = await client.resource('node').syncing()
 
 ### Retrieve the Fees
 
-```ts
+```typescript
 const { nodeFees } = await client.resource('node').fees()
 
 >>> Promise<IResponse<T>>
@@ -128,13 +129,13 @@ const { nodeFees } = await client.resource('node').fees()
 
 ## Peers
 
-Each node is connected to a set of peers, which are Relay or Delegate Nodes as well. The [peers resource](/api/public/v2/peers.html) provides access to all peers connected to our node.
+Each node is connected to a set of peers, which are Relay or Delegate Nodes as well. The [peers resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/peers.html) provides access to all peers connected to our node.
 
-> Peers have made their Public API available for use; however for mission-critical queries and transaction posting you should use a node which is under your control. We provide a guide to setting up a Relay Node [here](/tutorials/node/setup.html).
+> Peers have made their Public API available for use; however for mission-critical queries and transaction posting you should use a node which is under your control. We provide a guide to setting up a Relay Node [here](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/tutorials/node/setup.html).
 
 ### List All Peers
 
-```ts
+```typescript
 const { peers } = await client.resource('peers').all()
 
 >>> Promise<IResponse<T>>
@@ -142,7 +143,7 @@ const { peers } = await client.resource('peers').all()
 
 ### Retrieve a Peer
 
-```ts
+```typescript
 const { peer } = await client.resource('peers').get("validIpAddress")
 
 >>> Promise<IResponse<T>>
@@ -150,13 +151,13 @@ const { peer } = await client.resource('peers').get("validIpAddress")
 
 ## Transactions
 
-The heart of any blockchain is formed by its transactions; state-altering payloads signed by a wallet. Most likely you will be querying for transactions most often, using the [transaction resource](/api/public/v2/transactions.html).
+The heart of any blockchain is formed by its transactions; state-altering payloads signed by a wallet. Most likely you will be querying for transactions most often, using the [transaction resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/transactions.html).
 
 > A transaction is the only object which may be posted by a non-delegate. It requires a signature from a wallet containing a sufficient amount of ARK.
 
 ### Create a Transaction
 
-```ts
+```typescript
 const { transaction } = await client.resource('transactions').create([...])
 
 >>> Promise<IResponse<T>>
@@ -164,7 +165,7 @@ const { transaction } = await client.resource('transactions').create([...])
 
 ### Retrieve a Transaction
 
-```ts
+```typescript
 const { transaction } = await client.resource('transactions').get("validId")
 
 >>> Promise<IResponse<T>>
@@ -172,7 +173,7 @@ const { transaction } = await client.resource('transactions').get("validId")
 
 ### List All Transactions
 
-```ts
+```typescript
 const { transaction } = await client.resource('transactions').all()
 
 >>> Promise<IResponse<T>>
@@ -180,7 +181,7 @@ const { transaction } = await client.resource('transactions').all()
 
 ### List All Unconfirmed Transactions
 
-```ts
+```typescript
 const { transaction } = await client.resource('transactions').allUnconfirmed()
 
 >>> Promise<IResponse<T>>
@@ -188,7 +189,7 @@ const { transaction } = await client.resource('transactions').allUnconfirmed()
 
 ### Get Unconfirmed Transaction
 
-```ts
+```typescript
 const { transaction } = await client.resource('transactions').getUnconfirmed("validId")
 
 >>> Promise<IResponse<T>>
@@ -196,7 +197,7 @@ const { transaction } = await client.resource('transactions').getUnconfirmed("va
 
 ### Search Transactions
 
-```ts
+```typescript
 const { transaction } = await client.resource('transactions').search({"id": "validId"})
 
 >>> Promise<IResponse<T>>
@@ -204,7 +205,7 @@ const { transaction } = await client.resource('transactions').search({"id": "val
 
 ### List Transaction Types
 
-```ts
+```typescript
 const { transaction } = await client.resource('transactions').types()
 
 >>> Promise<IResponse<T>>
@@ -212,11 +213,11 @@ const { transaction } = await client.resource('transactions').types()
 
 ## Votes
 
-A [vote](/api/public/v2/votes.html) is a transaction sub-type, where the `asset` field contains a `votes` object and the `transaction.type` is `3`.
+A [vote](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/votes.html) is a transaction sub-type, where the `asset` field contains a `votes` object and the `transaction.type` is `3`.
 
 ### List All Votes
 
-```ts
+```typescript
 const { votes } = await client.resource('votes').all()
 
 >>> Promise<IResponse<T>>
@@ -224,7 +225,7 @@ const { votes } = await client.resource('votes').all()
 
 ### Retrieve a Vote
 
-```ts
+```typescript
 const { vote } = await client.resource('votes').get("validId")
 
 >>> Promise<IResponse<T>>
@@ -232,15 +233,15 @@ const { vote } = await client.resource('votes').get("validId")
 
 ## Wallets
 
-The [wallet resource](/api/public/v2/wallets.html#list-all-wallets) provides access to:
+The [wallet resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/wallets.html#list-all-wallets) provides access to:
 
-- Wallets.
-- Incoming and outgoing transactions per wallet.
-- Each wallet's votes.
+* Wallets.
+* Incoming and outgoing transactions per wallet.
+* Each wallet's votes.
 
 ### Retrieve All Wallets
 
-```ts
+```typescript
 const { wallets } = await client.resource('wallets').all()
 
 >>> Promise<IResponse<T>>
@@ -248,7 +249,7 @@ const { wallets } = await client.resource('wallets').all()
 
 ### Retrieve a Wallet
 
-```ts
+```typescript
 const { wallet } = await client.resource('wallets').get("validId")
 
 >>> Promise<IResponse<T>>
@@ -256,7 +257,7 @@ const { wallet } = await client.resource('wallets').get("validId")
 
 ### List All Transactions of a Wallet
 
-```ts
+```typescript
 const { walletTransactions } = await client.resource('wallets').transactions("validId")
 
 >>> Promise<IResponse<T>>
@@ -264,7 +265,7 @@ const { walletTransactions } = await client.resource('wallets').transactions("va
 
 ### List All Received Transactions of a Wallet
 
-```ts
+```typescript
 const { wallets } = await client.resource('wallets').transactionsReceived("validId")
 
 >>> Promise<IResponse<T>>
@@ -272,7 +273,7 @@ const { wallets } = await client.resource('wallets').transactionsReceived("valid
 
 ### List All Sent Transactions of a Wallet
 
-```ts
+```typescript
 const { wallets } = await client.resource('wallets').transactionsSent("validId")
 
 >>> Promise<IResponse<T>>
@@ -280,7 +281,7 @@ const { wallets } = await client.resource('wallets').transactionsSent("validId")
 
 ### List All Votes of a Wallet
 
-```ts
+```typescript
 const { wallets } = await client.resource('wallets').votes("validId")
 
 >>> Promise<IResponse<T>>
@@ -288,7 +289,7 @@ const { wallets } = await client.resource('wallets').votes("validId")
 
 ### List All Top Wallets
 
-```ts
+```typescript
 const { wallets } = await client.resource('wallets').top()
 
 >>> Promise<IResponse<T>>
@@ -296,8 +297,9 @@ const { wallets } = await client.resource('wallets').top()
 
 ### Search All Wallets
 
-```ts
+```typescript
 const { wallets } = await client.resource('wallets').search({"id": "validId"})
 
 >>> Promise<IResponse<T>>
 ```
+

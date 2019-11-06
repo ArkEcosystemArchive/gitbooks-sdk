@@ -107,15 +107,15 @@
   * [API Documentation](swift/client/api-documentation.md)
   * [Examples](swift/client/examples.md)
 
-## Javascript
+## Typescript
 
-* [Installation](javascript/installation.md)
-* [Crypto](javascript/crypto/README.md)
-  * [API Documentation](javascript/crypto/api-documentation.md)
-  * [Examples](javascript/crypto/examples.md)
-* [Client](javascript/client/README.md)
-  * [API Documentation](javascript/client/api-documentation.md)
-  * [Examples](javascript/client/examples.md)
+* [Installation](typescript/installation.md)
+* [Crypto](typescript/crypto/README.md)
+  * [API Documentation](typescript/crypto/api-documentation.md)
+  * [Examples](typescript/crypto/examples.md)
+* [Client](typescript/client/README.md)
+  * [API Documentation](typescript/client/api-documentation.md)
+  * [Examples](typescript/client/examples.md)
 
 ## Frameworks
 

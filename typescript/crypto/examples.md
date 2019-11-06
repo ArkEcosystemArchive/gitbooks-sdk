@@ -3,9 +3,11 @@ id: examples
 title: Examples
 ---
 
+# Examples
+
 ## Initialization
 
-```ts
+```typescript
 const { crypto } = require("@arkecosystem/crypto");
 
 // Throughout this document, the keys object used is:
@@ -14,13 +16,13 @@ const keys = crypto.getKeys("this is a top-secret passphrase");
 
 ## Transactions
 
-A transaction is an object specifying the transfer of funds from the sender's wallet to the recipient's. Each transaction must be signed by the sender's private key to prove authenticity and origin. After broadcasting through the [client SDK](/ts/client/api-documentation#initialization), a transaction is permanently incorporated in the blockchain by a Delegate Node.
+A transaction is an object specifying the transfer of funds from the sender's wallet to the recipient's. Each transaction must be signed by the sender's private key to prove authenticity and origin. After broadcasting through the [client SDK](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/ts/client/api-documentation/README.md#initialization), a transaction is permanently incorporated in the blockchain by a Delegate Node.
 
 ### Sign
 
-The crypto SDK can sign a transaction using your private key or passphrase (from which the private key is generated). Ensure you are familiar with [digital signatures](https://en.wikipedia.org/wiki/Digital_signature) before using the crypto SDKs.
+The crypto SDK can sign a transaction using your private key or passphrase \(from which the private key is generated\). Ensure you are familiar with [digital signatures](https://en.wikipedia.org/wiki/Digital_signature) before using the crypto SDKs.
 
-```ts
+```typescript
 const { Transaction } = require("@arkecosystem/crypto").models;
 
 const transaction = {
@@ -38,22 +40,22 @@ crypto.sign(transaction, keys);
 >>> TBuilder
 ```
 
-### Serialize (AIP11)
+### Serialize \(AIP11\)
 
 > Serialization of a transaction object ensures it is compact and properly formatted to be incorporated in the ARK blockchain. If you are using the crypto SDK in combination with the public API SDK, you should not need to serialize manually.
 
-```ts
+```typescript
 const { Transaction } = require("@arkecosystem/crypto").models;
 const serialized = Transaction.serialize(transaction).toString("hex");
 
 >>> string
 ```
 
-### Deserialize (AIP11)
+### Deserialize \(AIP11\)
 
 > A serialized transaction may be deserialized for inspection purposes. The public API does not return serialized transactions, so you should only need to deserialize in exceptional circumstances.
 
-```ts
+```typescript
 const { Transaction } = require("@arkecosystem/crypto").models;
 const deserialized = Transaction.deserialize(serialized);
 
@@ -62,13 +64,13 @@ const deserialized = Transaction.deserialize(serialized);
 
 ## Message
 
-The crypto SDK not only supports transactions but can also work with other arbitrary data (expressed as strings).
+The crypto SDK not only supports transactions but can also work with other arbitrary data \(expressed as strings\).
 
 ### Sign
 
 > Signing a string works much like signing a transaction: in most implementations, the message is hashed, and the resulting hash is signed using the `private key` or `passphrase`.
 
-```ts
+```typescript
 const message = "Arbitrary entry of data";
 const hash = utils.sha256(message);
 const signature = crypto.signHash(hash, keys);
@@ -86,7 +88,7 @@ const signed = {
 
 > A message's signature can easily be verified by hash, without the private key that signed the message, by using the `verify` method.
 
-```ts
+```typescript
 crypto.verifyHash(
   signed.hash,
   signed.signature,
@@ -102,7 +104,7 @@ crypto.verifyHash(
 
 ### Derive the Address from a Passphrase
 
-```ts
+```typescript
 const { identities } = require("@arkecosystem/crypto");
 identities.address.fromPassphrase("this is a top secret passphrase");
 
@@ -111,7 +113,7 @@ identities.address.fromPassphrase("this is a top secret passphrase");
 
 ### Derive the Address from a Public Key
 
-```ts
+```typescript
 const { identities } = require("@arkecosystem/crypto");
 identities.address.fromPublicKey(
   "validPublicKey"
@@ -122,7 +124,7 @@ identities.address.fromPublicKey(
 
 ### Derive the Address from a Private Key
 
-```ts
+```typescript
 const { identities } = require("@arkecosystem/crypto");
 identities.address.fromPrivateKey(
   "validPrivateKey"
@@ -133,7 +135,7 @@ identities.address.fromPrivateKey(
 
 ### Validate an Address
 
-```ts
+```typescript
 const { identities } = require("@arkecosystem/crypto");
 identities.address.validate("validAddress");
 
@@ -146,7 +148,7 @@ identities.address.validate("validAddress");
 
 ### Derive the Private Key from a Passphrase
 
-```ts
+```typescript
 const { identities } = require("@arkecosystem/crypto");
 identities.privateKey.fromPassphrase("this is a top secret passphrase");
 
@@ -155,13 +157,13 @@ identities.privateKey.fromPassphrase("this is a top secret passphrase");
 
 ### Derive the Private Key Instance Object from a Hexadecimal Encoded String
 
-```ts
+```typescript
 This function has not been implemented in this client library.
 ```
 
 ### Derive the Private Key from a WIF
 
-```ts
+```typescript
 const { identities } = require("@arkecosystem/crypto");
 identities.privateKey.fromWIF(
   "validWif"
@@ -176,7 +178,7 @@ identities.privateKey.fromWIF(
 
 ### Derive the Public Key from a Passphrase
 
-```ts
+```typescript
 const { identities } = require("@arkecosystem/crypto");
 identities.publicKey.fromPassphrase("this is a top secret passphrase");
 
@@ -185,13 +187,13 @@ identities.publicKey.fromPassphrase("this is a top secret passphrase");
 
 ### Derive the Public Key Instance Object from a Hexadecimal Encoded String
 
-```ts
+```typescript
 This function has not been implemented in this client library.
 ```
 
 ### Validate a Public Key
 
-```ts
+```typescript
 const { identities } = require("@arkecosystem/crypto");
 identities.publicKey.validate(
   "validPublicKey"
@@ -206,9 +208,10 @@ identities.publicKey.validate(
 
 ### Derive the WIF from a Passphrase
 
-```ts
+```typescript
 const { identities } = require("@arkecosystem/crypto");
 identities.wif.fromPassphrase("this is a top secret passphrase");
 
 >>> string
 ```
+

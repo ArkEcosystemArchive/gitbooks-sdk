@@ -3,11 +3,13 @@ id: api-documentation
 title: API Documentation
 ---
 
+# API Documentation
+
 ## ConnectionManager
 
 ### `connect()`
 
-```ts
+```typescript
 public connect(host: string, name = "main")
 ```
 
@@ -15,20 +17,18 @@ Connect to the given connection.
 
 #### Parameters
 
-| Type   | Name       | Required | Description  |
-| ------ | ---------- | -------- | ------------ |
-| string | host       | Yes      | Node URL     |
-| string | name       | No       | Network name |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | host | Yes | Node URL |
+| string | name | No | Network name |
 
 #### Return Value
 
 `Connection`
 
----
-
 ### `disconnect()`
 
-```ts
+```typescript
 public disconnect(name?: string)
 ```
 
@@ -36,19 +36,17 @@ Disconnect from the given connection.
 
 #### Parameters
 
-| Type   | Name       | Required | Description  |
-| ------ | ---------- | -------- | ------------ |
-| string | name       | No       | Network Name |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | name | No | Network Name |
 
 #### Return Value
 
 `void`
 
----
-
 ### `connection()`
 
-```ts
+```typescript
 public connection(name?: string)
 ```
 
@@ -56,19 +54,17 @@ Get a connection instance.
 
 #### Parameters
 
-| Type   | Name       | Required | Description  |
-| ------ | ---------- | -------- | ------------ |
-| string | name       | No       | Network Name |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | name | No | Network Name |
 
 #### Return Value
 
 `Connection`
 
----
-
 ### `getDefaultConnection()`
 
-```ts
+```typescript
 public getDefaultConnection()
 ```
 
@@ -78,11 +74,9 @@ Get the default connection name.
 
 `string`
 
----
-
 ### `setDefaultConnection()`
 
-```ts
+```typescript
 public setDefaultConnection(name: string)
 ```
 
@@ -90,19 +84,17 @@ Set the default connection name.
 
 #### Parameters
 
-| Type   | Name       | Required | Description  |
-| ------ | ---------- | -------- | ------------ |
-| string | name       | No       | Network Name |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | name | No | Network Name |
 
 #### Return Value
 
 `void`
 
----
-
 ### `getConnections()`
 
-```ts
+```typescript
 public getConnections()
 ```
 
@@ -116,7 +108,7 @@ Return all of the created connections.
 
 ### `constructor()`
 
-```ts
+```typescript
 public constructor(private readonly host: string)
 ```
 
@@ -124,15 +116,13 @@ Create a new Connection class instance.
 
 #### Parameters
 
-| Type    | Name       | Required | Description |
-| ------- | ---------- | -------- | ----------- |
-| string  | host       | Yes      | Node URL    |
-
----
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | host | Yes | Node URL |
 
 ### `api()`
 
-```ts
+```typescript
 public api<T = any>(name: string)
 ```
 
@@ -140,19 +130,17 @@ Instantiate new Api.
 
 #### Parameters
 
-| Type   | Name       | Required | Description  |
-| ------ | ---------- | -------- | ------------ |
-| string | name       | Yes      | Network name |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | name | Yes | Network name |
 
 #### Return Value
 
 `T`
 
----
-
 ### `get()`
 
-```ts
+```typescript
 public async get<T = any>(url: string, opts?: Record<string, any>)
 ```
 
@@ -160,20 +148,18 @@ Send a GET request with query parameters.
 
 #### Parameters
 
-| Type                | Name       | Required | Description      |
-| ------------------- | ---------- | -------- | ---------------- |
-| string              | url        | Yes      | Endpoint         |
-| Record<string, any> | opts?      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | url | Yes | Endpoint |
+| Record | opts? | No | Query parameters |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `post()`
 
-```ts
+```typescript
 public async post<T = any>(url: string, opts?: Record<string, any>): Promise<IResponse<T>>
 ```
 
@@ -181,10 +167,10 @@ Send a POST request with JSON-encoded parameters.
 
 #### Parameters
 
-| Type                | Name       | Required | Description      |
-| ------------------- | ---------- | -------- | ---------------- |
-| string              | url        | Yes      | Endpoint         |
-| Record<string, any> | opts?      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | url | Yes | Endpoint |
+| Record | opts? | No | Query parameters |
 
 #### Return Value
 
@@ -194,7 +180,7 @@ Send a POST request with JSON-encoded parameters.
 
 ### `constructor()`
 
-```ts
+```typescript
 public constructor(error)
 ```
 
@@ -202,15 +188,15 @@ Create a new RequestError class instance.
 
 #### Parameters
 
-| Type    | Name       | Required | Description |
-| ------- | ---------- | -------- | ----------- |
-| string  | error      | Yes      | Error       |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | error | Yes | Error |
 
 ## Resources\Blocks
 
 ### `all()`
 
-```ts
+```typescript
 public async all<T = any>(query?: Record<string, any>)
 ```
 
@@ -218,20 +204,17 @@ Get all blocks.
 
 #### Parameters
 
-| Type                | Name       | Required | Description      |
-| ------------------- | ---------- | -------- | ---------------- |
-| Record<string, any> | query      | No       | Query parameters |
-
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Record | query | No | Query parameters |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `get()`
 
-```ts
+```typescript
 public async get<T = any>(id: string)
 ```
 
@@ -239,19 +222,17 @@ Get a block by the given id.
 
 #### Parameters
 
-| Type   | Name     | Required | Description |
-| ------ | -------- | -------- | ----------- |
-| string | id       | Yes      | Block ID    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Block ID |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `transactions()`
 
-```ts
+```typescript
 public async transactions<T = any>(id: string, query?: Record<string, any>)
 ```
 
@@ -259,20 +240,18 @@ Get all transactions by the given block.
 
 #### Parameters
 
-| Type                | Name       | Required | Description      |
-| ------------------- | ---------- | -------- | ---------------- |
-| string              | id         | Yes      | Block ID         |
-| Record<string, any> | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Block ID |
+| Record | query | No | Query parameters |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `search()`
 
-```ts
+```typescript
 public async search<T = any>(payload?: Record<string, any>)
 ```
 
@@ -280,9 +259,9 @@ Filter all blocks by the given parameters.
 
 #### Parameters
 
-| Type                | Name       | Required | Description       |
-| ------------------- | ---------- | -------- | ----------------- |
-| Record<string, any> | payload    | No       | Search parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Record | payload | No | Search parameters |
 
 #### Return Value
 
@@ -292,7 +271,7 @@ Filter all blocks by the given parameters.
 
 ### `all()`
 
-```ts
+```typescript
 public async all<T = any>(query?: Record<string, any>)
 ```
 
@@ -300,19 +279,17 @@ Get all accounts.
 
 #### Parameters
 
-| Type                | Name       | Required | Description      |
-| ------------------- | ---------- | -------- | ---------------- |
-| Record<string, any> | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Record | query | No | Query parameters |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `get()`
 
-```ts
+```typescript
 public async get<T = any>(id: string)
 ```
 
@@ -320,19 +297,17 @@ Get a delegate by the given id.
 
 #### Parameters
 
-| Type   | Name        | Required | Description         |
-| ------ | ----------- | -------- | ------------------- |
-| string | id          | Yes      | Delegate identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Delegate identifier |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `blocks()`
 
-```ts
+```typescript
 public async blocks<T = any>(id: string, query?: Record<string, any>)
 ```
 
@@ -340,20 +315,18 @@ Get all blocks for the given delegate.
 
 #### Parameters
 
-| Type                | Name       | Required | Description         |
-| ------------------  | ---------- | -------- | ------------------- |
-| string              | id         | Yes      | Delegate identifier |
-| Record<string, any> | query      | No       | Query parameters    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Delegate identifier |
+| Record | query | No | Query parameters |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `voters()`
 
-```ts
+```typescript
 public async voters<T = any>(id: string, query?: Record<string, any>)
 ```
 
@@ -361,10 +334,10 @@ Get all voters for the given delegate.
 
 #### Parameters
 
-| Type                | Name       | Required | Description         |
-| ------------------  | ---------- | -------- | ------------------- |
-| string              | id         | Yes      | Delegate identifier |
-| Record<string, any> | query      | No       | Query parameters    |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Delegate identifier |
+| Record | query | No | Query parameters |
 
 #### Return Value
 
@@ -374,7 +347,7 @@ Get all voters for the given delegate.
 
 ### `configuration()`
 
-```ts
+```typescript
 public async configuration<T = any>()
 ```
 
@@ -384,11 +357,9 @@ Get the node configuration.
 
 `Promise<IResponse<T>>`
 
----
-
 ### `status()`
 
-```ts
+```typescript
 public async status<T = any>()
 ```
 
@@ -398,11 +369,9 @@ Get the node status.
 
 `Promise<IResponse<T>>`
 
----
-
 ### `syncing()`
 
-```ts
+```typescript
 public async syncing<T = any>()
 ```
 
@@ -412,11 +381,9 @@ Get the node syncing status.
 
 `Promise<IResponse<T>>`
 
----
-
 ### `fees()`
 
-```ts
+```typescript
 public async fees<T = any>(days: number)
 ```
 
@@ -424,9 +391,9 @@ Get the node fee statistics.
 
 #### Parameters
 
-| Type   | Name        | Required | Description |
-| ------ | ----------- | -------- | ----------- |
-| number | days        | Yes      | Days        |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| number | days | Yes | Days |
 
 #### Return Value
 
@@ -436,7 +403,7 @@ Get the node fee statistics.
 
 ### `all()`
 
-```ts
+```typescript
 public async all<T = any>(query?: Record<string, any>)
 ```
 
@@ -444,19 +411,17 @@ Get all peers.
 
 #### Parameters
 
-| Type                | Name       | Required | Description      |
-| ------------------- | ---------- | -------- | ---------------- |
-| Record<string, any> | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Record | query | No | Query parameters |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `get()`
 
-```ts
+```typescript
 public async get<T = any>(ip: string)
 ```
 
@@ -464,9 +429,9 @@ Get a peer by the given IP address.
 
 #### Parameters
 
-| Type   | Name | Required | Description |
-| ------ | ---- | -------- | ----------- |
-| string | ip   | Yes      | IP address  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | ip | Yes | IP address |
 
 #### Return Value
 
@@ -476,7 +441,7 @@ Get a peer by the given IP address.
 
 ### `create()`
 
-```ts
+```typescript
 public async create<T = any>(payload: object[])
 ```
 
@@ -484,19 +449,17 @@ Create a new transaction.
 
 #### Parameters
 
-| Type     | Name         | Required | Description                 |
-| -------- | ------------ | -------- | --------------------------- |
-| object[] | payload      | Yes      | Transaction(s) to broadcast |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| object\[\] | payload | Yes | Transaction\(s\) to broadcast |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `get()`
 
-```ts
+```typescript
 public async get<T = any>(id: string)
 ```
 
@@ -504,19 +467,17 @@ Get a transaction by the given id.
 
 #### Parameters
 
-| Type   | Name           | Required | Description    |
-| ------ | -------------- | -------- | -------------- |
-| string | id             | Yes      | Transaction ID |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Transaction ID |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `all()`
 
-```ts
+```typescript
 public async all<T = any>(query?: Record<string, any>)
 ```
 
@@ -524,19 +485,17 @@ Get all transactions.
 
 #### Parameters
 
-| Type                | Name       | Required | Description      |
-| ------------------- | ---------- | -------- | ---------------- |
-| Record<string, any> | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Record | query | No | Query parameters |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `allUnconfirmed()`
 
-```ts
+```typescript
 public async allUnconfirmed<T = any>(query?: Record<string, any>)
 ```
 
@@ -544,19 +503,17 @@ Get all unconfirmed transactions.
 
 #### Parameters
 
-| Type                | Name       | Required | Description      |
-| ------------------- | ---------- | -------- | ---------------- |
-| Record<string, any> | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Record | query | No | Query parameters |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `getUnconfirmed()`
 
-```ts
+```typescript
 public async getUnconfirmed<T = any>(id: string)
 ```
 
@@ -564,19 +521,17 @@ Get an unconfirmed transaction by the given id.
 
 #### Parameters
 
-| Type   | Name     | Required | Description    |
-| ------ | -------- | -------- | -------------- |
-| string | id       | Yes      | Transaction ID |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Transaction ID |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `search()`
 
-```ts
+```typescript
 public async search<T = any>(payload: Record<string, any>)
 ```
 
@@ -584,19 +539,17 @@ Filter all transactions by the given parameters.
 
 #### Parameters
 
-| Type                | Name       | Required | Description       |
-| ------------------- | ---------- | -------- | ----------------- |
-| Record<string, any> | payload    | Yes      | Search parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Record | payload | Yes | Search parameters |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `types()`
 
-```ts
+```typescript
 public async types<T = any>()
 ```
 
@@ -606,11 +559,9 @@ Get a list of valid transaction types.
 
 `Promise<IResponse<T>>`
 
----
-
 ### `fees()`
 
-```ts
+```typescript
 public async fees<T = any>(): Promise<IResponse<T>>
 ```
 
@@ -624,7 +575,7 @@ Get the node fee statistics.
 
 ### `all()`
 
-```ts
+```typescript
 public async all<T = any>(query?: Record<string, any>)
 ```
 
@@ -632,19 +583,17 @@ Get all votes.
 
 #### Parameters
 
-| Type                | Name       | Required | Description      |
-| ------------------- | ---------- | -------- | ---------------- |
-| Record<string, any> | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Record | query | No | Query parameters |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `get()`
 
-```ts
+```typescript
 public async get<T = any>(id: string)
 ```
 
@@ -652,9 +601,9 @@ Get a vote by the given id.
 
 #### Parameters
 
-| Type   | Name           | Required | Description |
-| ------ | -------------- | -------- | ----------- |
-| string | id             | Yes      | Vote ID     |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Vote ID |
 
 #### Return Value
 
@@ -664,7 +613,7 @@ Get a vote by the given id.
 
 ### `all()`
 
-```ts
+```typescript
 public async all<T = any>(query?: Record<string, any>)
 ```
 
@@ -672,19 +621,17 @@ Get all wallets.
 
 #### Parameters
 
-| Type                | Name       | Required | Description      |
-| ------------------- | ---------- | -------- | ---------------- |
-| Record<string, any> | query      | No       | Query parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Record | query | No | Query parameters |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `get()`
 
-```ts
+```typescript
 public async get<T = any>(id: string)
 ```
 
@@ -692,19 +639,17 @@ Get a wallet by the given id.
 
 #### Parameters
 
-| Type   | Name           | Required | Description       |
-| ------ | -------------- | -------- | ----------------- |
-| string | id             | Yes      | Wallet identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Wallet identifier |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `transactions()`
 
-```ts
+```typescript
 public async transactions<T = any>(id: string, query?: Record<string, any>)
 ```
 
@@ -712,20 +657,18 @@ Get all transactions for the given wallet.
 
 #### Parameters
 
-| Type                | Name  | Required | Description       |
-| ------------------- | ----- | -------- | ----------------- |
-| string              | id    | Yes      | Wallet identifier |
-| Record<string, any> | query | Yes      | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Wallet identifier |
+| Record | query | Yes | Query parameters |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `transactionsReceived()`
 
-```ts
+```typescript
 public async transactionsReceived<T = any>(id: string, query?: Record<string, any>)
 ```
 
@@ -733,20 +676,18 @@ Get all transactions received by the given wallet.
 
 #### Parameters
 
-| Type                | Name  | Required | Description       |
-| ------------------- | ----- | -------- | ----------------- |
-| string              | id    | Yes      | Wallet identifier |
-| Record<string, any> | query | Yes      | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Wallet identifier |
+| Record | query | Yes | Query parameters |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `transactionsSent()`
 
-```ts
+```typescript
 public async transactionsSent<T = any>(id: string, query?: Record<string, any>)
 ```
 
@@ -754,20 +695,18 @@ Get all transactions sent by the given wallet.
 
 #### Parameters
 
-| Type                | Name  | Required | Description       |
-| ------------------- | ----- | -------- | ----------------- |
-| string              | id    | Yes      | Wallet identifier |
-| Record<string, any> | query | Yes      | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Wallet identifier |
+| Record | query | Yes | Query parameters |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `votes()`
 
-```ts
+```typescript
 public async votes<T = any>(id: string)
 ```
 
@@ -775,19 +714,17 @@ Get all votes by the given wallet.
 
 #### Parameters
 
-| Type   | Name  | Required | Description       |
-| ------ | ----- | -------- | ----------------- |
-| string | id    | Yes      | Wallet identifier |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Wallet identifier |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `top()`
 
-```ts
+```typescript
 public async top<T = any>(query?: Record<string, any>)
 ```
 
@@ -795,19 +732,17 @@ Get all wallets sorted by balance in descending order.
 
 #### Parameters
 
-| Type                | Name  | Required | Description       |
-| ------------------- | ----- | -------- | ----------------- |
-| Record<string, any> | query | Yes      | Query parameters  |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Record | query | Yes | Query parameters |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
 
----
-
 ### `search()`
 
-```ts
+```typescript
 public async search<T = any>(payload: Record<string, any>)
 ```
 
@@ -815,10 +750,11 @@ Filter all wallets by the given parameters.
 
 #### Parameters
 
-| Type                | Name       | Required | Description       |
-| ------------------- | ---------- | -------- | ----------------- |
-| Record<string, any> | payload    | Yes      | Search parameters |
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Record | payload | Yes | Search parameters |
 
 #### Return Value
 
 `Promise<IResponse<T>>`
+
