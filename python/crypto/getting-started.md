@@ -126,7 +126,7 @@ pip install arkecosystem-crypto
 6. Once inside the virtualenv, you can proceed to install the dependencies. These are listed inside the setup.py file.
 
    ```bash
-   pip install flake8 flake8-import-order flake8-print flake8-quotes pytest pytest-cov
+   pip install flake8 flake8-import-order flake8-print flake8-quotes pytest pytest-cov base58 binary-helpers coincurve
    ```
 
 7. Dependencies are now installed, you can now run the tests to see if everything is running as it should.
