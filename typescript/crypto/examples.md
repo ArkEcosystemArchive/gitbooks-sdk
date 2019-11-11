@@ -185,6 +185,17 @@ Identities.Address.fromPrivateKey(
 >>> string
 ```
 
+### Derive the Address from a WIF
+
+```typescript
+const { Identities } = require("@arkecosystem/crypto");
+Identities.Address.fromWIF(
+  "validWif"
+);
+
+>>> string
+```
+
 ### Validate an Address
 
 ```typescript
