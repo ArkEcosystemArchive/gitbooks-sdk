@@ -8,9 +8,9 @@ title: Examples
 ## Initialization
 
 ```typescript
-import ApiClient from '@arkecosystem/typescript-client'
+const { Connection } = require("@arkecosystem/client");
 
-const client = new ApiClient(server, 2) // API version
+const client = new Connection(`${server}/api`);
 ```
 
 ## Blocks
@@ -22,7 +22,7 @@ This service API grants access to the [blocks resource](https://github.com/ArkEc
 ### List All Blocks
 
 ```typescript
-const { blocks } = await client.resource('blocks').all()
+const response = client.api("blocks").all();
 
 >>> Promise<IResponse<T>>
 ```
@@ -30,7 +30,7 @@ const { blocks } = await client.resource('blocks').all()
 ### Retrieve a Block
 
 ```typescript
-const { block } = await client.resource('blocks').get('validBlockId')
+const response = client.api("blocks").get("validBlockId");
 
 >>> Promise<IResponse<T>>
 ```
@@ -38,7 +38,7 @@ const { block } = await client.resource('blocks').get('validBlockId')
 ### List All Transactions of a Block
 
 ```typescript
-const { blockTransactions } = await client.resource('blocks').transactions('validBlockId')
+const response = client.api("blocks").transactions("validBlockId");
 
 >>> Promise<IResponse<T>>
 ```
@@ -46,7 +46,7 @@ const { blockTransactions } = await client.resource('blocks').transactions('vali
 ### Search All Blocks
 
 ```typescript
-const { searchedBlocks } = await client.resource('blocks').search({"id": "validBlockId"})
+const response = client.api("blocks").search({"id": "validBlockId"});
 
 >>> Promise<IResponse<T>>
 ```
@@ -62,7 +62,7 @@ A delegate is a regular wallet that has broadcasted a registration transaction, 
 ### List All Delegates
 
 ```typescript
-const { delegates } = await client.resource('delegates').all()
+const response = client.api("delegates").all();
 
 >>> Promise<IResponse<T>>
 ```
@@ -70,7 +70,7 @@ const { delegates } = await client.resource('delegates').all()
 ### Retrieve a Delegate
 
 ```typescript
-const { delegate } = await client.resource('delegates').get("validId")
+const response = client.api("delegates").get("validId");
 
 >>> Promise<IResponse<T>>
 ```
@@ -78,7 +78,7 @@ const { delegate } = await client.resource('delegates').get("validId")
 ### List All Blocks of a Delegate
 
 ```typescript
-const { delegateBlocks } = await client.resource('delegates').blocks("validId")
+const response = client.api("delegates").blocks("validId");
 
 >>> Promise<IResponse<T>>
 ```
@@ -86,7 +86,7 @@ const { delegateBlocks } = await client.resource('delegates').blocks("validId")
 ### List All Voters of a Delegate
 
 ```typescript
-const { delegateVoters } = await client.resource('delegates').voters("validId")
+const response = client.api("delegates").voters("validId");
 
 >>> Promise<IResponse<T>>
 ```
@@ -98,7 +98,7 @@ The ARK network consists of different anonymous nodes \(servers\), maintaining t
 ### Retrieve the Configuration
 
 ```typescript
-const { nodeConfiguration } = await client.resource('node').configuration()
+const response = client.api("node").configuration();
 
 >>> Promise<IResponse<T>>
 ```
@@ -106,7 +106,7 @@ const { nodeConfiguration } = await client.resource('node').configuration()
 ### Retrieve the Status
 
 ```typescript
-const { nodeStatus } = await client.resource('node').status()
+const response = client.api("node").status();
 
 >>> Promise<IResponse<T>>
 ```
@@ -114,7 +114,7 @@ const { nodeStatus } = await client.resource('node').status()
 ### Retrieve the Syncing Status
 
 ```typescript
-const { nodeSyncing } = await client.resource('node').syncing()
+const response = client.api("node").syncing();
 
 >>> Promise<IResponse<T>>
 ```
@@ -122,7 +122,7 @@ const { nodeSyncing } = await client.resource('node').syncing()
 ### Retrieve the Fees
 
 ```typescript
-const { nodeFees } = await client.resource('node').fees()
+const response = client.api("node").fees();
 
 >>> Promise<IResponse<T>>
 ```
@@ -136,7 +136,7 @@ Each node is connected to a set of peers, which are Relay or Delegate Nodes as w
 ### List All Peers
 
 ```typescript
-const { peers } = await client.resource('peers').all()
+const response = client.api("peers").all();
 
 >>> Promise<IResponse<T>>
 ```
@@ -144,7 +144,7 @@ const { peers } = await client.resource('peers').all()
 ### Retrieve a Peer
 
 ```typescript
-const { peer } = await client.resource('peers').get("validIpAddress")
+const response = client.api("peers").get("validIpAddress");
 
 >>> Promise<IResponse<T>>
 ```
@@ -158,7 +158,7 @@ The heart of any blockchain is formed by its transactions; state-altering payloa
 ### Create a Transaction
 
 ```typescript
-const { transaction } = await client.resource('transactions').create([...])
+const response = client.api("transactions").create([...]);
 
 >>> Promise<IResponse<T>>
 ```
@@ -166,7 +166,7 @@ const { transaction } = await client.resource('transactions').create([...])
 ### Retrieve a Transaction
 
 ```typescript
-const { transaction } = await client.resource('transactions').get("validId")
+const response = client.api("transactions").get("validId");
 
 >>> Promise<IResponse<T>>
 ```
@@ -174,7 +174,7 @@ const { transaction } = await client.resource('transactions').get("validId")
 ### List All Transactions
 
 ```typescript
-const { transaction } = await client.resource('transactions').all()
+const response = client.api("transactions").all();
 
 >>> Promise<IResponse<T>>
 ```
@@ -182,7 +182,7 @@ const { transaction } = await client.resource('transactions').all()
 ### List All Unconfirmed Transactions
 
 ```typescript
-const { transaction } = await client.resource('transactions').allUnconfirmed()
+const response = client.api("transactions").allUnconfirmed();
 
 >>> Promise<IResponse<T>>
 ```
@@ -190,7 +190,7 @@ const { transaction } = await client.resource('transactions').allUnconfirmed()
 ### Get Unconfirmed Transaction
 
 ```typescript
-const { transaction } = await client.resource('transactions').getUnconfirmed("validId")
+const response = client.api("transactions").getUnconfirmed("validId");
 
 >>> Promise<IResponse<T>>
 ```
@@ -198,7 +198,7 @@ const { transaction } = await client.resource('transactions').getUnconfirmed("va
 ### Search Transactions
 
 ```typescript
-const { transaction } = await client.resource('transactions').search({"id": "validId"})
+const response = client.api("transactions").search({"id": "validId"});
 
 >>> Promise<IResponse<T>>
 ```
@@ -206,7 +206,7 @@ const { transaction } = await client.resource('transactions').search({"id": "val
 ### List Transaction Types
 
 ```typescript
-const { transaction } = await client.resource('transactions').types()
+const response = client.api("transactions").types();
 
 >>> Promise<IResponse<T>>
 ```
@@ -218,7 +218,7 @@ A [vote](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0d
 ### List All Votes
 
 ```typescript
-const { votes } = await client.resource('votes').all()
+const response = client.api("votes").all();
 
 >>> Promise<IResponse<T>>
 ```
@@ -226,7 +226,7 @@ const { votes } = await client.resource('votes').all()
 ### Retrieve a Vote
 
 ```typescript
-const { vote } = await client.resource('votes').get("validId")
+const response = client.api("votes").get("validId");
 
 >>> Promise<IResponse<T>>
 ```
@@ -242,7 +242,7 @@ The [wallet resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a0
 ### Retrieve All Wallets
 
 ```typescript
-const { wallets } = await client.resource('wallets').all()
+const response = client.api("wallets").all();
 
 >>> Promise<IResponse<T>>
 ```
@@ -250,7 +250,7 @@ const { wallets } = await client.resource('wallets').all()
 ### Retrieve a Wallet
 
 ```typescript
-const { wallet } = await client.resource('wallets').get("validId")
+const response = client.api("wallets").get("validId");
 
 >>> Promise<IResponse<T>>
 ```
@@ -258,7 +258,7 @@ const { wallet } = await client.resource('wallets').get("validId")
 ### List All Transactions of a Wallet
 
 ```typescript
-const { walletTransactions } = await client.resource('wallets').transactions("validId")
+const response = client.api("wallets").transactions("validId");
 
 >>> Promise<IResponse<T>>
 ```
@@ -266,7 +266,7 @@ const { walletTransactions } = await client.resource('wallets').transactions("va
 ### List All Received Transactions of a Wallet
 
 ```typescript
-const { wallets } = await client.resource('wallets').transactionsReceived("validId")
+const response = client.api("wallets").transactionsReceived("validId");
 
 >>> Promise<IResponse<T>>
 ```
@@ -274,7 +274,7 @@ const { wallets } = await client.resource('wallets').transactionsReceived("valid
 ### List All Sent Transactions of a Wallet
 
 ```typescript
-const { wallets } = await client.resource('wallets').transactionsSent("validId")
+const response = client.api("wallets").transactionsSent("validId");
 
 >>> Promise<IResponse<T>>
 ```
@@ -282,7 +282,7 @@ const { wallets } = await client.resource('wallets').transactionsSent("validId")
 ### List All Votes of a Wallet
 
 ```typescript
-const { wallets } = await client.resource('wallets').votes("validId")
+const response = client.api("wallets").votes("validId");
 
 >>> Promise<IResponse<T>>
 ```
@@ -290,7 +290,7 @@ const { wallets } = await client.resource('wallets').votes("validId")
 ### List All Top Wallets
 
 ```typescript
-const { wallets } = await client.resource('wallets').top()
+const response = client.api("wallets").top();
 
 >>> Promise<IResponse<T>>
 ```
@@ -298,7 +298,7 @@ const { wallets } = await client.resource('wallets').top()
 ### Search All Wallets
 
 ```typescript
-const { wallets } = await client.resource('wallets').search({"id": "validId"})
+const response = client.api("wallets").search({"address": "validId"});
 
 >>> Promise<IResponse<T>>
 ```
