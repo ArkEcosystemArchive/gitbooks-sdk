@@ -231,7 +231,7 @@ const response = client.api("node").fees();
 
 Each node is connected to a set of peers, which are Relay or Delegate Nodes as well. The [peers resource](https://api.ark.dev/public-rest-api/endpoints/peers) provides access to all peers connected to our node.
 
-> Peers have made their Public API available for use; however for mission-critical queries and transaction posting you should use a node which is under your control. We provide a guide to setting up a Relay Node [here](https://github.com/ArkEcosystem/gitbooks-core/blob/master/getting-started/installation.md).
+> Peers have made their Public API available for use; however for mission-critical queries and transaction posting you should use a node which is under your control.
 
 ### List All Peers
 
