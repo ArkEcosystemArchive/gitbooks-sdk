@@ -51,6 +51,70 @@ const response = client.api("blocks").search({"id": "validBlockId"});
 >>> Promise<IResponse<T>>
 ```
 
+## Bridgechains
+
+This service API grants access to the bridgechain resource. This can be used to access all registered bridgechains on the network.
+
+### List All Bridgechains
+
+```typescript
+const response = client.api("bridgechains").all();
+
+>>> Promise<IResponse<T>>
+```
+
+### Retrieve a Bridgechain
+
+```typescript
+const response = client.api("bridgechains").get("validId");
+
+>>> Promise<IResponse<T>>
+```
+
+### Search All Bridgechains
+
+```typescript
+const response = client.api("bridgechains").search({"bridgechainId": "validId"});
+
+>>> Promise<IResponse<T>>
+```
+
+## Businesses
+
+This service API grants access to the business resource. This can be used to access all registered businesses on the network.
+
+### List All Businesses
+
+```typescript
+const response = client.api("businesses").all();
+
+>>> Promise<IResponse<T>>
+```
+
+### Retrieve a Business
+
+```typescript
+const response = client.api("businesses").get("validId");
+
+>>> Promise<IResponse<T>>
+```
+
+### Retrieve all Business Bridgechains
+
+```typescript
+const response = client.api("businesses").bridgechains("validId");
+
+>>> Promise<IResponse<T>>
+```
+
+### Search All Businesses
+
+```typescript
+const response = client.api("businesses").search({"businessId": "validId"});
+
+>>> Promise<IResponse<T>>
+```
+
 ## Delegates
 
 The client SDK can be used to query the [delegate resource](https://api.ark.dev/public-rest-api/endpoints/delegates).
@@ -87,6 +151,42 @@ const response = client.api("delegates").blocks("validId");
 
 ```typescript
 const response = client.api("delegates").voters("validId");
+
+>>> Promise<IResponse<T>>
+```
+
+## Locks
+
+This service API grants access to the lock resource. This can be used to access all locks initiated for wallets.
+
+### List All Locks
+
+```typescript
+const response = client.api("locks").all();
+
+>>> Promise<IResponse<T>>
+```
+
+### Retrieve a Lock
+
+```typescript
+const response = client.api("locks").get("validId");
+
+>>> Promise<IResponse<T>>
+```
+
+### Search Locks
+
+```typescript
+const response = client.api("locks").search({"lockId": "validId"});
+
+>>> Promise<IResponse<T>>
+```
+
+### Get Unlocked Locks
+
+```typescript
+const response = client.api("locks").unlocked({ids: [ "validId" ]});
 
 >>> Promise<IResponse<T>>
 ```
@@ -145,6 +245,18 @@ const response = client.api("peers").all();
 
 ```typescript
 const response = client.api("peers").get("validIpAddress");
+
+>>> Promise<IResponse<T>>
+```
+
+## Rounds
+
+This service API grants access to the round resource. This can be used to access all round information for the network.
+
+### List Delegates for a Round
+
+```typescript
+const response = client.api("rounds").delegates(roundNumber);
 
 >>> Promise<IResponse<T>>
 ```
@@ -283,6 +395,14 @@ const response = client.api("wallets").transactionsSent("validId");
 
 ```typescript
 const response = client.api("wallets").votes("validId");
+
+>>> Promise<IResponse<T>>
+```
+
+### List All Locks of a Wallet
+
+```typescript
+const response = client.api("wallets").locks("validId");
 
 >>> Promise<IResponse<T>>
 ```
