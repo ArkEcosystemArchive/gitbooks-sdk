@@ -16,7 +16,7 @@ const keys = Identities.Keys.fromPassphrase("this is a top-secret passphrase");
 // Throughout this document, the recipientId variable used is:
 const recipientId = Identities.Address.fromPassphrase("this is a top-secret passphrase");
 
-// Throughout this document, the keys object used is:
+// Throughout this document, the senderPublicKey variable used is:
 const senderPublicKey = Identities.PublicKey.fromPassphrase("this is a top-secret passphrase");
 ```
 
