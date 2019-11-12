@@ -5,7 +5,7 @@ title: API Documentation
 
 # API Documentation
 
-## Crypto\Managers\Config
+## Crypto\Managers\configManager
 
 ### `setConfig()`
 
@@ -19,7 +19,7 @@ Set the configuration.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| INetworkConfig | config | Yes | Configuration |
+| INetworkConfig | config | Yes | Network configuration object |
 
 #### Return Value
 
@@ -79,7 +79,7 @@ Get all configs.
 public set<T = any>(key: string, value: T)
 ```
 
-Set key value.
+Set a value for the specified network config key.
 
 #### Parameters
 
@@ -146,7 +146,7 @@ Get network height.
 public isNewMilestone(): boolean
 ```
 
-Verify is new milestone.
+Verify if current height contains a milestone.
 
 #### Return Value
 
@@ -182,7 +182,7 @@ Get all milestones.
 
 `any`
 
-## Crypto\Managers\Fee
+## Crypto\Managers\feeManager
 
 ### `set()`
 
@@ -239,7 +239,7 @@ Get a fee for a given transaction.
 
 `BigNumber`
 
-## Crypto\Managers\Network
+## Crypto\Managers\NetworkManager
 
 ### `all()`
 
@@ -289,6 +289,24 @@ Derive the address from the given public key.
 #### Return Value
 
 `string`
+
+```typescript
+public static fromMultiSignatureAsset(asset: IMultiSignatureAsset, networkVersion?: number)
+```
+
+Derive a (multisig) address from a multi signature asset
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | asset | Yes | Multi signature asset |
+| number | networkVersion | No | Version of the network |
+
+#### Return Value
+
+`string`
+
 
 ### `fromPrivateKey()`
 
