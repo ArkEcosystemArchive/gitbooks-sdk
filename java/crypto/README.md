@@ -51,18 +51,17 @@ Once installed, you can edit the `pom.xml` file of the project and add the follo
    cd java-crypto
    ```
 
-4. Dependencies are now installed, you can now run the tests to see if everything is running as it should.  
+4. Dependencies are now installed, you can now run the tests to see if everything is running as it should.
 
+With Maven
 
-   With Maven
-
-   ```bash
+```bash
    mvn test
-   ```
+```
 
-   With Gradle
+With Gradle
 
-   ```bash
+```bash
    gradle test
-   ```
+```
 

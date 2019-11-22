@@ -90,5 +90,3 @@ upload_speed = 921600
 monitor_speed = 115200
 ```
 
-## 
-
