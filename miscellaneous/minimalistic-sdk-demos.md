@@ -1,7 +1,5 @@
 # Minimalistic SDK Demos
 
-### SDK Client and Crypto Usage Samples
-
 The code represents minimal example of `client` and `crypto` libraries usage for the specified programming language. Example functionality consists of:
 
 * importing/loading the needed dependencies/libraries
