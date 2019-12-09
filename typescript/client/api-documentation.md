@@ -138,6 +138,28 @@ Instantiate new Api.
 
 `T`
 
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | host | Yes | Node URL |
+
+### `withOptions()`
+
+```typescript
+public withOptions(opts: Record<string, any>)
+```
+
+Apply options to future connection requests.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | opts | Yes | Connection options |
+
+#### Return Value
+
+`this`
+
 ### `get()`
 
 ```typescript
@@ -267,6 +289,211 @@ Filter all blocks by the given parameters.
 
 `Promise<IResponse<T>>`
 
+## Resources\Bridgechains
+
+### `all()`
+
+```typescript
+public async all<T = any>(query?: Record<string, any>)
+```
+
+Get all bridgechains.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Record | query | No | Query parameters |
+
+#### Return Value
+
+`Promise<IResponse<T>>`
+
+### `get()`
+
+```typescript
+public async get<T = any>(id: string)
+```
+
+Get a bridgechain by the given id.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Bridgechain identifier |
+
+#### Return Value
+
+`Promise<IResponse<T>>`
+
+### `search()`
+
+```typescript
+public async search<T = any>(payload?: Record<string, any>)
+```
+
+Search for a bridgechain with the given payload.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Record | payload | No | Search parameters |
+
+#### Return Value
+
+`Promise<IResponse<T>>`
+
+## Resources\Businesses
+
+### `all()`
+
+```typescript
+public async all<T = any>(query?: Record<string, any>)
+```
+
+Get all businesses.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Record | query | No | Query parameters |
+
+#### Return Value
+
+`Promise<IResponse<T>>`
+
+### `get()`
+
+```typescript
+public async get<T = any>(id: string)
+```
+
+Get a business by the given id.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Bridgechain identifier |
+
+#### Return Value
+
+`Promise<IResponse<T>>`
+
+### `bridgechains()`
+
+```typescript
+public async bridgechains<T = any>(id: string, query?: Record<string, any>)
+```
+
+Get all bridgechains for a business.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Business identifier |
+| Record | payload | No | Search parameters |
+
+#### Return Value
+
+`Promise<IResponse<T>>`
+
+### `search()`
+
+```typescript
+public async search<T = any>(payload?: Record<string, any>)
+```
+
+Search for a business with the given payload.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Record | payload | No | Search parameters |
+
+#### Return Value
+
+`Promise<IResponse<T>>`
+
+## Resources\Locks
+
+### `all()`
+
+```typescript
+public async all<T = any>(query?: Record<string, any>)
+```
+
+Get all locks.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Record | query | No | Query parameters |
+
+#### Return Value
+
+`Promise<IResponse<T>>`
+
+### `get()`
+
+```typescript
+public async get<T = any>(id: string)
+```
+
+Get a lock by the given id.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Bridgechain identifier |
+
+#### Return Value
+
+`Promise<IResponse<T>>`
+
+### `search()`
+
+```typescript
+public async search<T = any>(payload?: Record<string, any>)
+```
+
+Search for locks with given payload.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Record | payload | No | Search parameters |
+
+#### Return Value
+
+`Promise<IResponse<T>>`
+
+### `unlocked()`
+
+```typescript
+public async unlocked<T = any>(payload?: Record<string, any>)
+```
+
+Search for unlocked locks.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Record | payload | No | Search parameters |
+
+#### Return Value
+
+`Promise<IResponse<T>>`
+
 ## Resources\Delegates
 
 ### `all()`
@@ -381,6 +608,18 @@ Get the node syncing status.
 
 `Promise<IResponse<T>>`
 
+### `crypto()`
+
+```typescript
+public async crypto<T = any>()
+```
+
+Get the node crypto configuration.
+
+#### Return Value
+
+`Promise<IResponse<T>>`
+
 ### `fees()`
 
 ```typescript
@@ -432,6 +671,26 @@ Get a peer by the given IP address.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | string | ip | Yes | IP address |
+
+#### Return Value
+
+`Promise<IResponse<T>>`
+
+## Resources\Rounds
+
+### `delegates()`
+
+```typescript
+public async delegates<T = any>(id: number)
+```
+
+Get delegates for a round.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| number | id | yes | Round number |
 
 #### Return Value
 
@@ -642,6 +901,25 @@ Get a wallet by the given id.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | string | id | Yes | Wallet identifier |
+
+#### Return Value
+
+`Promise<IResponse<T>>`
+
+### `locks()`
+
+```typescript
+public async locks<T = any>(id: string, query?: Record<string, any>)
+```
+
+Get a wallet by the given id.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| string | id | Yes | Wallet identifier |
+| Record | query | No | Search parameters |
 
 #### Return Value
 
