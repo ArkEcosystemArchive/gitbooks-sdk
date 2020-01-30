@@ -7,7 +7,7 @@ Using ARK SDKs, developers can employ the programming language of their choice t
 \*\*\*\*[**Cryptography SDKs**](guidelines/crypto.md), by contrast, assist developers in working with transactions: signing, serializing, deserializing, etc.
 
 {% hint style="info" %}
-If you need to learn more about Cryptography in general, how initial key generation and address generation works, head over to the page link below:
+If you need to learn more about Cryptography in general, how initial key and address generation works, what is a public or private key, head over to the page link below:
 {% endhint %}
 
 {% embed url="https://learn.ark.dev/concepts/cryptography" %}
