@@ -6,6 +6,14 @@ Using ARK SDKs, developers can employ the programming language of their choice t
 
 \*\*\*\*[**Cryptography SDKs**](guidelines/crypto.md), by contrast, assist developers in working with transactions: signing, serializing, deserializing, etc.
 
+{% hint style="info" %}
+If you need to learn more about Cryptography in general, how initial key generation and address generation works, head over to the page link below:
+{% endhint %}
+
+{% embed url="https://learn.ark.dev/concepts/cryptography" %}
+
+
+
 If your application doesn't involve sending transactions, you can most likely build your application using the Client SDK alone. Otherwise, applications looking to leverage the full spectrum of ARK APIs should make use of both Client and Cryptography SDKs.
 
 Usage guides are included for each supported language, and examples of how to use these libraries can be found in the **Examples** section of each specific library.
