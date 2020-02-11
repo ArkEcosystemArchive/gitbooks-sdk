@@ -7,6 +7,26 @@
 * [Crypto Libraries](guidelines/crypto.md)
 * [Client Libraries](guidelines/client.md)
 
+## Typescript
+
+* [Installation](typescript/installation.md)
+* [Crypto](typescript/crypto/README.md)
+  * [API Documentation](typescript/crypto/api-documentation.md)
+  * [Examples](typescript/crypto/examples.md)
+* [Client](typescript/client/README.md)
+  * [API Documentation](typescript/client/api-documentation.md)
+  * [Examples](typescript/client/examples.md)
+
+## PHP
+
+* [Installation](php/installation-1.md)
+* [Crypto](php/crypto/README.md)
+  * [API Documentation](php/crypto/api-documentation.md)
+  * [Examples](php/crypto/examples.md)
+* [Client](php/client/README.md)
+  * [API Documentation](php/client/api-documentation.md)
+  * [Examples](php/client/examples.md)
+
 ## Java
 
 * [Installation](java/installation.md)
@@ -27,16 +47,6 @@
   * [API Documentation](golang/client/api-documentation.md)
   * [Examples](golang/client/examples.md)
 
-## PHP
-
-* [Installation](php/installation-1.md)
-* [Crypto](php/crypto/README.md)
-  * [API Documentation](php/crypto/api-documentation.md)
-  * [Examples](php/crypto/examples.md)
-* [Client](php/client/README.md)
-  * [API Documentation](php/client/api-documentation.md)
-  * [Examples](php/client/examples.md)
-
 ## Python
 
 * [Installation](python/installation.md)
@@ -56,6 +66,16 @@
 * [Client](c++/client/README.md)
   * [API Documentation](c++/client/api-documentation.md)
   * [Examples](c++/client/examples.md)
+
+## Rust
+
+* [Installation](rust/installation.md)
+* [Crypto](rust/crypto/README.md)
+  * [API Documentation](rust/crypto/api-documentation.md)
+  * [Examples](rust/crypto/examples.md)
+* [Client](rust/client/README.md)
+  * [API Documentation](rust/client/api-documentation.md)
+  * [Examples](rust/client/examples.md)
 
 ## Elixir
 
@@ -87,16 +107,6 @@
   * [API Documentation](ruby/client/api-documentation.md)
   * [Examples](ruby/client/examples.md)
 
-## Rust
-
-* [Installation](rust/installation.md)
-* [Crypto](rust/crypto/README.md)
-  * [API Documentation](rust/crypto/api-documentation.md)
-  * [Examples](rust/crypto/examples.md)
-* [Client](rust/client/README.md)
-  * [API Documentation](rust/client/api-documentation.md)
-  * [Examples](rust/client/examples.md)
-
 ## Swift
 
 * [Installation](swift/installation.md)
@@ -106,16 +116,6 @@
 * [Client](swift/client/README.md)
   * [API Documentation](swift/client/api-documentation.md)
   * [Examples](swift/client/examples.md)
-
-## Typescript
-
-* [Installation](typescript/installation.md)
-* [Crypto](typescript/crypto/README.md)
-  * [API Documentation](typescript/crypto/api-documentation.md)
-  * [Examples](typescript/crypto/examples.md)
-* [Client](typescript/client/README.md)
-  * [API Documentation](typescript/client/api-documentation.md)
-  * [Examples](typescript/client/examples.md)
 
 ## Frameworks
 

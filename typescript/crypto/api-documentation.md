@@ -1,3 +1,5 @@
+# API Documentation
+
 ## Crypto\Blocks\BlockFactory
 
 ### `fromHex()`
@@ -124,7 +126,7 @@ Serialize Block without Transactions.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | IBlockData | block | Yes | Block object |
-| boolean  | includeSignature | Yes | Whether to include signature in serialization |
+| boolean | includeSignature | Yes | Whether to include signature in serialization |
 
 #### Return Value
 
@@ -316,8 +318,8 @@ Generate BIP32 Wallet from mnemonic.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| string | mnemonic | Yes | INSERT_DESCRIPTION |
-| string | passphrase | No | INSERT_DESCRIPTION |
+| string | mnemonic | Yes | INSERT\_DESCRIPTION |
+| string | passphrase | No | INSERT\_DESCRIPTION |
 
 #### Return Value
 
@@ -335,8 +337,8 @@ Generate BIP32 Wallet from KeyPair.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| IKeyPair | keys | Yes | INSERT_DESCRIPTION |
-| Buffer | chainCode | Yes | INSERT_DESCRIPTION |
+| IKeyPair | keys | Yes | INSERT\_DESCRIPTION |
+| Buffer | chainCode | Yes | INSERT\_DESCRIPTION |
 
 #### Return Value
 
@@ -373,7 +375,7 @@ Determine Slip44 for BIP32 Wallet.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | BIP32Interface | root | Yes | BIP32 Wallet to determine Slip44 for |
-| boolean  | hardened | Yes | INSERT_DESCRIPTION |
+| boolean | hardened | Yes | INSERT\_DESCRIPTION |
 
 #### Return Value
 
@@ -482,7 +484,7 @@ Get the time diff between now and network start.
 public static getTimeInMsUntilNextSlot()
 ```
 
-Get the time (in milliseconds) until the start of the next slot.
+Get the time \(in milliseconds\) until the start of the next slot.
 
 #### Return Value
 
@@ -581,7 +583,7 @@ Derive the address from the given passphrase.
 public static fromPublicKey(publicKey: string, networkVersion?: number)
 ```
 
-Derive a (multisig) address from a multi signature asset.
+Derive a \(multisig\) address from a multi signature asset.
 
 #### Parameters
 
@@ -721,7 +723,7 @@ Derive the keys from the given passphrase.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | string | passphrase | Yes | Passphrase |
-| boolean  | compressed | Yes | Compression flag |
+| boolean | compressed | Yes | Compression flag |
 
 #### Return Value
 
@@ -737,10 +739,10 @@ Derive the keys from the given private key.
 
 #### Parameters
 
-| Type | Name | Required | Description |
-| :--- | :--- | :--- | :--- |
-| Buffer, string | privateKey | Yes | Private Key to derive keys from |
-| boolean  | compressed | Yes | Compression flag |  |
+| Type | Name | Required | Description |  |
+| :--- | :--- | :--- | :--- | :--- |
+| Buffer, string | privateKey | Yes | Private Key to derive keys from |  |
+| boolean | compressed | Yes | Compression flag |  |
 
 #### Return Value
 
@@ -1150,7 +1152,7 @@ Deserialize Transaction into object.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | string, Buffer | serialized | Yes | Serialized transaction |
-| IDeserializeOptions  | options | Yes | Options for deserializing |
+| IDeserializeOptions | options | Yes | Options for deserializing |
 
 #### Return Value
 
@@ -1207,7 +1209,7 @@ Create Transaction object from Buffer.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | Buffer | buffer | Yes | Transaction buffer |
-| boolean  | strict | Yes | Strict creation from buffer |
+| boolean | strict | Yes | Strict creation from buffer |
 
 #### Return Value
 
@@ -1219,7 +1221,7 @@ Create Transaction object from Buffer.
 public static fromBytesUnsafe(buffer: Buffer, id?: string)
 ```
 
-Create Transaction object from Buffer (unsafe).
+Create Transaction object from Buffer \(unsafe\).
 
 NOTE: Only use this internally when it is safe to assume the buffer has already been verified.
 
@@ -1265,7 +1267,7 @@ Create Transaction object from Transaction data.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | ITransactionData | data | Yes | Transaction object |
-| boolean  | strict | Yes | Strict conversion |
+| boolean | strict | Yes | Strict conversion |
 
 #### Return Value
 
@@ -1286,7 +1288,7 @@ Convert the transaction to its byte representation.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | ITransactionData | transaction | Yes | Transaction |
-| ISerializeOptions  | options | Yes | Options |
+| ISerializeOptions | options | Yes | Options |
 
 #### Return Value
 
@@ -1305,7 +1307,7 @@ Perform AIP11 compliant serialization.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | ITransaction | transaction | Yes | Transaction |
-| ISerializeOptions  | options | Yes | Options |
+| ISerializeOptions | options | Yes | Options |
 
 #### Return Value
 
@@ -1366,7 +1368,7 @@ Multi sign the given transaction with the provided keys.
 | :--- | :--- | :--- | :--- |
 | ITransactionData | transaction | Yes | Transaction |
 | IKeyPair | keys | Yes | Keys |
-| number  | index | Yes | Index |
+| number | index | Yes | Index |
 
 #### Return Value
 
@@ -1424,7 +1426,7 @@ Get Transaction ID of Transaction object.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | ITransactionData | transaction | Yes | Transaction object |
-| ISerializeOptions  | options | Yes | Serialization options for generating hash |
+| ISerializeOptions | options | Yes | Serialization options for generating hash |
 
 #### Return Value
 
@@ -1519,7 +1521,7 @@ Verify transaction schema.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | ITransactionData | data | Yes | Transaction |
-| boolean  | strict | Yes | Strict flag |
+| boolean | strict | Yes | Strict flag |
 
 #### Return Value
 
@@ -2156,7 +2158,7 @@ Initialize new transaction types factory.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| Map | transactionTypes | Yes | INSERT_DESCRIPTION |
+| Map | transactionTypes | Yes | INSERT\_DESCRIPTION |
 
 ### `create()`
 
@@ -2420,7 +2422,7 @@ Create new internal transaction type from existing type.
 public toString()
 ```
 
-Convert transaction type to a `group/type` string representation (E.g. 1/0)
+Convert transaction type to a `group/type` string representation \(E.g. 1/0\)
 
 #### Return Value
 
