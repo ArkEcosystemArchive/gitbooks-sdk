@@ -303,6 +303,22 @@ Create a new API class instance.
 | :--- | :--- | :--- | :--- |
 | Client | client | Yes | Client |
 
+## org.arkecosystem.client.api.Blockchain;
+
+### `Blockchain`\(\)
+
+```java
+public Blockchain(Client client)
+```
+
+Blockchain class constructor.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Client | client | Yes | Client |
+
 ## org.arkecosystem.client.api.Blocks;
 
 ### `Blocks()`
@@ -384,6 +400,136 @@ Filter all blocks by the given parameters.
 #### Return Value
 
 `LinkedTreeMap<String, Object>`
+
+## org.arkecosystem.client.api.Bridgechains;
+
+### `Bridgechains()`
+
+```java
+public Bridgechians(Client client)
+```
+
+Bridgechains class constructor.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Client | client | Yes | Client |
+
+### all\(\)
+
+```java
+public LinkedTreeMap<String, Object> all()
+```
+
+Get all bridgechains.
+
+#### Return Value
+
+`LinkedTreeMap<String, Object>`
+
+### `show()`
+
+```java
+public LinkedTreeMap<String, Object> show(String id)
+```
+
+Get a bridgechain by genesis hash.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Bridgechain identifier |
+
+#### Return Value
+
+`LinkedTreeMap<String, Object>`
+
+### search\(\)
+
+```java
+public LinkedTreeMap<String, Object> search(Map<String, Object> parameters)
+```
+
+Filter all bridgechains by the given parameters.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Map | parameters | Yes | Query parameters |
+
+## org.arkecosystem.client.api.Businesses
+
+### `Business()`
+
+```java
+public Businesses(Client client)
+```
+
+Businesses class constructor.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Client | client | Yes | Client |
+
+### `all()`
+
+```java
+public LinkedTreeMap<String, Object> all()
+```
+
+Get all business wallets.
+
+#### Return Value
+
+`LinkedTreeMap<String, Object>`
+
+### `show()`
+
+```java
+public LinkedTreeMap<String, Object> show(String id)
+```
+
+Get a business by wallet address.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Business identifier |
+
+### `showBridgechians()`
+
+```java
+public LinkedTreeMap<String, Object> showBridgechains(String id)
+```
+
+Get all bridgechains of a wallet.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Business identifier |
+
+### `search()`
+
+```java
+public LinkedTreeMap<String, Object> search(Map<String, Object> parameters)
+```
+
+Filter all businesses by the given parameters.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Map | parameters | Yes | Query parameters |
 
 ## org.arkecosystem.client.api.Delegates;
 
@@ -467,6 +613,76 @@ Get all voters for the given delegate.
 
 `LinkedTreeMap<String, Object>`
 
+## org.arkecosystem.client.api.Locks;
+
+### `Locks()`
+
+```java
+public Locks(Client client)
+```
+
+Locks class constructor.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Client | client | Yes | Client |
+
+### `all()`
+
+```java
+public LinkedTreeMap<String, Object> all()
+```
+
+Get all locks.
+
+#### Return Value
+
+`LinkedTreeMap<String, Object>`
+
+### show\(\)
+
+```java
+public LinkedTreeMap<String, Object> show(String id)
+```
+
+Return all locks by a given wallet address.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Wallet address |
+
+### `search()`
+
+```java
+public LinkedTreeMap<String, Object> search(Map<String, Object> parameters)
+```
+
+Filter all locks by the given parameters.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Map | parameters | Yes | Query parameters |
+
+### `search()`
+
+```java
+public LinkedTreeMap<String, Object> searchUnlocked(Map<String, Object> parameters)
+```
+
+Filter all unlocked locks by the given parameters.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Map | parameters | Yes | Query parameters |
+
 ## org.arkecosystem.client.api.Node;
 
 ### `Node()`
@@ -519,6 +735,28 @@ Get the node syncing status.
 
 `LinkedTreeMap<String, Object>`
 
+### `fees()`
+
+```java
+public LinkedTreeMap<String, Object> fees(Integer... days)
+```
+
+Get fees by days.
+
+#### Return Value
+
+`LinkedTreeMap<String, Object>`
+
+### `debug()`
+
+```java
+public LinkedTreeMap<String, Object> debug()
+```
+
+#### Return Value
+
+`LinkedTreeMap<String, Object>`
+
 ## org.arkecosystem.client.api.peers;
 
 ### `Peers()`
@@ -564,6 +802,36 @@ Get a peer by the given IP address.
 #### Return Value
 
 `public LinkedTreeMap<String, Object>`
+
+## org.arkecosystem.client.api.Rounds;
+
+### `Rounds()`
+
+```java
+public Rounds(Client client)
+```
+
+Rounds class constructor.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Client | client | Yes | Client |
+
+### `delegater()`
+
+```java
+public LinkedTreeMap<String, Object> delegates(int id)
+```
+
+Returns delegates by given round.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | id | Yes | Round identifier |
 
 ## org.arkecosystem.client.api.Transactions;
 
@@ -684,6 +952,30 @@ public LinkedTreeMap<String, Object> types()
 ```
 
 Get a list of valid transaction types.
+
+#### Return Value
+
+`LinkedTreeMap<String, Object>`
+
+### `schemas()`
+
+```java
+public LinkedTreeMap<String, Object> schemas()
+```
+
+Get a list of transactions schemas.
+
+#### Return Value
+
+`LinkedTreeMap<String, Object>`
+
+### `fees()`
+
+```java
+public LinkedTreeMap<String, Object> fees()
+```
+
+Get a list of transactions fees.
 
 #### Return Value
 
