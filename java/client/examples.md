@@ -23,6 +23,18 @@ public class Main {
 }
 ```
 
+## Blockchain
+
+Used to get the latest block and supply of the blockchain.
+
+### Get blockchain data
+
+```java
+LinkedTreeMap<String, Object> blockchain = connection2.api().blockchain.all();
+
+>>> LinkedTreeMap<String, Object>
+```
+
 ## Blocks
 
 This service API grants access to the [blocks resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/blocks.html). A block is a signed set of transactions created by a delegate and permanently committed to the ARK blockchain.
@@ -45,6 +57,22 @@ LinkedTreeMap<String, Object> block = connection.api().blocks.show("validBlockId
 >>> LinkedTreeMap<String, Object>
 ```
 
+### Retrieve first block
+
+```java
+LinkedTreeMap<String, Object> block = connection2.api().blocks.first();
+
+>>> LinkedTreeMap<String, Object>
+```
+
+### Retrieve last block
+
+```java
+LinkedTreeMap<String, Object> block = connection2.api().blocks.last();
+
+>>> LinkedTreeMap<String, Object>
+```
+
 ### List All Transactions of a Block
 
 ```java
@@ -57,6 +85,70 @@ LinkedTreeMap<String, Object> blockTransactions = connection.api().blocks.transa
 
 ```java
 LinkedTreeMap<String, Object> searchedBlocks = connection.api().blocks.search(new HashMap<>());
+
+>>> LinkedTreeMap<String, Object>
+```
+
+## Bridgechains
+
+This service API grants access to the bridgechain resource. This can be used to access all registered bridgechains on the network.
+
+### List all bridgechains
+
+```java
+LinkedTreeMap<String, Object> bridgechains = connection2.api().bridgechains.all();
+
+>>> LinkedTreeMap<String, Object>
+```
+
+### Retrieve a bridgechain
+
+```java
+LinkedTreeMap<String, Object> bridgechain = connection2.api().bridgechains.show("bridgechains genesis hash");
+
+>>> LinkedTreeMap<String, Object>
+```
+
+### Search bridgechains
+
+```java
+LinkedTreeMap<String, Object> bridgechains = connection2.api().bridgechains.search(new HashMap<>());
+
+>>> LinkedTreeMap<String, Object>
+```
+
+## Businesses
+
+This service API grants access to the business resource. This can be used to access all registered businesses on the network.
+
+### List all businesses
+
+```java
+LinkedTreeMap<String, Object> businesses = connection2.api().businesses.all();
+
+>>> LinkedTreeMap<String, Object>
+```
+
+### Retrieve a businesses
+
+```java
+LinkedTreeMap<String, Object> businesses = connection2.api().businesses.show("wallet address");
+
+>>> LinkedTreeMap<String, Object>
+```
+
+### Retrieve all bridgechains of a business
+
+```java
+LinkedTreeMap<String, Object> bridgechains = connection2.api().businesses.showBridgechains("D991ZqskaGWMDu9kpfpJr5LRssV7ek981k");
+
+>>> LinkedTreeMap<String, Object>
+```
+
+### Search businesses
+
+```java
+LinkedTreeMap<String, Object> businesses = connection2.api().businesses.search(new HashMap<>());
 
 >>> LinkedTreeMap<String, Object>
 ```
@@ -101,6 +193,50 @@ LinkedTreeMap<String, Object> delegateVoters = connection.api().delegates.voters
 >>> LinkedTreeMap<String, Object>
 ```
 
+### Search delegates
+
+```java
+LinkedTreeMap<String, Object> delegates = connection2.api().delegates.search(new HashMap<>());
+
+>>> LinkedTreeMap<String, Object>
+```
+
+## Locks
+
+This service API grants access to the lock resource. This can be used to access all locks initiated for wallets.
+
+### List all locks
+
+```java
+LinkedTreeMap<String, Object> locks = connection2.api().locks.all();
+
+>>> LinkedTreeMap<String, Object>
+```
+
+### Retrieve a lock
+
+```java
+LinkedTreeMap<String, Object> lock = connection2.api().locks.show("lock id");
+
+>>> LinkedTreeMap<String, Object>
+```
+
+### Search unlocked locks
+
+```java
+LinkedTreeMap<String, Object> unlockedLocks = connection2.api().locks.searchUnlocked(new HashMap<>());
+
+>>> LinkedTreeMap<String, Object>
+```
+
+### Search locks
+
+```java
+LinkedTreeMap<String, Object> locks = connection2.api().locks.search(new HashMap<>());
+
+>>> LinkedTreeMap<String, Object>
+```
+
 ## Node
 
 The ARK network consists of different anonymous nodes \(servers\), maintaining the public ledger, validating transactions and blocks and providing APIs. The [node resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0da34e9adbad8e0d2f3dc/api/public/v2/node.html) allows for querying the health and configurations of the node used by the instantiated client.
@@ -132,7 +268,17 @@ LinkedTreeMap<String, Object> nodeSyncingStatus = connection.api().node.syncing(
 ### Retrieve the Fees
 
 ```java
-Not Implemented in this library.
+LinkedTreeMap<String, Object> fees = connection2.api().node.fees(days);
+
+>>> LinkedTreeMap<String, Object>
+```
+
+### Debug
+
+```java
+LinkedTreeMap<String, Object> debug = connection2.api().node.debug();
+
+>>> LinkedTreeMap<String, Object>
 ```
 
 ## Peers
@@ -153,6 +299,18 @@ LinkedTreeMap<String, Object> peers = connection.api().peers.all();
 
 ```java
 LinkedTreeMap<String, Object> peer = connection.api().peers.show("validIpAddress");
+
+>>> LinkedTreeMap<String, Object>
+```
+
+## Rounds
+
+This service API grants access to the round resource. This can be used to access all round information for the network.
+
+### List Delegates for a Round
+
+```java
+LinkedTreeMap<String, Object> delegates = connection2.api().rounds.delegates(numberOfARound);
 
 >>> LinkedTreeMap<String, Object>
 ```
@@ -219,6 +377,22 @@ LinkedTreeMap<String, Object> searchedTransactions = connection.api().transactio
 
 ```java
 LinkedTreeMap<String, Object> transactionTypes = connection.api().transactions.types();
+
+>>> LinkedTreeMap<String, Object>
+```
+
+### List transaction schemas
+
+```java
+LinkedTreeMap<String, Object> schemas = connection2.api().transactions.schemas();
+
+>>> LinkedTreeMap<String, Object>
+```
+
+### List transaction fees
+
+```java
+LinkedTreeMap<String, Object> fees = connection2.api().transactions.fees();
 
 >>> LinkedTreeMap<String, Object>
 ```
@@ -303,6 +477,14 @@ LinkedTreeMap<String, Object> walletVotes = connection.api().wallets.votes("vali
 
 ```java
 LinkedTreeMap<String, Object> topWallets = connection.api().wallets.top();
+
+>>> LinkedTreeMap<String, Object>
+```
+
+### List locks of a Wallet
+
+```java
+LinkedTreeMap<String, Object> fees = connection2.api().wallets.locks(walletAddress);
 
 >>> LinkedTreeMap<String, Object>
 ```
