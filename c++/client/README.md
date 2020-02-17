@@ -32,18 +32,11 @@ description: C++ Client Library For Communicating With Core Server Public REST A
 5. Now we can run the tests to see if everything is running as it should.
 
    ```bash
-   ./test/ARK-Cpp-Client-tests
+   ./test/ark_cpp_client_tests
    ```
-
-### ESP8266 \(PlatformIO\)
-
-```bash
-pio run -e esp8266 -t upload
-```
 
 ### ESP32 \(PlatformIO\)
 
 ```bash
-pio run -e esp32 -t upload
+pio run -e esp32 -d test/ -t upload
 ```
-

@@ -20,25 +20,19 @@ This service API grants access to the [blocks resource](https://github.com/ArkEc
 ### List All Blocks
 
 ```cpp
-const auto blocks = connection.api.blocks.all()
-
->>> std::string
+std::string blocks = connection.api.blocks.all()
 ```
 
 ### Retrieve a Block
 
 ```cpp
-const auto block = connection.api.blocks.get("validBlockId")
-
->>> std::string
+std::string block = connection.api.blocks.get("validBlockId")
 ```
 
 ### List All Transactions of a Block
 
 ```cpp
-const auto blockTransactionss = connection.api.blocks.transactions("validBlockId")
-
->>> std::string
+std::string blockTransactions = connection.api.blocks.transactions("validBlockId")
 ```
 
 ### Search All Blocks
@@ -50,9 +44,7 @@ const std::map<std::string, std::string> body = {
     { "version", "validVersion" }
 };
 
-const auto walletsSearch = connection.api.blocks.search(body);
-
->>> std::string
+std::string walletsSearch = connection.api.blocks.search(body);
 ```
 
 ## Delegates
@@ -66,33 +58,25 @@ A delegate is a regular wallet that has broadcasted a registration transaction, 
 ### List All Delegates
 
 ```cpp
-const auto delegates = connection.api.delegates.all();
-
->>> std::string
+std::string delegates = connection.api.delegates.all();
 ```
 
 ### Retrieve a Delegate
 
 ```cpp
-const auto delegate = connection.api.delegates.get("validDelegateId");
-
->>> std::string
+std::string delegate = connection.api.delegates.get("validDelegateId");
 ```
 
 ### List All Blocks of a Delegate
 
 ```cpp
-const auto delegateBlocks = connection.api.delegates.blocks("validDelegateId");
-
->>> std::string
+std::string delegateBlocks = connection.api.delegates.blocks("validDelegateId");
 ```
 
 ### List All Voters of a Delegate
 
 ```cpp
-const auto delegateVoters = connection.api.delegates.voters("validDelegateId");
-
->>> std::string
+std::string delegateVoters = connection.api.delegates.voters("validDelegateId");
 ```
 
 ## Node
@@ -102,25 +86,19 @@ The ARK network consists of different anonymous nodes \(servers\), maintaining t
 ### Retrieve the Configuration
 
 ```cpp
-const auto nodeConfiguration = connection.api.node.configuration();
-
->>> std::string
+std::string nodeConfiguration = connection.api.node.configuration();
 ```
 
 ### Retrieve the Status
 
 ```cpp
-const auto nodeStatus = connection.api.node.status();
-
->>> std::string
+std::string nodeStatus = connection.api.node.status();
 ```
 
 ### Retrieve the Syncing Status
 
 ```cpp
-const auto nodeSyncing = connection.api.node.syncing();
-
->>> std::string
+std::string nodeSyncing = connection.api.node.syncing();
 ```
 
 ## Peers
@@ -132,17 +110,13 @@ Each node is connected to a set of peers, which are Relay or Delegate Nodes as w
 ### List All Peers
 
 ```cpp
-const auto peers = connection.api.peers.all();
-
->>> std::string
+std::string peers = connection.api.peers.all();
 ```
 
 ### Retrieve a Peer
 
 ```cpp
-const auto peer = connection.api.peers.get("validIpAddress");
-
->>> std::string
+std::string peer = connection.api.peers.get("validIpAddress");
 ```
 
 ## Transactions
@@ -160,41 +134,31 @@ std::string jsonTransaction = "{"
     "]"
 "}";
 
-const auto transaction = connection.api.transactions.send(jsonTransaction);
-
->>> std::string
+std::string transaction = connection.api.transactions.send(jsonTransaction);
 ```
 
 ### Retrieve a Transaction
 
 ```cpp
-const auto transaction = connection.api.transactions.get("validTransactionId");
-
->>> std::string
+std::string transaction = connection.api.transactions.get("validTransactionId");
 ```
 
 ### List All Transactions
 
 ```cpp
-const auto transactions = connection.api.transactions.all();
-
->>> std::string
+std::string transactions = connection.api.transactions.all();
 ```
 
 ### List All Unconfirmed Transactions
 
 ```cpp
-const auto unconfirmedTransactions = connection.api.transactions.allUnconfirmed();
-
->>> std::string
+std::string unconfirmedTransactions = connection.api.transactions.allUnconfirmed();
 ```
 
 ### Get Unconfirmed Transaction
 
 ```cpp
-const auto transactionUnconfirmed = connection.api.transactions.getUnconfirmed("validTransactionId");
-
->>> std::string
+std::string transactionUnconfirmed = connection.api.transactions.getUnconfirmed("validTransactionId");
 ```
 
 ### Search Transactions
@@ -204,17 +168,13 @@ const std::map<std::string, std::string> body = {
     { "height", "validHeight" }
 };
 
-const auto transactions = connection.api.transactions.search(body);
-
->>> std::string
+std::string transactions = connection.api.transactions.search(body);
 ```
 
 ### List Transaction Types
 
 ```cpp
-const auto transactionTypes = connection.api.transactions.types();
-
->>> std::string
+std::stringtransactionTypes = connection.api.transactions.types();
 ```
 
 ## Votes
@@ -224,17 +184,13 @@ A [vote](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a02301c4ed91f0d
 ### List All Votes
 
 ```cpp
-const auto votes = connection.api.votes.all();
-
->>> std::string
+std::string votes = connection.api.votes.all();
 ```
 
 ### Retrieve a Vote
 
 ```cpp
-const auto vote = connection.api.votes.get("validVoteId");
-
->>> std::string
+std::string vote = connection.api.votes.get("validVoteId");
 ```
 
 ## Wallets
@@ -248,57 +204,43 @@ The [wallet resource](https://github.com/ArkEcosystem/gitbooks-sdk/tree/fcb399a0
 ### Retrieve All Wallets
 
 ```cpp
-const auto wallet = connection.api.wallets.all();
-
->>> std::string
+std::string wallet = connection.api.wallets.all();
 ```
 
 ### Retrieve a Wallet
 
 ```cpp
-const auto wallet = connection.api.wallets.get("validWalletId");
-
->>> std::string
+std::string wallet = connection.api.wallets.get("validWalletId");
 ```
 
 ### List All Transactions of a Wallet
 
 ```cpp
-const auto walletTransactions = connection.api.wallets.transactions("validAddress");
-
->>> std::string
+std::string walletTransactions = connection.api.wallets.transactions("validAddress");
 ```
 
 ### List All Received Transactions of a Wallet
 
 ```cpp
-const auto walletTransactionsReceived = connection.api.wallets.transactionsReceived("validWalletAddress")
-
->>> std::string
+std::string walletTransactionsReceived = connection.api.wallets.transactionsReceived("validWalletAddress")
 ```
 
 ### List All Sent Transactions of a Wallet
 
 ```cpp
-const auto walletTransactionsSent = connection.api.wallets.transactionsSent("validWalletAddress")
-
->>> std::string
+std::string walletTransactionsSent = connection.api.wallets.transactionsSent("validWalletAddress")
 ```
 
 ### List All Votes of a Wallet
 
 ```cpp
-const auto walletVotes = connection.api.wallets.votes("validWalletAddress")
-
->>> std::string
+std::string walletVotes = connection.api.wallets.votes("validWalletAddress")
 ```
 
 ### List All Top Wallets
 
 ```cpp
-const auto walletsTop = connection.api.wallets.top();
-
->>> std::string
+std::string walletsTop = connection.api.wallets.top();
 ```
 
 ### Search All Wallets
@@ -310,8 +252,5 @@ const std::map<std::string, std::string> body_parameters = {
     { "publicKey", "validPublicKey" }
 };
 
-const auto walletsSearch = connection.api.wallets.search(body_parameters);
-
->>> std::string
+std::string walletsSearch = connection.api.wallets.search(body_parameters);
 ```
-

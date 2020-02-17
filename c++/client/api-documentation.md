@@ -5,14 +5,53 @@ title: API Documentation
 
 # API Documentation
 
-## Ark::Client::API::Blocks
+ARK C++ Client v1.4.0 API
+
+## Ark::Client::Connection
+
+### `Connection()`
+
+```cpp
+#include <arkClient.h>
+
+Ark::Client::Connection<Ark::Client::Api> connection(const char* newIP, int newPort);
+
+```
+
+Configure an API Connection
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| Ark::Client::Api | template<> parameter | Yes | API to use _(current `Ark::Crypto::Api` is AIP-11 (Core 2.6) API)_ |
+| const char\* | newIP | No | A Peers IP Address |
+| int | newPort | No | The Peers API Port |
+
+## Ark::Client::api::Blockchain
+
+### `get()`
+
+```cpp
+#include <arkClient.h>
+
+std::string getBlockchain = connection.api.blockchain.get();
+```
+
+Get Blockchain info, (height, id, supply)
+
+#### Return Value
+
+`std::string`
+
+## Ark::Client::api::Blocks
 
 ### `all()`
 
 ```cpp
-std::string Ark::Client::API::Blocks::all(
-    int limit /* = 5 */,
-    int page /* = 1 */)
+#include <arkClient.h>
+
+std::string allBlocks = connection.api.blocks.all(const char* const query);
 ```
 
 Get all blocks.
@@ -21,8 +60,7 @@ Get all blocks.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| int | limit | No | Limit of results |
-| int | page | No | Pagination |
+| const char\* const | query | No | API Query (page, limit, etc) |
 
 #### Return Value
 
@@ -31,8 +69,9 @@ Get all blocks.
 ### `get()`
 
 ```cpp
-std::string Ark::Client::API::Blocks::get(
-    const char *const blockId)
+#include <arkClient.h>
+
+std::string getBlock = connection.api.blocks.get(const char* const blockId);
 ```
 
 Get a block by the given id.
@@ -41,7 +80,7 @@ Get a block by the given id.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| char | blockID | Yes | Block ID |
+| const char\* const | blockId | Yes | Block ID |
 
 #### Return Value
 
@@ -50,8 +89,9 @@ Get a block by the given id.
 ### `transactions()`
 
 ```cpp
-std::string Ark::Client::API::Blocks::transactions(
-    const char *const blockId)
+#include <arkClient.h>
+
+std::string blockTxs = connection.api.blocks.transactions(const char* const blockId);
 ```
 
 Get all transactions by the given block.
@@ -60,7 +100,7 @@ Get all transactions by the given block.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| char | blockId | Yes | Block ID |
+| const char\* const | blockId | Yes | Block ID |
 
 #### Return Value
 
@@ -69,10 +109,11 @@ Get all transactions by the given block.
 ### `search()`
 
 ```cpp
-std::string Ark::Client::API::Blocks::search(
-    const std::map<std::string, std::string> &bodyParameters,
-    int limit /* = 5 */,
-    int page /* = 1 */)
+#include <arkClient.h>
+
+std::string results = connection.api.blocks.search(
+        const std::map<std::string, std::string>& bodyParameters,
+        const char* const query);
 ```
 
 Filter all blocks by the given parameters.
@@ -81,32 +122,30 @@ Filter all blocks by the given parameters.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| std::map | &bodyParameters | Yes | Search Parameters |
-| int | limit | No | Limit of results |
-| int | page | No | Pagination |
+| const std::map<std::string, std::string>& | &bodyParameters | Yes | Search Parameters |
+| const char\* const | query | No | API Query (page, limit, etc) |
 
 #### Return Value
 
 `std::string`
 
-## Ark::Client::API::Delegates
+## Ark::Client::api::Bridgechains
 
 ### `all()`
 
 ```cpp
-std::string Ark::Client::API::Delegates::all(
-    int limit /* = 5 */,
-    int page /* = 1 */)
+#include <arkClient.h>
+
+std::string allBridgechains = connection.api.bridgechains.all(const char* const query);
 ```
 
-Get all accounts.
+Get all Bridgechains.
 
 #### Parameters
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| int | limit | No | Limit of results |
-| int | page | No | Pagination |
+| const char\* const | query | No | API Query (page, limit, etc) |
 
 #### Return Value
 
@@ -115,8 +154,160 @@ Get all accounts.
 ### `get()`
 
 ```cpp
-std::string Ark::Client::API::Delegates::get(
-    const char *const identifier)
+#include <arkClient.h>
+
+std::string getBridgechain = connection.api.bridgechains.get(const char* const bridgechainId);
+```
+
+Get a Bridgechain by a given bridgechainId.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| const char\* const | bridgechainId | Yes | Bridgechain ID |
+
+#### Return Value
+
+`std::string`
+
+### `search()`
+
+```cpp
+#include <arkClient.h>
+
+std::string results = connection.api.bridgechains.search(
+        const std::map<std::string, std::string>& bodyParameters,
+        const char* const query);
+```
+
+Filter all Bridgechains by the given parameters.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| const std::map<std::string, std::string>& | &bodyParameters | Yes | Search Parameters |
+| const char\* const | query | No | API Query (page, limit, etc) |
+
+#### Return Value
+
+`std::string`
+
+## Ark::Client::api::Businesses
+
+### `all()`
+
+```cpp
+#include <arkClient.h>
+
+std::string allBusinesses = connection.api.businesses.all(const char* const query);
+```
+
+Get all Businesses.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| const char\* const | query | No | API Query (page, limit, etc) |
+
+#### Return Value
+
+`std::string`
+
+### `get()`
+
+```cpp
+#include <arkClient.h>
+
+std::string getBridgechain = connection.api.businesses.get(const char* const businessId);
+```
+
+Get a Business by a given businessId.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| const char\* const | businessId | Yes | Business ID |
+
+#### Return Value
+
+`std::string`
+
+### `bridgechains()`
+
+```cpp
+#include <arkClient.h>
+
+std::string getBusinessBridgechains = connection.api.businesses.bridgechains(const char* const businessId, const char* const query);
+```
+
+Get a Business by a given businessId.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| const char\* const | businessId | Yes | Business ID |
+| const char\* const | query | No | API Query (page, limit, etc) |
+
+#### Return Value
+
+`std::string`
+
+### `search()`
+
+```cpp
+#include <arkClient.h>
+
+std::string results = connection.api.businesses::search(
+        const std::map<std::string, std::string>& bodyParameters,
+        const char* const query);
+```
+
+Filter all Businesses by the given parameters.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| const std::map<std::string, std::string>& | &bodyParameters | Yes | Search Parameters |
+| const char\* const | query | No | API Query (page, limit, etc) |
+
+#### Return Value
+
+`std::string`
+
+## Ark::Client::api::Delegates
+
+### `all()`
+
+```cpp
+#include <arkClient.h>
+
+std::string allDelegates = connection.api.delegates.all(const char* const query);
+```
+
+Get all Delegates.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| const char\* const | query | No | API Query (page, limit, etc) |
+
+#### Return Value
+
+`std::string`
+
+### `get()`
+
+```cpp
+#include <arkClient.h>
+
+std::string delegate = connection.api.delegates.get(const char* const identifier);
 ```
 
 Get a delegate by the given id.
@@ -125,7 +316,7 @@ Get a delegate by the given id.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| char | identifier | Yes | Delegate identifier |
+| const char\* const | identifier | Yes | Delegate identifier |
 
 #### Return Value
 
@@ -134,10 +325,9 @@ Get a delegate by the given id.
 ### `blocks()`
 
 ```cpp
-std::string Ark::Client::API::Delegates::blocks(
-    const char *const identifier,
-    int limit /* = 5 */,
-    int page /* = 1 */)
+#include <arkClient.h>
+
+std::string allBlocks = connection.api.delegates.blocks(const char* const identifier, const char* const query);
 ```
 
 Get all blocks for the given delegate.
@@ -146,9 +336,8 @@ Get all blocks for the given delegate.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| char | identfier | Yes | Delegate identifier |
-| int | limit | No | Limit of results |
-| int | page | No | Pagination |
+| const char\* const | identifier | Yes | Delegate identifier |
+| const char\* const | query | No | API Query (page, limit, etc) |
 
 #### Return Value
 
@@ -157,10 +346,9 @@ Get all blocks for the given delegate.
 ### `voters()`
 
 ```cpp
-std::string Ark::Client::API::Delegates::voters(
-    const char *const identifier,
-    int limit /* = 5 */,
-    int page /* = 1 */)
+#include <arkClient.h>
+
+std::string allBlocks = connection.api.delegates.voters(const char* const identifier, const char* const query);
 ```
 
 Get all voters for the given delegate.
@@ -169,20 +357,107 @@ Get all voters for the given delegate.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| char | identfier | Yes | Delegate identifier |
-| int | limit | No | Limit of results |
-| int | page | No | Pagination |
+| const char\* const | identifier | Yes | Delegate identifier |
+| const char\* const | query | No | API Query (page, limit, etc) |
 
 #### Return Value
 
 `std::string`
 
-## Ark::Client::API::Node
+## Ark::Client::api::Locks
+
+### `all()`
+
+```cpp
+#include <arkClient.h>
+
+std::string allLocks = connection.api.locks.all(const char* const query);
+```
+
+Get all Locks.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| const char\* const | query | No | API Query (page, limit, etc) |
+
+#### Return Value
+
+`std::string`
+
+### `get()`
+
+```cpp
+#include <arkClient.h>
+
+std::string lock = connection.api.locks.all(const char* const lockId);
+```
+
+Get a Lock by the given id.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| const char\* const | lockId | Yes | Lock identifier |
+
+#### Return Value
+
+`std::string`
+
+### `search()`
+
+```cpp
+#include <arkClient.h>
+
+std::string results = connection.api.locks.search(
+        const std::map<std::string, std::string>& bodyParameters,
+        const char* const query);
+```
+
+Filter all Locks by the given parameters.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| const std::map<std::string, std::string>& | &bodyParameters | Yes | Search Parameters |
+| const char\* const | query | No | API Query (page, limit, etc) |
+
+#### Return Value
+
+`std::string`
+
+### `unlocked()`
+
+```cpp
+#include <arkClient.h>
+
+std::string results = connection.api.locks.unlocked(std::string& jsonIds, const char* const query);
+```
+
+Filter all Locks by the given parameters.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| std::string& | jsonIds | Yes | Search Parameters |
+| const char\* const | query | No | API Query (page, limit, etc) |
+
+#### Return Value
+
+`std::string`
+
+## Ark::Client::api::Node
 
 ### `configuration()`
 
 ```cpp
-std::string Ark::Client::API::Node::configuration()
+#include <arkClient.h>
+
+std::string nodeConfig = connection.api.node.configuration();
 ```
 
 Get the node configuration.
@@ -191,10 +466,46 @@ Get the node configuration.
 
 `std::string`
 
+### `crypto()`
+
+```cpp
+#include <arkClient.h>
+
+std::string nodeCrypto = connection.api.node.crypto();
+```
+
+Get the node crypto.
+
+#### Return Value
+
+`std::string`
+
+### `fees()`
+
+```cpp
+#include <arkClient.h>
+
+std::string nodeFees = connection.api.node.fees(const char* const query);
+```
+
+Get the node fees.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| const char\* const | query | No | API Query (page, limit, etc) |
+
+#### Return Value
+
+`std::string`
+
 ### `status()`
 
 ```cpp
-std::string Ark::Client::API::Node::status()
+#include <arkClient.h>
+
+std::string nodeStatus = connection.api.node.status();
 ```
 
 Get the node status.
@@ -206,7 +517,9 @@ Get the node status.
 ### `syncing()`
 
 ```cpp
-std::string Ark::Client::API::Node::syncing()
+#include <arkClient.h>
+
+std::string nodeSyncing = connection.api.node.syncing();
 ```
 
 Get the node syncing status.
@@ -215,15 +528,14 @@ Get the node syncing status.
 
 `std::string`
 
-## Ark::Client::API::Peers
+## Ark::Client::api::Peers
 
 ### `all()`
 
 ```cpp
-std::string Ark::Client::API::Peers::all(
-    int limit /* = 5 */,
-    int page /* = 1 */
-)
+#include <arkClient.h>
+
+std::string allPeers = connection.api.peers.all(const char* const query);
 ```
 
 Get all peers.
@@ -232,8 +544,7 @@ Get all peers.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| int | limit | No | Limit of results |
-| int | page | No | Pagination |
+| const char\* const | query | No | API Query (page, limit, etc) |
 
 #### Return Value
 
@@ -242,8 +553,10 @@ Get all peers.
 ### `get()`
 
 ```cpp
-std::string Ark::Client::API::Peers::get(
-    const char *const ip)
+#include <arkClient.h>
+
+std::string allPeers = connection.api.peers.get(const char* const ip);
+
 ```
 
 Get a peer by the given IP address.
@@ -252,22 +565,45 @@ Get a peer by the given IP address.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| char | ip | Yes | IP address |
+| const char\* const | ip | Yes | IP Address |
 
 #### Return Value
 
 `std::string`
 
-## Ark::Client::API::Transactions
+## Ark::Client::api::Rounds
+
+### `delegates()`
+
+```cpp
+#include <arkClient.h>
+
+std::string delegatesInRound = connection.api.rounds.delegates(const char* const roundId);
+```
+
+Get all delegates in a given round.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| const char\* const | roundId | Yes | Round Id |
+
+#### Return Value
+
+`std::string`
+
+## Ark::Client::api::Transactions
 
 ### `send()`
 
 ```cpp
-std::string Ark::Client::API::Transactions::send(
-    std::string& jsonTransaction)
+#include <arkClient.h>
+
+std::string sendResult = connection.api.transactions.send(std::string& jsonTransaction);
 ```
 
-Create a new transaction.
+Post a new transaction to the network.
 
 #### Parameters
 
@@ -279,31 +615,12 @@ Create a new transaction.
 
 `std::string`
 
-### `get()`
-
-```cpp
-std::string Ark::Client::API::Transactions::get(
-    const char *const identifier)
-```
-
-Get a transaction by the given id.
-
-#### Parameters
-
-| Type | Name | Required | Description |
-| :--- | :--- | :--- | :--- |
-| char | identifier | Yes | Transaction ID |
-
-#### Return Value
-
-`std::string`
-
 ### `all()`
 
 ```cpp
-std::string Ark::Client::API::Transactions::all(
-    int limit /* = 5 */,
-    int page /* = 1 */)
+#include <arkClient.h>
+
+std::string allTransactions = connection.api.transactions.all(const char* const query);
 ```
 
 Get all transactions.
@@ -312,8 +629,8 @@ Get all transactions.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| int | limit | No | Limit of results |
-| int | page | No | Pagination |
+| const char\* const | query | No | API Query (page, limit, etc) |
+
 
 #### Return Value
 
@@ -322,9 +639,9 @@ Get all transactions.
 ### `allUnconfirmed()`
 
 ```cpp
-std::string Ark::Client::API::Transactions::allUnconfirmed(
-    int limit /* = 5 */,
-    int page /* =1 */)
+#include <arkClient.h>
+
+std::string allUnconfirmed = connection.api.transactions.allUnconfirmed(const char* const query);
 ```
 
 Get all unconfirmed transactions.
@@ -333,8 +650,27 @@ Get all unconfirmed transactions.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| int | limit | No | Limit of results |
-| int | page | No | Pagination |
+| const char\* const | query | No | API Query (page, limit, etc) |
+
+#### Return Value
+
+`std::string`
+
+### `get()`
+
+```cpp
+#include <arkClient.h>
+
+std::string allUnconfirmed = connection.api.transactions.get(const char* const identifier);
+```
+
+Get a transaction by the given id.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| const char\* const | identifier | Yes | Transaction ID |
 
 #### Return Value
 
@@ -343,8 +679,9 @@ Get all unconfirmed transactions.
 ### `getUnconfirmed()`
 
 ```cpp
-std::string Ark::Client::API::Transactions::getUnconfirmed(
-    const char *const identifier)
+#include <arkClient.h>
+
+std::string allUnconfirmed = connection.api.transactions.getUnconfirmed(const char* const identifier);
 ```
 
 Get an unconfirmed transaction by the given id.
@@ -353,7 +690,7 @@ Get an unconfirmed transaction by the given id.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| char | identifier | Yes | Transaction ID |
+| const char\* const | identifier | Yes | Transaction ID |
 
 #### Return Value
 
@@ -362,10 +699,9 @@ Get an unconfirmed transaction by the given id.
 ### `search()`
 
 ```cpp
-std::string Ark::Client::API::Transactions::search(
-    const std::map<std::string, std::string> &bodyParameters,
-    int limit /* = 5 */,
-    int page /* = 1 */)
+#include <arkClient.h>
+
+std::string results = connection.api.transactions.search(const std::map<std::string, std::string> &bodyParameters, const char* const query);
 ```
 
 Filter all transactions by the given parameters.
@@ -374,9 +710,23 @@ Filter all transactions by the given parameters.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| std::map | &bodyParameters | Yes | Search parameters |
-| int | limit | No | Limit of results |
-| int | page | No | Pagination |
+| const std::map<std::string, std::string>& | &bodyParameters | Yes | Search parameters |
+| const char\* const | query | No | API Query (page, limit, etc) |
+
+
+#### Return Value
+
+`std::string`
+
+### `fees()`
+
+```cpp
+#include <arkClient.h>
+
+std::string allFees = connection.api.transactions.fees();
+```
+
+Get a list of fees for transaction types.
 
 #### Return Value
 
@@ -385,7 +735,9 @@ Filter all transactions by the given parameters.
 ### `types()`
 
 ```cpp
-std::string Ark::Client::API::Transactions::types()
+#include <arkClient.h>
+
+std::string allTypes = connection.api.transactions.types();
 ```
 
 Get a list of valid transaction types.
@@ -394,14 +746,14 @@ Get a list of valid transaction types.
 
 `std::string`
 
-## Ark::Client::API::Votes
+## Ark::Client::api::Votes
 
 ### `all()`
 
 ```cpp
-std::string Ark::Client::API::Votes::all(
-    int limit /* = 5 */,
-    int page /* = 1 */)
+#include <arkClient.h>
+
+std::string allVotes = connection.api.votes.all(const char* const query);
 ```
 
 Get all votes.
@@ -410,8 +762,7 @@ Get all votes.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| int | limit | No | Limit of results |
-| int | page | No | Pagination |
+| const char\* const | query | No | API Query (page, limit, etc) |
 
 #### Return Value
 
@@ -420,8 +771,9 @@ Get all votes.
 ### `get()`
 
 ```cpp
-std::string Ark::Client::API::Votes::get(
-    const char *const identifier)
+#include <arkClient.h>
+
+std::string getVote = connection.api.votes.get(const char* const identifier);
 ```
 
 Get a vote by the given id.
@@ -430,20 +782,20 @@ Get a vote by the given id.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| char | identifier | Yes | Vote ID |
+| const char\* const | identifier | Yes | Vote ID |
 
 #### Return Value
 
 `std::string`
 
-## Ark::Client::API::Wallets
+## Ark::Client::api::Wallets
 
 ### `all()`
 
 ```cpp
-std::string Ark::Client::API::Wallets::all(
-    int limit /* = 5 */,
-    int page /* = 1 */)
+#include <arkClient.h>
+
+std::string allWallets = connection.api.wallets.all(const char* const query);
 ```
 
 Get all wallets.
@@ -452,8 +804,7 @@ Get all wallets.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| int | limit | No | Limit of results |
-| int | page | No | Pagination |
+| const char\* const | query | No | API Query (page, limit, etc) |
 
 #### Return Value
 
@@ -462,8 +813,9 @@ Get all wallets.
 ### `get()`
 
 ```cpp
-std::string Ark::Client::API::Wallets::get(
-    const char *const identifier)
+#include <arkClient.h>
+
+std::string getWallet = connection.api.wallets.get(const char* const identifier);
 ```
 
 Get a wallet by the given id.
@@ -472,7 +824,28 @@ Get a wallet by the given id.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| char | identifier | Yes | Wallet ID |
+| const char\* const | identifier | Yes | Wallet ID |
+
+#### Return Value
+
+`std::string`
+
+### `locks()`
+
+```cpp
+#include <arkClient.h>
+
+std::string walletLocks = connection.api.wallets.locks(const char* const identifier, const char* const query);
+```
+
+Get a wallets locks by the given id.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| const char\* const | identifier | Yes | Wallet ID |
+| const char\* const | query | No | API Query (page, limit, etc) |
 
 #### Return Value
 
@@ -481,10 +854,9 @@ Get a wallet by the given id.
 ### `transactions()`
 
 ```cpp
-std::string Ark::Client::API::Wallets::transactions(
-    const char *const identifier,
-    int limit /* = 5 */,
-    int page /* = 1 */)
+#include <arkClient.h>
+
+std::string walletLocks = connection.api.wallets.transactions(const char* const identifier, const char* const query);
 ```
 
 Get all transactions for the given wallet.
@@ -494,8 +866,7 @@ Get all transactions for the given wallet.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | char | identifier | No | Wallet identifier |
-| int | limit | No | Limit of results |
-| int | page | No | Pagination |
+| const char\* const | query | No | API Query (page, limit, etc) |
 
 #### Return Value
 
@@ -504,10 +875,9 @@ Get all transactions for the given wallet.
 ### `transactionsReceived()`
 
 ```cpp
-std::string Ark::Client::API::Wallets::transactionsReceived(
-    const char *const identifier,
-    int limit /* = 5 */,
-    int page /* = 1 */)
+#include <arkClient.h>
+
+std::string txsReceived = connection.api.wallets.transactionsReceived(const char* const identifier, const char* const query);
 ```
 
 Get all transactions received by the given wallet.
@@ -516,9 +886,8 @@ Get all transactions received by the given wallet.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| char | identifier | No | Wallet identifier |
-| int | limit | No | Limit of results |
-| int | page | No | Pagination |
+| const char\* const | identifier | No | Wallet identifier |
+| const char\* const | query | No | API Query (page, limit, etc) |
 
 #### Return Value
 
@@ -527,10 +896,9 @@ Get all transactions received by the given wallet.
 ### `transactionsSent()`
 
 ```cpp
-std::string Ark::Client::API::Wallets::transactionsSent(
-    const char *const identifier,
-    int limit /* = 5 */,
-    int page /* = 1 */)
+#include <arkClient.h>
+
+std::string txsSent = connection.api.wallets.transactionsSent(const char* const identifier, const char* const query);
 ```
 
 Get all transactions sent by the given wallet.
@@ -539,32 +907,8 @@ Get all transactions sent by the given wallet.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| char | identifier | No | Wallet identifier |
-| int | limit | No | Limit of results |
-| int | page | No | Pagination |
-
-#### Return Value
-
-`std::string`
-
-### `votes()`
-
-```cpp
-std::string Ark::Client::API::Wallets::votes(
-    const char *const identifier,
-    int limit /* = 5 */,
-    int page /* = 1 */)
-```
-
-Get all votes by the given wallet.
-
-#### Parameters
-
-| Type | Name | Required | Description |
-| :--- | :--- | :--- | :--- |
-| char | identifier | No | Wallet identifier |
-| int | limit | No | Limit of results |
-| int | page | No | Pagination |
+| const char\* const | identifier | Yes | Wallet identifier |
+| const char\* const | query | No | API Query (page, limit, etc) |
 
 #### Return Value
 
@@ -573,9 +917,9 @@ Get all votes by the given wallet.
 ### `top()`
 
 ```cpp
-std::string Ark::Client::API::Wallets::top(
-    int limit /* = 5 */,
-    int page /* = 1 */)
+#include <arkClient.h>
+
+std::string topWallets = connection.api.wallets.top(const char* const query);
 ```
 
 Get all wallets sorted by balance in descending order.
@@ -584,8 +928,29 @@ Get all wallets sorted by balance in descending order.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| int | limit | No | Limit of results |
-| int | page | No | Pagination |
+| const char\* const | query | No | API Query (page, limit, etc) |
+
+#### Return Value
+
+`std::string`
+
+### `votes()`
+
+```cpp
+#include <arkClient.h>
+
+std::string topWallets = connection.api.wallets.votes(const char* const identifier, const char* const query);
+```
+
+Get all votes by the given wallet.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| const char\* const | identifier | Yes | Wallet identifier |
+| const char\* const | query | No | API Query (page, limit, etc) |
+
 
 #### Return Value
 
@@ -594,10 +959,9 @@ Get all wallets sorted by balance in descending order.
 ### `search()`
 
 ```cpp
-std::string Ark::Client::API::Wallets::search(
-    const std::map<std::string, std::string> &bodyParameters,
-    int limit /* = 5 */,
-    int page /* = 1 */)
+#include <arkClient.h>
+
+std::string result = connection.api.wallets.search(const std::map<std::string, std::string> &bodyParameters, const char* const query);
 ```
 
 Filter all wallets by the given parameters.
@@ -606,11 +970,9 @@ Filter all wallets by the given parameters.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| std::map | &bodyParameters | Yes | Search parameters |
-| int | limit | No | Result limit |
-| int | page | No | Pagination |
+| const std::map<std::string, std::string>& | bodyParameters | Yes | Search parameters |
+| const char\* const | query | No | API Query (page, limit, etc) |
 
 #### Return Value
 
 `std::string`
-
