@@ -6,7 +6,7 @@
 
 [Unix](https://linuxconfig.org/how-to-install-g-the-c-compiler-on-ubuntu-18-04-bionic-beaver-linux)
 
-For OSx you can use `brew` to install `gcc` by doing so : `brew install gcc`
+For macOS you can use `brew` to install `gcc` by doing so : `brew install gcc`
 
 ## CMake
 
@@ -16,16 +16,44 @@ For OSx you can use `brew` to install `gcc` by doing so : `brew install gcc`
 
 Head over to [cmake.org](https://www.cmake.org/download/) or install it via Homebrew `brew install cmake`.
 
-Once CMake properly installed, you can now install the package.
+Once CMake properly installed, you can now build the package.
+
+#### Client
 
 ```bash
-git clone https://github.com/ARKEcosystem/cpp-crypto
-cd cpp-crypto
-# Init & Update Micro-Ecc Submodule
-git submodule init
-git submodule update
+git clone https://github.com/ArkEcosystem/cpp-client
+cd cpp-client
+mkdir build && cd build
 cmake .
 cmake --build .
+```
+
+Building and Running Tests
+
+```bash
+cd cpp-crypto/build
+cmake -DUNIT_TEST=ON ..
+cmake --build .
+./test/ark_cpp_client_tests
+```
+
+#### Crypto
+
+```bash
+git clone https://github.com/ArkEcosystem/cpp-crypto
+cd cpp-crypto
+mkdir build && cd build
+cmake .
+cmake --build .
+```
+
+Building and Running Tests
+
+```bash
+cd cpp-crypto/build
+cmake -DUNIT_TEST=ON ..
+cmake --build .
+./test/ark_cpp_crypto_tests
 ```
 
 ## Arduino
@@ -42,8 +70,12 @@ Using the Arduino IDE's built-in Library Manager, install the ARK-Cpp-Crypto lib
 
 Using the Arduino IDE's built-in Library Manager, also install the following libraries:
 
-* micro-ecc
-* ArduinoJson@5.13.5
+##### Crypto
+
+* [`ArduinoJson@6.12.0`](https://github.com/bblanchon/ArduinoJson)
+* [`bcl@0.0.5`](https://github.com/sleepdefic1t/bcl)
+* [`BIP66@0.3.2`](https://github.com/sleepdefic1t/BIP66)
+* [`micro-ecc@1.0.0`](https://github.com/kmackay/micro-ecc)
 
 ### Using With the Arduino IDE
 
@@ -65,8 +97,10 @@ Head over to [platformio.org](https://platformio.org/install) to learn how to in
 
 Once installed, add the following line to your `platformio.ini` configuration file:
 
+#### Client
+
 ```text
-lib_deps = ARK-Cpp-Crypto
+lib_deps = Ark-Cpp-Client
 ```
 
 This is an example of a fully configured \`platformio.ini file for the Adafruit ESP32 Feather:
@@ -85,8 +119,34 @@ This is an example of a fully configured \`platformio.ini file for the Adafruit 
 [env:featheresp32]platform = espressif32
 board = featheresp32
 framework = arduino
-lib_deps = ARK-Cpp-Crypto
+lib_deps = Ark-Cpp-Client
 upload_speed = 921600
 monitor_speed = 115200
 ```
 
+#### Crypto
+
+```text
+lib_deps = Ark-Cpp-Crypto
+```
+
+This is an example of a fully configured \`platformio.ini file for the Adafruit ESP32 Feather:
+
+```text
+; PlatformIO Project Configuration File
+;
+;   Build options: build flags, source filter
+;   Upload options: custom upload port, speed and extra flags
+;   Library options: dependencies, extra library storages
+;   Advanced options: extra scripting
+;
+; Please visit documentation for the other options and examples
+; https://docs.platformio.org/page/projectconf.html
+
+[env:featheresp32]platform = espressif32
+board = featheresp32
+framework = arduino
+lib_deps = Ark-Cpp-Crypto
+upload_speed = 921600
+monitor_speed = 115200
+```
