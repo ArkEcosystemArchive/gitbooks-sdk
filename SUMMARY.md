@@ -16,6 +16,7 @@
 * [Client](typescript/client/README.md)
   * [API Documentation](typescript/client/api-documentation.md)
   * [Examples](typescript/client/examples.md)
+* [Complementary Examples](typescript/complementary-examples.md)
 
 ## PHP
 
