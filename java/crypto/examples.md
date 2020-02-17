@@ -20,15 +20,34 @@ A transaction is an object specifying the transfer of funds from the sender's wa
 
 The crypto SDK can sign a transaction using your private key or passphrase \(from which the private key is generated\). Ensure you are familiar with [digital signatures](https://en.wikipedia.org/wiki/Digital_signature) before using the crypto SDKs.
 
+To learn more about how nonces work go to the following link: [https://learn.ark.dev/concepts/understanding-transaction-nonce](https://learn.ark.dev/concepts/understanding-transaction-nonce)
+
+#### Transfer 
+
 ```java
 Transaction transfer = new Transfer()
-    .recipient('validAddress')
-    .amount(1000)
+    .recipient("validAddress")
+    .amount(1000) // amount of arktoshis we want to send
+    .nonce("3")
     .vendorField("This is a transaction from Java")
-    .sign('this is a top secret passphrase')
+    .sign("this is a top secret passphrase")
     .transaction;
 
 >>> Transfer
+```
+
+#### MultiPayment
+
+```java
+Transaction multiPayment = new MultiPayment()
+        .nonce(nonce)
+        .addPayment("validAddress", 100) // amount of arktoshis we want to send
+        .addPayment("validAddress", 200)
+        .addPayment("validAddress", 200)
+        .sign("this is a top secret passphrase")
+        .transaction;
+        
+>>> MultiPayment
 ```
 
 ### Serialize \(AIP11\)

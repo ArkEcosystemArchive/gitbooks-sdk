@@ -5,6 +5,12 @@ title: API Documentation
 
 # API Documentation
 
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | network | Yes | Network of transaction |
+
+#### Parameters
+
 ## org.arkecosystem.crypto.configuration.Fee;
 
 ### `get()`
@@ -456,6 +462,90 @@ public AbstractTransaction()
 
 AbstractTransaction class constructor.
 
+### `version()`
+
+```java
+public TBuilder version(int version)
+```
+
+Sets the version of transaction.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | version | Yes | Version of a transaction |
+
+### `typeGroup()`
+
+```java
+public TBuilder typeGroup(int typeGroup)
+```
+
+Sets the typeGroup of transaction.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | typeGroup | Yes | TypeGroup of transaction |
+
+### `nonce()`
+
+```java
+public TBuilder nonce(long nonce)
+```
+
+Sets the nonce of transaction. To see how nonces work, check this guide [https://learn.ark.dev/concepts/understanding-transaction-nonce](https://learn.ark.dev/concepts/understanding-transaction-nonce).
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| long | nonce | Yes | Nonce of transaction |
+
+### `network()`
+
+```java
+public TBuilder network(int network)
+```
+
+Sets the network of a transaction.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | network | Yes | Network of transaction |
+
+### `fee()`
+
+```java
+public TBuilder fee(long fee)
+```
+
+Sets the fee of transaction.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| long | fee | Yes | Fee of transaction |
+
+### `amount()`
+
+```java
+public TBuilder amount(long amount)
+```
+
+Sets the amount of transaction.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| long | amount | Yes | Amount of transaction |
+
 ### `sign()`
 
 ```java
@@ -495,24 +585,32 @@ Sign the transaction using the given second passphrase
 ### `getType()`
 
 ```java
-abstract Types getType()
+abstract int getType()
 ```
 
 Get the type of the transaction.
+
+### `instance()`
+
+```java
+abstract TBuilder instance();
+```
+
+Get the instance of the builder.
 
 ## org.arkecosystem.crypto.transactions.builder.DelegateRegistration;
 
 ### `getType()`
 
 ```java
-public Types getType()
+public int getType()
 ```
 
 Get the type of the transaction.
 
 #### Return Value
 
-`Types`
+`int`
 
 ### `username()`
 
@@ -531,6 +629,322 @@ Set the username to assign.
 #### Return Value
 
 `DelegateRegistration`
+
+### `instance()`
+
+```java
+public DelegateRegistration instance()
+```
+
+#### Return Value
+
+`DelegateRegistration`
+
+## org.arkecosystem.crypto.transactions.builder.DelegateResignation;
+
+### `getType()`
+
+```java
+public int getType()
+```
+
+Get the type of the transaction.
+
+#### Return Value
+
+`int`
+
+### `instance()`
+
+```java
+public DelegateResignation instance()
+```
+
+#### Return Value
+
+`DelegateResignation`
+
+## org.arkecosystem.crypto.transactions.builder.HtlcClaim
+
+### `getType()`
+
+```java
+public int getType()
+```
+
+Get the type of the transaction.
+
+#### Return Value
+
+`int`
+
+### `htlcClaimAsset()`
+
+```java
+public HtlcClaim htlcClaimAsset(String lockTransactionId, String unlockSecret)
+```
+
+Sets the locks transaction id and unlock secret.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | lockTransactionId | Yes | Lock transaction id |
+| String | unlockSecret | Yes | Unlock secret |
+
+#### Return Value
+
+`HtlcClaim`
+
+### `instance()`
+
+```java
+public HtlcClaim instance()
+```
+
+#### Return Value
+
+`HtlcClaim`
+
+## org.arkecosystem.crypto.transactions.builder.HtlcLock
+
+### `recipientId()`
+
+```java
+public HtlcLock recipientId(String recipientId)
+```
+
+Sets the recipient id.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | recipientId | Yes | Recipient id |
+
+#### Return Value
+
+`HtlcLock`
+
+### `secretHash()`
+
+```java
+public HtlcLock secretHash(String secretHash) 
+```
+
+Sets secret hash.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | secretHash | Yes | Secret hash |
+
+#### Return Value
+
+`HtlcLock`
+
+### `ExpirationType()`
+
+```java
+public HtlcLock expirationType(HtlcLockExpirationType expirationType, int expirationValue) 
+```
+
+Sets the expiration type of htlc lock.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| HtlcLockExpirationType | expirationType | Yes | Expiration type |
+
+#### Return Value
+
+`HtlcLock`
+
+### `vendorField()`
+
+```java
+public HtlcLock vendorField(String vendorField)
+```
+
+Sets the vendor field.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | vendorField | Yes | Transaction vendorfield |
+
+#### Return Value
+
+`HtlcLock`
+
+### `getType()`
+
+```java
+public int getType()
+```
+
+Get the type of the transaction.
+
+#### Return Value
+
+`int`
+
+### `instance()`
+
+```java
+public HtlcLock instance()
+```
+
+#### Return Value
+
+`HtlcLock`
+
+## org.arkecosystem.crypto.transactions.builder.HtlcRefund;
+
+### `htlcRefundAsset()`
+
+```java
+public HtlcRefund htlcRefundAsset(String lockTransactionId)
+```
+
+Sets the refund lock transaction id.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | lockTransactionId | Yes | Lock transaction id |
+
+#### Return Value
+
+`HtlcRefund`
+
+### `getType()`
+
+```java
+public int getType()
+```
+
+Get the type of the transaction.
+
+#### Return Value
+
+`int`
+
+### `instance()`
+
+```java
+public HtlcRefund instance()
+```
+
+#### Return Value
+
+`HtlcRefund`
+
+## org.arkecosystem.crypto.transactions.builder.Ipfs;
+
+### `ipfsAsset()`
+
+```java
+public AbstractTransactionBuilder ipfsAsset(String ipfsId)
+```
+
+Set the ipfs id.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | ipfsId | Yes | Ipfs id |
+
+#### Return Value
+
+`Ipfs`
+
+### `getType()`
+
+```java
+public int getType()
+```
+
+Get the type of the transaction.
+
+#### Return Value
+
+`int`
+
+### `instance()`
+
+```java
+public Ipfs instance()
+```
+
+#### Return Value
+
+`Ipfs`
+
+## org.arkecosystem.crypto.transactions.builder.MultiPayment;
+
+### `addPayment()`
+
+```java
+public MultiPayment addPayment(String recipientId, long amount)
+```
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | recipientId | Yes | Recipient id |
+| long | amount | Yes | Amount |
+
+#### Return value
+
+`MultiPayment`
+
+### `vendorField()`
+
+```java
+public HtlcLock vendorField(String vendorField)
+```
+
+Sets the vendor field.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | vendorField | Yes | Transaction vendorfield |
+
+#### Return Value
+
+`MultiPayment`
+
+### `getType()`
+
+```java
+public int getType()
+```
+
+Get the type of the transaction.
+
+#### Return Value
+
+`int`
+
+### `instance()`
+
+```java
+public MultiPayment instance()
+```
+
+#### Return Value
+
+`MultiPayment`
 
 ## org.arkecosystem.crypto.transactions.builder.MultiSignatureRegistration;
 
@@ -627,14 +1041,24 @@ Set the keysgroup of signatures.
 ### `getType()`
 
 ```java
-public Types getType()
+public int getType()
 ```
 
 Get the type of the transaction.
 
 #### Return Value
 
-`Types`
+`int`
+
+### `instance()`
+
+```java
+public MultiPayment instance()
+```
+
+#### Return Value
+
+`MultiPayment`
 
 ## org.arkecosystem.crypto.transactions.builder.SecondSignatureRegistration;
 
@@ -659,14 +1083,24 @@ Set the signature asset to register the second passphrase.
 ### `getType()`
 
 ```java
-public Types getType()
+public int getType()
 ```
 
 Get the type of the transaction.
 
 #### Return Value
 
-`Types`
+`int`
+
+### `instance()`
+
+```java
+public SecondSignatureRegistration instance()
+```
+
+#### Return Value
+
+`SecondSignatureRegistration`
 
 ## org.arkecosystem.crypto.transactions.builder.Transfer;
 
@@ -745,14 +1179,24 @@ Set the vendor field / smartbridge.
 ### `getType()`
 
 ```java
-public Types getType()
+public int getType()
 ```
 
 Get the type of the transaction.
 
 #### Return Value
 
-`Types`
+`int`
+
+### `instance()`
+
+```java
+public Transfer instance()
+```
+
+#### Return Value
+
+`Transfer`
 
 ## org.arkecosystem.crypto.transactions.builder.Vote;
 
@@ -795,14 +1239,24 @@ Sign the transaction using the given passphrase.
 ### `getType()`
 
 ```java
-public Types getType()
+public int getType()
 ```
 
 Get the type of the transaction.
 
 #### Return Value
 
-`Types`
+`int`
+
+### `instance()`
+
+```java
+public Vote instance()
+```
+
+#### Return Value
+
+`Vote`
 
 ## org.arkecosystem.crypto.transactions.deserializers.AbstractDeserializer;
 
