@@ -9,7 +9,7 @@ description: TypeScript Client Library For Communicating With Core Server Public
 ## Install package with Yarn
 
 ```bash
-yarn add @arkecosystem/typescript-client
+yarn add @arkecosystem/client
 ```
 
 ## Development

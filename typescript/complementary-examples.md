@@ -16,21 +16,21 @@ Open your project and execute the following commands to install both SDKs. Make 
 
 ```text
 yarn add @arkecosystem/crypto
-yarn add @arkecosystem/typescript-client
+yarn add @arkecosystem/client
 ```
 
 ### [pnpm](https://pnpm.js.org/)
 
 ```text
 pnpm add @arkecosystem/crypto
-pnpm add @arkecosystem/typescript-client
+pnpm add @arkecosystem/client
 ```
 
 ### [npm](https://www.npmjs.com/)
 
 ```text
 npm install @arkecosystem/crypto
-npm install @arkecosystem/typescript-client
+npm install @arkecosystem/client
 ```
 
 Now that we're setup and ready to go we'll look into some examples for the most common tasks you'll encounter when wanting to interact with the ARK Blockchain.
