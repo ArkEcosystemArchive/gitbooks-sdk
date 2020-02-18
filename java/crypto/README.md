@@ -6,35 +6,13 @@ description: Java Crypto Library For Working With Transactions
 
 # Crypto
 
-## Install Package via Gradle
+## Install Package via GitHub Package Repository
 
-> Gradle is an open-source build automation tool that is designed to be flexible enough to build almost any type of software.
+**Package is available here:**
 
-To install Gradle on your operating system, follow [this guide](https://gradle.org/install/).
+{% embed url="https://github.com/ArkEcosystem/java-crypto/packages/130497" %}
 
-[More detailed guide on Gradle](https://docs.gradle.org/current/userguide/getting_started.html).
-
-```bash
-compile group: 'org.arkecosystem.crypto', name: 'crypto', version: '0.1.2'
-```
-
-## Install Package via Maven
-
-> Maven is a build automation tool used primarily for Java projects.
-
-To install Maven on your operating system, follow [this guide](https://maven.apache.org/install.html).
-
-[More detailed guide on Maven](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).
-
-Once installed, you can edit the `pom.xml` file of the project and add the following values :
-
-```markup
-<dependency>
-  <groupId>org.arkecosystem</groupId>
-  <artifactId>crypto</artifactId>
-  <version>0.1.2</version>
-</dependency>
-```
+Follow instructions for **Gradle** or **Maven** on how to add project to your source control.
 
 ## Development
 
