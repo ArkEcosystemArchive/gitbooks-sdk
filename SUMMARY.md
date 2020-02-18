@@ -37,6 +37,7 @@
 * [Client](java/client/README.md)
   * [API Documentation](java/client/api-documentation.md)
   * [Examples](java/client/examples.md)
+* [Complementary Examples](java/complementary-examples.md)
 
 ## golang
 
