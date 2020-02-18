@@ -339,10 +339,10 @@ Convert the transaction to its JSON representation
 
 `<class 'dict'>`
 
-### `sign()`
+### `schnorr_sign()`
 
 ```python
-def sign(self, passphrase):
+def schnorr_sign(self, passphrase):
 ```
 
 Sign the transaction using the given passphrase
@@ -375,10 +375,29 @@ Sign the transaction using the given second passphrase
 
 `<class 'NoneType'>`
 
-### `verify()`
+### `multi_sign()`
 
 ```python
-def verify(self):
+def multi_sign(self, passphrase, index):
+```
+
+Sign the transaction using the given passphrase. A signature will be generated inside the signatures array of the transaction at the specified index.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | passphrase | Yes | Passphrase associated with the account sending this transaction |
+| int | index | Yes | Index of the signature for the signatures array. Starts at 0. |
+
+#### Return Value
+
+`<class 'NoneType'>`
+
+### `verify_schnorr()`
+
+```python
+def verify_schnorr(self):
 ```
 
 Verify the transaction validity
@@ -387,17 +406,108 @@ Verify the transaction validity
 
 `<class 'bool'>`
 
-### `second_verify()`
+### `schnorr_verify_multisig()`
 
 ```python
-def second_verify(self):
+def schnorr_verify_multisig(self):
 ```
 
-Verify the transaction validity with a second signature
+Verify the multisignature transaction validity
 
 #### Return Value
 
 `<class 'bool'>`
+
+### `set_nonce()`
+
+```python
+def set_nonce(self, nonce):
+```
+
+Set the nonce of the transaction.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | nonce | Yes | Nonce of the transaction |
+
+#### Return Value
+
+`<class 'NoneType'>`
+
+### `set_amount()`
+
+```python
+def set_amount(self, amount):
+```
+
+Set the amount of the transaction.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | amount | Yes | Amount of the transaction |
+
+#### Return Value
+
+`<class 'NoneType'>`
+
+### `set_sender_public_key()`
+
+```python
+def set_sender_public_key(self, public_key):
+```
+
+Set the Public Key of the transaction.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | public\_key | Yes | Public key of the transaction |
+
+#### Return Value
+
+`<class 'NoneType'>`
+
+
+### `set_expiration()`
+
+```python
+def set_expiration(self, expiration):
+```
+
+Set the expiration of the transaction.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int, HTLC\_LOCK\_EXPIRATION\_TYPE | expiration | Yes | Expiration of the transaction |
+
+#### Return Value
+
+`<class 'NoneType'>`
+
+### `set_type_group()`
+
+```python
+def set_type_group(self, type_group):
+```
+
+Set the type group of the transaction.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int, TRANSACTION\_TYPE\_GROUP | type\_group | Yes | Type group of the transaction |
+
+#### Return Value
+
+`<class 'NoneType'>`
 
 ## crypto.transactions.builder.delegate\_registration.DelegateRegistration
 
@@ -458,6 +568,18 @@ Create a new DelegateResignation transaction instance
 
 `<class 'crypto.transactions.builder.delegate_resignation.DelegateResignation'>`
 
+### `get_type_group()`
+
+```python
+def get_type_group(self):
+```
+
+Get the type group of the Transaction.
+
+#### Return Value
+
+`<class 'int'>`
+
 ## crypto.transactions.builder.ipfs.IPFS
 
 ### `__init__()`
@@ -477,6 +599,18 @@ Create a new IPFS transaction instance
 #### Return Value
 
 `<class 'crypto.transactions.builder.ipfs.IPFS'>`
+
+### `get_type_group()`
+
+```python
+def get_type_group(self):
+```
+
+Get the type group of the Transaction.
+
+#### Return Value
+
+`<class 'int'>`
 
 ## crypto.transactions.builder.multi\_payment.MultiPayment
 
@@ -498,12 +632,43 @@ Create a new MultiPayment transaction instance
 
 `<class 'crypto.transactions.builder.multi_payment.MultiPayment'>`
 
+### `get_type_group()`
+
+```python
+def get_type_group(self):
+```
+
+Get the type group of the Transaction.
+
+#### Return Value
+
+`<class 'int'>`
+
+### `add_payment()`
+
+```python
+def add_payment(self, amount, recipient_id):
+```
+
+Add a payment to the Payments array of a Transaction.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | amount | Yes | Transaction amount |
+| string | recipient\_id | Yes | Transaction recipient |
+
+#### Return Value
+
+`<class 'NoneType'>`
+
 ## crypto.transactions.builder.multi\_signature\_registration.MultiSignatureRegistration
 
 ### `__init__()`
 
 ```python
-def __init__(self, min_signatures, lifetime, keysgroup, fee=None):
+def __init__(self, fee=None):
 ```
 
 Create a new MultiSignatureRegistration transaction instance
@@ -512,14 +677,65 @@ Create a new MultiSignatureRegistration transaction instance
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| int | min\_signatures | Yes | Transaction minimum required signatures |
-| int | lifetime | Yes | Transaction lifetime |
-| list | keysgroup | Yes | Transaction keygroups |
 | int | fee | No | Transaction fee |
 
 #### Return Value
 
 `<class 'crypto.transactions.builder.multi_signature_registration.MultiSignatureRegistration'>`
+
+### `set_min()`
+
+```python
+def set_min(self, minimum_participants):
+```
+
+Set the minimum amount of participants of a Transaction.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | minimum\_participants | Yes | Transaction minimum participants |
+
+#### Return Value
+
+`<class 'NoneType'>`
+
+### `set_public_keys()`
+
+```python
+def set_public_keys(self, public_keys):
+```
+
+Set the public keys of a Transaction.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| list | public\_keys | Yes | Transaction public keys participants |
+
+#### Return Value
+
+`<class 'NoneType'>`
+
+### `add_participant()`
+
+```python
+def add_participant(self, public_key):
+```
+
+Add a participant with his public key to the Transaction.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | public\_key | Yes | Participant public key |
+
+#### Return Value
+
+`<class 'NoneType'>`
 
 ## crypto.transactions.builder.second\_signature\_registration.SecondSignatureRegistration
 
@@ -542,25 +758,108 @@ Create a new SecondSignatureRegistration transaction instance
 
 `<class 'crypto.transactions.builder.second_signature_registration.SecondSignatureRegistration'>`
 
-## crypto.transactions.builder.timelock\_transfer.TimelockTransfer
+## crypto.transactions.builder.htlc\_lock.HtlcLock
 
 ### `__init__()`
 
 ```python
-def __init__(self, fee=None):
+def __init__(self, recipient_id, secret_hash, expiration_type, expiration_value, fee=None):
 ```
 
-Create a new TimelockTransfer transaction instance
+Create a new HtlcLock transaction instance
 
 #### Parameters
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
+| str | recipient\_id | Yes | Transaction recipient |
+| str | secret\_hash | Yes | Transaction secret hash. The same hash must be used in the corresponding "claim" transaction |
+| int | expiration\_type | Yes | Transaction expiration type. Either block height or network epoch timestamp based |
+| int | expiration\_value | Yes | Transaction expiration value. In seconds or height depending on expiration_type |
 | int | fee | No | Transaction fee |
 
 #### Return Value
 
-`<class 'crypto.transactions.builder.timelock_transfer.TimelockTransfer'>`
+`<class 'crypto.transactions.builder.htlc_lock.HtlcLock'>`
+
+### `get_type_group()`
+
+```python
+def get_type_group(self):
+```
+
+Get the type group of the Transaction.
+
+#### Return Value
+
+`<class 'int'>`
+
+## crypto.transactions.builder.htlc\_claim.HtlcClaim
+
+### `__init__()`
+
+```python
+def __init__(self, transaction_id, unlock_secret, fee=None):
+```
+
+Create a new HtlcClaim transaction instance
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | transaction\_id | Yes | HTLC Lock transaction id |
+| str | unlock\_secret | Yes | Transaction secret hash |
+| int | fee | No | Transaction fee |
+
+#### Return Value
+
+`<class 'crypto.transactions.builder.htlc_claim.HtlcClaim'>`
+
+### `get_type_group()`
+
+```python
+def get_type_group(self):
+```
+
+Get the type group of the Transaction.
+
+#### Return Value
+
+`<class 'int'>`
+
+## crypto.transactions.builder.htlc\_refund.HtlcRefund
+
+### `__init__()`
+
+```python
+def __init__(self, transaction_id, fee=None):
+```
+
+Create a new HtlcRefund transaction instance
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| str | transaction\_id | Yes | HTLC Lock transaction id |
+| int | fee | No | Transaction fee |
+
+#### Return Value
+
+`<class 'crypto.transactions.builder.htlc_refund.HtlcRefund'>`
+
+### `get_type_group()`
+
+```python
+def get_type_group(self):
+```
+
+Get the type group of the Transaction.
+
+#### Return Value
+
+`<class 'int'>`
 
 ## crypto.transactions.builder.Transfer.Transfer
 
@@ -667,6 +966,90 @@ def deserialize(self):
 ```
 
 Handle the deserialization of "delegate registration" data
+
+#### Return Value
+
+`<class 'dict'>`
+
+## crypto.transactions.deserializers.delegate\_resignation
+
+### `deserialize()`
+
+```python
+def deserialize(self):
+```
+
+Handle the deserialization of "delegate resignation" data
+
+#### Return Value
+
+`<class 'dict'>`
+
+## crypto.transactions.deserializers.htlc\_lock
+
+### `deserialize()`
+
+```python
+def deserialize(self):
+```
+
+Handle the deserialization of "HTLC Lock" data
+
+#### Return Value
+
+`<class 'dict'>`
+
+## crypto.transactions.deserializers.htlc\_claim
+
+### `deserialize()`
+
+```python
+def deserialize(self):
+```
+
+Handle the deserialization of "HTLC Claim" data
+
+#### Return Value
+
+`<class 'dict'>`
+
+## crypto.transactions.deserializers.htlc\_refund
+
+### `deserialize()`
+
+```python
+def deserialize(self):
+```
+
+Handle the deserialization of "HTLC refund" data
+
+#### Return Value
+
+`<class 'dict'>`
+
+## crypto.transactions.deserializers.ipfs
+
+### `deserialize()`
+
+```python
+def deserialize(self):
+```
+
+Handle the deserialization of "IPFS" data
+
+#### Return Value
+
+`<class 'dict'>`
+
+## crypto.transactions.deserializers.multi\_payment
+
+### `deserialize()`
+
+```python
+def deserialize(self):
+```
+
+Handle the deserialization of "multi payments" data
 
 #### Return Value
 
@@ -789,6 +1172,48 @@ Handle the serialization of "delegate resignation" data
 
 `<class 'bytes'>`
 
+## crypto.transactions.serializers.htlc\_lock
+
+### `serialize()`
+
+```python
+def serialize(self):
+```
+
+Handle the serialization of "HTLC Lock" data
+
+#### Return Value
+
+`<class 'bytes'>`
+
+## crypto.transactions.serializers.htlc\_claim
+
+### `serialize()`
+
+```python
+def serialize(self):
+```
+
+Handle the serialization of "HTLC Claim" data
+
+#### Return Value
+
+`<class 'bytes'>`
+
+## crypto.transactions.serializers.htlc\_refund
+
+### `serialize()`
+
+```python
+def serialize(self):
+```
+
+Handle the serialization of "HTLC Refund" data
+
+#### Return Value
+
+`<class 'bytes'>`
+
 ## crypto.transactions.serializers.ipfs
 
 ### `serialize`
@@ -840,20 +1265,6 @@ def serialize(self):
 ```
 
 Handle the serialization of "second signature" data
-
-#### Return Value
-
-`<class 'bytes'>`
-
-## crypto.transactions.serializers.timelock\_transfer
-
-### `serialize`
-
-```python
-def serialize(self):
-```
-
-Handle the serialization of "timelock" data
 
 #### Return Value
 
@@ -938,24 +1349,6 @@ Handle the deserialization of transaction data
 
 `<class 'crypto.transactions.transaction.Transaction'>`
 
-### `_handle_version_one`
-
-```python
-def _handle_version_one(self, transaction):
-```
-
-Handle the deserialization of transaction data with a version of 1.0
-
-#### Parameters
-
-| Type | Name | Required | Description |
-| :--- | :--- | :--- | :--- |
-| transaction.Transaction | transaction | Yes | Transaction |
-
-#### Return Value
-
-`<class 'crypto.transactions.transaction.Transaction'>`
-
 ### `_handle_version_two`
 
 ```python
@@ -997,10 +1390,19 @@ Create a new serializer instance
 ### `serialize`
 
 ```python
-def serialize(self):
+def serialize(self, skip_signature=True, skip_second_signature=True, skip_multi_signature=True, raw=False):
 ```
 
 Perform AIP11 compliant serialization
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| bool | skip\_signature | No | Should we skip the serialization of the signature |
+| bool | skip\_second\_signature | No | Should we skip the serialization of the second signature |
+| bool | skip\_multi\_signature | No | Should we skip the serialization of multiple signatures |
+| bool | raw | No | Raw output |
 
 #### Return Value
 
@@ -1027,7 +1429,7 @@ Handle the serialization of transaction data
 ### `_handle_signature`
 
 ```python
-def _handle_signature(self, bytes_data):
+def _handle_signature(self, bytes_data, skip_signature, skip_second_signature, skip_multi_signature):
 ```
 
 Handle the serialization of "signatures" data
@@ -1037,6 +1439,9 @@ Handle the serialization of "signatures" data
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | bytes | bytes\_data | Yes | ... |
+| bool | skip\_signature | Yes | Should we skip the serialization of the signature |
+| bool | skip\_second\_signature | Yes | Should we skip the serialization of the second signature |
+| bool | skip\_multi\_signature | Yes | Should we skip the serialization of multiple signatures |
 
 #### Return Value
 
@@ -1102,7 +1507,7 @@ Convert the transaction to its JSON representation
 ### `to_bytes`
 
 ```python
-def to_bytes(self, skip_signature=True, skip_second_signature=True):
+def to_bytes(self, skip_signature=True, skip_second_signature=True, skip_multi_signature=True):
 ```
 
 Convert the transaction to its byte representation
@@ -1113,6 +1518,7 @@ Convert the transaction to its byte representation
 | :--- | :--- | :--- | :--- |
 | bool | skip\_signature | Yes | Skip first signature |
 | bool | skip\_second\_signature | Yes | Skip second signature |
+| bool | skip\_multi\_signature | Yes | Skip multi signatures |
 
 #### Return Value
 
@@ -1140,10 +1546,18 @@ Parse the signature, second signature and multi signatures
 ### `serialize`
 
 ```python
-def serialize(self):
+def serialize(self, skip_signature=True, skip_second_signature=True, skip_multi_signature=True):
 ```
 
 Perform AIP11 compliant serialization
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| bool | skip\_signature | Yes | Skip first signature |
+| bool | skip\_second\_signature | Yes | Skip second signature |
+| bool | skip\_multi\_signature | Yes | Skip multi signatures |
 
 #### Return Value
 
@@ -1167,35 +1581,29 @@ Perform AIP11 compliant deserialization
 
 `<class 'str'>`
 
-### `verify`
+### `verify_schnorr`
 
 ```python
-def verify(self):
+def verify_schnorr(self):
 ```
 
-Verify the transaction
+Verify the transaction. Method will raise an exception if invalid, if it's valid it will returns True
 
 #### Return Value
 
-`<class 'NoneType'>`
+`<class 'bool'>`
 
-### `second_verify`
+### `verify_schnorr_multisig`
 
 ```python
-def second_verify(self, passphrase):
+def verify_schnorr_multisig(self):
 ```
 
-Verify the transaction using the 2nd passphrase
-
-#### Parameters
-
-| Type | Name | Required | Description |
-| :--- | :--- | :--- | :--- |
-| str | passphrase | Yes | Second passphrase |
+Verify the multisignatures transaction. Method will raise an exception if invalid, it will returns True
 
 #### Return Value
 
-`<class 'NoneType'>`
+`<class 'bool'>`
 
 ### `_handle_transaction_type`
 
@@ -1218,7 +1626,7 @@ Handle each transaction type differently
 ### `_handle_signature`
 
 ```python
-def _handle_signature(self, bytes_data, skip_signature, skip_second_signature):
+def _handle_signature(self, bytes_data, skip_signature, skip_second_signature, skip_multi_signature):
 ```
 
 Handle the serialization of "signatures" data
@@ -1230,6 +1638,7 @@ Handle the serialization of "signatures" data
 | bytes | bytes\_data | Yes | Input the bytes data to which you want to append new bytes from signature |
 | bool | skip\_signature | Yes | Skip first signature |
 | bool | skip\_second\_signature | Yes | Skip second signature |
+| bool | skip\_multi\_signature | Yes | Skip multi signatures |
 
 #### Return Value
 

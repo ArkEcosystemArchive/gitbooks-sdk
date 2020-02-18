@@ -56,7 +56,7 @@ Using the Transaction builder class.
 
 ```python
 transaction = Transfer(recipientId=str, amount=int)
-transaction.sign('seedPass')
+transaction.schnorr_sign('seedPass')
 ```
 
 ### Serialize \(AIP11\)
