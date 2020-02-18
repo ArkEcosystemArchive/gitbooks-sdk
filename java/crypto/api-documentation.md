@@ -1316,6 +1316,222 @@ Handle the deserialization of "delegate registration" data.
 
 `void`
 
+## org.arkecosystem.crypto.transactions.deserializers.DelegateResignation;
+
+### `DelegateResignation()`
+
+```java
+public DelegateResignation(String serialized, ByteBuffer buffer, Transaction transaction)
+```
+
+Create a new DelegateResignation instance.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | serialized | Yes | Serialized |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
+
+### `deserialize()`
+
+```java
+public void deserialize(int assetOffset)
+```
+
+Handle the deserialization of "delegate resignation" data
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | assetOffset | Yes | Offset |
+
+#### Return Value
+
+`void`
+
+## org.arkecosystem.crypto.transactions.deserializers.HtlcClaim;
+
+### `HtlcClaim()`
+
+```java
+public HtlcClaim(String serialized, ByteBuffer buffer, Transaction transaction)
+```
+
+Create a new HtlcClaim instance.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | serialized | Yes | Serialized |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
+
+### `deserialize()`
+
+```java
+public void deserialize(int assetOffset)
+```
+
+Handle the deserialization of "htlc claim" data
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | assetOffset | Yes | Offset |
+
+#### Return Value
+
+`void`
+
+## org.arkecosystem.crypto.transactions.deserializers.HtlcLock;
+
+### `HtlcLock()`
+
+```java
+public HtlcLock(String serialized, ByteBuffer buffer, Transaction transaction)
+```
+
+Create a new HtlcLock instance.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | serialized | Yes | Serialized |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
+
+### `deserialize()`
+
+```java
+public void deserialize(int assetOffset)
+```
+
+Handle the deserialization of "htlc lock" data
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | assetOffset | Yes | Offset |
+
+#### Return Value
+
+`void`
+
+## org.arkecosystem.crypto.transactions.deserializers.HtlcRefund;
+
+### `HtlcRefund()`
+
+```java
+public HtlcRefund(String serialized, ByteBuffer buffer, Transaction transaction)
+```
+
+Create a new HtlcRefund instance.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | serialized | Yes | Serialized |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
+
+### `deserialize()`
+
+```java
+public void deserialize(int assetOffset)
+```
+
+Handle the deserialization of "htlc refund" data
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | assetOffset | Yes | Offset |
+
+#### Return Value
+
+`void`
+
+## org.arkecosystem.crypto.transactions.deserializers.Ipfs;
+
+### `Ipfs()`
+
+```java
+public Ipfs(String serialized, ByteBuffer buffer, Transaction transaction)
+```
+
+Create a new Ipfs instance.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | serialized | Yes | Serialized |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
+
+### `deserialize()`
+
+```java
+public void deserialize(int assetOffset)
+```
+
+Handle the deserialization of "Ipfs" data
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | assetOffset | Yes | Offset |
+
+#### Return Value
+
+`void`
+
+## org.arkecosystem.crypto.transactions.deserializers.MultiPayment;
+
+### `MultiPayment()`
+
+```java
+public MultiPayment(String serialized, ByteBuffer buffer, Transaction transaction)
+```
+
+Create a new MultiPayment instance.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| String | serialized | Yes | Serialized |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
+
+### `deserialize()`
+
+```java
+public void deserialize(int assetOffset)
+```
+
+Handle the deserialization of "multi payment" data
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| int | assetOffset | Yes | Offset |
+
+#### Return Value
+
+`void`
+
 ## org.arkecosystem.crypto.transactions.deserializers.MultiSignatureRegistration;
 
 ### `MultiSignatureRegistration()`
@@ -1479,7 +1695,7 @@ Create a new AbstractSerializer instance.
 
 ## org.arkecosystem.crypto.transactions.serializers.DelegateRegistration;
 
-### `DelegateRegistration`
+### `DelegateRegistration()`
 
 ```java
 public DelegateRegistration(ByteBuffer buffer, Transaction transaction)
@@ -1501,6 +1717,180 @@ public void serialize()
 ```
 
 Handle the serialization of "delegate registration" data.
+
+#### Return Value
+
+`void`
+
+## org.arkecosystem.crypto.transactions.serializers.DelegateResignation;
+
+### `DelegateResignation()`
+
+```java
+public DelegateResignation(ByteBuffer buffer, Transaction transaction)
+```
+
+Create a new DelegateResignation instance.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
+
+### `serialize`
+
+```java
+public void serialize()
+```
+
+Handle the serialization of "delegate resignation" data.
+
+#### Return Value
+
+`void`
+
+## org.arkecosystem.crypto.transactions.serializers.HtlcClaim;
+
+### `HtlcClaim()`
+
+```java
+public HtlcClaim(ByteBuffer buffer, Transaction transaction)
+```
+
+Create a new HtlcClaim instance.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
+
+### `serialize`
+
+```java
+public void serialize()
+```
+
+Handle the serialization of "htlc claim" data.
+
+#### Return Value
+
+`void`
+
+## org.arkecosystem.crypto.transactions.serializers.HtlcLock;
+
+### `HtlcLock()`
+
+```java
+public HtlcLock(ByteBuffer buffer, Transaction transaction)
+```
+
+Create a new HtlcLock instance.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
+
+### `serialize`
+
+```java
+public void serialize()
+```
+
+Handle the serialization of "htlc lock" data.
+
+#### Return Value
+
+`void`
+
+## org.arkecosystem.crypto.transactions.serializers.HtlcRefund;
+
+### `HtlcRefund()`
+
+```java
+public HtlcRefund(ByteBuffer buffer, Transaction transaction)
+```
+
+Create a new HtlcRefund instance.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
+
+### `serialize`
+
+```java
+public void serialize()
+```
+
+Handle the serialization of "htlc refund" data.
+
+#### Return Value
+
+`void`
+
+## org.arkecosystem.crypto.transactions.serializers.Ipfs;
+
+### `Ipfs()`
+
+```java
+public Ipfs(ByteBuffer buffer, Transaction transaction)
+```
+
+Create a new Ipfs instance.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
+
+### `serialize`
+
+```java
+public void serialize()
+```
+
+Handle the serialization of "ipfs" data.
+
+#### Return Value
+
+`void`
+
+## org.arkecosystem.crypto.transactions.serializers.MultiPayment;
+
+### `MultiPayment()`
+
+```java
+public MultiPayment(ByteBuffer buffer, Transaction transaction)
+```
+
+Create a new MultiPayment instance.
+
+#### Parameters
+
+| Type | Name | Required | Description |
+| :--- | :--- | :--- | :--- |
+| ByteBuffer | buffer | Yes | Buffer |
+| Transaction | transaction | Yes | Transaction |
+
+### `serialize`
+
+```java
+public void serialize()
+```
+
+Handle the serialization of "multi payment" data.
 
 #### Return Value
 
