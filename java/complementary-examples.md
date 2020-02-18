@@ -98,7 +98,8 @@ public class SecondSignatureTransaction {
                 .wallets
                 .show("YOUR_SENDER_WALLET_ADDRESS")
                 .get("data"))
-                .get("nonce").toString());
+                .get("nonce")
+                .toString());
         // Increment it by one
         nonce++;
 
@@ -153,7 +154,8 @@ public class DelegateRegistrationTransaction {
                 .wallets
                 .show("YOUR_SENDER_WALLET_ADDRESS")
                 .get("data"))
-                .get("nonce").toString());
+                .get("nonce")
+                .toString());
         // Increment it by one
         nonce++;
 
@@ -208,7 +210,8 @@ public class VoteTransaction {
                 .wallets
                 .show("YOUR_SENDER_WALLET_ADDRESS")
                 .get("data"))
-                .get("nonce").toString());
+                .get("nonce")
+                .toString());
         // Increment it by one
         nonce++;
 
@@ -269,7 +272,8 @@ public class UnvoteTransaction {
                 .wallets
                 .show("YOUR_SENDER_WALLET_ADDRESS")
                 .get("data"))
-                .get("nonce").toString());
+                .get("nonce")
+                .toString());
         // Increment it by one
         nonce++;
 
@@ -330,7 +334,8 @@ public class IpfsTransaction {
                 .wallets
                 .show("YOUR_SENDER_WALLET_ADDRESS")
                 .get("data"))
-                .get("nonce").toString());
+                .get("nonce")
+                .toString());
         // Increment it by one
         nonce++;
         
@@ -386,7 +391,8 @@ public class MultiPaymentTransaction {
                 .wallets
                 .show("YOUR_SENDER_WALLET_ADDRESS")
                 .get("data"))
-                .get("nonce").toString());
+                .get("nonce")
+                .toString());
         // Increment it by one
         nonce++;
 
@@ -442,7 +448,8 @@ public class DelegateResignationTransaction {
                 .wallets
                 .show("YOUR_SENDER_WALLET_ADDRESS")
                 .get("data"))
-                .get("nonce").toString());
+                .get("nonce")
+                .toString());
         // Increment it by one
         nonce++;
 
@@ -501,7 +508,8 @@ public class HtlcLockTransaction {
                 .wallets
                 .show("YOUR_SENDER_WALLET_ADDRESS")
                 .get("data"))
-                .get("nonce").toString());
+                .get("nonce")
+                .toString());
         // Increment it by one
         nonce++;
 
@@ -559,7 +567,8 @@ public class HtlcClaimTransaction {
                 .wallets
                 .show("YOUR_SENDER_WALLET_ADDRESS")
                 .get("data"))
-                .get("nonce").toString());
+                .get("nonce")
+                .toString());
         // Increment it by one
         nonce++;
 
@@ -620,7 +629,8 @@ public class HtlcRefundTransaction {
                 .wallets
                 .show("YOUR_SENDER_WALLET_ADDRESS")
                 .get("data"))
-                .get("nonce").toString());
+                .get("nonce")
+                .toString());
         // Increment it by one
         nonce++;
 
