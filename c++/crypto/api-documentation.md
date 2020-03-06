@@ -5,7 +5,7 @@ title: API Documentation
 
 # API Documentation
 
-ARK C++ Crypto v1.0.0 API
+* ARK C++ Crypto v1.1.0
 
 ## Ark::Crypto::Configuration
 
@@ -892,6 +892,7 @@ struct Ark::Crypto::Network {
     std::string     epoch;
 };
 ```
+
 Network data structure
 
 ### `Network()`
@@ -925,7 +926,7 @@ Create a network instance
 ```cpp
 #include "transactions/builders/builder.hpp"
 
-const auto transaction = builder::Transfer()
+const auto transaction = builder::Transfer(const Configuration &config = {})
         .version(uint8_t version)
         .network(uint8_t network)
         .typeGroup(uint16_t typeGroup)
@@ -947,7 +948,7 @@ const auto transaction = builder::Transfer()
         .sign(const std::string& passphrase)
         .secondSign(const std::string& secondPassphrase)
 
-        .build(const Configuration &config = {});
+        .build();
 ```
 
 Build a Transfer Transaction
@@ -956,13 +957,13 @@ Build a Transfer Transaction
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| uint8\_t | version | No¹ | Transaction version |
-| uint8\_t | network | No¹ | Network version |
+| uint8\_t | version | No | Transaction version |
+| uint8\_t | network | No | Network version |
 | uint16\_t | typeGroup | No | Transaction Type-Group |
 | uint16\_t | type | No | Transaction Type |
 | uint64\_t | nonce | Yes | Transaction nonce |
-| const uint8\_t\* | senderPublicKey | No² | Sender PublicKey |
-| uint64\_t | fee | No¹ | Transaction fee |
+| const uint8\_t\* | senderPublicKey | No | Sender PublicKey |
+| uint64\_t | fee | No | Transaction fee |
 | | | | |
 | const std::string& | vendorField | No | Transaction vendorfield |
 | const uint8\_t\*, const size_t& | vendorFieldHex | No | Transaction vendorfield hex |
@@ -971,17 +972,13 @@ Build a Transfer Transaction
 | uint32\_t | expiration | Yes | Transfer expiration |
 | const uint8\_t\* | recipientId | Yes | Transfer recipient address hash _**(uint8_t[1 + 20])**_ |
 | | | | |
-| const uint8\_t\*, const size_t& | signature | No | Transaction Signature |
+| const uint8\_t\*, const size_t& | signature¹ | No | Transaction Signature |
 | const uint8\_t\*, const size_t& | secondSignature | No | Transaction Second Signature |
 | | | | |
 | const std::string& | sign | No | Passphrase |
 | const std::string& | secondSign | No | Second passphrase |
 | | | | |
-| const Configuration& | build | Yes³ | Finish the builder process |
-
-¹ _(optional if a configuration is used for `.build()`)_  
-² _(optional if signed inline)**_  
-³ _(configuration parameter is optional)_
+| const Configuration& | build | Yes | Finish the builder process |
 
 #### Return Value
 
@@ -992,7 +989,7 @@ Build a Transfer Transaction
 ```cpp
 #include "transactions/builders/builder.hpp"
 
-const auto transaction = builder::SecondSignature()
+const auto transaction = builder::SecondSignature(const Configuration &config = {})
         .version(uint8_t version)
         .network(uint8_t network)
         .typeGroup(uint16_t typeGroup)
@@ -1008,7 +1005,7 @@ const auto transaction = builder::SecondSignature()
 
         .sign(const std::string& passphrase)
 
-        .build(const Configuration &config = {});
+        .build();
 ```
 
 Build a Second Signature Registration Transaction
@@ -1017,13 +1014,13 @@ Build a Second Signature Registration Transaction
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| uint8\_t | version | No¹ | Transaction version |
-| uint8\_t | network | No¹ | Network version |
+| uint8\_t | version | No | Transaction version |
+| uint8\_t | network | No | Network version |
 | uint16\_t | typeGroup | No | Transaction Type-Group |
 | uint16\_t | type | No | Transaction Type |
 | uint64\_t | nonce | Yes | Transaction nonce |
-| const uint8\_t\* | senderPublicKey | No² | Sender PublicKey |
-| uint64\_t | fee | No¹ | Transaction fee |
+| const uint8\_t\* | senderPublicKey | No | Sender PublicKey |
+| uint64\_t | fee | No | Transaction fee |
 | | | | |
 | const uint8\_t\* | publicKey | Yes | Second PublicKey _**(uint8_t[33])**_ |
 | | | | |
@@ -1032,11 +1029,7 @@ Build a Second Signature Registration Transaction
 | | | | |
 | const std::string& | sign | No | Passphrase |
 | | | | |
-| const Configuration& | build | Yes³ | Finish the builder process |
-
-¹ _(optional if a configuration is used for `.build()`)_  
-² _(optional if signed inline)**_  
-³ _(configuration parameter is optional)_
+| const Configuration& | build | Yes | Finish the builder process |
 
 #### Return Value
 
@@ -1047,7 +1040,7 @@ Build a Second Signature Registration Transaction
 ```cpp
 #include "transactions/builders/builder.hpp"
 
-const auto transaction = builder::DelegateRegistration()
+const auto transaction = builder::DelegateRegistration(const Configuration &config = {})
         .version(uint8_t version)
         .network(uint8_t network)
         .typeGroup(uint16_t typeGroup)
@@ -1065,7 +1058,7 @@ const auto transaction = builder::DelegateRegistration()
         .sign(const std::string& passphrase)
         .secondSign(const std::string& secondPassphrase)
 
-        .build(const Configuration &config = {});
+        .build();
 ```
 
 Build a Delegate Registration Transaction
@@ -1074,13 +1067,13 @@ Build a Delegate Registration Transaction
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| uint8\_t | version | No¹ | Transaction version |
-| uint8\_t | network | No¹ | Network version |
+| uint8\_t | version | No | Transaction version |
+| uint8\_t | network | No | Network version |
 | uint16\_t | typeGroup | No | Transaction Type-Group |
 | uint16\_t | type | No | Transaction Type |
 | uint64\_t | nonce | Yes | Transaction nonce |
-| const uint8\_t\* | senderPublicKey | No² | Sender PublicKey |
-| uint64\_t | fee | No¹ | Transaction fee |
+| const uint8\_t\* | senderPublicKey | No | Sender PublicKey |
+| uint64\_t | fee | No | Transaction fee |
 | | | | |
 | const uint8\_t\*, const size_t &length | username | _Yes_ | Delegate Username from bytes and length |
 | const std::string& | username | _Yes_ | Delegate Username from a string |
@@ -1091,11 +1084,7 @@ Build a Delegate Registration Transaction
 | const std::string& | sign | No | Passphrase |
 | const std::string& | secondSign | No | Second passphrase |
 | | | | |
-| const Configuration& | build | Yes³ | Finish the builder process |
-
-¹ _(optional if a configuration is used for `.build()`)_  
-² _(optional if signed inline)**_  
-³ _(configuration parameter is optional)_
+| const Configuration& | build | Yes | Finish the builder process |
 
 #### Return Value
 
@@ -1106,7 +1095,7 @@ Build a Delegate Registration Transaction
 ```cpp
 #include "transactions/builders/builder.hpp"
 
-const auto transaction = builder::Vote()
+const auto transaction = builder::Vote(const Configuration &config = {})
         .version(uint8_t version)
         .network(uint8_t network)
         .typeGroup(uint16_t typeGroup)
@@ -1123,7 +1112,7 @@ const auto transaction = builder::Vote()
         .sign(const std::string& passphrase)
         .secondSign(const std::string& secondPassphrase)
 
-        .build(const Configuration &config = {});
+        .build();
 ```
 
 Build a Vote Transaction
@@ -1132,15 +1121,15 @@ Build a Vote Transaction
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| uint8\_t | version | No¹ | Transaction version |
-| uint8\_t | network | No¹ | Network version |
+| uint8\_t | version | No | Transaction version |
+| uint8\_t | network | No | Network version |
 | uint16\_t | typeGroup | No | Transaction Type-Group |
 | uint16\_t | type | No | Transaction Type |
 | uint64\_t | nonce | Yes | Transaction nonce |
-| const uint8\_t\* | senderPublicKey | No² | Sender PublicKey |
-| uint64\_t | fee | No¹ | Transaction fee |
+| const uint8\_t\* | senderPublicKey | No | Sender PublicKey |
+| uint64\_t | fee | No | Transaction fee |
 | | | | |
-| const uint8\_t\* | votes | Yes | Vote-bytes⁴ |
+| const uint8\_t\* | votes | Yes | Vote-bytes¹ |
 | | | | |
 | const uint8\_t\*, const size_t& | signature | No | Transaction Signature |
 | const uint8\_t\*, const size_t& | secondSignature | No | Transaction Second Signature |
@@ -1148,12 +1137,9 @@ Build a Vote Transaction
 | const std::string& | sign | No | Passphrase |
 | const std::string& | secondSign | No | Second passphrase |
 | | | | |
-| const Configuration& | build | Yes³ | Finish the builder process |
+| const Configuration& | build | Yes | Finish the builder process |
 
-¹ _(optional if a configuration is used for `.build()`)_  
-² _(optional if signed inline)**_  
-³ _(configuration parameter is optional)_  
-⁴ _(encoded as uint8_t votes[] = { (uint8_t)voteCount, (uint8_t)`0x00(-)`|`0x01(+)`, publicKey, ..., ... }; )_
+¹ _(`uint8_t votes[] = { count, `0x00(-)`|`0x01(+)`, publicKey, ..., ... };` )_
 
 #### Return Value
 
@@ -1164,7 +1150,7 @@ Build a Vote Transaction
 ```cpp
 #include "transactions/builders/builder.hpp"
 
-const auto transaction = builder::Ipfs()
+const auto transaction = builder::Ipfs(const Configuration &config = {})
         .version(uint8_t version)
         .network(uint8_t network)
         .typeGroup(uint16_t typeGroup)
@@ -1181,7 +1167,7 @@ const auto transaction = builder::Ipfs()
         .sign(const std::string& passphrase)
         .secondSign(const std::string& secondPassphrase)
 
-        .build(const Configuration &config = {});
+        .build();
 ```
 
 Build an Ipfs Transaction
@@ -1190,13 +1176,13 @@ Build an Ipfs Transaction
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| uint8\_t | version | No¹ | Transaction version |
-| uint8\_t | network | No¹ | Network version |
+| uint8\_t | version | No | Transaction version |
+| uint8\_t | network | No | Network version |
 | uint16\_t | typeGroup | No | Transaction Type-Group |
 | uint16\_t | type | No | Transaction Type |
 | uint64\_t | nonce | Yes | Transaction nonce |
-| const uint8\_t\* | senderPublicKey | No² | Sender PublicKey |
-| uint64\_t | fee | No¹ | Transaction fee |
+| const uint8\_t\* | senderPublicKey | No | Sender PublicKey |
+| uint64\_t | fee | No | Transaction fee |
 | | | | |
 | const uint8\_t\*, const size_t& | ipfs | Yes | Ipfs hash-bytes |
 | | | | |
@@ -1206,11 +1192,7 @@ Build an Ipfs Transaction
 | const std::string& | sign | No | Passphrase |
 | const std::string& | secondSign | No | Second passphrase |
 | | | | |
-| const Configuration& | build | Yes³ | Finish the builder process |
-
-¹ _(optional if a configuration is used for `.build()`)_  
-² _(optional if signed inline)**_  
-³ _(configuration parameter is optional)_
+| const Configuration& | build | Yes | Finish the builder process |
 
 #### Return Value
 
@@ -1221,7 +1203,7 @@ Build an Ipfs Transaction
 ```cpp
 #include "transactions/builders/builder.hpp"
 
-const auto transaction = builder::MultiPayment()
+const auto transaction = builder::MultiPayment(const Configuration &config = {})
         .version(uint8_t version)
         .network(uint8_t network)
         .typeGroup(uint16_t typeGroup)
@@ -1240,7 +1222,7 @@ const auto transaction = builder::MultiPayment()
         .sign(const std::string& passphrase)
         .secondSign(const std::string& secondPassphrase)
 
-        .build(const Configuration &config = {});
+        .build();
 ```
 
 Build a MultiPayment Transaction
@@ -1249,17 +1231,17 @@ Build a MultiPayment Transaction
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| uint8\_t | version | No¹ | Transaction version |
-| uint8\_t | network | No¹ | Network version |
+| uint8\_t | version | No | Transaction version |
+| uint8\_t | network | No | Network version |
 | uint16\_t | typeGroup | No | Transaction Type-Group |
 | uint16\_t | type | No | Transaction Type |
 | uint64\_t | nonce | Yes | Transaction nonce |
-| const uint8\_t\* | senderPublicKey | No² | Sender PublicKey |
-| uint64\_t | fee | No¹ | Transaction fee |
+| const uint8\_t\* | senderPublicKey | No | Sender PublicKey |
+| uint64\_t | fee | No | Transaction fee |
 | | | | |
 | uint16\_t | n_payments | Yes | Number of Payments |
 | const std::vector<uint64\_t> | amounts | Yes | Vector of amounts for `payments[i]` |
-| const std::vector<std::array<uint8\_t, 21> > | addresses | Yes | Vector of Address Hashes for `payments[i]`⁴ |
+| const std::vector<std::array<uint8\_t, 21> > | addresses | Yes | Vector of Address Hashes for `payments[i]`¹ |
 | | | | |
 | const uint8\_t\*, const size_t& | signature | No | Transaction Signature |
 | const uint8\_t\*, const size_t& | secondSignature | No | Transaction Second Signature |
@@ -1267,12 +1249,9 @@ Build a MultiPayment Transaction
 | const std::string& | sign | No | Passphrase |
 | const std::string& | secondSign | No | Second passphrase |
 | | | | |
-| const Configuration& | build | Yes³ | Finish the builder process |
+| const Configuration& | build | Yes | Finish the builder process |
 
-¹ _(optional if a configuration is used for `.build()`)_  
-² _(optional if signed inline)**_  
-³ _(configuration parameter is optional)_  
-⁴ _(Address Hash: `uint8_t[1 + 20] | { networkVersion, PubkeyHash }` )_
+¹ _(Address Hash: `uint8_t[1 + 20] | { networkVersion, PubkeyHash }` )_
 
 #### Return Value
 
@@ -1283,7 +1262,7 @@ Build a MultiPayment Transaction
 ```cpp
 #include "transactions/builders/builder.hpp"
 
-const auto transaction = builder::HtlcLock()
+const auto transaction = builder::HtlcLock(const Configuration &config = {})
         .version(uint8_t version)
         .network(uint8_t network)
         .typeGroup(uint16_t typeGroup)
@@ -1304,7 +1283,7 @@ const auto transaction = builder::HtlcLock()
         .sign(const std::string& passphrase)
         .secondSign(const std::string& secondPassphrase)
 
-        .build(const Configuration &config = {});
+        .build();
 ```
 
 Build an Htlc Lock Transaction
@@ -1313,13 +1292,13 @@ Build an Htlc Lock Transaction
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| uint8\_t | version | No¹ | Transaction version |
-| uint8\_t | network | No¹ | Network version |
+| uint8\_t | version | No | Transaction version |
+| uint8\_t | network | No | Network version |
 | uint16\_t | typeGroup | No | Transaction Type-Group |
 | uint16\_t | type | No | Transaction Type |
 | uint64\_t | nonce | Yes | Transaction nonce |
-| const uint8\_t\* | senderPublicKey | No² | Sender PublicKey |
-| uint64\_t | fee | No¹ | Transaction fee |
+| const uint8\_t\* | senderPublicKey | No | Sender PublicKey |
+| uint64\_t | fee | No | Transaction fee |
 | | | | |
 | uint64\_t | amount | Yes | Htlc Lock amount |
 | const uint8\_t\* | amount | Yes | Htlc Lock Secret hash _**(uint8_t[32])**_ |
@@ -1333,11 +1312,7 @@ Build an Htlc Lock Transaction
 | const std::string& | sign | No | Passphrase |
 | const std::string& | secondSign | No | Second passphrase |
 | | | | |
-| const Configuration& | build | Yes³ | Finish the builder process |
-
-¹ _(optional if a configuration is used for `.build()`)_  
-² _(optional if signed inline)**_  
-³ _(configuration parameter is optional)_
+| const Configuration& | build | Yes | Finish the builder process |
 
 #### Return Value
 
@@ -1348,7 +1323,7 @@ Build an Htlc Lock Transaction
 ```cpp
 #include "transactions/builders/builder.hpp"
 
-const auto transaction = builder::HtlcClaim()
+const auto transaction = builder::HtlcClaim(const Configuration &config = {})
         .version(uint8_t version)
         .network(uint8_t network)
         .typeGroup(uint16_t typeGroup)
@@ -1366,7 +1341,7 @@ const auto transaction = builder::HtlcClaim()
         .sign(const std::string& passphrase)
         .secondSign(const std::string& secondPassphrase)
 
-        .build(const Configuration &config = {});
+        .build();
 ```
 
 Build an Htlc Claim Transaction
@@ -1375,13 +1350,13 @@ Build an Htlc Claim Transaction
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| uint8\_t | version | No¹ | Transaction version |
-| uint8\_t | network | No¹ | Network version |
+| uint8\_t | version | No | Transaction version |
+| uint8\_t | network | No | Network version |
 | uint16\_t | typeGroup | No | Transaction Type-Group |
 | uint16\_t | type | No | Transaction Type |
 | uint64\_t | nonce | Yes | Transaction nonce |
-| const uint8\_t\* | senderPublicKey | No² | Sender PublicKey |
-| uint64\_t | fee | No¹ | Transaction fee |
+| const uint8\_t\* | senderPublicKey | No | Sender PublicKey |
+| uint64\_t | fee | No | Transaction fee |
 | | | | |
 | const uint8\_t\* | lockTransactionId | Yes | TransactionId of the Htlc Lock Transaction _**(uint8_t[32])**_ |
 | const uint8\_t\* | unlockSecret | Yes | Htlc Claim Unlock Secret _**(uint8_t[32])**_ |
@@ -1392,11 +1367,7 @@ Build an Htlc Claim Transaction
 | const std::string& | sign | No | Passphrase |
 | const std::string& | secondSign | No | Second passphrase |
 | | | | |
-| const Configuration& | build | Yes³ | Finish the builder process |
-
-¹ _(optional if a configuration is used for `.build()`)_  
-² _(optional if signed inline)**_  
-³ _(configuration parameter is optional)_
+| const Configuration& | build | Yes | Finish the builder process |
 
 #### Return Value
 
@@ -1407,7 +1378,7 @@ Build an Htlc Claim Transaction
 ```cpp
 #include "transactions/builders/builder.hpp"
 
-const auto transaction = builder::HtlcRefund()
+const auto transaction = builder::HtlcRefund(const Configuration &config = {})
         .version(uint8_t version)
         .network(uint8_t network)
         .typeGroup(uint16_t typeGroup)
@@ -1424,7 +1395,7 @@ const auto transaction = builder::HtlcRefund()
         .sign(const std::string& passphrase)
         .secondSign(const std::string& secondPassphrase)
 
-        .build(const Configuration &config = {});
+        .build();
 ```
 
 Build an Htlc Claim Transaction
@@ -1433,13 +1404,13 @@ Build an Htlc Claim Transaction
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| uint8\_t | version | No¹ | Transaction version |
-| uint8\_t | network | No¹ | Network version |
+| uint8\_t | version | No | Transaction version |
+| uint8\_t | network | No | Network version |
 | uint16\_t | typeGroup | No | Transaction Type-Group |
 | uint16\_t | type | No | Transaction Type |
 | uint64\_t | nonce | Yes | Transaction nonce |
-| const uint8\_t\* | senderPublicKey | No² | Sender PublicKey |
-| uint64\_t | fee | No¹ | Transaction fee |
+| const uint8\_t\* | senderPublicKey | No | Sender PublicKey |
+| uint64\_t | fee | No | Transaction fee |
 | | | | |
 | const uint8\_t\* | lockTransactionId | Yes | TransactionId of the Htlc Lock Transaction _**(uint8_t[32])**_ |
 | | | | |
@@ -1449,11 +1420,7 @@ Build an Htlc Claim Transaction
 | const std::string& | sign | No | Passphrase |
 | const std::string& | secondSign | No | Second passphrase |
 | | | | |
-| const Configuration& | build | Yes³ | Finish the builder process |
-
-¹ _(optional if a configuration is used for `.build()`)_  
-² _(optional if signed inline)**_  
-³ _(configuration parameter is optional)_
+| const Configuration& | build | Yes | Finish the builder process |
 
 #### Return Value
 
