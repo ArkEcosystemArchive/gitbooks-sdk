@@ -5,7 +5,7 @@ title: API Documentation
 
 # API Documentation
 
-ARK C++ Client v1.4.0 API
+* ARK C++ Client v1.4.1
 
 ## Ark::Client::Connection
 
@@ -81,6 +81,34 @@ Get a block by the given id.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | const char\* const | blockId | Yes | Block ID |
+
+#### Return Value
+
+`std::string`
+
+### `first()`
+
+```cpp
+#include <arkClient.h>
+
+std::string getFirst = connection.api.blocks.first();
+```
+
+Get the first block forged.
+
+#### Return Value
+
+`std::string`
+
+### `last()`
+
+```cpp
+#include <arkClient.h>
+
+std::string getLast = connection.api.blocks.last();
+```
+
+Get the last block forged.
 
 #### Return Value
 
