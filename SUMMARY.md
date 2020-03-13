@@ -51,7 +51,6 @@
 
 ## Python
 
-* [Complementary Examples](python/complementary-examples.md)
 * [Installation](python/installation.md)
 * [Crypto](python/crypto/README.md)
   * [API Documentation](python/crypto/api-documentation.md)
@@ -59,6 +58,7 @@
 * [Client](python/client/README.md)
   * [API Documentation](python/client/api-documentation.md)
   * [Examples](python/client/examples.md)
+* [Complementary Examples](python/complementary-examples.md)
 
 ## C++
 
