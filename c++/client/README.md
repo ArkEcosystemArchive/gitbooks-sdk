@@ -40,3 +40,4 @@ description: C++ Client Library For Communicating With Core Server Public REST A
 ```bash
 pio run -e esp32 -d test/ -t upload
 ```
+

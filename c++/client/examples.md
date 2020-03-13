@@ -254,3 +254,4 @@ const std::map<std::string, std::string> body_parameters = {
 
 std::string walletsSearch = connection.api.wallets.search(body_parameters);
 ```
+

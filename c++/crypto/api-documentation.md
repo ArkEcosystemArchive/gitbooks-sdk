@@ -163,8 +163,8 @@ Create a new message instance ready for verification
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | std::string | message | Yes | Message to sign |
-| const uint8\_t\* | publicKeyBytes | Yes | Public key bytes _**(uint8_t[33])**_ |
-| const uint8\_t\* | signature | Yes | Signature bytes _**(uint8_t[32])**_ |
+| const uint8\_t\* | publicKeyBytes | Yes | Public key bytes _**\(uint8\_t\[33\]\)**_ |
+| const uint8\_t\* | signature | Yes | Signature bytes _**\(uint8\_t\[32\]\)**_ |
 
 ### `sign()`
 
@@ -305,7 +305,7 @@ Constructor of the Address class.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const PubkeyHash& | pubkeyHash | Yes | Valid PubkeyHash _**(std::array<uint8_t, 20>)**_ |
+| const PubkeyHash& | pubkeyHash | Yes | Valid PubkeyHash _**\(std::array\)**_ |
 | uint8\_t | version | Yes | Network version-byte |
 
 ### `version()`
@@ -367,7 +367,7 @@ Derive the address from the given public key.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const uint8\_t\* | publicKeyBytes | Yes | Public key bytes (_**uint8\_t[33]**_) |
+| const uint8\_t\* | publicKeyBytes | Yes | Public key bytes \(_**uint8\_t\[33\]**_\) |
 | uint8\_t | version | Yes | Version of the network |
 
 #### Return Value
@@ -388,7 +388,7 @@ Derive the address from the given private key.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const uint8\_t\* | privateKeyBytes | Yes | Private key bytes (_**uint8\_t[32]**_) |
+| const uint8\_t\* | privateKeyBytes | Yes | Private key bytes \(_**uint8\_t\[32\]**_\) |
 | uint8\_t | version | Yes | Version of the network |
 
 #### Return Value
@@ -522,7 +522,7 @@ Create a key-pair instance from privateKey bytes.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const uint8\_t\* | privateKeyBytes | Yes | Private Key bytes _**(uint8_t[32])**_ |
+| const uint8\_t\* | privateKeyBytes | Yes | Private Key bytes _**\(uint8\_t\[32\]\)**_ |
 
 #### Return Value
 
@@ -603,7 +603,7 @@ Generate PublicKey bytes PrivateKey bytes.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const uint8\_t\* | privateKeyBytes | Yes | Private Key bytes _**(uint8_t[32])**_ |
+| const uint8\_t\* | privateKeyBytes | Yes | Private Key bytes _**\(uint8\_t\[32\]\)**_ |
 
 #### Return Value
 
@@ -625,7 +625,7 @@ Constructor of the Private Key class.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const PrivateKeyBytes& | privateKeyBytes | Yes | Private Key _**(std::array<uint8_t, 32>)**_ |
+| const PrivateKeyBytes& | privateKeyBytes | Yes | Private Key _**\(std::array\)**_ |
 
 ### `toBytes()`
 
@@ -671,7 +671,7 @@ Derive the private key for the given passphrase.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const char* | passphrase | Yes | Passphrase |
+| const char\* | passphrase | Yes | Passphrase |
 
 #### Return Value
 
@@ -691,7 +691,7 @@ Create a private key instance from a hex string.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const char* | privateKeyHex | Yes | Private key hex-string |
+| const char\* | privateKeyHex | Yes | Private key hex-string |
 
 #### Return Value
 
@@ -713,7 +713,7 @@ Constructor of the Public Key class.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const PublicKeyBytes& | publicKeyBytes | Yes | Public Key bytes _**(std::array<uint8_t, 33>)**_ |
+| const PublicKeyBytes& | publicKeyBytes | Yes | Public Key bytes _**\(std::array\)**_ |
 
 ### `toBytes()`
 
@@ -799,7 +799,7 @@ Constructor of the Wif class.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const PrivateKeyBytes& | privateKeyBytes | Yes | Private Key bytes _**(std::array<uint8_t, 32>)**_ |
+| const PrivateKeyBytes& | privateKeyBytes | Yes | Private Key bytes _**\(std::array\)**_ |
 | uint8\_t | version | Yes | Network Wif version |
 
 ### `Wif()`
@@ -964,20 +964,20 @@ Build a Transfer Transaction
 | uint64\_t | nonce | Yes | Transaction nonce |
 | const uint8\_t\* | senderPublicKey | No | Sender PublicKey |
 | uint64\_t | fee | No | Transaction fee |
-| | | | |
+|  |  |  |  |
 | const std::string& | vendorField | No | Transaction vendorfield |
-| const uint8\_t\*, const size_t& | vendorFieldHex | No | Transaction vendorfield hex |
-| | | | |
+| const uint8\_t\*, const size\_t& | vendorFieldHex | No | Transaction vendorfield hex |
+|  |  |  |  |
 | uint64\_t | amount | Yes | Transfer amount |
 | uint32\_t | expiration | Yes | Transfer expiration |
-| const uint8\_t\* | recipientId | Yes | Transfer recipient address hash _**(uint8_t[1 + 20])**_ |
-| | | | |
-| const uint8\_t\*, const size_t& | signature¹ | No | Transaction Signature |
-| const uint8\_t\*, const size_t& | secondSignature | No | Transaction Second Signature |
-| | | | |
+| const uint8\_t\* | recipientId | Yes | Transfer recipient address hash _**\(uint8\_t\[1 + 20\]\)**_ |
+|  |  |  |  |
+| const uint8\_t\*, const size\_t& | signature¹ | No | Transaction Signature |
+| const uint8\_t\*, const size\_t& | secondSignature | No | Transaction Second Signature |
+|  |  |  |  |
 | const std::string& | sign | No | Passphrase |
 | const std::string& | secondSign | No | Second passphrase |
-| | | | |
+|  |  |  |  |
 | const Configuration& | build | Yes | Finish the builder process |
 
 #### Return Value
@@ -1021,14 +1021,14 @@ Build a Second Signature Registration Transaction
 | uint64\_t | nonce | Yes | Transaction nonce |
 | const uint8\_t\* | senderPublicKey | No | Sender PublicKey |
 | uint64\_t | fee | No | Transaction fee |
-| | | | |
-| const uint8\_t\* | publicKey | Yes | Second PublicKey _**(uint8_t[33])**_ |
-| | | | |
-| const uint8\_t\*, const size_t& | signature | No | Transaction Signature |
-| const uint8\_t\*, const size_t& | secondSignature | No | Transaction Second Signature |
-| | | | |
+|  |  |  |  |
+| const uint8\_t\* | publicKey | Yes | Second PublicKey _**\(uint8\_t\[33\]\)**_ |
+|  |  |  |  |
+| const uint8\_t\*, const size\_t& | signature | No | Transaction Signature |
+| const uint8\_t\*, const size\_t& | secondSignature | No | Transaction Second Signature |
+|  |  |  |  |
 | const std::string& | sign | No | Passphrase |
-| | | | |
+|  |  |  |  |
 | const Configuration& | build | Yes | Finish the builder process |
 
 #### Return Value
@@ -1074,16 +1074,16 @@ Build a Delegate Registration Transaction
 | uint64\_t | nonce | Yes | Transaction nonce |
 | const uint8\_t\* | senderPublicKey | No | Sender PublicKey |
 | uint64\_t | fee | No | Transaction fee |
-| | | | |
-| const uint8\_t\*, const size_t &length | username | _Yes_ | Delegate Username from bytes and length |
+|  |  |  |  |
+| const uint8\_t\*, const size\_t &length | username | _Yes_ | Delegate Username from bytes and length |
 | const std::string& | username | _Yes_ | Delegate Username from a string |
-| | | | |
-| const uint8\_t\*, const size_t& | signature | No | Transaction Signature |
-| const uint8\_t\*, const size_t& | secondSignature | No | Transaction Second Signature |
-| | | | |
+|  |  |  |  |
+| const uint8\_t\*, const size\_t& | signature | No | Transaction Signature |
+| const uint8\_t\*, const size\_t& | secondSignature | No | Transaction Second Signature |
+|  |  |  |  |
 | const std::string& | sign | No | Passphrase |
 | const std::string& | secondSign | No | Second passphrase |
-| | | | |
+|  |  |  |  |
 | const Configuration& | build | Yes | Finish the builder process |
 
 #### Return Value
@@ -1128,18 +1128,18 @@ Build a Vote Transaction
 | uint64\_t | nonce | Yes | Transaction nonce |
 | const uint8\_t\* | senderPublicKey | No | Sender PublicKey |
 | uint64\_t | fee | No | Transaction fee |
-| | | | |
+|  |  |  |  |
 | const uint8\_t\* | votes | Yes | Vote-bytes¹ |
-| | | | |
-| const uint8\_t\*, const size_t& | signature | No | Transaction Signature |
-| const uint8\_t\*, const size_t& | secondSignature | No | Transaction Second Signature |
-| | | | |
+|  |  |  |  |
+| const uint8\_t\*, const size\_t& | signature | No | Transaction Signature |
+| const uint8\_t\*, const size\_t& | secondSignature | No | Transaction Second Signature |
+|  |  |  |  |
 | const std::string& | sign | No | Passphrase |
 | const std::string& | secondSign | No | Second passphrase |
-| | | | |
+|  |  |  |  |
 | const Configuration& | build | Yes | Finish the builder process |
 
-¹ _(`uint8_t votes[] = { count, `0x00(-)`|`0x01(+)`, publicKey, ..., ... };` )_
+¹ _\(`uint8_t votes[] = { count,`0x00\(-\)`|`0x01\(+\)`, publicKey, ..., ... };` \)_
 
 #### Return Value
 
@@ -1183,15 +1183,15 @@ Build an Ipfs Transaction
 | uint64\_t | nonce | Yes | Transaction nonce |
 | const uint8\_t\* | senderPublicKey | No | Sender PublicKey |
 | uint64\_t | fee | No | Transaction fee |
-| | | | |
-| const uint8\_t\*, const size_t& | ipfs | Yes | Ipfs hash-bytes |
-| | | | |
-| const uint8\_t\*, const size_t& | signature | No | Transaction Signature |
-| const uint8\_t\*, const size_t& | secondSignature | No | Transaction Second Signature |
-| | | | |
+|  |  |  |  |
+| const uint8\_t\*, const size\_t& | ipfs | Yes | Ipfs hash-bytes |
+|  |  |  |  |
+| const uint8\_t\*, const size\_t& | signature | No | Transaction Signature |
+| const uint8\_t\*, const size\_t& | secondSignature | No | Transaction Second Signature |
+|  |  |  |  |
 | const std::string& | sign | No | Passphrase |
 | const std::string& | secondSign | No | Second passphrase |
-| | | | |
+|  |  |  |  |
 | const Configuration& | build | Yes | Finish the builder process |
 
 #### Return Value
@@ -1238,20 +1238,20 @@ Build a MultiPayment Transaction
 | uint64\_t | nonce | Yes | Transaction nonce |
 | const uint8\_t\* | senderPublicKey | No | Sender PublicKey |
 | uint64\_t | fee | No | Transaction fee |
-| | | | |
-| uint16\_t | n_payments | Yes | Number of Payments |
-| const std::vector<uint64\_t> | amounts | Yes | Vector of amounts for `payments[i]` |
-| const std::vector<std::array<uint8\_t, 21> > | addresses | Yes | Vector of Address Hashes for `payments[i]`¹ |
-| | | | |
-| const uint8\_t\*, const size_t& | signature | No | Transaction Signature |
-| const uint8\_t\*, const size_t& | secondSignature | No | Transaction Second Signature |
-| | | | |
+|  |  |  |  |
+| uint16\_t | n\_payments | Yes | Number of Payments |
+| const std::vector | amounts | Yes | Vector of amounts for `payments[i]` |
+| const std::vector &gt; | addresses | Yes | Vector of Address Hashes for `payments[i]`¹ |
+|  |  |  |  |
+| const uint8\_t\*, const size\_t& | signature | No | Transaction Signature |
+| const uint8\_t\*, const size\_t& | secondSignature | No | Transaction Second Signature |
+|  |  |  |  |
 | const std::string& | sign | No | Passphrase |
 | const std::string& | secondSign | No | Second passphrase |
-| | | | |
+|  |  |  |  |
 | const Configuration& | build | Yes | Finish the builder process |
 
-¹ _(Address Hash: `uint8_t[1 + 20] | { networkVersion, PubkeyHash }` )_
+¹ _\(Address Hash: `uint8_t[1 + 20] | { networkVersion, PubkeyHash }` \)_
 
 #### Return Value
 
@@ -1299,19 +1299,19 @@ Build an Htlc Lock Transaction
 | uint64\_t | nonce | Yes | Transaction nonce |
 | const uint8\_t\* | senderPublicKey | No | Sender PublicKey |
 | uint64\_t | fee | No | Transaction fee |
-| | | | |
+|  |  |  |  |
 | uint64\_t | amount | Yes | Htlc Lock amount |
-| const uint8\_t\* | amount | Yes | Htlc Lock Secret hash _**(uint8_t[32])**_ |
+| const uint8\_t\* | amount | Yes | Htlc Lock Secret hash _**\(uint8\_t\[32\]\)**_ |
 | uint8\_t | expirationType | Yes | Htlc Lock Expiration Type |
 | uint32\_t | expiration | Yes | Htlc Lock Expiration |
-| const uint8\_t\* | recipientId | Yes | Htlc Lock recipient address hash _**(uint8_t[1 + 20])**_ |
-| | | | |
-| const uint8\_t\*, const size_t& | signature | No | Transaction Signature |
-| const uint8\_t\*, const size_t& | secondSignature | No | Transaction Second Signature |
-| | | | |
+| const uint8\_t\* | recipientId | Yes | Htlc Lock recipient address hash _**\(uint8\_t\[1 + 20\]\)**_ |
+|  |  |  |  |
+| const uint8\_t\*, const size\_t& | signature | No | Transaction Signature |
+| const uint8\_t\*, const size\_t& | secondSignature | No | Transaction Second Signature |
+|  |  |  |  |
 | const std::string& | sign | No | Passphrase |
 | const std::string& | secondSign | No | Second passphrase |
-| | | | |
+|  |  |  |  |
 | const Configuration& | build | Yes | Finish the builder process |
 
 #### Return Value
@@ -1357,16 +1357,16 @@ Build an Htlc Claim Transaction
 | uint64\_t | nonce | Yes | Transaction nonce |
 | const uint8\_t\* | senderPublicKey | No | Sender PublicKey |
 | uint64\_t | fee | No | Transaction fee |
-| | | | |
-| const uint8\_t\* | lockTransactionId | Yes | TransactionId of the Htlc Lock Transaction _**(uint8_t[32])**_ |
-| const uint8\_t\* | unlockSecret | Yes | Htlc Claim Unlock Secret _**(uint8_t[32])**_ |
-| | | | |
-| const uint8\_t\*, const size_t& | signature | No | Transaction Signature |
-| const uint8\_t\*, const size_t& | secondSignature | No | Transaction Second Signature |
-| | | | |
+|  |  |  |  |
+| const uint8\_t\* | lockTransactionId | Yes | TransactionId of the Htlc Lock Transaction _**\(uint8\_t\[32\]\)**_ |
+| const uint8\_t\* | unlockSecret | Yes | Htlc Claim Unlock Secret _**\(uint8\_t\[32\]\)**_ |
+|  |  |  |  |
+| const uint8\_t\*, const size\_t& | signature | No | Transaction Signature |
+| const uint8\_t\*, const size\_t& | secondSignature | No | Transaction Second Signature |
+|  |  |  |  |
 | const std::string& | sign | No | Passphrase |
 | const std::string& | secondSign | No | Second passphrase |
-| | | | |
+|  |  |  |  |
 | const Configuration& | build | Yes | Finish the builder process |
 
 #### Return Value
@@ -1411,15 +1411,15 @@ Build an Htlc Claim Transaction
 | uint64\_t | nonce | Yes | Transaction nonce |
 | const uint8\_t\* | senderPublicKey | No | Sender PublicKey |
 | uint64\_t | fee | No | Transaction fee |
-| | | | |
-| const uint8\_t\* | lockTransactionId | Yes | TransactionId of the Htlc Lock Transaction _**(uint8_t[32])**_ |
-| | | | |
-| const uint8\_t\*, const size_t& | signature | No | Transaction Signature |
-| const uint8\_t\*, const size_t& | secondSignature | No | Transaction Second Signature |
-| | | | |
+|  |  |  |  |
+| const uint8\_t\* | lockTransactionId | Yes | TransactionId of the Htlc Lock Transaction _**\(uint8\_t\[32\]\)**_ |
+|  |  |  |  |
+| const uint8\_t\*, const size\_t& | signature | No | Transaction Signature |
+| const uint8\_t\*, const size\_t& | secondSignature | No | Transaction Second Signature |
+|  |  |  |  |
 | const std::string& | sign | No | Passphrase |
 | const std::string& | secondSign | No | Second passphrase |
-| | | | |
+|  |  |  |  |
 | const Configuration& | build | Yes | Finish the builder process |
 
 #### Return Value
@@ -1503,7 +1503,7 @@ Convert the byte representation to a unique identifier.
 
 #### Return Value
 
-`Hash32` _**(std::array<uint8_t, 32>)**_
+`Hash32` _**\(std::array\)**_
 
 ### `sign()`
 
@@ -1573,7 +1573,7 @@ Verify the transaction with a second public key.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const uint8\_t\* | secondPublicKey | Yes | Second public key bytes _**(uint8_t[33])**_ |
+| const uint8\_t\* | secondPublicKey | Yes | Second public key bytes _**\(uint8\_t\[33\]\)**_ |
 
 #### Return Value
 
@@ -1593,7 +1593,7 @@ Deserialize a validly-serialized transaction byte-array
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const std::vector<uint8_t>& | serialized | Yes | Serialized transaction byte-array |
+| const std::vector& | serialized | Yes | Serialized transaction byte-array |
 
 #### Return Value
 
@@ -1661,3 +1661,4 @@ Convert the transaction to its Json-string representation.
 #### Return Value
 
 `std::string`
+

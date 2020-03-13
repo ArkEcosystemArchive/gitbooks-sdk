@@ -15,7 +15,6 @@ title: API Documentation
 #include <arkClient.h>
 
 Ark::Client::Connection<Ark::Client::Api> connection(const char* newIP, int newPort);
-
 ```
 
 Configure an API Connection
@@ -24,7 +23,7 @@ Configure an API Connection
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| Ark::Client::Api | template<> parameter | Yes | API to use _(current `Ark::Crypto::Api` is AIP-11 (Core 2.6) API)_ |
+| Ark::Client::Api | template&lt;&gt; parameter | Yes | API to use _\(current `Ark::Crypto::Api` is AIP-11 \(Core 2.6\) API\)_ |
 | const char\* | newIP | No | A Peers IP Address |
 | int | newPort | No | The Peers API Port |
 
@@ -38,7 +37,7 @@ Configure an API Connection
 std::string getBlockchain = connection.api.blockchain.get();
 ```
 
-Get Blockchain info, (height, id, supply)
+Get Blockchain info, \(height, id, supply\)
 
 #### Return Value
 
@@ -60,7 +59,7 @@ Get all blocks.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -150,8 +149,8 @@ Filter all blocks by the given parameters.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const std::map<std::string, std::string>& | &bodyParameters | Yes | Search Parameters |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const std::map& | &bodyParameters | Yes | Search Parameters |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -173,7 +172,7 @@ Get all Bridgechains.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -215,8 +214,8 @@ Filter all Bridgechains by the given parameters.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const std::map<std::string, std::string>& | &bodyParameters | Yes | Search Parameters |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const std::map& | &bodyParameters | Yes | Search Parameters |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -238,7 +237,7 @@ Get all Businesses.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -279,7 +278,7 @@ Get a Business by a given businessId.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | const char\* const | businessId | Yes | Business ID |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -301,8 +300,8 @@ Filter all Businesses by the given parameters.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const std::map<std::string, std::string>& | &bodyParameters | Yes | Search Parameters |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const std::map& | &bodyParameters | Yes | Search Parameters |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -324,7 +323,7 @@ Get all Delegates.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -365,7 +364,7 @@ Get all blocks for the given delegate.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | const char\* const | identifier | Yes | Delegate identifier |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -386,7 +385,7 @@ Get all voters for the given delegate.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | const char\* const | identifier | Yes | Delegate identifier |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -408,7 +407,7 @@ Get all Locks.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -450,8 +449,8 @@ Filter all Locks by the given parameters.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const std::map<std::string, std::string>& | &bodyParameters | Yes | Search Parameters |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const std::map& | &bodyParameters | Yes | Search Parameters |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -472,7 +471,7 @@ Filter all Locks by the given parameters.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | std::string& | jsonIds | Yes | Search Parameters |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -522,7 +521,7 @@ Get the node fees.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -572,7 +571,7 @@ Get all peers.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -584,7 +583,6 @@ Get all peers.
 #include <arkClient.h>
 
 std::string allPeers = connection.api.peers.get(const char* const ip);
-
 ```
 
 Get a peer by the given IP address.
@@ -657,8 +655,7 @@ Get all transactions.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const char\* const | query | No | API Query (page, limit, etc) |
-
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -678,7 +675,7 @@ Get all unconfirmed transactions.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -738,9 +735,8 @@ Filter all transactions by the given parameters.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const std::map<std::string, std::string>& | &bodyParameters | Yes | Search parameters |
-| const char\* const | query | No | API Query (page, limit, etc) |
-
+| const std::map& | &bodyParameters | Yes | Search parameters |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -790,7 +786,7 @@ Get all votes.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -832,7 +828,7 @@ Get all wallets.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -873,7 +869,7 @@ Get a wallets locks by the given id.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | const char\* const | identifier | Yes | Wallet ID |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -894,7 +890,7 @@ Get all transactions for the given wallet.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | char | identifier | No | Wallet identifier |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -915,7 +911,7 @@ Get all transactions received by the given wallet.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | const char\* const | identifier | No | Wallet identifier |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -936,7 +932,7 @@ Get all transactions sent by the given wallet.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | const char\* const | identifier | Yes | Wallet identifier |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -956,7 +952,7 @@ Get all wallets sorted by balance in descending order.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -977,8 +973,7 @@ Get all votes by the given wallet.
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
 | const char\* const | identifier | Yes | Wallet identifier |
-| const char\* const | query | No | API Query (page, limit, etc) |
-
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
@@ -998,9 +993,10 @@ Filter all wallets by the given parameters.
 
 | Type | Name | Required | Description |
 | :--- | :--- | :--- | :--- |
-| const std::map<std::string, std::string>& | bodyParameters | Yes | Search parameters |
-| const char\* const | query | No | API Query (page, limit, etc) |
+| const std::map& | bodyParameters | Yes | Search parameters |
+| const char\* const | query | No | API Query \(page, limit, etc\) |
 
 #### Return Value
 
 `std::string`
+

@@ -51,6 +51,7 @@
 
 ## Python
 
+* [Complementary Examples](python/complementary-examples.md)
 * [Installation](python/installation.md)
 * [Crypto](python/crypto/README.md)
   * [API Documentation](python/crypto/api-documentation.md)

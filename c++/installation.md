@@ -70,7 +70,7 @@ Using the Arduino IDE's built-in Library Manager, install the ARK-Cpp-Crypto lib
 
 Using the Arduino IDE's built-in Library Manager, also install the following libraries:
 
-##### Crypto
+**Crypto**
 
 * [`ArduinoJson@6.12.0`](https://github.com/bblanchon/ArduinoJson)
 * [`bcl@0.0.5`](https://github.com/sleepdefic1t/bcl)
@@ -150,3 +150,4 @@ lib_deps = Ark-Cpp-Crypto
 upload_speed = 921600
 monitor_speed = 115200
 ```
+

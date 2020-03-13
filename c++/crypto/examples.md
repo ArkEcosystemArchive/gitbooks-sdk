@@ -214,3 +214,4 @@ const auto passphrase = "this is a top secret passphrase";
 const uint8_t wifVersion = 0xaa;
 const auto wif = Ark::Crypto::Identities::Wif::fromPassphrase(passphrase, wifVersion);
 ```
+
