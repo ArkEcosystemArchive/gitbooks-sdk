@@ -25,27 +25,26 @@ To learn more about how nonces work go to the following link: [https://learn.ark
 #### Transfer 
 
 ```java
-Transaction transfer = new Transfer()
-    .recipient("validAddress")
-    .amount(1000) // amount of arktoshis we want to send
-    .nonce("3")
-    .vendorField("This is a transaction from Java")
-    .sign("this is a top secret passphrase")
-    .transaction;
-
+Transaction actual = new TransferBuilder()
+                .recipient("validAddress")
+                .amount(10^8) // amount of arktoshis we want to send
+                .nonce("1")
+                .vendorField("This is a transaction from Java")
+                .sign("this is a top secret passphrase")
+                .transaction;
 >>> Transfer
 ```
 
 #### MultiPayment
 
 ```java
-Transaction multiPayment = new MultiPayment()
-        .nonce(nonce)
-        .addPayment("validAddress", 100) // amount of arktoshis we want to send
-        .addPayment("validAddress", 200)
-        .addPayment("validAddress", 200)
-        .sign("this is a top secret passphrase")
-        .transaction;
+Transaction actual = new MultiPaymentBuilder()
+                .addPayment("validAddress", 10^8)
+                .addPayment("validAddress", 10^8)
+                .addPayment("validAddress", 10^8)
+                .nonce("1")
+                .sign("this is a top secret passphrase")
+                .transaction;
         
 >>> MultiPayment
 ```
@@ -57,8 +56,8 @@ Transaction multiPayment = new MultiPayment()
 ```java
 import org.arkecosystem.crypto.transactions.Serializer;
 
-byte[] bytes = new Serializer().serialize(transaction);
-String serializedHex = Arrays.toString(bytes);
+   byte[] bytes = Serializer.serialize(transaction);
+   String serializedHex = Arrays.toString(bytes);
 
 >>> String
 ```
@@ -70,7 +69,7 @@ String serializedHex = Arrays.toString(bytes);
 ```java
 import org.arkecosystem.crypto.transactions.Deserializer;
 
-Transaction transaction = new Deserializer().deserialize("serialized-hex");
+Transaction transaction = new Deserializer("serialized-hex").deserialize();
 
 >>> void
 ```
