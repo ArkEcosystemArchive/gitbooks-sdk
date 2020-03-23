@@ -35,7 +35,7 @@ Add this to **pom.xml** file:
 ```markup
 <dependency>
   <groupId>org.arkecosystem</groupId>
-  <artifactId>java-client</artifactId>
+  <artifactId>client</artifactId>
   <version>1.2.9</version>
 </dependency> 
 ```

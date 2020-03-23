@@ -6,6 +6,40 @@ description: >-
 
 # Complementary Examples
 
+## Prerequisites <a id="prerequisites"></a>
+
+Before we get started we need to make sure that all of the required dependencies are installed. These dependencies are the [Crypto SDK](https://sdk.ark.dev/java/crypto) and [Client SDK](https://sdk.ark.dev/java/client). You can head on over to their documentations to read more about them but for now we are only concerned with installing them to get up and running.
+
+Open your project and include the following dependencies for both SDKs. If you encounter any errors, please [open an issue](https://github.com/ArkEcosystem/core/issues/new) with as much information as you can provide so that our developers can have a look and get to the bottom of the issue.
+
+### Gradle
+
+```java
+implementation 'org.arkecosystem:crypto:1.2.9'
+```
+
+```java
+implementation 'org.arkecosystem:client:1.2.9'
+```
+
+### Maven
+
+```markup
+<dependency>
+  <groupId>org.arkecosystem</groupId>
+  <artifactId>crypto</artifactId>
+  <version>1.2.9</version>
+</dependency> 
+```
+
+```markup
+<dependency>
+  <groupId>org.arkecosystem</groupId>
+  <artifactId>client</artifactId>
+  <version>1.2.9</version>
+</dependency> 
+```
+
 ## Complementary Examples
 
 ### Transfer - Creating and Broadcasting
