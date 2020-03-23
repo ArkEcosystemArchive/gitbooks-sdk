@@ -14,6 +14,38 @@ description: Java Crypto Library For Working With Transactions
 
 Follow instructions for **Gradle** or **Maven** on how to add project to your source control.
 
+### Gradle
+
+Add this to your **build.gradle** file:
+
+```java
+implementation 'org.arkecosystem:crypto:1.2.9'
+```
+
+Execute the following command:
+
+```bash
+gradle build
+```
+
+### Maven
+
+Add this to **pom.xml** file:
+
+```markup
+<dependency>
+  <groupId>org.arkecosystem</groupId>
+  <artifactId>java-crypto</artifactId>
+  <version>1.1.2</version>
+</dependency> 
+```
+
+Execute the following command:
+
+```bash
+mvn install
+```
+
 ## Development
 
 1. Fork the [package](https://github.com/ARKEcosystem/java-crypto).
