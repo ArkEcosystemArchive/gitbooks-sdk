@@ -6,11 +6,7 @@ description: Java Client Library For Communicating With Core Server Public REST 
 
 # Client
 
-## Install Package via GitHub Package Repository
-
-**Package is available here:**
-
-{% embed url="https://github.com/ArkEcosystem/java-client/packages/130520" %}
+## Install Package via Gradle or maven
 
 Follow instructions for **Gradle** or **Maven** on how to add project to your source control.
 
