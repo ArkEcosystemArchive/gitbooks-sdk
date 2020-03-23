@@ -36,7 +36,7 @@ Add this to **pom.xml** file:
 <dependency>
   <groupId>org.arkecosystem</groupId>
   <artifactId>java-crypto</artifactId>
-  <version>1.1.2</version>
+  <version>1.2.9</version>
 </dependency> 
 ```
 
