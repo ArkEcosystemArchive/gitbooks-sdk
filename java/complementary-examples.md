@@ -6,7 +6,9 @@ description: >-
 
 # Complementary Examples
 
-## Transfer - Creating and Broadcasting
+## Complementary Examples
+
+### Transfer - Creating and Broadcasting
 
 ```java
 import com.google.gson.internal.LinkedTreeMap;
@@ -69,7 +71,7 @@ public class Transfer {
 The vendorField is optional and limited to a length of 255 characters. It can be a good idea to add a vendor field to your transactions if you want to be able to easily track them in the future.
 {% endhint %}
 
-## Second Signature - Creating and Broadcasting <a id="creating-and-broadcasting-a-second-signature"></a>
+### Second Signature - Creating and Broadcasting
 
 ```java
 package transactions;
@@ -126,7 +128,7 @@ public class SecondSignature {
 
 ```
 
-## Delegate Registration - Creating and Broadcasting <a id="creating-and-broadcasting-a-delegate-registration"></a>
+### Delegate Registration - Creating and Broadcasting
 
 ```java
 import com.google.gson.internal.LinkedTreeMap;
@@ -183,7 +185,7 @@ public class DelegateRegistration {
 
 ```
 
-## Vote - Creating and Broadcasting
+### Vote - Creating and Broadcasting
 
 ```java
 import com.google.gson.internal.LinkedTreeMap;
@@ -246,7 +248,7 @@ public class Vote {
 Note the **plus** prefix for the public key that is passed to the **votes** function. This prefix denotes that this is a transaction to remove a vote from the given delegate.
 {% endhint %}
 
-## Unvote - Creating and Broadcasting
+### Unvote - Creating and Broadcasting
 
 ```java
 import com.google.gson.internal.LinkedTreeMap;
@@ -309,7 +311,7 @@ public class Vote {
 Note the **minus** prefix for the public key that is passed to the **votes** function. This prefix denotes that this is a transaction to add a vote to the given delegate.
 {% endhint %}
 
-## IPFS - Creating and Broadcasting
+### IPFS - Creating and Broadcasting
 
 ```java
 import com.google.gson.internal.LinkedTreeMap;
@@ -366,7 +368,7 @@ public class Ipfs {
 
 ```
 
-## Multi Payment - Creating and Broadcasting
+### Multi Payment - Creating and Broadcasting
 
 ```java
 import com.google.gson.internal.LinkedTreeMap;
@@ -425,7 +427,7 @@ public class MultiPayment {
 
 ```
 
-## Delegate Resignation - Creating and Broadcasting
+### Delegate Resignation - Creating and Broadcasting
 
 ```java
 import com.google.gson.internal.LinkedTreeMap;
@@ -485,7 +487,7 @@ public class DelegateResignation {
 A delegate resignation has to be sent from the delegate wallet itself to verify its identity.
 {% endhint %}
 
-## HTLC Lock - Creating and Broadcasting
+### HTLC Lock - Creating and Broadcasting
 
 ```java
 import com.google.gson.internal.LinkedTreeMap;
@@ -547,7 +549,7 @@ public class HtlcLock {
 
 ```
 
-## HTLC Claim - Creating and Broadcasting
+### HTLC Claim - Creating and Broadcasting
 
 ```java
 import com.google.gson.internal.LinkedTreeMap;
@@ -611,7 +613,7 @@ public class HtlcClaim {
 The **unlockSecret** has to be a SHA256 hash of the plain text secret that you shared with the person that is allowed to claim the transaction.
 {% endhint %}
 
-## HTLC Refund - Creating and Broadcasting
+### HTLC Refund - Creating and Broadcasting
 
 ```java
 import com.google.gson.internal.LinkedTreeMap;
