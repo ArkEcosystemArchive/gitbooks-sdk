@@ -6,25 +6,25 @@ description: >-
 
 # Complementary Examples
 
-## Creating and Broadcasting a Transfer
+## Transfer - Creating and Broadcasting
 
 ```java
 import com.google.gson.internal.LinkedTreeMap;
 import org.arkecosystem.client.Connection;
 import org.arkecosystem.crypto.configuration.Network;
 import org.arkecosystem.crypto.networks.Devnet;
-import org.arkecosystem.crypto.transactions.Transaction;
-import org.arkecosystem.crypto.transactions.builder.Transfer;
+import org.arkecosystem.crypto.transactions.builder.TransferBuilder;
+import org.arkecosystem.crypto.transactions.types.Transaction;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class TransferTransaction {
-
+public class Transfer {
     public static void main(String[] args) throws IOException {
         // Set the network
         Network.set(new Devnet());
+
         // Make configurations and connect to the node
         HashMap<String, Object> configurations = new HashMap<>();
         configurations.put("host", "https://dexplorer.ark.io/api/");
@@ -38,14 +38,14 @@ public class TransferTransaction {
                 .get("data"))
                 .get("nonce")
                 .toString());
+
         // Increment it by one
         nonce++;
 
         // Create the transaction
-        Transaction actual = new Transfer()
+        Transaction actual = new TransferBuilder()
                 .recipient("Address of Recipient")
-                .amount(10^8) // amount of arktoshis
-                .vendorField("Hello world")
+                .amount(10^8)
                 .nonce(nonce)
                 .sign("this is a top secret passphrase")
                 .transaction;
@@ -59,38 +59,41 @@ public class TransferTransaction {
 
         // Log the response
         System.out.println(broadcastResponse);
-
+        
     }
 }
+
 ```
 
 {% hint style="info" %}
 The vendorField is optional and limited to a length of 255 characters. It can be a good idea to add a vendor field to your transactions if you want to be able to easily track them in the future.
 {% endhint %}
 
-## Creating and Broadcasting a Second Signature <a id="creating-and-broadcasting-a-second-signature"></a>
+## Second Signature - Creating and Broadcasting <a id="creating-and-broadcasting-a-second-signature"></a>
 
 ```java
+package transactions;
+
 import com.google.gson.internal.LinkedTreeMap;
 import org.arkecosystem.client.Connection;
 import org.arkecosystem.crypto.configuration.Network;
 import org.arkecosystem.crypto.networks.Devnet;
-import org.arkecosystem.crypto.transactions.Transaction;
-import org.arkecosystem.crypto.transactions.builder.SecondSignatureRegistration;
+import org.arkecosystem.crypto.transactions.builder.SecondSignatureRegistrationBuilder;
+import org.arkecosystem.crypto.transactions.types.Transaction;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class SecondSignatureTransaction {
-
+public class SecondSignature {
     public static void main(String[] args) throws IOException {
         // Set the network
         Network.set(new Devnet());
+
         // Make configurations and connect to the node
         HashMap<String, Object> configurations = new HashMap<>();
         configurations.put("host", "https://dexplorer.ark.io/api/");
-        configurations.put("content-type","application/json");
+        configurations.put("content-type", "application/json");
         Connection connection = new Connection(configurations);
 
         // Retrieve the nonce
@@ -98,15 +101,14 @@ public class SecondSignatureTransaction {
                 .wallets
                 .show("YOUR_SENDER_WALLET_ADDRESS")
                 .get("data"))
-                .get("nonce")
-                .toString());
+                .get("nonce").toString());
         // Increment it by one
         nonce++;
 
         // Create the transaction
-        Transaction actual = new SecondSignatureRegistration()
-                .signature("this is a top secret second passphrase")
+        Transaction actual = new SecondSignatureRegistrationBuilder()
                 .nonce(nonce)
+                .signature("this is a top secret second passphrase")
                 .sign("this is a top secret passphrase")
                 .transaction;
 
@@ -119,34 +121,33 @@ public class SecondSignatureTransaction {
 
         // Log the response
         System.out.println(broadcastResponse);
-
     }
 }
+
 ```
 
-## Creating and Broadcasting a Delegate Registration <a id="creating-and-broadcasting-a-delegate-registration"></a>
+## Delegate Registration - Creating and Broadcasting <a id="creating-and-broadcasting-a-delegate-registration"></a>
 
 ```java
 import com.google.gson.internal.LinkedTreeMap;
 import org.arkecosystem.client.Connection;
 import org.arkecosystem.crypto.configuration.Network;
 import org.arkecosystem.crypto.networks.Devnet;
-import org.arkecosystem.crypto.transactions.Transaction;
-import org.arkecosystem.crypto.transactions.builder.DelegateRegistration;
+import org.arkecosystem.crypto.transactions.builder.DelegateRegistrationBuilder;
+import org.arkecosystem.crypto.transactions.types.Transaction;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class DelegateRegistrationTransaction {
-
+public class DelegateRegistration {
     public static void main(String[] args) throws IOException {
         // Set the network
         Network.set(new Devnet());
         // Make configurations and connect to the node
         HashMap<String, Object> configurations = new HashMap<>();
         configurations.put("host", "https://dexplorer.ark.io/api/");
-        configurations.put("content-type","application/json");
+        configurations.put("content-type", "application/json");
         Connection connection = new Connection(configurations);
 
         // Retrieve the nonce
@@ -156,11 +157,12 @@ public class DelegateRegistrationTransaction {
                 .get("data"))
                 .get("nonce")
                 .toString());
+                
         // Increment it by one
         nonce++;
 
         // Create the transaction
-        Transaction actual = new DelegateRegistration()
+        Transaction actual = new DelegateRegistrationBuilder()
                 .username("johndoe")
                 .nonce(nonce)
                 .sign("this is a top secret passphrase")
@@ -175,89 +177,28 @@ public class DelegateRegistrationTransaction {
 
         // Log the response
         System.out.println(broadcastResponse);
-        
+
     }
 }
+
 ```
 
-## Creating and Broadcasting a Vote
+## Vote - Creating and Broadcasting
 
 ```java
 import com.google.gson.internal.LinkedTreeMap;
 import org.arkecosystem.client.Connection;
 import org.arkecosystem.crypto.configuration.Network;
 import org.arkecosystem.crypto.networks.Devnet;
-import org.arkecosystem.crypto.transactions.Transaction;
-import org.arkecosystem.crypto.transactions.builder.Vote;
+import org.arkecosystem.crypto.transactions.builder.VoteBuilder;
+import org.arkecosystem.crypto.transactions.types.Transaction;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 
-public class VoteTransaction {
-    public static void main(String[] args) throws IOException {
-        // Set the network
-        Network.set(new Devnet());
-        // Make configurations and connect to the node
-        HashMap<String, Object> configurations = new HashMap<>();
-        configurations.put("host", "https://dexplorer.ark.io/api/");
-        configurations.put("content-type","application/json");
-        Connection connection = new Connection(configurations);
-
-        // Retrieve the nonce
-        long nonce = Long.parseLong(((LinkedTreeMap<String, Object>) connection.api()
-                .wallets
-                .show("YOUR_SENDER_WALLET_ADDRESS")
-                .get("data"))
-                .get("nonce")
-                .toString());
-        // Increment it by one
-        nonce++;
-
-        List <String>votes = new ArrayList<>();
-        votes.add("+public_key_of_a_delegate_wallet");
-        // Create the transaction
-        Transaction actual = new Vote()
-                .votes(votes)
-                .nonce(nonce)
-                .sign("this is a top secret passphrase")
-                .transaction;
-
-        // Add transaction to payload
-        ArrayList<HashMap> payload = new ArrayList<>();
-        payload.add(actual.toHashMap());
-
-        // Broadcast the transaction
-        LinkedTreeMap<String, Object> broadcastResponse = connection.api().transactions.create(payload);
-
-        // Log the response
-        System.out.println(broadcastResponse);
-
-    }
-}
-```
-
-{% hint style="info" %}
-Note the **plus** prefix for the public key that is passed to the **votes** function. This prefix denotes that this is a transaction to remove a vote from the given delegate.
-{% endhint %}
-
-## Creating and Broadcasting an Unvote
-
-```java
-import com.google.gson.internal.LinkedTreeMap;
-import org.arkecosystem.client.Connection;
-import org.arkecosystem.crypto.configuration.Network;
-import org.arkecosystem.crypto.networks.Devnet;
-import org.arkecosystem.crypto.transactions.Transaction;
-import org.arkecosystem.crypto.transactions.builder.Vote;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
-public class UnvoteTransaction {
+public class Vote {
     public static void main(String[] args) throws IOException {
         // Set the network
         Network.set(new Devnet());
@@ -274,14 +215,13 @@ public class UnvoteTransaction {
                 .get("data"))
                 .get("nonce")
                 .toString());
+        
         // Increment it by one
         nonce++;
 
-        List<String> votes = new ArrayList<>();
-        votes.add("-public_key_of_a_delegate_wallet");
         // Create the transaction
-        Transaction actual = new Vote()
-                .votes(votes)
+        Transaction actual = new VoteBuilder()
+                .addVotes(Arrays.asList("+public_key_of_a_delegate_wallet"))
                 .nonce(nonce)
                 .sign("this is a top secret passphrase")
                 .transaction;
@@ -297,6 +237,70 @@ public class UnvoteTransaction {
         System.out.println(broadcastResponse);
 
     }
+
+}
+
+```
+
+{% hint style="info" %}
+Note the **plus** prefix for the public key that is passed to the **votes** function. This prefix denotes that this is a transaction to remove a vote from the given delegate.
+{% endhint %}
+
+## Unvote - Creating and Broadcasting
+
+```java
+import com.google.gson.internal.LinkedTreeMap;
+import org.arkecosystem.client.Connection;
+import org.arkecosystem.crypto.configuration.Network;
+import org.arkecosystem.crypto.networks.Devnet;
+import org.arkecosystem.crypto.transactions.builder.VoteBuilder;
+import org.arkecosystem.crypto.transactions.types.Transaction;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+
+public class Vote {
+    public static void main(String[] args) throws IOException {
+        // Set the network
+        Network.set(new Devnet());
+        // Make configurations and connect to the node
+        HashMap<String, Object> configurations = new HashMap<>();
+        configurations.put("host", "https://dexplorer.ark.io/api/");
+        configurations.put("content-type", "application/json");
+        Connection connection = new Connection(configurations);
+
+        // Retrieve the nonce
+        long nonce = Long.parseLong(((LinkedTreeMap<String, Object>) connection.api()
+                .wallets
+                .show("YOUR_SENDER_WALLET_ADDRESS")
+                .get("data"))
+                .get("nonce")
+                .toString());
+
+        // Increment it by one
+        nonce++;
+
+        // Create the transaction
+        Transaction actual = new VoteBuilder()
+                .addVotes(Arrays.asList("-public_key_of_a_delegate_wallet"))
+                .nonce(nonce)
+                .sign("this is a top secret passphrase")
+                .transaction;
+
+        // Add transaction to payload
+        ArrayList<HashMap> payload = new ArrayList<>();
+        payload.add(actual.toHashMap());
+
+        // Broadcast the transaction
+        LinkedTreeMap<String, Object> broadcastResponse = connection.api().transactions.create(payload);
+
+        // Log the response
+        System.out.println(broadcastResponse);
+
+    }
+
 }
 
 ```
@@ -305,21 +309,21 @@ public class UnvoteTransaction {
 Note the **minus** prefix for the public key that is passed to the **votes** function. This prefix denotes that this is a transaction to add a vote to the given delegate.
 {% endhint %}
 
-## Creating and Broadcasting a IPFS
+## IPFS - Creating and Broadcasting
 
 ```java
 import com.google.gson.internal.LinkedTreeMap;
 import org.arkecosystem.client.Connection;
 import org.arkecosystem.crypto.configuration.Network;
 import org.arkecosystem.crypto.networks.Devnet;
-import org.arkecosystem.crypto.transactions.Transaction;
-import org.arkecosystem.crypto.transactions.builder.Ipfs;
+import org.arkecosystem.crypto.transactions.builder.IpfsBuilder;
+import org.arkecosystem.crypto.transactions.types.Transaction;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class IpfsTransaction {
+public class Ipfs {
     public static void main(String[] args) throws IOException {
         // Set the network
         Network.set(new Devnet());
@@ -336,12 +340,13 @@ public class IpfsTransaction {
                 .get("data"))
                 .get("nonce")
                 .toString());
+
         // Increment it by one
         nonce++;
-        
+
         // Create the transaction
-        Transaction actual = new Ipfs()
-                .ipfsAsset("QmR45FmbVVrixReBwJkhEKde2qwHYaQzGxu4ZoDeswuF9w")
+        Transaction actual = new IpfsBuilder()
+                .ipfsAsset("QmR45FmbVVrixReBwJkhEKde2qwHYaQzGxu4ZoDeswuF9c")
                 .nonce(nonce)
                 .sign("this is a top secret passphrase")
                 .transaction;
@@ -361,25 +366,25 @@ public class IpfsTransaction {
 
 ```
 
-## Creating and Broadcasting a Multi Payment
+## Multi Payment - Creating and Broadcasting
 
 ```java
 import com.google.gson.internal.LinkedTreeMap;
 import org.arkecosystem.client.Connection;
 import org.arkecosystem.crypto.configuration.Network;
 import org.arkecosystem.crypto.networks.Devnet;
-import org.arkecosystem.crypto.transactions.Transaction;
-import org.arkecosystem.crypto.transactions.builder.MultiPayment;
-
+import org.arkecosystem.crypto.transactions.builder.MultiPaymentBuilder;
+import org.arkecosystem.crypto.transactions.types.Transaction;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MultiPaymentTransaction {
+public class MultiPayment {
     public static void main(String[] args) throws IOException {
         // Set the network
         Network.set(new Devnet());
+
         // Make configurations and connect to the node
         HashMap<String, Object> configurations = new HashMap<>();
         configurations.put("host", "https://dexplorer.ark.io/api/");
@@ -393,11 +398,12 @@ public class MultiPaymentTransaction {
                 .get("data"))
                 .get("nonce")
                 .toString());
+        
         // Increment it by one
         nonce++;
 
         // Create the transaction
-        Transaction actual = new MultiPayment()
+        Transaction actual = new MultiPaymentBuilder()
                 .addPayment("Address of Recipient Wallet 1", 10^8)
                 .addPayment("Address of Recipient Wallet 2", 10^8)
                 .addPayment("Address of Recipient Wallet 3", 10^8)
@@ -414,33 +420,33 @@ public class MultiPaymentTransaction {
 
         // Log the response
         System.out.println(broadcastResponse);
-
     }
 }
+
 ```
 
-## Creating and Broadcasting a Delegate Resignation
+## Delegate Resignation - Creating and Broadcasting
 
 ```java
 import com.google.gson.internal.LinkedTreeMap;
 import org.arkecosystem.client.Connection;
 import org.arkecosystem.crypto.configuration.Network;
 import org.arkecosystem.crypto.networks.Devnet;
-import org.arkecosystem.crypto.transactions.Transaction;
-import org.arkecosystem.crypto.transactions.builder.DelegateResignation;
+import org.arkecosystem.crypto.transactions.builder.DelegateResignationBuilder;
+import org.arkecosystem.crypto.transactions.types.Transaction;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class DelegateResignationTransaction {
+public class DelegateResignation {
     public static void main(String[] args) throws IOException {
         // Set the network
         Network.set(new Devnet());
         // Make configurations and connect to the node
         HashMap<String, Object> configurations = new HashMap<>();
         configurations.put("host", "https://dexplorer.ark.io/api/");
-        configurations.put("content-type","application/json");
+        configurations.put("content-type", "application/json");
         Connection connection = new Connection(configurations);
 
         // Retrieve the nonce
@@ -450,11 +456,12 @@ public class DelegateResignationTransaction {
                 .get("data"))
                 .get("nonce")
                 .toString());
+                
         // Increment it by one
         nonce++;
 
         // Create the transaction
-        Transaction actual = new DelegateResignation()
+        Transaction actual = new DelegateResignationBuilder()
                 .nonce(nonce)
                 .sign("this is a top secret passphrase")
                 .transaction;
@@ -478,7 +485,7 @@ public class DelegateResignationTransaction {
 A delegate resignation has to be sent from the delegate wallet itself to verify its identity.
 {% endhint %}
 
-## Creating and Broadcasting a HTLC Lock
+## HTLC Lock - Creating and Broadcasting
 
 ```java
 import com.google.gson.internal.LinkedTreeMap;
@@ -486,21 +493,21 @@ import org.arkecosystem.client.Connection;
 import org.arkecosystem.crypto.configuration.Network;
 import org.arkecosystem.crypto.enums.HtlcLockExpirationType;
 import org.arkecosystem.crypto.networks.Devnet;
-import org.arkecosystem.crypto.transactions.Transaction;
-import org.arkecosystem.crypto.transactions.builder.HtlcLock;
+import org.arkecosystem.crypto.transactions.builder.HtlcLockBuilder;
+import org.arkecosystem.crypto.transactions.types.Transaction;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class HtlcLockTransaction {
+public class HtlcLock {
     public static void main(String[] args) throws IOException {
         // Set the network
         Network.set(new Devnet());
         // Make configurations and connect to the node
         HashMap<String, Object> configurations = new HashMap<>();
         configurations.put("host", "https://dexplorer.ark.io/api/");
-        configurations.put("content-type","application/json");
+        configurations.put("content-type", "application/json");
         Connection connection = new Connection(configurations);
 
         // Retrieve the nonce
@@ -510,17 +517,20 @@ public class HtlcLockTransaction {
                 .get("data"))
                 .get("nonce")
                 .toString());
+                
         // Increment it by one
         nonce++;
 
         // Create the transaction
-        Transaction actual = new HtlcLock()
+        Transaction actual = new HtlcLockBuilder()
                 .secretHash("0f128d401958b1b30ad0d10406f47f9489321017b4614e6cb993fc63913c5454")
-                .expirationType(HtlcLockExpirationType.BLOCK_HEIGHT, 1000)
+                .expirationType(HtlcLockExpirationType.BLOCK_HEIGHT, 43671000)
                 .amount(10^8)
+                .recipientId("Address of Recipient")
                 .nonce(nonce)
                 .sign("this is a top secret passphrase")
                 .transaction;
+
 
         // Add transaction to payload
         ArrayList<HashMap> payload = new ArrayList<>();
@@ -537,29 +547,29 @@ public class HtlcLockTransaction {
 
 ```
 
-## Creating and Broadcasting a HTLC Claim
+## HTLC Claim - Creating and Broadcasting
 
 ```java
 import com.google.gson.internal.LinkedTreeMap;
 import org.arkecosystem.client.Connection;
 import org.arkecosystem.crypto.configuration.Network;
 import org.arkecosystem.crypto.networks.Devnet;
-import org.arkecosystem.crypto.transactions.Transaction;
-import org.arkecosystem.crypto.transactions.builder.HtlcClaim;
-
+import org.arkecosystem.crypto.transactions.builder.HtlcClaimBuilder;
+import org.arkecosystem.crypto.transactions.types.Transaction;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class HtlcClaimTransaction {
+public class HtlcClaim {
+
     public static void main(String[] args) throws IOException {
         // Set the network
         Network.set(new Devnet());
         // Make configurations and connect to the node
         HashMap<String, Object> configurations = new HashMap<>();
         configurations.put("host", "https://dexplorer.ark.io/api/");
-        configurations.put("content-type","application/json");
+        configurations.put("content-type", "application/json");
         Connection connection = new Connection(configurations);
 
         // Retrieve the nonce
@@ -569,17 +579,18 @@ public class HtlcClaimTransaction {
                 .get("data"))
                 .get("nonce")
                 .toString());
+                
         // Increment it by one
         nonce++;
 
         // Create the transaction
-        Transaction actual = new HtlcClaim()
-                .htlcClaimAsset(
-                        "943c220691e711c39c79d437ce185748a0018940e1a4144293af9d05627d2eb4",
+        Transaction actual = new HtlcClaimBuilder()
+                .htlcClaimAsset("943c220691e711c39c79d437ce185748a0018940e1a4144293af9d05627d2eb4",
                         "c27f1ce845d8c29eebc9006be932b604fd06755521b1a8b0be4204c65377151a")
                 .nonce(nonce)
                 .sign("this is a top secret passphrase")
                 .transaction;
+
 
         // Add transaction to payload
         ArrayList<HashMap> payload = new ArrayList<>();
@@ -600,28 +611,28 @@ public class HtlcClaimTransaction {
 The **unlockSecret** has to be a SHA256 hash of the plain text secret that you shared with the person that is allowed to claim the transaction.
 {% endhint %}
 
-## Creating and Broadcasting a HTLC Refund
+## HTLC Refund - Creating and Broadcasting
 
 ```java
 import com.google.gson.internal.LinkedTreeMap;
 import org.arkecosystem.client.Connection;
 import org.arkecosystem.crypto.configuration.Network;
 import org.arkecosystem.crypto.networks.Devnet;
-import org.arkecosystem.crypto.transactions.Transaction;
-import org.arkecosystem.crypto.transactions.builder.HtlcRefund;
+import org.arkecosystem.crypto.transactions.builder.HtlcRefundBuilder;
+import org.arkecosystem.crypto.transactions.types.Transaction;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class HtlcRefundTransaction {
+public class HtlcRefund {
     public static void main(String[] args) throws IOException {
         // Set the network
         Network.set(new Devnet());
         // Make configurations and connect to the node
         HashMap<String, Object> configurations = new HashMap<>();
         configurations.put("host", "https://dexplorer.ark.io/api/");
-        configurations.put("content-type","application/json");
+        configurations.put("content-type", "application/json");
         Connection connection = new Connection(configurations);
 
         // Retrieve the nonce
@@ -631,15 +642,17 @@ public class HtlcRefundTransaction {
                 .get("data"))
                 .get("nonce")
                 .toString());
+                
         // Increment it by one
         nonce++;
 
         // Create the transaction
-        Transaction actual = new HtlcRefund()
-                .htlcRefundAsset("943c220691e711c39c79d437ce185748a0018940e1a4144293af9d05627d2eb4")
+        Transaction actual = new HtlcRefundBuilder()
+                .htlcRefundAsset("2fad9edeafbdbaa7253e2a56e0aa077957da613497883923a053fca5f6fae8d6")
                 .nonce(nonce)
                 .sign("this is a top secret passphrase")
                 .transaction;
+
 
         // Add transaction to payload
         ArrayList<HashMap> payload = new ArrayList<>();
