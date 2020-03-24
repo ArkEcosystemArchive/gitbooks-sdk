@@ -125,7 +125,3 @@
 * [Laravel](frameworks/laravel.md)
 * [Symfony](frameworks/symfony.md)
 
-## Miscellaneous
-
-* [Minimalistic SDK Demos](miscellaneous/minimalistic-sdk-demos.md)
-
