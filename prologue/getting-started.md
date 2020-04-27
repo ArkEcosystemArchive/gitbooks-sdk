@@ -19,7 +19,7 @@ Usage guides are included for each supported language, and examples of how to us
 
 | Crypto                                           | Client                                           | Frameworks                         |
 | ------------------------------------------------ | ------------------------------------------------ | ---------------------------------- |
-| [C++](/cpp/crypto/getting-started)               | [C++](/cpp/client/getting-started)               | [Laravel](/php/frameworks/laravel) |
+| [C++](/c++/crypto/getting-started)               | [C++](/c++/client/getting-started)               | [Laravel](/php/frameworks/laravel) |
 | [Elixir](/elixir/crypto/getting-started)         | [Elixir](/elixir/client/getting-started)         | [Symfony](/php/frameworks/symfony) |
 | [Golang](/golang/crypto/getting-started)         | [Golang](/golang/client/getting-started)         |                                    |
 | [Java](/java/crypto/getting-started)             | [Java](/java/client/getting-started)             |                                    |

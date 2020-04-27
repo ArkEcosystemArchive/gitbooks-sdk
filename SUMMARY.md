@@ -69,6 +69,7 @@
 * [Client](c++/client/README.md)
   * [API Documentation](c++/client/api-documentation.md)
   * [Examples](c++/client/examples.md)
+* [Complementary Examples](c++/complementary-examples.md)
 
 ## Rust
 
