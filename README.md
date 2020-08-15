@@ -29,7 +29,6 @@ Usage guides are included for each supported language, and examples of how to us
 | [C++](c++/crypto/) | [C++](c++/client/) |  |
 | [Elixir](elixir/crypto/) | [Elixir](elixir/client/) |  |
 | [Golang](golang/crypto/) | [Golang](golang/client/) |  |
-| [.NET](https://sdk.ark.dev/dotnet/getting-started) | [.NET](dotnet/client/) |  |
 | [Ruby](ruby/crypto/) | [Ruby](ruby/client/) |  |
 | [Rust](rust/crypto/) | [Rust](rust/client/) |  |
 | [Swift](swift/crypto/) | [Swift](swift/client/) |  |

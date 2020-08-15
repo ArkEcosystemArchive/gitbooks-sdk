@@ -68,7 +68,6 @@ There are already a few implementations of cryptography packages available, so t
 
 ### Object Oriented Programming
 
-* [https://github.com/ARKEcosystem/dotnet-client](https://github.com/ARKEcosystem/dotnet-client)
 * [https://github.com/ARKEcosystem/php-client](https://github.com/ARKEcosystem/php-client)
 * [https://github.com/ARKEcosystem/python-client](https://github.com/ARKEcosystem/python-client)
 * [https://github.com/ARKEcosystem/ruby-client](https://github.com/ARKEcosystem/ruby-client)

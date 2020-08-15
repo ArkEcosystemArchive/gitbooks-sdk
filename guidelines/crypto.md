@@ -168,7 +168,6 @@ There are already a few implementations of cryptography packages available, so t
 
 ### Object Oriented Programming
 
-* [https://github.com/ARKEcosystem/dotnet-crypto](https://github.com/ARKEcosystem/dotnet-crypto)
 * [https://github.com/ARKEcosystem/php-crypto](https://github.com/ARKEcosystem/php-crypto)
 * [https://github.com/ARKEcosystem/python-crypto](https://github.com/ARKEcosystem/python-crypto)
 * [https://github.com/ARKEcosystem/ruby-crypto](https://github.com/ARKEcosystem/ruby-crypto)

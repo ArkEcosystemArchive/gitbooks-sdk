@@ -91,16 +91,6 @@
   * [API Documentation](elixir/client/api-documentation.md)
   * [Examples](elixir/client/examples.md)
 
-## DotNET
-
-* [Installation](dotnet/installation.md)
-* [Crypto](dotnet/getting-started/README.md)
-  * [API Documentation](dotnet/getting-started/api-documentation.md)
-  * [Examples](dotnet/getting-started/examples.md)
-* [Client](dotnet/client/README.md)
-  * [API Documentation](dotnet/client/api-documentation.md)
-  * [Examples](dotnet/client/examples.md)
-
 ## Ruby
 
 * [Installation](ruby/installation.md)
