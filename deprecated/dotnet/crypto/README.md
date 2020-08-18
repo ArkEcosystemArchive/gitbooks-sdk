@@ -1,25 +1,20 @@
 ---
 id: getting-started
 title: Getting Started
+description: .NET Crypto Library For Working With Transactions
 ---
 
-## .NET installation
+# Crypto
 
-.NET framework can be downloaded [here](https://dotnet.microsoft.com/download).
+{% hint style="danger" %}
+WARNING! This package is deprecated and is no longer maintained and supported.
+{% endhint %}
 
-For further information on how to install .NET on your operating system :
-
-[Windows guide](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro?initial-os=windows)
-
-[Unix guide](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro?initial-os=linux)
-
-[OSx guide](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro?initial-os=macos)
-
-## NuGet
+## NuGet Package Manager
 
 > NuGet is the package manager for .NET. The NuGet client tools provide the ability to produce and consume packages. The NuGet Gallery is the central package repository used by all package authors and consumers.
 
-### Package Manager
+### Install Package
 
 ```bash
 Install-Package ARKEcosystem.Crypto -Version 0.2.1
@@ -35,7 +30,7 @@ dotnet add package ARKEcosystem.Crypto --version 0.2.1
 
 For projects that support PackageReference, copy this XML node into the project file to reference the package.
 
-```xml
+```markup
 <PackageReference Include="ArkEcosystem.Crypto" Version="0.2.1" />
 ```
 
@@ -48,8 +43,7 @@ paket add ARKEcosystem.Crypto --version 0.2.1
 ## Development
 
 1. Fork the [package](https://github.com/ARKEcosystem/dotnet-crypto).
-
-2. Clone your forked repository.
+2. Clone forked repository.
 
    ```bash
    git clone https://github.com/<githubusername>/dotnet-crypto
@@ -60,3 +54,4 @@ paket add ARKEcosystem.Crypto --version 0.2.1
    ```bash
    cd dotnet-crypto
    ```
+

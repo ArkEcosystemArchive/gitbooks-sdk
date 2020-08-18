@@ -5,6 +5,10 @@ title: API Documentation
 
 # API Documentation
 
+{% hint style="danger" %}
+WARNING! This package is deprecated and is no longer maintained and supported.
+{% endhint %}
+
 ## ArkEcosystem.Crypto.Configuration.Fee
 
 ### `Get()`

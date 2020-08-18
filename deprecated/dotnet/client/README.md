@@ -1,10 +1,14 @@
 ---
 id: getting-started
 title: Getting Started
-description: .NET Crypto Library For Working With Transactions
+description: .NET Client Library For Communicating With Core Server Public REST API
 ---
 
-# Crypto
+# Client
+
+{% hint style="danger" %}
+WARNING! This package is deprecated and is no longer maintained and supported.
+{% endhint %}
 
 ## NuGet Package Manager
 
@@ -13,13 +17,13 @@ description: .NET Crypto Library For Working With Transactions
 ### Install Package
 
 ```bash
-Install-Package ARKEcosystem.Crypto -Version 0.2.1
+Install-Package ARKEcosystem.Client -Version 0.2.1
 ```
 
 ### .NET CLI
 
 ```bash
-dotnet add package ARKEcosystem.Crypto --version 0.2.1
+dotnet add package ARKEcosystem.Client --version 0.2.1
 ```
 
 ### PackageReference
@@ -27,27 +31,27 @@ dotnet add package ARKEcosystem.Crypto --version 0.2.1
 For projects that support PackageReference, copy this XML node into the project file to reference the package.
 
 ```markup
-<PackageReference Include="ArkEcosystem.Crypto" Version="0.2.1" />
+<PackageReference Include="ArkEcosystem.Client" Version="0.2.1" />
 ```
 
 ### Paket CLI
 
 ```bash
-paket add ARKEcosystem.Crypto --version 0.2.1
+paket add ARKEcosystem.Client --version 0.2.1
 ```
 
 ## Development
 
-1. Fork the [package](https://github.com/ARKEcosystem/dotnet-crypto).
+1. Fork the [package](https://github.com/ARKEcosystem/dotnet-client).
 2. Clone forked repository.
 
    ```bash
-   git clone https://github.com/<githubusername>/dotnet-crypto
+   git clone https://github.com/<githubusername>/dotnet-client
    ```
 
 3. Next, move into the fresh cloned directory.
 
    ```bash
-   cd dotnet-crypto
+   cd dotnet-client
    ```
 

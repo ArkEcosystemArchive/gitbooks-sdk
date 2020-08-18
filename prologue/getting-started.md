@@ -23,13 +23,18 @@ Usage guides are included for each supported language, and examples of how to us
 | [Elixir](/elixir/crypto/getting-started)         | [Elixir](/elixir/client/getting-started)         | [Symfony](/php/frameworks/symfony) |
 | [Golang](/golang/crypto/getting-started)         | [Golang](/golang/client/getting-started)         |                                    |
 | [Java](/java/crypto/getting-started)             | [Java](/java/client/getting-started)             |                                    |
-| [.NET](/dotnet/crypto/getting-started)           | [.NET](/dotnet/client/getting-started)           |                                    |
 | [PHP](/php/crypto/getting-started)               | [PHP](/php/client/getting-started)               |                                    |
 | [Python](/python/crypto/getting-started)         | [Python](/python/client/getting-started)         |                                    |
 | [Ruby](/ruby/crypto/getting-started)             | [Ruby](/ruby/client/getting-started)             |                                    |
 | [Rust](/rust/crypto/getting-started)             | [Rust](/rust/client/getting-started)             |                                    |
 | [Swift](/swift/crypto/getting-started)           | [Swift](/swift/client/getting-started)           |                                    |
 | [TypeScript](/typescript/crypto/getting-started) | [TypeScript](/typescript/client/getting-started) |                                    |
+
+## Deprecated
+
+| Crypto                                            | Client                                            | Frameworks                         |
+| ------------------------------------------------- | ------------------------------------------------- | ---------------------------------- |
+| [.NET](/deprecated/dotnet/crypto/getting-started) | [.NET](/deprecated/dotnet/client/getting-started) |                                    |
 
 ## Contributing
 
