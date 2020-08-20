@@ -28,15 +28,15 @@ git clone https://github.com/arkecosystem/cpp-crypto
 
 ### Project Layout
 
->```text
->project
->- extern/
+> ```text
+> project
+> - extern/
 >    - cpp-client/
 >    - cpp-crypto/
->- src/
+> - src/
 >    - | main.c
->- | CMakeLists.txt
->```
+> - | CMakeLists.txt
+> ```
 
 ### Cloning
 
@@ -49,32 +49,31 @@ git clone https://github.com/arkecosystem/cpp-crypto extern/cpp-crypto
 
 #### `CMakeLists.txt`
 
->```cmake
->cmake_minimum_required(VERSION 3.2)
+> ```text
+> cmake_minimum_required(VERSION 3.2)
 >
->project(ark_cpp_example_project)
+> project(ark_cpp_example_project)
 >
->set(CMAKE_CXX_STANDARD 11)
+> set(CMAKE_CXX_STANDARD 11)
 >
->if (MSVC)
+> if (MSVC)
 >    add_definitions(
 >        -D_CRT_SECURE_NO_WARNINGS
 >        -D_SCL_SECURE_NO_WARNINGS
 >        -DNOMINMAX
 >    )
 >    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /utf-8")
->endif()
+> endif()
 >
->add_subdirectory(extern/cpp-client)
->add_subdirectory(extern/cpp-crypto)
+> add_subdirectory(extern/cpp-client)
+> add_subdirectory(extern/cpp-crypto)
 >
->set(FILE_SRC src/main.cpp)
+> set(FILE_SRC src/main.cpp)
 >
->add_executable(${PROJECT_NAME} ${FILE_SRC})
+> add_executable(${PROJECT_NAME} ${FILE_SRC})
 >
->target_link_libraries(${PROJECT_NAME} ark_cpp_client ark_cpp_crypto)
->
->```
+> target_link_libraries(${PROJECT_NAME} ark_cpp_client ark_cpp_crypto)
+> ```
 
 ### Building and Running the Project
 
@@ -251,7 +250,6 @@ The vendorField is optional and limited to a length of 255 characters. It can be
 ## Creating and Broadcasting a Second Signature Registration Transaction
 
 ```cpp
-
 #include <iostream>
 
 #include <arkClient.h>
@@ -314,7 +312,6 @@ int main() {
 ## Creating and Broadcasting a Delegate Registration Transaction
 
 ```cpp
-
 #include <iostream>
 
 #include <arkClient.h>
@@ -373,7 +370,6 @@ int main() {
 ## Creating and Broadcasting a Vote Transaction
 
 ```cpp
-
 #include <iostream>
 
 #include <arkClient.h>
@@ -438,13 +434,12 @@ int main() {
 ```
 
 {% hint style="info" %}
-Note the **plus (1)** prefix for the public key that is passed to the **.votes()** function. This prefix denotes that this is a transaction to remove a vote from the given delegate.
+Note the **plus \(1\)** prefix for the public key that is passed to the **.votes\(\)** function. This prefix denotes that this is a transaction to remove a vote from the given delegate.
 {% endhint %}
 
 ## Creating and Broadcasting an Unvote Transaction
 
 ```cpp
-
 #include <iostream>
 
 #include <arkClient.h>
@@ -512,13 +507,12 @@ int main() {
 ```
 
 {% hint style="info" %}
-Note the **minus (0)** prefix for the public key that is passed to the **.votes()** function. This prefix denotes that this is a transaction to add a vote to the given delegate.
+Note the **minus \(0\)** prefix for the public key that is passed to the **.votes\(\)** function. This prefix denotes that this is a transaction to add a vote to the given delegate.
 {% endhint %}
 
 ## Creating and Broadcasting an Ipfs Transaction
 
 ```cpp
-
 #include <iostream>
 
 #include <arkClient.h>
@@ -581,7 +575,6 @@ int main() {
 ## Creating and Broadcasting a Multi Payment Transaction
 
 ```cpp
-
 #include <array>
 #include <vector>
 
@@ -670,7 +663,6 @@ int main() {
 ## Creating and Broadcasting a Delegate Resignation Transaction
 
 ```cpp
-
 #include <iostream>
 
 #include <arkClient.h>
@@ -733,7 +725,6 @@ A delegate resignation has to be sent from the delegate wallet itself to verify 
 ## Creating and Broadcasting a Htlc Lock Transaction
 
 ```cpp
-
 #include <iostream>
 
 #include <arkClient.h>
@@ -799,7 +790,6 @@ int main() {
 ## Creating and Broadcasting a Htlc Claim Transaction
 
 ```cpp
-
 #include <iostream>
 
 #include <arkClient.h>
@@ -870,7 +860,6 @@ The **unlockSecret** has to be a SHA256 hash of the plain text secret that you s
 ## Creating and Broadcasting a Htlc Refund Transaction
 
 ```cpp
-
 #include <iostream>
 
 #include <arkClient.h>
@@ -929,3 +918,4 @@ int main() {
     return 0;
 }
 ```
+

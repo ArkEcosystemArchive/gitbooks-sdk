@@ -29,7 +29,7 @@ implementation 'org.arkecosystem:client:1.2.9'
   <groupId>org.arkecosystem</groupId>
   <artifactId>crypto</artifactId>
   <version>1.2.9</version>
-</dependency> 
+</dependency>
 ```
 
 ```markup
@@ -37,7 +37,7 @@ implementation 'org.arkecosystem:client:1.2.9'
   <groupId>org.arkecosystem</groupId>
   <artifactId>client</artifactId>
   <version>1.2.9</version>
-</dependency> 
+</dependency>
 ```
 
 ## Complementary Examples
@@ -95,10 +95,9 @@ public class Transfer {
 
         // Log the response
         System.out.println(broadcastResponse);
-        
+
     }
 }
-
 ```
 
 {% hint style="info" %}
@@ -159,7 +158,6 @@ public class SecondSignature {
         System.out.println(broadcastResponse);
     }
 }
-
 ```
 
 ### Delegate Registration - Creating and Broadcasting
@@ -193,7 +191,7 @@ public class DelegateRegistration {
                 .get("data"))
                 .get("nonce")
                 .toString());
-                
+
         // Increment it by one
         nonce++;
 
@@ -216,7 +214,6 @@ public class DelegateRegistration {
 
     }
 }
-
 ```
 
 ### Vote - Creating and Broadcasting
@@ -251,7 +248,7 @@ public class Vote {
                 .get("data"))
                 .get("nonce")
                 .toString());
-        
+
         // Increment it by one
         nonce++;
 
@@ -275,7 +272,6 @@ public class Vote {
     }
 
 }
-
 ```
 
 {% hint style="info" %}
@@ -338,7 +334,6 @@ public class Vote {
     }
 
 }
-
 ```
 
 {% hint style="info" %}
@@ -399,7 +394,6 @@ public class Ipfs {
 
     }
 }
-
 ```
 
 ### Multi Payment - Creating and Broadcasting
@@ -434,7 +428,7 @@ public class MultiPayment {
                 .get("data"))
                 .get("nonce")
                 .toString());
-        
+
         // Increment it by one
         nonce++;
 
@@ -458,7 +452,6 @@ public class MultiPayment {
         System.out.println(broadcastResponse);
     }
 }
-
 ```
 
 ### Delegate Resignation - Creating and Broadcasting
@@ -492,7 +485,7 @@ public class DelegateResignation {
                 .get("data"))
                 .get("nonce")
                 .toString());
-                
+
         // Increment it by one
         nonce++;
 
@@ -514,7 +507,6 @@ public class DelegateResignation {
 
     }
 }
-
 ```
 
 {% hint style="info" %}
@@ -553,7 +545,7 @@ public class HtlcLock {
                 .get("data"))
                 .get("nonce")
                 .toString());
-                
+
         // Increment it by one
         nonce++;
 
@@ -580,7 +572,6 @@ public class HtlcLock {
 
     }
 }
-
 ```
 
 ### HTLC Claim - Creating and Broadcasting
@@ -615,7 +606,7 @@ public class HtlcClaim {
                 .get("data"))
                 .get("nonce")
                 .toString());
-                
+
         // Increment it by one
         nonce++;
 
@@ -640,7 +631,6 @@ public class HtlcClaim {
 
     }
 }
-
 ```
 
 {% hint style="info" %}
@@ -678,7 +668,7 @@ public class HtlcRefund {
                 .get("data"))
                 .get("nonce")
                 .toString());
-                
+
         // Increment it by one
         nonce++;
 
@@ -702,6 +692,5 @@ public class HtlcRefund {
 
     }
 }
-
 ```
 

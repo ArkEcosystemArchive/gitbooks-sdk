@@ -730,7 +730,7 @@ Sets the recipient id.
 ### `secretHash()`
 
 ```java
-public HtlcLock secretHash(String secretHash) 
+public HtlcLock secretHash(String secretHash)
 ```
 
 Sets secret hash.
@@ -748,7 +748,7 @@ Sets secret hash.
 ### `ExpirationType()`
 
 ```java
-public HtlcLock expirationType(HtlcLockExpirationType expirationType, int expirationValue) 
+public HtlcLock expirationType(HtlcLockExpirationType expirationType, int expirationValue)
 ```
 
 Sets the expiration type of htlc lock.
