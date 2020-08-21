@@ -5,6 +5,10 @@ title: Examples
 
 # Examples
 
+{% hint style="danger" %}
+WARNING! This package is deprecated and is no longer maintained and supported.
+{% endhint %}
+
 ## Initialization
 
 ```csharp

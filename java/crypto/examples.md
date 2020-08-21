@@ -22,7 +22,7 @@ The crypto SDK can sign a transaction using your private key or passphrase \(fro
 
 To learn more about how nonces work go to the following link: [https://learn.ark.dev/concepts/understanding-transaction-nonce](https://learn.ark.dev/concepts/understanding-transaction-nonce)
 
-#### Transfer 
+#### Transfer
 
 ```java
 Transaction actual = new TransferBuilder()
@@ -45,7 +45,7 @@ Transaction actual = new MultiPaymentBuilder()
                 .nonce("1")
                 .sign("this is a top secret passphrase")
                 .transaction;
-        
+
 >>> MultiPayment
 ```
 

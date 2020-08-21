@@ -5,6 +5,10 @@ title: Getting Started
 
 ## .NET installation
 
+{% hint style="danger" %}
+WARNING! This package is deprecated and is no longer maintained and supported.
+{% endhint %}
+
 .NET framework can be downloaded [here](https://dotnet.microsoft.com/download).
 
 For further information on how to install .NET on your operating system :

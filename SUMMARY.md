@@ -91,16 +91,6 @@
   * [API Documentation](elixir/client/api-documentation.md)
   * [Examples](elixir/client/examples.md)
 
-## DotNET
-
-* [Installation](dotnet/installation.md)
-* [Crypto](dotnet/getting-started/README.md)
-  * [API Documentation](dotnet/getting-started/api-documentation.md)
-  * [Examples](dotnet/getting-started/examples.md)
-* [Client](dotnet/client/README.md)
-  * [API Documentation](dotnet/client/api-documentation.md)
-  * [Examples](dotnet/client/examples.md)
-
 ## Ruby
 
 * [Installation](ruby/installation.md)
@@ -125,4 +115,14 @@
 
 * [Laravel](frameworks/laravel.md)
 * [Symfony](frameworks/symfony.md)
+
+## Deprecated
+
+* [DOTNET](deprecated/dotnet/README.md)
+  * [Crypto](deprecated/dotnet/crypto/README.md)
+    * [API Documentation](deprecated/dotnet/crypto/api-documentation.md)
+    * [Examples](deprecated/dotnet/crypto/examples.md)
+  * [Client](deprecated/dotnet/client/README.md)
+    * [API Documentation](deprecated/dotnet/client/api-documentation.md)
+    * [Examples](deprecated/dotnet/client/examples.md)
 

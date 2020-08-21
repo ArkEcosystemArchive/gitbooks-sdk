@@ -92,10 +92,10 @@ Managers.configManager.setHeight(4006000);
         .amount(1 * 1e8)
         .vendorField("Hello World")
         .sign("this is a top secret passphrase");
-    
+
     // Step 4: Broadcast the transaction
     const broadcastResponse = await client.api("transactions").create({ transactions: [transaction.build().toJson()] });
-    
+
     // Step 5: Log the response
     console.log(JSON.stringify(broadcastResponse.body.data, null, 4))
 })();
@@ -129,10 +129,10 @@ Managers.configManager.setHeight(4006000);
         .nonce(senderNonce.toFixed())
         .signatureAsset("this is a top secret second passphrase")
         .sign("this is a top secret passphrase");
-    
+
     // Step 4: Broadcast the transaction
     const broadcastResponse = await client.api("transactions").create({ transactions: [transaction.build().toJson()] });
-    
+
     // Step 5: Log the response
     console.log(JSON.stringify(broadcastResponse.body.data, null, 4))
 })();
@@ -162,10 +162,10 @@ Managers.configManager.setHeight(4006000);
         .nonce(senderNonce.toFixed())
         .usernameAsset("johndoe")
         .sign("this is a top secret passphrase");
-    
+
     // Step 4: Broadcast the transaction
     const broadcastResponse = await client.api("transactions").create({ transactions: [transaction.build().toJson()] });
-    
+
     // Step 5: Log the response
     console.log(JSON.stringify(broadcastResponse.body.data, null, 4))
 })();
@@ -195,10 +195,10 @@ Managers.configManager.setHeight(4006000);
         .nonce(senderNonce.toFixed())
         .votesAsset(["+public_key_of_a_delegate_wallet"])
         .sign("this is a top secret passphrase");
-    
+
     // Step 4: Broadcast the transaction
     const broadcastResponse = await client.api("transactions").create({ transactions: [transaction.build().toJson()] });
-    
+
     // Step 5: Log the response
     console.log(JSON.stringify(broadcastResponse.body.data, null, 4))
 })();
@@ -232,10 +232,10 @@ Managers.configManager.setHeight(4006000);
         .nonce(senderNonce.toFixed())
         .votesAsset(["-public_key_of_a_delegate_wallet"])
         .sign("this is a top secret passphrase");
-    
+
     // Step 4: Broadcast the transaction
     const broadcastResponse = await client.api("transactions").create({ transactions: [transaction.build().toJson()] });
-    
+
     // Step 5: Log the response
     console.log(JSON.stringify(broadcastResponse.body.data, null, 4))
 })();
@@ -280,10 +280,10 @@ Managers.configManager.setHeight(4006000);
         .multiSign("this is a top secret passphrase 2", 1)
         .multiSign("this is a top secret passphrase 3", 2)
         .sign("this is a top secret passphrase");
-    
+
     // Step 4: Broadcast the transaction
     const broadcastResponse = await client.api("transactions").create({ transactions: [transaction.build().toJson()] });
-    
+
     // Step 5: Log the response
     console.log(JSON.stringify(broadcastResponse.body.data, null, 4))
 })();
@@ -313,10 +313,10 @@ Managers.configManager.setHeight(4006000);
         .nonce(senderNonce.toFixed())
         .ipfsAsset("QmR45FmbVVrixReBwJkhEKde2qwHYaQzGxu4ZoDeswuF9w")
         .sign("this is a top secret passphrase");
-    
+
     // Step 4: Broadcast the transaction
     const broadcastResponse = await client.api("transactions").create({ transactions: [transaction.build().toJson()] });
-    
+
     // Step 5: Log the response
     console.log(JSON.stringify(broadcastResponse.body.data, null, 4))
 })();
@@ -348,10 +348,10 @@ Managers.configManager.setHeight(4006000);
         .addPayment("Address of Recipient Wallet 2", 1 * 1e8)
         .addPayment("Address of Recipient Wallet 3", 1 * 1e8)
         .sign("this is a top secret passphrase");
-    
+
     // Step 4: Broadcast the transaction
     const broadcastResponse = await client.api("transactions").create({ transactions: [transaction.build().toJson()] });
-    
+
     // Step 5: Log the response
     console.log(JSON.stringify(broadcastResponse.body.data, null, 4))
 })();
@@ -380,10 +380,10 @@ Managers.configManager.setHeight(4006000);
         .version(2)
         .nonce(senderNonce.toFixed())
         .sign("this is a top secret passphrase");
-    
+
     // Step 4: Broadcast the transaction
     const broadcastResponse = await client.api("transactions").create({ transactions: [transaction.build().toJson()] });
-    
+
     // Step 5: Log the response
     console.log(JSON.stringify(broadcastResponse.body.data, null, 4))
 })();
@@ -424,10 +424,10 @@ Managers.configManager.setHeight(4006000);
         })
         .amoun(1 * 1e8)
         .sign("this is a top secret passphrase");
-    
+
     // Step 4: Broadcast the transaction
     const broadcastResponse = await client.api("transactions").create({ transactions: [transaction.build().toJson()] });
-    
+
     // Step 5: Log the response
     console.log(JSON.stringify(broadcastResponse.body.data, null, 4))
 })();
@@ -460,10 +460,10 @@ Managers.configManager.setHeight(4006000);
             unlockSecret: "c27f1ce845d8c29eebc9006be932b604fd06755521b1a8b0be4204c65377151a",
         })
         .sign("this is a top secret passphrase");
-    
+
     // Step 4: Broadcast the transaction
     const broadcastResponse = await client.api("transactions").create({ transactions: [transaction.build().toJson()] });
-    
+
     // Step 5: Log the response
     console.log(JSON.stringify(broadcastResponse.body.data, null, 4))
 })();
@@ -499,10 +499,10 @@ Managers.configManager.setHeight(4006000);
             lockTransactionId: "943c220691e711c39c79d437ce185748a0018940e1a4144293af9d05627d2eb4",
         })
         .sign("this is a top secret passphrase");
-    
+
     // Step 4: Broadcast the transaction
     const broadcastResponse = await client.api("transactions").create({ transactions: [transaction.build().toJson()] });
-    
+
     // Step 5: Log the response
     console.log(JSON.stringify(broadcastResponse.body.data, null, 4))
 })();

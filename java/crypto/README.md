@@ -33,7 +33,7 @@ Add this to **pom.xml** file:
   <groupId>org.arkecosystem</groupId>
   <artifactId>crypto</artifactId>
   <version>1.2.9</version>
-</dependency> 
+</dependency>
 ```
 
 Execute the following command:
