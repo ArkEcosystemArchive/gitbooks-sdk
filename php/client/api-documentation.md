@@ -38,7 +38,7 @@ Send a GET request with query parameters.
 
 #### Return Value
 
-`array|string`
+`array|null|bool`
 
 ### `post()`
 
@@ -57,7 +57,7 @@ Send a POST request with JSON-encoded parameters.
 
 #### Return Value
 
-`array|string`
+`array|null|bool`
 
 ## ArkEcosystem\Client\API\Blocks
 
@@ -77,7 +77,7 @@ Get all blocks.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `show()`
 
@@ -95,7 +95,7 @@ Get a block by the given id.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `transactions()`
 
@@ -114,7 +114,7 @@ Get all transactions by the given block.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `search()`
 
@@ -132,7 +132,7 @@ Filter all blocks by the given parameters.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ## ArkEcosystem\Client\API\Delegates
 
@@ -152,7 +152,7 @@ Get all accounts.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `show()`
 
@@ -170,7 +170,7 @@ Get a delegate by the given id.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `blocks()`
 
@@ -189,7 +189,7 @@ Get all blocks for the given delegate.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `voters()`
 
@@ -208,7 +208,7 @@ Get all voters for the given delegate.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ## ArkEcosystem\Client\API\Node
 
@@ -222,7 +222,7 @@ Get the node configuration.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `status()`
 
@@ -234,7 +234,7 @@ Get the node status.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `syncing()`
 
@@ -246,7 +246,7 @@ Get the node syncing status.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `fees()`
 
@@ -264,7 +264,7 @@ Get the node fee statistics.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ## ArkEcosystem\Client\API\Peers
 
@@ -284,7 +284,7 @@ Get all peers.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `show()`
 
@@ -302,7 +302,7 @@ Get a peer by the given IP address.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ## ArkEcosystem\Client\API\Transactions
 
@@ -322,7 +322,7 @@ Create a new transaction.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `show()`
 
@@ -340,7 +340,7 @@ Get a transaction by the given id.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `all()`
 
@@ -358,7 +358,7 @@ Get all transactions.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `allUnconfirmed()`
 
@@ -370,7 +370,7 @@ Get all unconfirmed transactions.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `showUnconfirmed()`
 
@@ -388,7 +388,7 @@ Get an unconfirmed transaction by the given id.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `search()`
 
@@ -406,7 +406,7 @@ Filter all transactions by the given parameters.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `types()`
 
@@ -418,7 +418,7 @@ Get a list of valid transaction types.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ## ArkEcosystem\Client\API\Votes
 
@@ -438,7 +438,7 @@ Get all votes.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `show()`
 
@@ -456,7 +456,7 @@ Get a vote by the given id.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ## ArkEcosystem\Client\API\Wallets
 
@@ -476,7 +476,7 @@ Get all wallets.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `show()`
 
@@ -494,7 +494,7 @@ Get a wallet by the given id.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `transactions()`
 
@@ -513,7 +513,7 @@ Get all transactions for the given wallet.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `receivedTransactions()`
 
@@ -532,7 +532,7 @@ Get all transactions received by the given wallet.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `sentTransactions()`
 
@@ -551,7 +551,7 @@ Get all transactions sent by the given wallet.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `votes()`
 
@@ -570,7 +570,7 @@ Get all votes by the given wallet.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `top()`
 
@@ -582,7 +582,7 @@ Get all wallets sorted by balance in descending order.
 
 #### Return Value
 
-`array`
+`array|null`
 
 ### `search()`
 
@@ -600,5 +600,4 @@ Filter all wallets by the given parameters.
 
 #### Return Value
 
-`array`
-
+`array|null`
